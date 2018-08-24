@@ -21,7 +21,6 @@ class Login extends Component {
                     <TextField
                         id="with-placeholder"
                         label="Enter your email"
-                        placeholder="Placeholder"
                         margin="normal"
                     />
                 </div>
