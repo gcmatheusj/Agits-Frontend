@@ -4,10 +4,26 @@ import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
+import axios from 'axios'
 
 class Login extends Component {
     constructor(props) {
         super(props)
+        this.state = {
+            email: '',
+            password: ''
+        }
+        this.handleAuth = this.handleAuth.bind(this)
+    }
+
+    async handleAuth(){
+        const { email, password } = this.state
+        try {
+            const response = await axios.post('localhost:3001/authenticate', { email, password })
+            console.log(response)
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     render() {
