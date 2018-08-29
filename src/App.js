@@ -1,17 +1,21 @@
 import React, { Component } from 'react'
-import Login from './login'
-import 'typeface-roboto'
-import Sidebar from './sidebar';
+import {
+  BrowserRouter as Router,
+  Route,
+} from 'react-router-dom'
+import './App.css'
+import TelaLogin from './TelaLogin'
+import RecuperarSenha from './RecuperarSenha'
 
 class App extends Component {
   render() {
     return (
-      <div style={{ display: "flex" }}>
-        <Sidebar></Sidebar>
-        <div style={{ flex: "1 1 0%",
-         padding: "10px"}}>  <Login></Login> </div>
-       
-      </div>
+      <Router>
+        <div>
+          <Route exact path='/' component={TelaLogin} />
+          <Route path='/recuperar-senha' component={RecuperarSenha} />
+        </div>
+      </Router>
     )
   }
 }

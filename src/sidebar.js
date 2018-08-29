@@ -1,10 +1,30 @@
 import React, { Component } from 'react'
 import './sidebar.css'
-import Typography from '@material-ui/core/Typography'
-import Divider from '@material-ui/core/Divider'
-import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Background from './assets/imagem_fundo_filtro.png'
+import logo from './assets/meu-tutor.png'
+import { withStyles } from '@material-ui/core/styles'
+import PropTypes from 'prop-types'
+import { Typography } from '@material-ui/core';
+
+const styles = {
+    root: {
+        width: "50%",
+        backgroundImage: "url(" + Background + ")",
+        backgroundSize: "cover",
+        height: "100vh"
+    },
+    button: {
+        borderColor: "#ff572f",
+        color: "#ff572f",
+        verticalAlign: 'middle',
+        border: '2px solid'
+    },
+    content: {
+        margin: 70,
+        color: 'white'
+    }
+}
 
 class Sidebar extends Component {
     constructor(props) {
@@ -12,25 +32,29 @@ class Sidebar extends Component {
     }
 
     render() {
+        const { classes } = this.props
         return (
-            <div style={{
-                padding: "10px",
-                width: "30%",
-                backgroundImage: "url("+Background+")",
-                backgroundSize: "cover",
-                height: "700px"
-                }}> 
-                <div style={{position:"absolute",bottom:"40px"}} >
-                    <Button variant="outlined" size="large" color="primary" style={{
-                        borderColor: "#ff9b00",
-                        color:  "#ff9b00"
-                    }}>
-                        Learn More
-                    </Button>
+            <div className={classes.root}>
+                <div className="container">
+                    <div className="content">
+                        <div align="center" >
+                            <img src={logo} alt=""></img>
+                        </div>
+                        <Typography className={classes.content} variant="display1" align="center">LOREM IPSUM PORTTITOR AENEAN TACITI SCELERISQUE TEMPUS DONEC.</Typography>
+                        <div align="center">
+                            <Button id="btn-ln" className={classes.button} variant="outlined" size="large" color="primary" >
+                                Learn More
+                            </Button>
+                        </div>
+                    </div>
                 </div>
             </div>
         )
     }
 }
 
-export default Sidebar
+Sidebar.propTypes = {
+    classes: PropTypes.object.isRequired
+}
+
+export default withStyles(styles)(Sidebar)

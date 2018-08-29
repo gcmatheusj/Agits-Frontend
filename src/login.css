@@ -1,16 +1,18 @@
-.login-container {
-    width: 500px;
+.loginContainer {
+    margin-right: auto;
+    margin-left: auto;
+    display: table;
+    height: 100%;
+    width: 100%;
 }
 
-.teste {
-    font-size: 50px;
+.loginContent {
+    position: relative;
+    display: table-cell;
+    vertical-align: middle;
+    height: 500px;
 }
 
-.right-align-btn {
-    position: absolute;
-    right: 0;
-}
-
-.MuiInput-Input-54 {
-    width: 500px;
+.btn-gs {
+    float: right;
 }
