@@ -32,7 +32,7 @@ const styles = {
         width: 500,
     },
     btngs: {
-        float: 'right'
+        float: 'right',
     }
 }
 
@@ -72,6 +72,26 @@ class Login extends Component {
         const { classes } = this.props
         return (
             <div className={classes.root}>
+                <div className = "flex">
+                    <div className = "flexName">
+                        <Typography
+                            variant="subheading" 
+                            className={classes.subheading}>
+                                Don't have an account?
+                        </Typography>
+                    </div>
+                    <div className = "flexButton">
+                        <Button
+                            className = {classes.btngs} 
+                            variant="contained"
+                            color="primary" 
+                            style={{ backgroundColor: '#ff572f'}}
+                            onClick={this.handleAuth}>
+                                GET STARTED
+                        </Button>
+                    </div>
+                </div>
+                
                 <div className="loginContainer">
                     <div className="loginContent" align="center">
                         <div className={classes.formContainer}>
@@ -100,8 +120,20 @@ class Login extends Component {
                                 />
                             </div>
                             <div align="right">
-                                <Button className={classes.button} variant="contained" size="large" color="primary" style={{ backgroundColor: '#ff572f' }} onClick={this.handleAuth}>
-                                    Access
+                                <Button 
+                                    id = "forgot-password"
+                                    className={classes.button} 
+                                    onClick={this.handleAuth}>
+                                        Forgot your password?
+                                </Button>
+                                <Button
+                                    className={classes.button} 
+                                     variant="contained" 
+                                     size="large" 
+                                     color="primary" 
+                                     style={{ backgroundColor: '#ff572f' }} 
+                                     onClick={this.handleAuth}>
+                                        Access
                                 </Button>
                             </div>
                             <Divider />

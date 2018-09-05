@@ -16,3 +16,39 @@
 .btn-gs {
     float: right;
 }
+
+.h3 {
+    display: inline-block;
+}
+
+.flex {
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+.flexName {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px;
+
+}
+
+#forgot-password:hover {
+    background: none;
+}
+
+#forgot-password {
+    margin-right: 3px;
+}
+
+.flexButton {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+    margin-right: 10px; 
+    width: 130px;
+    height: 68px;
+}

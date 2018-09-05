@@ -20,3 +20,7 @@
     vertical-align: middle;
     height: 100%;
 }
+
+#btn-ln:hover {
+    border: 2px solid white;
+}
