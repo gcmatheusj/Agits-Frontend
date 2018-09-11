@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom'
 import './App.css'
 import TelaLogin from './TelaLogin'
-import RecuperarSenha from './RecuperarSenha'
+import RecuperarSenha from './components/recuperarSenha'
 
 class App extends Component {
   render() {
