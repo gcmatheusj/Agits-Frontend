@@ -6,6 +6,7 @@ import {
 import './App.css'
 import TelaLogin from './TelaLogin'
 import RecuperarSenha from './components/recuperarSenha'
+import Cadastro from './Cadastro'
 
 class App extends Component {
   render() {
@@ -14,6 +15,7 @@ class App extends Component {
         <div>
           <Route exact path='/' component={TelaLogin} />
           <Route path='/recuperar-senha' component={RecuperarSenha} />
+          <Route path='/cadastro' component={Cadastro} />
         </div>
       </Router>
     )
