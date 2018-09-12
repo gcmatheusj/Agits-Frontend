@@ -3,17 +3,16 @@ import {
   BrowserRouter as Router,
   Route,
 } from 'react-router-dom'
-import './App.css'
-import TelaLogin from './TelaLogin'
+import Login from './components/login'
 import RecuperarSenha from './components/recuperarSenha'
 import Cadastro from './Cadastro'
-
+import './App.css'
 class App extends Component {
   render() {
     return (
       <Router>
         <div>
-          <Route exact path='/' component={TelaLogin} />
+          <Route exact path='/' component={Login} />
           <Route path='/recuperar-senha' component={RecuperarSenha} />
           <Route path='/cadastro' component={Cadastro} />
         </div>

@@ -7,13 +7,15 @@ const styles = theme => ({
     grid: {
         flexGrow: 1,
         alignItems: "center",
-        [theme.breakpoints.down('md')]: {
-            alignItems: "flex-start"
-        }
+        [theme.breakpoints.down('sm')]: {
+            alignItems: "flex-start",
+            marginTop: 30,
+            marginLeft: 30,
+            marginRight: 30
+        },
     },
     card: {
-        width: 550,
-        minWidth: 275,
+        maxWidth: 550,  
     },
     title: {
         fontSize: 27,
@@ -26,21 +28,20 @@ const styles = theme => ({
     input: {
         width: '100%'
     },
-    button: {
-        marginTop: 8,
-        marginBottom: 16
+    cardActions: {
+        marginBottom: 10
     },
     formContainer: {
-        width: 500,
+        width: '100%',
     },
 })
 
-class Rsenha extends Component {
+class RecuperarSenha extends Component {
     render() {
         const { classes } = this.props
         return (
-            <Grid className={classes.grid} container direction="row" justify="center"  >
-                <Grid >
+            <Grid className={classes.grid} container direction="row" justify="center">
+                <Grid>
                     <Card className={classes.card}>
                         <CardContent >
                             <Grid>
@@ -52,19 +53,19 @@ class Rsenha extends Component {
                                         <TextField
                                             className={classes.input}
                                             id="with-placeholder"
-                                            label="Enter address"
+                                            label="Email address"
                                             margin="normal"
                                         />
                                     </Grid>
                                 </Grid>
                             </Grid>
                         </CardContent>
-                        <CardActions>
+                        <CardActions className={classes.cardActions}>
                             <Grid container justify="flex-end">
-                                <Button className={classes.button} size="large">
+                                <Button size="medium">
                                     Back to login
                                 </Button>
-                                <Button className={classes.button} variant="contained" size="large" color="primary" style={{ backgroundColor: '#ff572f' }}>
+                                <Button size="medium" variant="contained" color="primary" style={{ backgroundColor: '#ff572f' }}>
                                     Send
                                 </Button>
                             </Grid>
@@ -76,8 +77,8 @@ class Rsenha extends Component {
     }
 }
 
-Rsenha.propTypes = {
+RecuperarSenha.propTypes = {
     classes: PropTypes.object.isRequired
 }
 
-export default withStyles(styles)(Rsenha)
+export default withStyles(styles)(RecuperarSenha)
