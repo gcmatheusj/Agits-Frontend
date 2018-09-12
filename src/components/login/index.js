@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import Login from './login'
-import 'typeface-roboto'
-import Sidebar from './sidebar';
-import './App.css'
+import Login from './Login'
+import Sidebar from './Sidebar'
 
 class TelaLogin extends Component {
   render() {
