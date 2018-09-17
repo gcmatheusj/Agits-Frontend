@@ -3,14 +3,17 @@ import { Typography, Grid, Button } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 
-import Background from '../../assets/imagem_fundo_filtro.png'
-import logo from '../../assets/meu-tutor.png'
+import Background from '../assets/imagem_fundo_filtro.png'
+import logo from '../assets/meu-tutor.png'
 
-const styles = {
+const styles = theme => ({
     root: {
         backgroundImage: "url(" + Background + ")",
         backgroundSize: "cover",
-        height: '100vh'
+        height: '100vh',
+        [theme.breakpoints.down('sm')]: {
+            display: 'none'
+        },
     },
     grid: {
         alignItems: "center"
@@ -25,7 +28,7 @@ const styles = {
         margin: 70,
         color: 'white'
     }
-}
+})
 
 class Sidebar extends Component {
     constructor(props) {

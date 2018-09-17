@@ -6,10 +6,16 @@ import axios from 'axios'
 
 const styles = theme => ({
     grid: {
-        alignItems: "center"
+        alignItems: "center",
+        [theme.breakpoints.down('sm')]: {
+            alignItems: "flex-start",
+            marginTop: 30,
+            marginLeft: 16,
+            marginRight: 16
+        },
     },
     root: {
-        height: "100vh"
+        height: "90vh"
     },
     title: {
         fontSize: 27,
@@ -22,12 +28,37 @@ const styles = theme => ({
     input: {
         width: '100%'
     },
+    buttonGS: {
+        backgroundColor: '#ff572f',
+        color: 'white'
+    },
     button: {
         marginTop: 8,
         marginBottom: 16
     },
-    formContainer: {
-        width: 500,
+    cardContainer: {
+        maxWidth: 550,
+    },
+    newAccountPadding: {
+        paddingLeft: 24,
+        paddingRight: 24,
+        [theme.breakpoints.down('sm')]: {
+            alignItems: "flex-start",
+            paddingLeft: 16,
+            paddingRight: 16
+        },
+    },
+    newAccount: {
+        minHeight: 64,
+        [theme.breakpoints.down('sm')]: {
+        minHeight: 56,
+        },
+    },
+    label: {
+        marginRight: 20,
+        [theme.breakpoints.down('xs')]: {
+            display: 'none'
+        }
     },
     cardActions: {
         marginBottom: 10,
@@ -69,77 +100,66 @@ class Login extends Component {
     render() {
         const { classes } = this.props
         return (
-            <Grid className={classes.root} container >
-                { /*<Grid container>
-                    <div className = "flex">
-                        <div className = "flexName">
-                            <Typography
-                                variant="subheading" 
-                                className={classes.subheading}>
-                                    Don't have an account?
+            <Grid container >
+                <Grid className={classes.newAccountPadding} container>
+                    <Grid className={classes.newAccount} container justify="flex-end" alignItems="center">
+                        <Typography className={classes.label} variant="subheading" color="inherit">
+                            Don't have an account?
                             </Typography>
-                        </div>
-                        <div className = "flexButton">
-                            <Button
-                                className = {classes.btngs} 
-                                variant="contained"
-                                color="primary" 
-                                style={{ backgroundColor: '#ff572f'}}
-                                onClick={this.handleAuth}>
-                                    GET STARTED
-                            </Button>
-                        </div>
-                    </div>
-               </Grid> */}
-                <Grid className={classes.grid} container justify="center" direction="row">
-                    <Card className="loginContainer">
-                        <CardContent className="loginContent" align="center">
-                            <div className={classes.formContainer}>
-                                <Typography align="left" variant="title" className={classes.title}>Sign in to Meu Tutor</Typography>
-                                <Typography align="left" variant="subheading" className={classes.subheading}>Access your account to use the system</Typography>
-                                <Divider />
-                                <div >
-                                    <TextField
-                                        className={classes.input}
-                                        id="with-placeholder"
-                                        label="Enter your email"
-                                        margin="normal"
-                                        onChange={this.handleChange('email')}
-                                    />
-                                </div>
-                                <div>
-                                    <TextField
-                                        className={classes.input}
-                                        id="password-input"
-                                        label="Password"
-                                        type="password"
-                                        autoComplete="current-password"
-                                        margin="normal"
-                                        onChange={this.handleChange('password')}
-                                    />
-                                </div>
-                            </div>
-                        </CardContent>
-                        <CardActions className={classes.cardActions}>
-                            <Grid container justify="flex-end">
-                                <Button
-                                    size="medium"
-                                    onClick={this.handleAuth}>
-                                    Forgot your password?
-                                </Button>
-                                <Button
-                                    variant="contained"
-                                    size="medium"
-                                    color="primary"
-                                    style={{ backgroundColor: '#ff572f' }}
-                                    onClick={this.handleAuth}>
-                                    Access
-                                </Button>
-                            </Grid>
-                        </CardActions>
-                    </Card>
+                        <Button className={classes.buttonGS} size="medium" variant="contained">Get Started</Button>
+                    </Grid>
                 </Grid>
-            </Grid>
+                <Grid className={classes.root} container>
+                    <Grid className={classes.grid} container justify="center" direction="row">
+                        <Card className={classes.cardContainer}>
+                            <CardContent className="loginContent">
+                                <div className={classes.formContainer}>
+                                    <Typography align="left" variant="title" className={classes.title}>Sign in to Meu Tutor</Typography>
+                                    <Typography align="left" variant="subheading" className={classes.subheading}>Access your account to use the system</Typography>
+                                    <Divider />
+                                    <div >
+                                        <TextField
+                                            className={classes.input}
+                                            id="with-placeholder"
+                                            label="Enter your email"
+                                            margin="normal"
+                                            onChange={this.handleChange('email')}
+                                        />
+                                    </div>
+                                    <div>
+                                        <TextField
+                                            className={classes.input}
+                                            id="password-input"
+                                            label="Password"
+                                            type="password"
+                                            autoComplete="current-password"
+                                            margin="normal"
+                                            onChange={this.handleChange('password')}
+                                        />
+                                    </div>
+                                </div>
+                            </CardContent>
+                            <CardActions className={classes.cardActions}>
+                                <Grid container justify="flex-end">
+                                    <Button
+                                        size="medium"
+                                        onClick={this.handleAuth}>
+                                        Forgot your password?
+                                </Button>
+                                    <Button
+                                        variant="contained"
+                                        size="medium"
+                                        color="primary"
+                                        style={{ backgroundColor: '#ff572f' }}
+                                        onClick={this.handleAuth}>
+                                        Access
+                                </Button>
+                                </Grid>
+                            </CardActions>
+                        </Card>
+                    </Grid>
+                </Grid>
+            </Grid >
         )
     }
 }

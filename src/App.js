@@ -5,8 +5,9 @@ import {
 } from 'react-router-dom'
 import Login from './components/login'
 import RecuperarSenha from './components/recuperarSenha'
-import Cadastro from './Cadastro'
+import Cadastro from './components/cadastro/'
 import './App.css'
+
 class App extends Component {
   render() {
     return (

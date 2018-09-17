@@ -10,8 +10,8 @@ const styles = theme => ({
         [theme.breakpoints.down('sm')]: {
             alignItems: "flex-start",
             marginTop: 30,
-            marginLeft: 30,
-            marginRight: 30
+            marginLeft: 16,
+            marginRight: 16
         },
     },
     card: {

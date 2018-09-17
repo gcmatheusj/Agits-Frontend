@@ -11,7 +11,10 @@ const styles = theme => ({
     },
     logo: {
         marginTop: 5,
-        width: 130
+        width: 130,
+        [theme.breakpoints.down('sm')]: {
+            width: 110
+        },
     }, 
     button: {
         backgroundColor: '#ff572f',
@@ -33,9 +36,6 @@ class Header extends Component {
         return (
             <AppBar className={classes.root} position="static">
                 <Toolbar>
-                    <IconButton style={{ marginLeft: -12, marginRight: 20, }} color="inherit" aria-label="Menu">
-                        <MenuIcon />
-                    </IconButton>
                     <Typography variant="title" color="inherit" >
                         <img className={classes.logo} src={logo} alt=""></img>
                     </Typography>

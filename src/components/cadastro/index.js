@@ -1,16 +1,16 @@
 import React, { Component } from 'react'
-import Login from './Login'
 import Sidebar from '../Sidebar'
+import Cadastro from './Cadastro';
 
-class TelaLogin extends Component {
+class TelaCadastro extends Component {
   render() {
     return (
       <div style={{ display: "flex", }}>
-        <Sidebar></Sidebar> 
-         <Login></Login>         
+        <Sidebar /> 
+        <Cadastro />        
       </div>
     )
   }
 }
 
-export default TelaLogin
+export default TelaCadastro
