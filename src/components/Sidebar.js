@@ -32,11 +32,12 @@ const styles = theme => ({
 })
 
 class Sidebar extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
+    /*  (useless constructor)
+        constructor(props) {
+            super(props)
+        }
+    */
+       render() {
         const { classes } = this.props
         return (
             <Grid className={classes.root} container>
