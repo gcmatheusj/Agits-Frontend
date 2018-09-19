@@ -14,6 +14,7 @@ const styles = theme => ({
         [theme.breakpoints.down('sm')]: {
             display: 'none'
         },
+        userSelect: 'none'
     },
     grid: {
         alignItems: "center"
@@ -22,20 +23,23 @@ const styles = theme => ({
         borderColor: "#ff572f",
         color: "#ff572f",
         verticalAlign: 'middle',
-        border: '2px solid'
+        border: '2px solid',
+        padding: '1px'
     },
     content: {
         margin: 70,
-        color: 'white'
+        color: 'white',
+        userSelect: 'none'
     }
 })
 
 class Sidebar extends Component {
-    constructor(props) {
-        super(props)
-    }
-
-    render() {
+    /*  (useless constructor)
+        constructor(props) {
+            super(props)
+        }
+    */
+       render() {
         const { classes } = this.props
         return (
             <Grid className={classes.root} container>
@@ -45,9 +49,11 @@ class Sidebar extends Component {
                             <div align="center" >
                                 <img src={logo} alt=""></img>
                             </div>
-                            <Typography className={classes.content} variant="display1" align="center">LOREM IPSUM PORTTITOR AENEAN TACITI SCELERISQUE TEMPUS DONEC.</Typography>
+                            <Typography className={classes.content} variant="display1" align="center">
+                                LOREM IPSUM PORTTITOR AENEAN TACITI SCELERISQUE TEMPUS DONEC.
+                            </Typography>
                             <div align="center">
-                                <Button id="btn-ln" className={classes.button} variant="outlined" size="large" color="primary" >
+                                <Button id="btn-ln" className={classes.button} variant="outlined" size="large" color="primary">
                                     Learn More
                                 </Button>
                             </div>

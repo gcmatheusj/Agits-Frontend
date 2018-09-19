@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { AppBar, Toolbar, IconButton, Typography, Button, Grid } from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
+//import { AppBar, Toolbar, IconButton, Typography, Button, Grid } from '@material-ui/core' (unused)
+import { AppBar, Toolbar, Typography, Button, Grid } from '@material-ui/core'
+//import MenuIcon from '@material-ui/icons/Menu' (unused)
 import logo from '../../assets/meu-tutor.png'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
