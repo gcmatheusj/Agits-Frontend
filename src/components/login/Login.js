@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Typography, Divider, TextField, Button, Grid, Card, CardContent, CardActions, } from '@material-ui/core'
+import { Typography, Divider, TextField, Input, Button, InputLabel, FormControl, Grid, Card, CardContent, CardActions, IconButton, InputAdornment } from '@material-ui/core'
+import { Visibility, VisibilityOff, } from '@material-ui/icons'
 import { withStyles } from '@material-ui/core/styles'
 import PropTypes from 'prop-types'
 import axios from 'axios'
@@ -51,7 +52,7 @@ const styles = theme => ({
     newAccount: {
         minHeight: 64,
         [theme.breakpoints.down('sm')]: {
-        minHeight: 56,
+            minHeight: 56,
         },
     },
     label: {
@@ -71,6 +72,7 @@ class Login extends Component {
         this.state = {
             email: '',
             password: '',
+            showPassword: false
         }
         this.handleAuth = this.handleAuth.bind(this)
         this.handleChange = this.handleChange.bind(this)
@@ -81,6 +83,13 @@ class Login extends Component {
         this.setState({
             [name]: event.target.value
         })
+    }
+
+    handleClickShowPassword = () => {
+        this.setState(state => ({
+                showPassword: !state.showPassword
+            })
+        )
     }
 
     //Requisição post para api rest
@@ -126,39 +135,50 @@ class Login extends Component {
                                             onChange={this.handleChange('email')}
                                         />
                                     </div>
-                                    <div>
-                                        <TextField
-                                            className={classes.input}
-                                            id="password-input"
-                                            label="Password"
-                                            type="password"
+                                    
+                                    <FormControl className={classes.input}>
+                                        <InputLabel htmlFor="adornment-password">Password</InputLabel>
+                                        <Input
+                                            id="adornment-password"
+                                            type={this.state.showPassword ? 'text' : 'password'}
+                                            value={this.state.password}
                                             autoComplete="current-password"
                                             margin="normal"
                                             onChange={this.handleChange('password')}
+                                            endAdornment = {
+                                                <InputAdornment position="end">
+                                                    <IconButton
+                                                        aria-label="Toggle password visibility"
+                                                        onClick={this.handleClickShowPassword}
+                                                    >
+                                                        {this.state.showPassword ? <VisibilityOff /> : <Visibility />}
+                                                    </IconButton>
+                                                </InputAdornment>
+                                            }     
                                         />
-                                    </div>
+                                    </FormControl>
                                 </div>
                             </CardContent>
-                            <CardActions className={classes.cardActions}>
-                                <Grid container justify="flex-end">
-                                    <Button
-                                        size="medium"
-                                        onClick={this.handleAuth}>
-                                        Forgot your password?
-                                </Button>
-                                    <Button
-                                        variant="contained"
-                                        size="medium"
-                                        color="primary"
-                                        style={{ backgroundColor: '#ff572f' }}
-                                        onClick={this.handleAuth}>
-                                        Access
-                                </Button>
-                                </Grid>
-                            </CardActions>
+                        <CardActions className={classes.cardActions}>
+                            <Grid container justify="flex-end">
+                                <Button
+                                    size="medium"
+                                    onClick={this.handleAuth}>
+                                    Forgot your password?
+                                    </Button>
+                                <Button
+                                    variant="contained"
+                                    size="medium"
+                                    color="primary"
+                                    style={{ backgroundColor: '#ff572f' }}
+                                    onClick={this.handleAuth}>
+                                    Access
+                                    </Button>
+                            </Grid>
+                        </CardActions>
                         </Card>
-                    </Grid>
                 </Grid>
+            </Grid>
             </Grid >
         )
     }
