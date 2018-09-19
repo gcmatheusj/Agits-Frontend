@@ -14,6 +14,7 @@ const styles = theme => ({
         [theme.breakpoints.down('sm')]: {
             display: 'none'
         },
+        userSelect: 'none'
     },
     grid: {
         alignItems: "center"
@@ -27,7 +28,8 @@ const styles = theme => ({
     },
     content: {
         margin: 70,
-        color: 'white'
+        color: 'white',
+        userSelect: 'none'
     }
 })
 
