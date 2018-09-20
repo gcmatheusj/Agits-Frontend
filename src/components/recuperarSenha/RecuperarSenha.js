@@ -46,7 +46,7 @@ class RecuperarSenha extends Component {
     }
 
     onClick() {
-        this.setState({cardNovaSenha:!this.state.cardNovaSenha});
+        this.setState({cardNovaSenha:true});
     }
 
     render() {
