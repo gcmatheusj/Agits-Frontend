@@ -12,9 +12,17 @@ import Typography from '@material-ui/core/Typography';
 import DefineDomainAndSubject from './Steps/DefineDomainAndSubject'
 import Start from "./Steps/Start"
 
+/*  (@gustavodlima)
+    Ainda é necessário testar a responsividade dos steps, visto que o step Start.js tem elementos que não
+    funcionam muito bem em telas pequenas, ou seja, menos que 780px já temos um bug no step.
+*/
+
 const styles = theme => ({
     root: {
-      width: '90%',
+        width: '100%',
+        ['@media (min-width:780px)']: {
+            width: '60%'
+        }
     },
     button: {
       marginTop: theme.spacing.unit,
@@ -40,17 +48,9 @@ function getSteps() {
 }
 
 function getStepContent(step) {
-    /* (***ATENÇÃO***)
-        Aqui existem algumas possibilidades de implementação.
-        
-        1) implementar cada step num arquivo separado, importar e usar como retorno no switch ou
-        2) implementar cada step direto no retorno do switch
-
-        Particularmente eu prefiro a primeira opção. @gustavodlima
-    */
     switch (step) {
         case 0:
-            return <Start />;
+            return <Start/>;
         case 1:
             return <DefineDomainAndSubject/>;
         case 2:
