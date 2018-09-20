@@ -17,20 +17,53 @@ import MailIcon from '@material-ui/icons/Mail';
 import Grid from '@material-ui/core/Grid';
 import SettingsIcon from '@material-ui/icons/Settings'
 import MoreIcon from '@material-ui/icons/MoreVert';
+import Drawer from '@material-ui/core/Drawer'
+import List from '@material-ui/core/List'
+import classNames from 'classnames'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import Divider from '@material-ui/core/Divider';
+import { mainListItems } from './listItems';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Tabs from './Tabs';
+
+import NewsActivities from './News&Activities'
+import Ranking from './Ranking';
+import Content from './Content'
+import SwipeableViews from 'react-swipeable-views';
+
+function TabContainer({ children, dir }) {
+  return (
+    <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
+      {children}
+    </Typography>
+  );
+}
+
+TabContainer.propTypes = {
+  children: PropTypes.node.isRequired,
+  dir: PropTypes.string.isRequired,
+};
+
+const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
-    width: '100%',
+    //width: '100%',
+    display: 'flex'
+  },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    //marginTop: 80,
+    //padding: theme.spacing.unit * 3,
+    height: '100vh',
+    overflow: 'auto',
   },
   bar: {
-    backgroundColor: '#003175',
+    
   },
   grow: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
   },
   title: {
     display: 'none',
@@ -89,12 +122,70 @@ const styles = theme => ({
       display: 'none',
     },
   },
+  toolbar: {
+    paddingRight: 24, // keep right padding when drawer closed
+  },
+  toolbarIcon: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    padding: '0 8px',
+    ...theme.mixins.toolbar,
+  },
+  appBar: {
+    backgroundColor: '#003175',
+    zIndex: theme.zIndex.drawer + 1,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+  },
+  appBarShift: {
+    marginLeft: drawerWidth,
+    width: `calc(100% - ${drawerWidth}px)`,
+    transition: theme.transitions.create(['width', 'margin'], {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  menuButton: {
+    marginLeft: 12,
+    marginRight: 36,
+  },
+  menuButtonHidden: {
+    display: 'none',
+  },
+  title: {
+    flexGrow: 1,
+  },
+  drawerPaper: {
+    position: 'relative',
+    whiteSpace: 'nowrap',
+    width: drawerWidth,
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.enteringScreen,
+    }),
+  },
+  drawerPaperClose: {
+    overflowX: 'hidden',
+    transition: theme.transitions.create('width', {
+      easing: theme.transitions.easing.sharp,
+      duration: theme.transitions.duration.leavingScreen,
+    }),
+    width: theme.spacing.unit * 7,
+    [theme.breakpoints.up('sm')]: {
+      width: theme.spacing.unit * 9,
+    },
+  },
 });
 
 class Header extends React.Component {
   state = {
     anchorEl: null,
     mobileMoreAnchorEl: null,
+    open: true,
+    value: 0,
   };
 
   handleProfileMenuOpen = event => {
@@ -114,9 +205,25 @@ class Header extends React.Component {
     this.setState({ mobileMoreAnchorEl: null });
   };
 
+  handleDrawerOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleDrawerClose = () => {
+    this.setState({ open: false });
+  };
+
+  handleChange = (event, value) => {
+    this.setState({ value });
+  };
+
+  handleChangeIndex = index => {
+    this.setState({ value: index });
+  };
+
   render() {
     const { anchorEl, mobileMoreAnchorEl } = this.state;
-    const { classes } = this.props;
+    const { classes, theme } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
@@ -157,56 +264,74 @@ class Header extends React.Component {
     );
 
     return (
-      <div className={classes.root}>
-        <AppBar className={classes.bar} position="static">
-          <Toolbar>
-            <IconButton className={classes.menuButton} color="inherit" aria-label="Open drawer">
-              <MenuIcon />
-            </IconButton>
-            <Typography className={classes.title} variant="title" color="inherit" noWrap>
-              Dashboard
-            </Typography>
-              <div className={classes.search}>
-                  <div className={classes.searchIcon}>
-                      <SearchIcon />
+      
+          <div className={classes.root}>
+            <AppBar className={classNames(classes.appBar, this.state.open && classes.appBarShift)} position="absolute">
+              <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
+                <IconButton className={classNames(classes.menuButton, this.state.open && classes.menuButtonHidden)} color="inherit" aria-label="Open drawer" onClick={this.handleDrawerOpen}>
+                  <MenuIcon />
+                </IconButton>
+                <Typography className={classes.title} variant="title" color="inherit" noWrap>
+                  Dashboard
+                </Typography>
+                  <div className={classes.search}>
+                      <div className={classes.searchIcon}>
+                          <SearchIcon />
+                      </div>
+                      <Input
+                          placeholder="Search"
+                          disableUnderline
+                          classes={{
+                          root: classes.inputRoot,
+                          input: classes.inputInput,
+                          }}
+                      />
                   </div>
-                  <Input
-                      placeholder="Search"
-                      disableUnderline
-                      classes={{
-                      root: classes.inputRoot,
-                      input: classes.inputInput,
-                      }}
-                  />
-              </div>
-            <div className={classes.grow} />
-            <div className={classes.sectionDesktop}>
-              <IconButton color="inherit">
-                  <SettingsIcon /> 
-              </IconButton>
-              <IconButton
-                aria-owns={isMenuOpen ? 'material-appbar' : null}
-                aria-haspopup="true"
-                onClick={this.handleProfileMenuOpen}
-                color="inherit"
-              >
-                <AccountCircle />
-              </IconButton>
+                <div className={classes.grow} />
+                <div className={classes.sectionDesktop}>
+                  <IconButton color="inherit">
+                      <SettingsIcon /> 
+                  </IconButton>
+                  <IconButton
+                    aria-owns={isMenuOpen ? 'material-appbar' : null}
+                    aria-haspopup="true"
+                    onClick={this.handleProfileMenuOpen}
+                    color="inherit"
+                  >
+                    <AccountCircle />
+                  </IconButton>
+                </div>
+                <div className={classes.sectionMobile}>
+                  <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
+                    <MoreIcon />
+                  </IconButton>
+                </div>
+              </Toolbar>
+            </AppBar>
+            <Drawer
+            variant="permanent"
+            classes={{
+              paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
+            }}
+            open={this.state.open}
+            >
+            <div className={classes.toolbarIcon}>
+            <IconButton onClick={this.handleDrawerClose}>
+            <ChevronLeftIcon />
+            </IconButton>
             </div>
-            <div className={classes.sectionMobile}>
-              <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
-                <MoreIcon />
-              </IconButton>
+            <Divider />
+            <List>{mainListItems}</List>
+            </Drawer>
+            <Tabs />
+            {renderMenu}
+            {renderMobileMenu}
             </div>
-          </Toolbar>
-        </AppBar>
-        {renderMenu}
-        {renderMobileMenu}
-      </div>
-    );
-  }
-}
-
+            
+            );
+          }
+        }
+        
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };

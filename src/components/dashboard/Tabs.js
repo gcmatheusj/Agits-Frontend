@@ -29,6 +29,14 @@ const styles = theme => ({
     backgroundColor: theme.palette.background.paper,
     width: '100%',
   },
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    paddingTop: 64,
+    //padding: theme.spacing.unit * 3,
+    height: '100vh',
+    overflow: 'auto',
+  },
 });
 
 class FullWidthTabs extends React.Component {
@@ -48,7 +56,8 @@ class FullWidthTabs extends React.Component {
     const { classes, theme } = this.props;
 
     return (
-      <div className={classes.root}>
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer}>
         <AppBar position="static" color="default">
           <Tabs
           style={{ backgroundColor: '#fff'}}
@@ -85,7 +94,8 @@ class FullWidthTabs extends React.Component {
           </TabContainer>
           <TabContainer dir={theme.direction}>Turma 2</TabContainer>
         </SwipeableViews>
-      </div>
+        </div>
+      </main>
     );
   }
 }

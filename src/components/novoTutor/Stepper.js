@@ -9,12 +9,8 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-<<<<<<< HEAD
-import DefineDomain from './Steps/DefineDomain'
-import Start from "./Steps/Start"
-=======
 import DefineDomainAndSubject from './Steps/DefineDomainAndSubject'
->>>>>>> d2a9bf3f1b441749364481e3283a18a5ff85e69a
+import Start from "./Steps/Start"
 
 const styles = theme => ({
     root: {
