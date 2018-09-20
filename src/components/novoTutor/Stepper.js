@@ -10,7 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
 import Start from "./Steps/Start"
-import DefineDomainAndSubject from './Steps/DefineDomain'
+import DefineDomainAndSubject from './Steps/DefineDomainAndSubject'
 
 const styles = theme => ({
     root: {
