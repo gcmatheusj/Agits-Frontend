@@ -37,6 +37,18 @@ const styles = theme => ({
 })
 
 class RecuperarSenha extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            cardNovaSenha: false,
+        };
+        this.onClick = this.onClick.bind(this);
+    }
+
+    onClick() {
+        this.setState({cardNovaSenha:!this.state.cardNovaSenha});
+    }
+
     render() {
         const { classes } = this.props
         return (
@@ -46,16 +58,45 @@ class RecuperarSenha extends Component {
                         <CardContent >
                             <Grid>
                                 <Grid className={classes.formContainer}>
-                                    <Typography align="left" variant="title" className={classes.title}>Forget your password?</Typography>
-                                    <Typography align="left" variant="subheading" className={classes.subheading}>To recover you password, enter your email below</Typography>
-                                    <Divider />
-                                    <Grid >
-                                        <TextField
-                                            className={classes.input}
-                                            id="with-placeholder"
-                                            label="Email address"
-                                            margin="normal"
-                                        />
+                                    <Typography align="center" variant="title" className={classes.title}>
+                                        {(this.state.cardNovaSenha) ? "Enter the new password" : "Forgot your password?"}
+                                    </Typography>
+                                    <Typography align="center" variant="subheading" className={classes.subheading}>
+                                        {
+                                            (this.state.cardNovaSenha) ? 
+                                            "To recover your account, create a new password"
+                                            :
+                                            "To recover your password, enter your email below"
+                                        }
+                                    </Typography>
+                                    <Divider/>
+                                    <Grid>
+                                        {
+                                            (this.state.cardNovaSenha) ? 
+                                            [
+                                                <TextField
+                                                    className={classes.input}
+                                                    id="with-placeholder"
+                                                    label="Enter your new password" 
+                                                    margin="normal"
+                                                    key='0'
+                                                />,
+                                                <TextField
+                                                    className={classes.input}
+                                                    id="with-placeholder"
+                                                    label="Confirm your new password"
+                                                    margin="normal"
+                                                    key='1'
+                                                />
+                                            ]
+                                            :
+                                            <TextField
+                                                className={classes.input}
+                                                id="with-placeholder"
+                                                label="Email address"
+                                                margin="normal"
+                                            />
+                                        }
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -65,8 +106,14 @@ class RecuperarSenha extends Component {
                                 <Button size="medium">
                                     Back to login
                                 </Button>
-                                <Button size="medium" variant="contained" color="primary" style={{ backgroundColor: '#ff572f' }}>
-                                    Send
+                                <Button size="medium" variant="contained" color="primary" style={{backgroundColor: '#ff572f'}}
+                                        onClick={this.onClick}>
+                                    {
+                                        (this.state.cardNovaSenha) ?
+                                        "Change password"
+                                        :
+                                        "Send"
+                                    }
                                 </Button>
                             </Grid>
                         </CardActions>
