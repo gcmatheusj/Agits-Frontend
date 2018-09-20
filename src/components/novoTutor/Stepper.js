@@ -10,6 +10,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
 import DefineDomain from './Steps/DefineDomain'
+import Start from "./Steps/Start"
 
 const styles = theme => ({
     root: {
@@ -49,7 +50,7 @@ function getStepContent(step) {
     */
     switch (step) {
         case 0:
-            return 'Start';
+            return <Start />;
         case 1:
             return <DefineDomain/>;
         case 2:
