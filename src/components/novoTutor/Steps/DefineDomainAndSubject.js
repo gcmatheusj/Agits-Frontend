@@ -35,7 +35,25 @@ const styles = {
     }
 }
 
+/*  (@gustavodlima)
+    Essa parte vai ficar mais interessante quando tiver o back implementado pra que a busca pelo conteúdo seja o que
+    tiver armazenado no DB. Por hora, é só um conteúdo estático.
+*/
+
+let domainArray = [
+    'Basic math for 9th graders students'
+];
+
+let subjectArray = [
+
+];
+
 class DefineDomainAndSubject extends React.Component {
+
+    state = {
+        domainArray: [],
+        subjectArray: []
+    }
 
     handleChange() {
         
