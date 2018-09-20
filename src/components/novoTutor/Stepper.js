@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 
-import DefineDomain from './Steps/DefineDomain'
+import DefineDomainAndSubject from './Steps/DefineDomainAndSubject'
 
 const styles = theme => ({
     root: {
@@ -51,7 +51,7 @@ function getStepContent(step) {
         case 0:
             return 'Start';
         case 1:
-            return <DefineDomain/>;
+            return <DefineDomainAndSubject/>;
         case 2:
             return `Define Pedagogical Model`;
         case 3:
