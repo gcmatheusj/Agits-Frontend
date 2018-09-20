@@ -14,10 +14,16 @@ const styles = {
     expansionPanel: {
         paddingTop: '5px',
         paddingBottom: '5px',
-        border: '1px solid #bdbdbd'
+        borderTop: '1px solid #bdbdbd',
+        borderRight: '1px solid #bdbdbd',
+        borderLeft: '1px solid #bdbdbd',
     },
     expansionPanelFont: {
         fontSize: '16pt'
+    },
+    expansionPanelDetail: {
+        borderRight: '1px solid #bdbdbd',
+        borderLeft: '1px solid #bdbdbd',
     },
     label: {
         paddingTop: '30px',
@@ -45,7 +51,7 @@ class DefineDomainAndSubject extends React.Component {
                                 Define Domain
                             </Typography>
                         </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
+                        <ExpansionPanelDetails style={styles.expansionPanelDetail}>
                            <form>
                                 <FormControl>
                                     {/*TODO*/}
@@ -59,7 +65,7 @@ class DefineDomainAndSubject extends React.Component {
                                 Define Subjects
                             </Typography>
                         </ExpansionPanelSummary>
-                        <ExpansionPanelDetails>
+                        <ExpansionPanelDetails style={styles.expansionPanelDetail}>
                             <form>
                                 <FormControl>
                                     {/*TODO*/}
