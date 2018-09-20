@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import PropTypes from 'prop-types';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import scratch from '../../../assets/scratch.png'
+import LogoS from '../../../assets/scratch.png'
 
 const styles = {
     card: {
@@ -25,7 +25,7 @@ const Start = props => {
                     You can start by selecting a tutor template or creating a new tutor
                 </Typography>
                 <Card className={classes.card}>
-                    <img src={scratch} />
+                    <img src={LogoS} />
                     <CardMedia
                         className={classes.media}
                         image="/"
