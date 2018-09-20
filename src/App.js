@@ -7,6 +7,7 @@ import Login from './components/login'
 import RecuperarSenha from './components/recuperarSenha'
 import Cadastro from './components/cadastro/'
 import Dashboard from './components/dashboard'
+import novoTutor from './components/novoTutor'
 import './App.css'
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
           <Route path='/recuperar-senha' component={RecuperarSenha} />
           <Route path='/cadastro' component={Cadastro} />
           <Route path='/dashboard' component={Dashboard} />
+          <Route path='/novo-tutor' component={novoTutor} />
         </div>
       </Router>
     )
