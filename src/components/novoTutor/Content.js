@@ -14,18 +14,19 @@ const styles = {
         color: '#bdbdbd',
         padding: '1px',
     }
-
 };
 
 class novoTutor extends React.Component {
     constructor(props) {
         super(props);
     }
-
+    
     render() {
         return (
             <div>
-                <Typography variant='title' style={styles.pageTitle}>My First Gamified Intelligent Tutor</Typography>
+                <Typography variant='title' style={styles.pageTitle}>
+                    My First Gamified Intelligent Tutor
+                </Typography>
                 <Divider style={styles.divider}/>
                 <VerticalLinearStepper/>
             </div>
@@ -33,4 +34,8 @@ class novoTutor extends React.Component {
     }
 }
 
-export default novoTutor;
+novoTutor.PropTypes = {
+    classes: PropTypes.object
+};
+
+export default withStyles(styles)(novoTutor);
