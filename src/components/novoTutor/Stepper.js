@@ -37,6 +37,14 @@ function getSteps() {
 }
 
 function getStepContent(step) {
+    /* (***ATENÇÃO***)
+        Aqui existem algumas possibilidades de implementação.
+        
+        1) implementar cada step num arquivo separado, importar e usar como retorno no switch ou
+        2) implementar cada step direto no retorno do switch
+
+        Particularmente eu prefiro a primeira opção. @gustavodlima
+    */
     switch (step) {
         case 0:
             return 'Start';

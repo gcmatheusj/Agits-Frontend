@@ -1,18 +1,17 @@
 import React from 'react'
 import Header from './Header'
+import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import VerticalLinearStepper from './Stepper'
+
+import Content from './Content';
 
 const Index = () => {
     return (
         <div>
             <Header />
-            <Typography variant='title'>
-                My First Gamified Intelligent Tutor
-            </Typography>
-            <VerticalLinearStepper/>
+            <Content/>
         </div>
     )
 }
 
-export default Index
+export default Index;
