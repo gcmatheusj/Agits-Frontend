@@ -22,7 +22,7 @@ import List from '@material-ui/core/List'
 import classNames from 'classnames'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import Divider from '@material-ui/core/Divider';
-import { mainListItems } from './listItems';
+import { mainListItems } from '../listItems';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Tabs from './Tabs';
 
@@ -60,7 +60,7 @@ const styles = theme => ({
     overflow: 'auto',
   },
   bar: {
-    
+
   },
   grow: {
     flexGrow: 1,
@@ -264,74 +264,72 @@ class Header extends React.Component {
     );
 
     return (
-      
-          <div className={classes.root}>
-            <AppBar className={classNames(classes.appBar, this.state.open && classes.appBarShift)} position="absolute">
-              <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
-                <IconButton className={classNames(classes.menuButton, this.state.open && classes.menuButtonHidden)} color="inherit" aria-label="Open drawer" onClick={this.handleDrawerOpen}>
-                  <MenuIcon />
-                </IconButton>
-                <Typography className={classes.title} variant="title" color="inherit" noWrap>
-                  Dashboard
-                </Typography>
-                  <div className={classes.search}>
-                      <div className={classes.searchIcon}>
-                          <SearchIcon />
-                      </div>
-                      <Input
-                          placeholder="Search"
-                          disableUnderline
-                          classes={{
-                          root: classes.inputRoot,
-                          input: classes.inputInput,
-                          }}
-                      />
-                  </div>
-                <div className={classes.grow} />
-                <div className={classes.sectionDesktop}>
-                  <IconButton color="inherit">
-                      <SettingsIcon /> 
-                  </IconButton>
-                  <IconButton
-                    aria-owns={isMenuOpen ? 'material-appbar' : null}
-                    aria-haspopup="true"
-                    onClick={this.handleProfileMenuOpen}
-                    color="inherit"
-                  >
-                    <AccountCircle />
-                  </IconButton>
-                </div>
-                <div className={classes.sectionMobile}>
-                  <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
-                    <MoreIcon />
-                  </IconButton>
-                </div>
-              </Toolbar>
-            </AppBar>
-            <Drawer
-            variant="permanent"
-            classes={{
-              paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
-            }}
-            open={this.state.open}
-            >
-            <div className={classes.toolbarIcon}>
-            <IconButton onClick={this.handleDrawerClose}>
-            <ChevronLeftIcon />
+      <div className={classes.root}>
+        <AppBar className={classNames(classes.appBar, this.state.open && classes.appBarShift)} position="absolute">
+          <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
+            <IconButton className={classNames(classes.menuButton, this.state.open && classes.menuButtonHidden)} color="inherit" aria-label="Open drawer" onClick={this.handleDrawerOpen}>
+              <MenuIcon />
             </IconButton>
+            <Typography className={classes.title} variant="title" color="inherit" noWrap>
+              Dashboard
+                </Typography>
+            <div className={classes.search}>
+              <div className={classes.searchIcon}>
+                <SearchIcon />
+              </div>
+              <Input
+                placeholder="Search"
+                disableUnderline
+                classes={{
+                  root: classes.inputRoot,
+                  input: classes.inputInput,
+                }}
+              />
             </div>
-            <Divider />
-            <List>{mainListItems}</List>
-            </Drawer>
-            <Tabs />
-            {renderMenu}
-            {renderMobileMenu}
+            <div className={classes.grow} />
+            <div className={classes.sectionDesktop}>
+              <IconButton color="inherit">
+                <SettingsIcon />
+              </IconButton>
+              <IconButton
+                aria-owns={isMenuOpen ? 'material-appbar' : null}
+                aria-haspopup="true"
+                onClick={this.handleProfileMenuOpen}
+                color="inherit"
+              >
+                <AccountCircle />
+              </IconButton>
             </div>
-            
-            );
-          }
-        }
-        
+            <div className={classes.sectionMobile}>
+              <IconButton aria-haspopup="true" onClick={this.handleMobileMenuOpen} color="inherit">
+                <MoreIcon />
+              </IconButton>
+            </div>
+          </Toolbar>
+        </AppBar>
+        <Drawer
+          variant="permanent"
+          classes={{
+            paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
+          }}
+          open={this.state.open}
+        >
+          <div className={classes.toolbarIcon}>
+            <IconButton onClick={this.handleDrawerClose}>
+              <ChevronLeftIcon />
+            </IconButton>
+          </div>
+          <Divider />
+          <List>{mainListItems}</List>
+        </Drawer>
+        <Tabs />
+        {renderMenu}
+        {renderMobileMenu}
+      </div>
+    );
+  }
+}
+
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
 };

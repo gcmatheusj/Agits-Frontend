@@ -15,33 +15,29 @@ const styles = {
         textAlign: "center",
         margin: 20,
         padding: 10,
-        background: "#757575"
+        //background: "#757575"
     },
     root: {
         flexGrow: 1,
     },
 }
 
-
-
-
 const Start = props => {
     const { classes } = props
-
     return (
         <div>
-            <Typography variant="headline">
-                You can start by selecting a tutor template or creating a new tutor
+            <Typography variant="subheading">
+                Você pode começar selecionando um modelo de tutor ou criando um novo tutor.
                 </Typography>
             <Grid container className={classes.root} container justify="center">
-                <Card className={classes.card} style={{marginRight:150}}>
+                <Card className={classes.card}>
                     <img src={scratch} />
                     <CardContent>
-                        <Typography gutterBottom variant="title" component="h2">
-                            Create ITS from scratch
+                        <Typography gutterBottom variant="title" component="h2" align="justify">
+                            Criar seu tutor a partir do zero
                             </Typography>
-                        <Typography component="p">
-                            Create a new tutor step by step and explore all features that we bring for you!
+                        <Typography align="justify">
+                            Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.
                             </Typography>
                     </CardContent>
                 </Card>
@@ -49,19 +45,18 @@ const Start = props => {
                 <Card className={classes.card}>
                     <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
                     <CardContent>
-                        <Typography gutterBottom variant="title" component="h2">
-                            Using a template
+                        <Typography gutterBottom variant="title" component="h2" align="justify">
+                            Usando modelo
                             </Typography>
-                        <Typography component="p">
-                            Save time using a tutor already configured for use! But, feel free to modify whatever you need.
+                        <Typography align="justify">
+                        Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
                             </Typography>
                     </CardContent>
                 </Card>
             </Grid>
-        </div >
+        </div>
     )
 }
-
 
 Start.propTypes = {
     classes: PropTypes.object.isRequired,

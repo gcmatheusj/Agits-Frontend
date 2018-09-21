@@ -3,18 +3,24 @@ import PropTypes from 'prop-types';
 import Typography from '@material-ui/core/Typography';
 import { withStyles } from '@material-ui/core/styles';
 import Divider from '@material-ui/core/Divider';
+import Grid from '@material-ui/core/Grid'
 
 import VerticalLinearStepper from './Stepper';
 
-const styles = {
+const styles = theme => ({
     pageTitle: {
         margin: '20px',
+        fontWeight: 'bold'
     },
-    divider: {
-        color: '#bdbdbd',
-        padding: '1px',
-    }
-};
+    appBarSpacer: theme.mixins.toolbar,
+    content: {
+        flexGrow: 1,
+        //paddingTop: 64,
+        //padding: theme.spacing.unit * 3,
+        height: '100vh',
+        overflow: 'auto',
+    },
+});
 
 class novoTutor extends React.Component {
     constructor(props) {
@@ -22,14 +28,20 @@ class novoTutor extends React.Component {
     }
     
     render() {
+        const { classes } = this.props
         return (
-            <div>
-                <Typography variant='title' style={styles.pageTitle}>
-                    My First Gamified Intelligent Tutor
-                </Typography>
-                <Divider style={styles.divider}/>
-                <VerticalLinearStepper/>
-            </div>
+            <main className={classes.content}>
+                <div className={classes.appBarSpacer} />
+                    <Typography className={classes.pageTitle} variant='title' >
+                        Meu Primeiro Tutor Inteligente Gamificado
+                    </Typography>
+                    <Divider style={styles.divider}/>
+                    <Grid container>
+                        <Grid container >
+                            <VerticalLinearStepper/>
+                        </Grid>
+                    </Grid>
+            </main>
        )
     }
 }

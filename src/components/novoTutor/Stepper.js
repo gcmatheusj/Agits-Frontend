@@ -38,12 +38,12 @@ const styles = theme => ({
 
 function getSteps() {
     return [
-        'Start', 
-        'Define Domain', 
-        'Define Pedagogical Model',
-        'Define Gamification Model',
-        'Define Evaluation Methods',
-        'Define Reports'
+        'Início', 
+        'Definir Domínio', 
+        'Definir Modelo Pedagógico',
+        'Definir Modelo de Gamificação',
+        'Definir Métodos de Avaliação',
+        'Define Relatórios'
     ];
 }
 
