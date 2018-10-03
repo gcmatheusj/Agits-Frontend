@@ -11,6 +11,10 @@ import Typography from '@material-ui/core/Typography';
 
 import DefineDomainAndSubject from './Steps/DefineDomainAndSubject'
 import Start from "./Steps/Start"
+import DefinePedagogicalModel from "./Steps/DefinePedagogicalModel"
+import DefineGamificationModel from "./Steps/DefineGamificationModel"
+import EvalutaionMethods from "./Steps/EvalutaionMethods"
+import DefineReports from "./Steps/DefineReports"
 
 /*  (@gustavodlima)
     Ainda é necessário testar a responsividade dos steps, visto que o step Start.js tem elementos que não
@@ -54,13 +58,13 @@ function getStepContent(step) {
         case 1:
             return <DefineDomainAndSubject/>;
         case 2:
-            return `Define Pedagogical Model`;
+            return <DefinePedagogicalModel/>;
         case 3:
-            return 'Define Gamification Model';
+            return <DefineGamificationModel />;
         case 4:
-            return 'Evalutaion Methods';
+            return <EvalutaionMethods />;
         case 5:
-            return 'Define Reports';
+            return <DefineReports />;
         default:
         return 'Unknown step';
     }
