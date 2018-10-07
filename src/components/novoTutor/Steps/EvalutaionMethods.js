@@ -7,6 +7,10 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Switch from '@material-ui/core/Switch';
 
+import quick from "../../../assets/quick.png"
+import custom from "../../../assets/custom.png"
+import placement from "../../../assets/placement.png"
+
 const styles = theme => ({
     root: {
         marginTop: 10,
@@ -52,7 +56,7 @@ class EvalutaionMethods extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={quick} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -83,7 +87,7 @@ class EvalutaionMethods extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={custom} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -114,7 +118,7 @@ class EvalutaionMethods extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={placement} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>

@@ -6,6 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Switch from '@material-ui/core/Switch';
+import curriculum from "../../../assets/curriculum.png"
+import syllabus from ".././../../assets/syllabus.png"
 
 const styles = theme => ({
     root: {
@@ -52,7 +54,7 @@ class DefinePedagogicalModel extends React.Component {
                     <Grid container spacing={16} style={{alignItems: "center"}}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={curriculum} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -83,7 +85,7 @@ class DefinePedagogicalModel extends React.Component {
                     <Grid container spacing={16} style={{alignItems: "center"}}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={syllabus} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>

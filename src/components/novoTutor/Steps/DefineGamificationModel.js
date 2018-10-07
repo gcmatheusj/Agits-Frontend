@@ -5,8 +5,27 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
-import Switch from '@material-ui/core/Switch';
 import Divider from '@material-ui/core/Divider';
+
+import participation from "../../../assets/participation.png"
+import performance from "../../../assets/performance.png"
+import competition from "../../../assets/competition.png"
+import enjoyment from "../../../assets/enjoyment.png"
+import exploration from "../../../assets/exploration.png"
+import effectiveness from "../../../assets/effectiveness.png"
+
+import story from "../../../assets/story.png"
+import rewards from "../../../assets/rewards.png"
+import badge from "../../../assets/badge.png"
+import levels from "../../../assets/levels.png"
+import challenges from "../../../assets/challenges.png"
+import leaderboard from "../../../assets/leaderboard.png"
+import points from "../../../assets/points.png"
+import feedback from "../../../assets/feedback.png"
+import avatar from "../../../assets/avatar.png"
+import quests from "../../../assets/quests.png"
+import bossfight from "../../../assets/boss-fight.png"
+
 
 const styles = theme => ({
     root: {
@@ -26,9 +45,9 @@ const styles = theme => ({
         maxHeight: '100%',
     },
     icon: {
-        maxWidth: 20,
-        maxHeight: 20,
-        margin: 10
+        maxWidth: 30,
+        maxHeight: 30,
+        margin: 5
     }
 });
 
@@ -63,7 +82,7 @@ class DefineGamificationModel extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={participation} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -74,7 +93,9 @@ class DefineGamificationModel extends React.Component {
                             </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
                                         Select this option if you expect your students to be participative in your
-                                        course by interacting with ...
+                                        course by interacting with the tutor. Enabling this behavior will activate the
+                                        following game elements in the system: Challenges, Levels, Leaderboard, Story,
+                                        Badges, Rewards and Points
                             </Typography>
                                 </Grid>
                             </Grid>
@@ -83,10 +104,25 @@ class DefineGamificationModel extends React.Component {
                     <Divider />
                     <Grid>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
                         </ButtonBase>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
                         </ButtonBase>
                     </Grid>
                 </Paper>
@@ -94,7 +130,7 @@ class DefineGamificationModel extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={performance} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -104,37 +140,60 @@ class DefineGamificationModel extends React.Component {
                                         Performance
                             </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect your students to ...
+                                        Select this option if you expect your students to mainly focus on their
+                                        learning performance by using the tutor. Enabling this behavior will activate the
+                                        following game elements in the system: Story, Feedback, Rewards,
+                                        Badges, Challenges, Leaderboard, Points and Levels
                             </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
                     </Grid>
-                    <Divider /> 
-                        <Grid item xs container direction="row">
-                            <ButtonBase className={classes.icon}>
-                                <img alt="x" src="" />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
-                                <img alt="x" src="" />
-                            </ButtonBase>
-                        </Grid>
-                        <Divider />
-                        <Grid container direction="row" alignItems="center">
-                            <ButtonBase className={classes.icon}>
-                                <img alt="x" src="" />
-                            </ButtonBase>
-                            <Typography gutterBottom align="justify">
-                                Leaderboard: A ranked list of ...
+                    <Divider />
+                    <Grid item xs container direction="row">
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={feedback} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                        </ButtonBase>
+                    </Grid>
+                    <Divider />
+                    <Grid container direction="row" alignItems="center">
+                        <ButtonBase style={{ maxWidth: 40, maxHeight: 40, }}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                        </ButtonBase>
+                        <Typography style={{ marginTop: 2 }} align="justify">
+                            Leaderboard: A ranked list of participants, showing the performance of a particular student in
+                            <Typography align="justify">
+                                comparison to the highest scores and to his friends
+                            </Typography>
                         </Typography>
-                        </Grid>
-                    
+                    </Grid>
                 </Paper>
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={competition} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -144,7 +203,9 @@ class DefineGamificationModel extends React.Component {
                                         Competition
                             </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect to provide competition ...
+                                        Select this option if you expect to provide competition between students in the
+                                        tutor. Enabling this behavior will activate the following game elements in the
+                                        system: Leaderboard and Points
                             </Typography>
                                 </Grid>
                             </Grid>
@@ -153,10 +214,10 @@ class DefineGamificationModel extends React.Component {
                     <Divider />
                     <Grid>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
                         </ButtonBase>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
                         </ButtonBase>
                     </Grid>
                 </Paper>
@@ -164,7 +225,7 @@ class DefineGamificationModel extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={enjoyment} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -174,7 +235,10 @@ class DefineGamificationModel extends React.Component {
                                         Enjoyment
                             </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect your students to be ...
+                                        Select this option if you expect your students to be mainly enjoyed by the
+                                        tutor while they are learning. Enabling this behavior will activate the
+                                        following game elements in the system: Story, Rewards, Badges, Points, Avatar
+                                        and Quests
                             </Typography>
                                 </Grid>
                             </Grid>
@@ -183,10 +247,22 @@ class DefineGamificationModel extends React.Component {
                     <Divider />
                     <Grid>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
                         </ButtonBase>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={avatar} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={quests} />
                         </ButtonBase>
                     </Grid>
                 </Paper>
@@ -194,7 +270,7 @@ class DefineGamificationModel extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={exploration} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -204,7 +280,9 @@ class DefineGamificationModel extends React.Component {
                                         Exploration
                             </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect to incentive the exploration of the tutor ...
+                                        Select this option if you expect to incentive the exploration of the tutor by 
+                                        your students.Enabling this behavior will activate the
+                                        following game elements in the system: Levels, Challenges, Feedback, Boos Fight,
                             </Typography>
                                 </Grid>
                             </Grid>
@@ -213,10 +291,13 @@ class DefineGamificationModel extends React.Component {
                     <Divider />
                     <Grid>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
                         </ButtonBase>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={bossfight} />
                         </ButtonBase>
                     </Grid>
                 </Paper>
@@ -224,7 +305,7 @@ class DefineGamificationModel extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={effectiveness} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -234,7 +315,9 @@ class DefineGamificationModel extends React.Component {
                                         Effectiveness
                             </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this options if you mainly expect your students to be effective ...
+                                        Select this options if you mainly expect your students to be effective when they 
+                                        are using the tutor. Enabling this behavior will activate the
+                                        following game elements in the system: Leaderboard, Badges and Points
                             </Typography>
                                 </Grid>
                             </Grid>
@@ -243,10 +326,13 @@ class DefineGamificationModel extends React.Component {
                     <Divider />
                     <Grid>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
                         </ButtonBase>
                         <ButtonBase className={classes.icon}>
-                            <img alt="x" src="" />
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                        </ButtonBase>
+                        <ButtonBase className={classes.icon}>
+                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
                         </ButtonBase>
                     </Grid>
                 </Paper>

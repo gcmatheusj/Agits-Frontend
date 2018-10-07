@@ -7,6 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Switch from '@material-ui/core/Switch';
 
+import student from "../../../assets/student.png"
+import teacher from "../../../assets/teacher.png"
+
 const styles = theme => ({
     root: {
         marginTop: 10,
@@ -55,7 +58,7 @@ class DefineReports extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={student} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
@@ -87,7 +90,7 @@ class DefineReports extends React.Component {
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
                             <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src="" />
+                                <img className={classes.img} alt="complex" src={teacher} />
                             </ButtonBase>
                         </Grid>
                         <Grid container item xs={12} sm container>
