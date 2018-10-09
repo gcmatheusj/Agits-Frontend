@@ -49,7 +49,7 @@ class DefinePedagogicalModel extends React.Component {
             <div style={{justifyContent:"center"}}>
                 <Typography variant="subheading">
                     We use the most advanced techniques for providing an adaptive and intelligent tutor for your students!
-            </Typography>
+                </Typography>
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{alignItems: "center"}}>
                         <Grid item>
@@ -62,12 +62,12 @@ class DefinePedagogicalModel extends React.Component {
                                 <Grid item xs>
                                     <Typography gutterBottom variant="title">
                                         Knowledge tracing and curriculum sequence
-                            </Typography>
+                                    </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                        By default your customized tutor maskes use of current intelligent techniques that model
+                                        By default your custom tutor makes use of current intelligent techniques that model
                                         student's knowledge to accurately decide which problems it should give to students at any
                                         given time.
-                            </Typography>
+                                    </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -93,11 +93,11 @@ class DefinePedagogicalModel extends React.Component {
                                 <Grid item xs>
                                     <Typography gutterBottom variant="title">
                                        Syllabus
-                            </Typography>
+                                    </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
                                         Enable this feature if you want to manage the schedule and subjects on which
                                         your students will learn using the tutor
-                            </Typography>
+                                    </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
