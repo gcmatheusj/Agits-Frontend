@@ -25,7 +25,7 @@ const styles = theme => ({
     root: {
         width: '100%',
         ['@media (min-width:780px)']: {
-            width: '70%'
+            width: '100%'
         }
     },
     button: {
