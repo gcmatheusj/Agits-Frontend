@@ -6,13 +6,13 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Switch from '@material-ui/core/Switch';
+import CardActionArea from '@material-ui/core/CardActionArea';
 
 import student from "../../../assets/student.png"
 import teacher from "../../../assets/teacher.png"
 
 const styles = theme => ({
     root: {
-        marginTop: 10,
         flexGrow: 1,
         maxWidth: 700,
         padding: theme.spacing.unit * 2,
@@ -54,6 +54,7 @@ class DefineReports extends React.Component {
                 <Typography variant="subheading">
                     You can also select which kind of reports the tutor will provide
                 </Typography>
+                <CardActionArea>
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
@@ -86,6 +87,10 @@ class DefineReports extends React.Component {
                         </Grid>
                     </Grid>
                 </Paper>
+                </CardActionArea>
+                <div style={{marginTop: 10}}/>
+
+                <CardActionArea>
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
@@ -116,6 +121,7 @@ class DefineReports extends React.Component {
                         </Grid>
                     </Grid>
                 </Paper>
+                </CardActionArea>
             </div>
         )
     }

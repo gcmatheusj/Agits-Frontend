@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import ButtonBase from '@material-ui/core/ButtonBase';
 import Divider from '@material-ui/core/Divider';
+import CardActionArea from '@material-ui/core/CardActionArea';
 
 import participation from "../../../assets/participation.png"
 import performance from "../../../assets/performance.png"
@@ -26,10 +27,8 @@ import avatar from "../../../assets/avatar.png"
 import quests from "../../../assets/quests.png"
 import bossfight from "../../../assets/boss-fight.png"
 
-
 const styles = theme => ({
     root: {
-        marginTop: 10,
         flexGrow: 1,
         maxWidth: 700,
         padding: theme.spacing.unit * 2,
@@ -78,264 +77,286 @@ class DefineGamificationModel extends React.Component {
                     behavior options that are positively supported by the literature! Each behavior enables a particular
                     set of gamification elemwnts in your customized tutor
                 </Typography>
-                <Paper className={classes.root}>
-                    <Grid container spacing={16} style={{ alignItems: "center" }}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src={participation} />
-                            </ButtonBase>
-                        </Grid>
-                        <Grid container item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={16}>
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="title">
-                                        Participation
+                <CardActionArea>
+                    <Paper className={classes.root}>
+                        <Grid container spacing={16} style={{ alignItems: "center" }}>
+                            <Grid item>
+                                <ButtonBase className={classes.image}>
+                                    <img className={classes.img} alt="complex" src={participation} />
+                                </ButtonBase>
+                            </Grid>
+                            <Grid container item xs={12} sm container>
+                                <Grid item xs container direction="column" spacing={16}>
+                                    <Grid item xs>
+                                        <Typography gutterBottom variant="title">
+                                            Participation
                             </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect your students to be participative in your
-                                        course by interacting with the tutor. Enabling this behavior will activate the
-                                        following game elements in the system: Challenges, Levels, Leaderboard, Story,
-                                        Badges, Rewards and Points
+                                        <Typography gutterBottom variant="subheading" align="justify">
+                                            Select this option if you expect your students to be participative in your
+                                            course by interacting with the tutor. Enabling this behavior will activate the
+                                            following game elements in the system: Challenges, Levels, Leaderboard, Story,
+                                            Badges, Rewards and Points
                             </Typography>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                    <Divider />
-                    <Grid>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                        </ButtonBase>
-                    </Grid>
-                </Paper>
-                <Paper className={classes.root}>
-                    <Grid container spacing={16} style={{ alignItems: "center" }}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src={performance} />
+                        <Divider />
+                        <Grid>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
                             </ButtonBase>
                         </Grid>
-                        <Grid container item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={16}>
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="title">
-                                        Performance
+                    </Paper>
+                </CardActionArea>
+                <div style={{ marginTop: 10 }} />
+
+                <CardActionArea>
+                    <Paper className={classes.root}>
+                        <Grid container spacing={16} style={{ alignItems: "center" }}>
+                            <Grid item>
+                                <ButtonBase className={classes.image}>
+                                    <img className={classes.img} alt="complex" src={performance} />
+                                </ButtonBase>
+                            </Grid>
+                            <Grid container item xs={12} sm container>
+                                <Grid item xs container direction="column" spacing={16}>
+                                    <Grid item xs>
+                                        <Typography gutterBottom variant="title">
+                                            Performance
                             </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect your students to mainly focus on their
-                                        learning performance by using the tutor. Enabling this behavior will activate the
-                                        following game elements in the system: Story, Feedback, Rewards,
-                                        Badges, Challenges, Leaderboard, Points and Levels
+                                        <Typography gutterBottom variant="subheading" align="justify">
+                                            Select this option if you expect your students to mainly focus on their
+                                            learning performance by using the tutor. Enabling this behavior will activate the
+                                            following game elements in the system: Story, Feedback, Rewards,
+                                            Badges, Challenges, Leaderboard, Points and Levels
                             </Typography>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                    <Divider />
-                    <Grid item xs container direction="row">
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={feedback} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                        </ButtonBase>
-                    </Grid>
-                    <Divider />
-                    <Grid container direction="row" alignItems="center">
-                        <ButtonBase style={{ maxWidth: 40, maxHeight: 40, }}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                        </ButtonBase>
-                        <Typography style={{ marginTop: 2 }} align="justify">
-                            Leaderboard: A ranked list of participants, showing the performance of a particular student in
+                        <Divider />
+                        <Grid item xs container direction="row">
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={feedback} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                            </ButtonBase>
+                        </Grid>
+                        <Divider />
+                        <Grid container direction="row" alignItems="center">
+                            <ButtonBase style={{ maxWidth: 40, maxHeight: 40, }}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                            </ButtonBase>
+                            <Typography style={{ marginTop: 2 }} align="justify">
+                                Leaderboard: A ranked list of participants, showing the performance of a particular student in
                             <Typography align="justify">
-                                comparison to the highest scores and to his friends
+                                    comparison to the highest scores and to his friends
                             </Typography>
-                        </Typography>
-                    </Grid>
-                </Paper>
-                <Paper className={classes.root}>
-                    <Grid container spacing={16} style={{ alignItems: "center" }}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src={competition} />
-                            </ButtonBase>
+                            </Typography>
                         </Grid>
-                        <Grid container item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={16}>
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="title">
-                                        Competition
+                    </Paper>
+                </CardActionArea>
+                <div style={{ marginTop: 10 }} />
+
+                <CardActionArea>
+                    <Paper className={classes.root}>
+                        <Grid container spacing={16} style={{ alignItems: "center" }}>
+                            <Grid item>
+                                <ButtonBase className={classes.image}>
+                                    <img className={classes.img} alt="complex" src={competition} />
+                                </ButtonBase>
+                            </Grid>
+                            <Grid container item xs={12} sm container>
+                                <Grid item xs container direction="column" spacing={16}>
+                                    <Grid item xs>
+                                        <Typography gutterBottom variant="title">
+                                            Competition
                             </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect to provide competition between students in the
-                                        tutor. Enabling this behavior will activate the following game elements in the
-                                        system: Leaderboard and Points
+                                        <Typography gutterBottom variant="subheading" align="justify">
+                                            Select this option if you expect to provide competition between students in the
+                                            tutor. Enabling this behavior will activate the following game elements in the
+                                            system: Leaderboard and Points
                             </Typography>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                    <Divider />
-                    <Grid>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                        </ButtonBase>
-                    </Grid>
-                </Paper>
-                <Paper className={classes.root}>
-                    <Grid container spacing={16} style={{ alignItems: "center" }}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src={enjoyment} />
+                        <Divider />
+                        <Grid>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
                             </ButtonBase>
                         </Grid>
-                        <Grid container item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={16}>
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="title">
-                                        Enjoyment
+                    </Paper>
+                </CardActionArea>
+                <div style={{ marginTop: 10 }} />
+
+                <CardActionArea>
+                    <Paper className={classes.root}>
+                        <Grid container spacing={16} style={{ alignItems: "center" }}>
+                            <Grid item>
+                                <ButtonBase className={classes.image}>
+                                    <img className={classes.img} alt="complex" src={enjoyment} />
+                                </ButtonBase>
+                            </Grid>
+                            <Grid container item xs={12} sm container>
+                                <Grid item xs container direction="column" spacing={16}>
+                                    <Grid item xs>
+                                        <Typography gutterBottom variant="title">
+                                            Enjoyment
                             </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect your students to be mainly enjoyed by the
-                                        tutor while they are learning. Enabling this behavior will activate the
-                                        following game elements in the system: Story, Rewards, Badges, Points, Avatar
-                                        and Quests
+                                        <Typography gutterBottom variant="subheading" align="justify">
+                                            Select this option if you expect your students to be mainly enjoyed by the
+                                            tutor while they are learning. Enabling this behavior will activate the
+                                            following game elements in the system: Story, Rewards, Badges, Points, Avatar
+                                            and Quests
                             </Typography>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                    <Divider />
-                    <Grid>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={avatar} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={quests} />
-                        </ButtonBase>
-                    </Grid>
-                </Paper>
-                <Paper className={classes.root}>
-                    <Grid container spacing={16} style={{ alignItems: "center" }}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src={exploration} />
+                        <Divider />
+                        <Grid>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={avatar} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={quests} />
                             </ButtonBase>
                         </Grid>
-                        <Grid container item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={16}>
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="title">
-                                        Exploration
+                    </Paper>
+                </CardActionArea>
+                <div style={{ marginTop: 10 }} />
+
+                <CardActionArea>
+                    <Paper className={classes.root}>
+                        <Grid container spacing={16} style={{ alignItems: "center" }}>
+                            <Grid item>
+                                <ButtonBase className={classes.image}>
+                                    <img className={classes.img} alt="complex" src={exploration} />
+                                </ButtonBase>
+                            </Grid>
+                            <Grid container item xs={12} sm container>
+                                <Grid item xs container direction="column" spacing={16}>
+                                    <Grid item xs>
+                                        <Typography gutterBottom variant="title">
+                                            Exploration
                             </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this option if you expect to incentive the exploration of the tutor by 
-                                        your students.Enabling this behavior will activate the
-                                        following game elements in the system: Levels, Challenges, Feedback, Boos Fight,
+                                        <Typography gutterBottom variant="subheading" align="justify">
+                                            Select this option if you expect to incentive the exploration of the tutor by
+                                            your students.Enabling this behavior will activate the
+                                            following game elements in the system: Levels, Challenges, Feedback, Boos Fight,
                             </Typography>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                    <Divider />
-                    <Grid>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={bossfight} />
-                        </ButtonBase>
-                    </Grid>
-                </Paper>
-                <Paper className={classes.root}>
-                    <Grid container spacing={16} style={{ alignItems: "center" }}>
-                        <Grid item>
-                            <ButtonBase className={classes.image}>
-                                <img className={classes.img} alt="complex" src={effectiveness} />
+                        <Divider />
+                        <Grid>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={bossfight} />
                             </ButtonBase>
                         </Grid>
-                        <Grid container item xs={12} sm container>
-                            <Grid item xs container direction="column" spacing={16}>
-                                <Grid item xs>
-                                    <Typography gutterBottom variant="title">
-                                        Effectiveness
+                    </Paper>
+                </CardActionArea>
+                <div style={{ marginTop: 10 }} />
+
+                <CardActionArea>
+                    <Paper className={classes.root}>
+                        <Grid container spacing={16} style={{ alignItems: "center" }}>
+                            <Grid item>
+                                <ButtonBase className={classes.image}>
+                                    <img className={classes.img} alt="complex" src={effectiveness} />
+                                </ButtonBase>
+                            </Grid>
+                            <Grid container item xs={12} sm container>
+                                <Grid item xs container direction="column" spacing={16}>
+                                    <Grid item xs>
+                                        <Typography gutterBottom variant="title">
+                                            Effectiveness
                             </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
-                                        Select this options if you mainly expect your students to be effective when they 
-                                        are using the tutor. Enabling this behavior will activate the
-                                        following game elements in the system: Leaderboard, Badges and Points
+                                        <Typography gutterBottom variant="subheading" align="justify">
+                                            Select this options if you mainly expect your students to be effective when they
+                                            are using the tutor. Enabling this behavior will activate the
+                                            following game elements in the system: Leaderboard, Badges and Points
                             </Typography>
+                                    </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
-                    </Grid>
-                    <Divider />
-                    <Grid>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                        </ButtonBase>
-                        <ButtonBase className={classes.icon}>
-                            <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                        </ButtonBase>
-                    </Grid>
-                </Paper>
+                        <Divider />
+                        <Grid>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                            </ButtonBase>
+                            <ButtonBase className={classes.icon}>
+                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                            </ButtonBase>
+                        </Grid>
+                    </Paper>
+                </CardActionArea>
             </div>
         )
     }
