@@ -1,12 +1,7 @@
 import React from "react"
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Switch from '@material-ui/core/Switch';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import { Grid, Paper, Typography, ButtonBase, Switch, CardActionArea } from '@material-ui/core'
 
 import curriculum from "../../../assets/curriculum.png"
 import syllabus from ".././../../assets/syllabus.png"
@@ -50,7 +45,7 @@ class DefinePedagogicalModel extends React.Component {
             <div style={{ justifyContent: "center" }}>
                 <Typography variant="subheading">
                     We use the most advanced techniques for providing an adaptive and intelligent tutor for your students!
-            </Typography>
+                </Typography>
                 <CardActionArea>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
@@ -64,12 +59,12 @@ class DefinePedagogicalModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Knowledge tracing and curriculum sequence
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             By default your customized tutor maskes use of current intelligent techniques that model
                                             student's knowledge to accurately decide which problems it should give to students at any
                                             given time.
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -97,11 +92,11 @@ class DefinePedagogicalModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Syllabus
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             Enable this feature if you want to manage the schedule and subjects on which
                                             your students will learn using the tutor
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>

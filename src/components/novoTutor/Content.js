@@ -1,9 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
-import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid'
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import { Typography, Divider, Grid } from '@material-ui/core'
+import { withStyles } from '@material-ui/core/styles'
 
 import VerticalLinearStepper from './Stepper';
 
@@ -22,7 +20,7 @@ const styles = theme => ({
     },
 });
 
-class novoTutor extends React.Component {
+class novoTutor extends Component {
     constructor(props) {
         super(props);
     }

@@ -1,13 +1,9 @@
 import React from "react"
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import PropTypes from 'prop-types';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import { withStyles } from '@material-ui/core/styles'
+import { Grid, Typography, Card, CardContent } from '@material-ui/core'
+import PropTypes from 'prop-types'
 import scratch from '../../../assets/scratch.png'
 import template from '../../../assets/template.png'
-import Grid from "@material-ui/core/Grid";
 
 const styles = {
     card: {
@@ -28,29 +24,28 @@ const Start = props => {
         <div>
             <Typography variant="subheading">
                 Você pode começar selecionando um modelo de tutor ou criando um novo tutor.
-                </Typography>
+            </Typography>
             <Grid container className={classes.root} container justify="center">
                 <Card className={classes.card}>
                     <img src={scratch} />
                     <CardContent>
                         <Typography gutterBottom variant="title" component="h2" align="justify">
                             Criar seu tutor a partir do zero
-                            </Typography>
+                        </Typography>
                         <Typography align="justify">
                             Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.
-                            </Typography>
+                        </Typography>
                     </CardContent>
                 </Card>
-
                 <Card className={classes.card}>
                     <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
                     <CardContent>
                         <Typography gutterBottom variant="title" component="h2" align="justify">
                             Usando modelo
-                            </Typography>
+                        </Typography>
                         <Typography align="justify">
                         Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
-                            </Typography>
+                        </Typography>
                     </CardContent>
                 </Card>
             </Grid>
