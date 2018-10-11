@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import SwipeableViews from 'react-swipeable-views';
-import AppBar from '@material-ui/core/AppBar';
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
-import NewsActivities from './News&Activities'
-import Grid from '@material-ui/core/Grid'
+import Content from './Content';
 import Ranking from './Ranking';
-import Content from './Content'
+import SwipeableViews from 'react-swipeable-views';
+import NewsActivities from './News&Activities';
+import { withStyles, AppBar, Tabs, Tab,  Typography, Grid} from '@material-ui/core';
+
 
 function TabContainer({ children, dir }) {
   return (
@@ -33,7 +29,6 @@ const styles = theme => ({
   content: {
     flexGrow: 1,
     paddingTop: 64,
-    //padding: theme.spacing.unit * 3,
     height: '100vh',
     overflow: 'auto',
   },
@@ -60,22 +55,22 @@ class FullWidthTabs extends React.Component {
         <div className={classes.appBarSpacer}>
         <AppBar position="static" color="default">
           <Tabs
-          style={{ backgroundColor: '#fff'}}
-            value={this.state.value}
-            onChange={this.handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            fullWidth
+              style={{ backgroundColor: '#fff'}}
+              value={this.state.value}
+              onChange={this.handleChange}
+              indicatorColor="primary"
+              textColor="primary"
+              fullWidth
           >
             <Tab label="Turma  1" />
             <Tab label="Turma 2" />
           </Tabs>
         </AppBar>
         <SwipeableViews
-          style={{ backgroundColor: '#f1f1f1'}}
-          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-          index={this.state.value}
-          onChangeIndex={this.handleChangeIndex}
+            style={{ backgroundColor: '#f1f1f1'}}
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+            index={this.state.value}
+            onChangeIndex={this.handleChangeIndex}
         >
           <TabContainer dir={theme.direction} >
           <Grid container >
