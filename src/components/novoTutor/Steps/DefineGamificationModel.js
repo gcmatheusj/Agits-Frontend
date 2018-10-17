@@ -1,12 +1,7 @@
-import React from "react"
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Divider from '@material-ui/core/Divider';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import React, { Component } from "react"
+import { Grid, Paper, Typography, ButtonBase, Divider, CardActionArea } from '@material-ui/core'
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
 
 import participation from "../../../assets/participation.png"
 import performance from "../../../assets/performance.png"
@@ -50,7 +45,7 @@ const styles = theme => ({
     }
 });
 
-class DefineGamificationModel extends React.Component {
+class DefineGamificationModel extends Component {
     constructor(props) {
         super(props)
     }
@@ -59,7 +54,6 @@ class DefineGamificationModel extends React.Component {
         checkedA: true,
         checkedB: false,
     }
-
 
     handleChange = name => event => {
         this.setState({ [name]: event.target.checked });
@@ -90,13 +84,13 @@ class DefineGamificationModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Participation
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             Select this option if you expect your students to be participative in your
                                             course by interacting with the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Challenges, Levels, Leaderboard, Story,
                                             Badges, Rewards and Points
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -128,7 +122,6 @@ class DefineGamificationModel extends React.Component {
                     </Paper>
                 </CardActionArea>
                 <div style={{ marginTop: 10 }} />
-
                 <CardActionArea>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
@@ -142,13 +135,13 @@ class DefineGamificationModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Performance
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             Select this option if you expect your students to mainly focus on their
                                             learning performance by using the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Story, Feedback, Rewards,
                                             Badges, Challenges, Leaderboard, Points and Levels
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -195,7 +188,6 @@ class DefineGamificationModel extends React.Component {
                     </Paper>
                 </CardActionArea>
                 <div style={{ marginTop: 10 }} />
-
                 <CardActionArea>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
@@ -209,12 +201,12 @@ class DefineGamificationModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Competition
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             Select this option if you expect to provide competition between students in the
                                             tutor. Enabling this behavior will activate the following game elements in the
                                             system: Leaderboard and Points
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -245,13 +237,13 @@ class DefineGamificationModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Enjoyment
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             Select this option if you expect your students to be mainly enjoyed by the
                                             tutor while they are learning. Enabling this behavior will activate the
                                             following game elements in the system: Story, Rewards, Badges, Points, Avatar
                                             and Quests
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -294,12 +286,12 @@ class DefineGamificationModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Exploration
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             Select this option if you expect to incentive the exploration of the tutor by
                                             your students.Enabling this behavior will activate the
                                             following game elements in the system: Levels, Challenges, Feedback, Boos Fight,
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
@@ -333,12 +325,12 @@ class DefineGamificationModel extends React.Component {
                                     <Grid item xs>
                                         <Typography gutterBottom variant="title">
                                             Effectiveness
-                            </Typography>
+                                        </Typography>
                                         <Typography gutterBottom variant="subheading" align="justify">
                                             Select this options if you mainly expect your students to be effective when they
                                             are using the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Leaderboard, Badges and Points
-                            </Typography>
+                                        </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>

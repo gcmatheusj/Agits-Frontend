@@ -93,9 +93,7 @@ class Cadastro extends Component {
             <Grid container>
                 <Grid className={classes.loginPadding} container>
                     <Grid className={classes.login} container justify="flex-end" alignItems="center">
-                        <Typography
-                            variant="subheading"
-                            className={classes.label}>
+                        <Typography variant="subheading" className={classes.label}>
                             I already have an account!
                         </Typography>
                         <Button
@@ -104,7 +102,7 @@ class Cadastro extends Component {
                             color="primary"
                             style={{ backgroundColor: '#ff572f' }}
                             onClick={this.handleAuth}>
-                            LOGIN
+                                LOGIN
                         </Button>
                     </Grid>
                 </Grid>
@@ -112,8 +110,12 @@ class Cadastro extends Component {
                     <Grid className={classes.grid} container justify="center" direction="row">
                         <Card className={classes.cardContainer}>
                             <CardContent >
-                                <Typography align="left" variant="title" className={classes.title}>Create your Account</Typography>
-                                <Typography align="left" variant="subheading" className={classes.subheading}>To continue to MeuTutor</Typography>
+                                <Typography align="left" variant="title" className={classes.title}>
+                                        Create your Account
+                                </Typography>
+                                <Typography align="left" variant="subheading" className={classes.subheading}>
+                                        To continue to MeuTutor
+                                </Typography>
                                 <Divider />
                                 <form className={classes.formContainer}>
                                     <Grid container>
@@ -177,7 +179,7 @@ class Cadastro extends Component {
                                         size="medium"
                                         color="primary"
                                         style={{ backgroundColor: '#ff572f' }} >
-                                        CREATE
+                                            CREATE
                                     </Button>
                                 </Grid>
                             </CardActions>

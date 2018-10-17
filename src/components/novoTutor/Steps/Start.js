@@ -1,14 +1,10 @@
 import React from "react"
-import { withStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-import Card from '@material-ui/core/Card';
-import PropTypes from 'prop-types';
-import CardContent from '@material-ui/core/CardContent';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import { withStyles } from '@material-ui/core/styles'
+import { Grid, Typography, Card, CardContent, CardActionArea} from '@material-ui/core'
+import PropTypes from 'prop-types'
 import scratch from '../../../assets/scratch.png'
 import template from '../../../assets/template.png'
-import Grid from "@material-ui/core/Grid";
-import Button from '@material-ui/core/Button';
+
 
 const styles = theme => ({
     card: {
@@ -29,7 +25,7 @@ const Start = props => {
         <div>
             <Typography variant="subheading">
                 Você pode começar selecionando um modelo de tutor ou criando um novo tutor.
-                </Typography>
+            </Typography>
             <Grid container className={classes.root} container justify="center">
                     <Card className={classes.card}>
                     <CardActionArea>

@@ -1,12 +1,7 @@
-import React from "react"
-import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Paper from '@material-ui/core/Paper';
-import Typography from '@material-ui/core/Typography';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Switch from '@material-ui/core/Switch';
-import CardActionArea from '@material-ui/core/CardActionArea';
+import React, { Component } from "react"
+import PropTypes from 'prop-types'
+import { withStyles } from '@material-ui/core/styles'
+import { Grid, Paper, Typography, ButtonBase, Switch, CardActionArea } from '@material-ui/core'
 
 import student from "../../../assets/student.png"
 import teacher from "../../../assets/teacher.png"
@@ -29,7 +24,7 @@ const styles = theme => ({
     },
 });
 
-class DefineReports extends React.Component {
+class DefineReports extends Component {
     constructor(props) {
         super(props)
     }
@@ -67,13 +62,13 @@ class DefineReports extends React.Component {
                                 <Grid item xs>
                                     <Typography gutterBottom variant="title">
                                         Students Reports 
-                            </Typography>
+                                    </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                    Enable this feature if you want to provide for your students different types of 
-                                    reports regarding her learning performance in the domain. It includes reports on 
-                                    learning performance in the overall domain or on particular subjects as well as 
-                                    tests history
-                            </Typography>
+                                        Enable this feature if you want to provide for your students different types of 
+                                        reports regarding her learning performance in the domain. It includes reports on 
+                                        learning performance in the overall domain or on particular subjects as well as 
+                                        tests history
+                                    </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>
@@ -102,12 +97,12 @@ class DefineReports extends React.Component {
                             <Grid item xs container direction="column" spacing={16}>
                                 <Grid item xs>
                                     <Typography gutterBottom variant="title">
-                                    Teacher Reports
-                            </Typography>
+                                        Teacher Reports
+                                    </Typography>
                                     <Typography gutterBottom variant="subheading" align="justify">
-                                    Enable this feature if you want to visualize reports about the interaction, 
-                                    learning performance and other interesting reports about your students.
-                            </Typography>
+                                        Enable this feature if you want to visualize reports about the interaction, 
+                                        learning performance and other interesting reports about your students.
+                                    </Typography>
                                 </Grid>
                             </Grid>
                         </Grid>

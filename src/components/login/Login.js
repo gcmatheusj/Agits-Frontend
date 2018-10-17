@@ -179,7 +179,7 @@ class Login extends Component {
                         </Card>
                 </Grid>
             </Grid>
-            </Grid >
+            </Grid>
         )
     }
 }

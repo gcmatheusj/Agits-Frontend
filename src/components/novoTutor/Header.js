@@ -1,27 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import Input from '@material-ui/core/Input';
-import Badge from '@material-ui/core/Badge';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import { fade } from '@material-ui/core/styles/colorManipulator';
-import { withStyles } from '@material-ui/core/styles';
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
-import AccountCircle from '@material-ui/icons/AccountCircle';
-import MailIcon from '@material-ui/icons/Mail';
-import Grid from '@material-ui/core/Grid';
+import { AppBar, Toolbar, IconButton, Typography, Input, MenuItem, Menu, List, Divider, Drawer } from '@material-ui/core'
+import { fade } from '@material-ui/core/styles/colorManipulator'
+import { withStyles } from '@material-ui/core/styles'
+import MenuIcon from '@material-ui/icons/Menu'
+import SearchIcon from '@material-ui/icons/Search'
+import AccountCircle from '@material-ui/icons/AccountCircle'
 import SettingsIcon from '@material-ui/icons/Settings'
-import MoreIcon from '@material-ui/icons/MoreVert';
-import { mainListItems } from '../listItems';
-import List from '@material-ui/core/List'
-import Divider from '@material-ui/core/Divider'
+import MoreIcon from '@material-ui/icons/MoreVert'
+import { mainListItems } from '../listItems'
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import Drawer from '@material-ui/core/Drawer'
 import classNames from 'classnames'
 import Content from './Content'
 

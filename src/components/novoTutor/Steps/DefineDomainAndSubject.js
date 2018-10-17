@@ -1,10 +1,6 @@
-import React from 'react';
-import ExpansionPanel from '@material-ui/core/ExpansionPanel';
-import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
-import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import Typography from '@material-ui/core/Typography';
-import FormControl from '@material-ui/core/FormControl';
+import React, { Component } from 'react'
+import { ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, FormControl } from '@material-ui/core'
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 
 const styles = {
     root: {
@@ -48,7 +44,7 @@ let subjectArray = [
 
 ];
 
-class DefineDomainAndSubject extends React.Component {
+class DefineDomainAndSubject extends Component {
 
     state = {
         domainArray: [],
