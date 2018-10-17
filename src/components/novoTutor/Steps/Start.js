@@ -4,12 +4,13 @@ import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import PropTypes from 'prop-types';
 import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import scratch from '../../../assets/scratch.png'
 import template from '../../../assets/template.png'
 import Grid from "@material-ui/core/Grid";
+import Button from '@material-ui/core/Button';
 
-const styles = {
+const styles = theme => ({
     card: {
         maxWidth: 280,
         textAlign: "center",
@@ -20,7 +21,7 @@ const styles = {
     root: {
         flexGrow: 1,
     },
-}
+})
 
 const Start = props => {
     const { classes } = props
@@ -30,29 +31,33 @@ const Start = props => {
                 Você pode começar selecionando um modelo de tutor ou criando um novo tutor.
                 </Typography>
             <Grid container className={classes.root} container justify="center">
-                <Card className={classes.card}>
-                    <img src={scratch} />
-                    <CardContent>
-                        <Typography gutterBottom variant="title" component="h2" align="justify">
-                            Criar seu tutor a partir do zero
+                    <Card className={classes.card}>
+                    <CardActionArea>
+                        <img src={scratch} />
+                        <CardContent>
+                            <Typography gutterBottom variant="title" component="h2" align="justify">
+                                Criar seu tutor a partir do zero
                             </Typography>
-                        <Typography align="justify">
-                            Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.
+                            <Typography align="justify">
+                                Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.
                             </Typography>
-                    </CardContent>
-                </Card>
+                        </CardContent>
+                        </CardActionArea>
+                    </Card>
 
-                <Card className={classes.card}>
-                    <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
-                    <CardContent>
-                        <Typography gutterBottom variant="title" component="h2" align="justify">
-                            Usando modelo
+                <CardActionArea>
+                    <Card className={classes.card}>
+                        <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
+                        <CardContent>
+                            <Typography gutterBottom variant="title" component="h2" align="justify">
+                                Usando modelo
                             </Typography>
-                        <Typography align="justify">
-                        Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
+                            <Typography align="justify">
+                                Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
                             </Typography>
-                    </CardContent>
-                </Card>
+                        </CardContent>
+                    </Card>
+                </CardActionArea>
             </Grid>
         </div>
     )

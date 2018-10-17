@@ -110,7 +110,7 @@ class VerticalLinearStepper extends React.Component {
                     <div className={classes.actionsContainer}>
                         <div>
                         <Button
-                            disabled={activeStep === 0}
+                            disabled={activeStep === 1}
                             onClick={this.handleBack}
                             className={classes.button}
                         >
