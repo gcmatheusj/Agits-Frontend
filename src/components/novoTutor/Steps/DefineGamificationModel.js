@@ -63,10 +63,10 @@ class DefineGamificationModel extends Component {
         const { classes } = this.props;
         return (
             <div style={{ justifyContent: "center" }}>
-                <Typography variant="title">
+                <Typography variant="h6">
                     What is the main behavior do you expect from your students when they are learning in the gamifed tutor?
                 </Typography>
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                     Using gamificantion you can drive yours students to a motivating experience. We provide six target
                     behavior options that are positively supported by the literature! Each behavior enables a particular
                     set of gamification elemwnts in your customized tutor
@@ -82,10 +82,10 @@ class DefineGamificationModel extends Component {
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
-                                        <Typography gutterBottom variant="title">
+                                        <Typography gutterBottom variant="h6">
                                             Participation
                                         </Typography>
-                                        <Typography gutterBottom variant="subheading" align="justify">
+                                        <Typography gutterBottom variant="subtitle1" align="justify">
                                             Select this option if you expect your students to be participative in your
                                             course by interacting with the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Challenges, Levels, Leaderboard, Story,
@@ -133,10 +133,10 @@ class DefineGamificationModel extends Component {
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
-                                        <Typography gutterBottom variant="title">
+                                        <Typography gutterBottom variant="h6">
                                             Performance
                                         </Typography>
-                                        <Typography gutterBottom variant="subheading" align="justify">
+                                        <Typography gutterBottom variant="subtitle1" align="justify">
                                             Select this option if you expect your students to mainly focus on their
                                             learning performance by using the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Story, Feedback, Rewards,
@@ -199,10 +199,10 @@ class DefineGamificationModel extends Component {
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
-                                        <Typography gutterBottom variant="title">
+                                        <Typography gutterBottom variant="h6">
                                             Competition
                                         </Typography>
-                                        <Typography gutterBottom variant="subheading" align="justify">
+                                        <Typography gutterBottom variant="subtitle1" align="justify">
                                             Select this option if you expect to provide competition between students in the
                                             tutor. Enabling this behavior will activate the following game elements in the
                                             system: Leaderboard and Points
@@ -235,10 +235,10 @@ class DefineGamificationModel extends Component {
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
-                                        <Typography gutterBottom variant="title">
+                                        <Typography gutterBottom variant="h6">
                                             Enjoyment
                                         </Typography>
-                                        <Typography gutterBottom variant="subheading" align="justify">
+                                        <Typography gutterBottom variant="subtitle1" align="justify">
                                             Select this option if you expect your students to be mainly enjoyed by the
                                             tutor while they are learning. Enabling this behavior will activate the
                                             following game elements in the system: Story, Rewards, Badges, Points, Avatar
@@ -284,10 +284,10 @@ class DefineGamificationModel extends Component {
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
-                                        <Typography gutterBottom variant="title">
+                                        <Typography gutterBottom variant="h6">
                                             Exploration
                                         </Typography>
-                                        <Typography gutterBottom variant="subheading" align="justify">
+                                        <Typography gutterBottom variant="subtitle1" align="justify">
                                             Select this option if you expect to incentive the exploration of the tutor by
                                             your students.Enabling this behavior will activate the
                                             following game elements in the system: Levels, Challenges, Feedback, Boos Fight,
@@ -323,10 +323,10 @@ class DefineGamificationModel extends Component {
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
-                                        <Typography gutterBottom variant="title">
+                                        <Typography gutterBottom variant="h6">
                                             Effectiveness
                                         </Typography>
-                                        <Typography gutterBottom variant="subheading" align="justify">
+                                        <Typography gutterBottom variant="subtitle1" align="justify">
                                             Select this options if you mainly expect your students to be effective when they
                                             are using the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Leaderboard, Badges and Points

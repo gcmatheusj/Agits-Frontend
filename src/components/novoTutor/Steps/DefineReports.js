@@ -43,10 +43,10 @@ class DefineReports extends Component {
         const { classes } = this.props;
         return (
             <div>
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                     This is the least step to customize your tutor!
                 </Typography>
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                     You can also select which kind of reports the tutor will provide
                 </Typography>
                 <CardActionArea>
@@ -60,10 +60,10 @@ class DefineReports extends Component {
                         <Grid container item xs={12} sm container>
                             <Grid item xs container direction="column" spacing={16}>
                                 <Grid item xs>
-                                    <Typography gutterBottom variant="title">
+                                    <Typography gutterBottom variant="h6">
                                         Students Reports 
                                     </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
+                                    <Typography gutterBottom variant="subtitle1" align="justify">
                                         Enable this feature if you want to provide for your students different types of 
                                         reports regarding her learning performance in the domain. It includes reports on 
                                         learning performance in the overall domain or on particular subjects as well as 
@@ -96,10 +96,10 @@ class DefineReports extends Component {
                         <Grid container item xs={12} sm container>
                             <Grid item xs container direction="column" spacing={16}>
                                 <Grid item xs>
-                                    <Typography gutterBottom variant="title">
+                                    <Typography gutterBottom variant="h6">
                                         Teacher Reports
                                     </Typography>
-                                    <Typography gutterBottom variant="subheading" align="justify">
+                                    <Typography gutterBottom variant="subtitle1" align="justify">
                                         Enable this feature if you want to visualize reports about the interaction, 
                                         learning performance and other interesting reports about your students.
                                     </Typography>

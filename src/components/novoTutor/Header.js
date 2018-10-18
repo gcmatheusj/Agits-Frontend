@@ -230,9 +230,9 @@ class Header extends React.Component {
             <IconButton className={classNames(classes.menuButton, this.state.open && classes.menuButtonHidden)} color="inherit" aria-label="Open drawer" onClick={this.handleDrawerOpen}>
               <MenuIcon />
             </IconButton>
-            <Typography className={classes.title} variant="title" color="inherit" noWrap>
+            <Typography className={classes.title} variant="h6" color="inherit" noWrap>
               Customizando Tutor
-                </Typography>
+            </Typography>
             <div className={classes.search}>
               <div className={classes.searchIcon}>
                 <SearchIcon />

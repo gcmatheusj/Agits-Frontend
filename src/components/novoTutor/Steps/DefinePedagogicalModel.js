@@ -43,9 +43,9 @@ class DefinePedagogicalModel extends React.Component {
         const { classes } = this.props;
         return (
             <div style={{ justifyContent: "center" }}>
-                <Typography variant="subheading">
+                <Typography variant="subtitle1">
                     We use the most advanced techniques for providing an adaptive and intelligent tutor for your students!
-            </Typography>
+                </Typography>
                 <div className={classes.root}>
                     <Paper>
                         <CardActionArea>
@@ -58,10 +58,10 @@ class DefinePedagogicalModel extends React.Component {
                                 <Grid container item xs={12} sm container>
                                     <Grid item xs container direction="column" spacing={16}>
                                         <Grid item xs>
-                                            <Typography gutterBottom variant="title">
+                                            <Typography gutterBottom variant="h6">
                                                 Knowledge tracing and curriculum sequence
                                             </Typography>
-                                            <Typography gutterBottom variant="subheading" align="justify">
+                                            <Typography gutterBottom variant="subtitle1" align="justify">
                                                 By default your customized tutor maskes use of current intelligent techniques that model
                                                 student's knowledge to accurately decide which problems it should give to students at any
                                                 given time.
@@ -94,10 +94,10 @@ class DefinePedagogicalModel extends React.Component {
                                 <Grid container item xs={12} sm container>
                                     <Grid item xs container direction="column" spacing={16}>
                                         <Grid item xs>
-                                            <Typography gutterBottom variant="title">
+                                            <Typography gutterBottom variant="h6">
                                                 Syllabus
                                             </Typography>
-                                            <Typography gutterBottom variant="subheading" align="justify">
+                                            <Typography gutterBottom variant="subtitle1" align="justify">
                                                 Enable this feature if you want to manage the schedule and subjects on which
                                                 your students will learn using the tutor
                                             </Typography>

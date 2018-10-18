@@ -61,7 +61,7 @@ class DefineDomainAndSubject extends Component {
                 <div>
                     <ExpansionPanel>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} style={styles.expansionPanel}>
-                            <Typography variant="headline" style={styles.expansionPanelFont}>
+                            <Typography variant="h5" style={styles.expansionPanelFont}>
                                 Define Domain
                             </Typography>
                         </ExpansionPanelSummary>
@@ -75,7 +75,7 @@ class DefineDomainAndSubject extends Component {
                     </ExpansionPanel>
                     <ExpansionPanel>
                         <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>} style={styles.expansionPanel}>
-                            <Typography variant="headline" style={styles.expansionPanelFont}>
+                            <Typography variant="h5" style={styles.expansionPanelFont}>
                                 Define Subjects
                             </Typography>
                         </ExpansionPanelSummary>
@@ -89,7 +89,7 @@ class DefineDomainAndSubject extends Component {
                     </ExpansionPanel>
                 </div>
                 <div>
-                    <Typography variant='headline' alignCenter style={styles.label}>
+                    <Typography variant='h5' style={styles.label}>
                         Do not worry about creating or modifying your tutor content at this stage.
                         After finalizing the customization of your tutor, you can manage all your 
                         content whenever you want!

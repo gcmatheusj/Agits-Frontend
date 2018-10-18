@@ -23,7 +23,7 @@ const Start = props => {
     const { classes } = props
     return (
         <div>
-            <Typography variant="subheading">
+            <Typography variant="subtitle1">
                 Você pode começar selecionando um modelo de tutor ou criando um novo tutor.
             </Typography>
             <Grid container className={classes.root} container justify="center">
@@ -31,7 +31,7 @@ const Start = props => {
                     <CardActionArea>
                         <img src={scratch} />
                         <CardContent>
-                            <Typography gutterBottom variant="title" component="h2" align="justify">
+                            <Typography gutterBottom variant="h6" align="justify">
                                 Criar seu tutor a partir do zero
                             </Typography>
                             <Typography align="justify">
@@ -45,7 +45,7 @@ const Start = props => {
                     <Card className={classes.card}>
                         <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
                         <CardContent>
-                            <Typography gutterBottom variant="title" component="h2" align="justify">
+                            <Typography gutterBottom variant="h6" align="justify">
                                 Usando modelo
                             </Typography>
                             <Typography align="justify">
