@@ -112,7 +112,7 @@ class Login extends Component {
             <Grid container >
                 <Grid className={classes.newAccountPadding} container>
                     <Grid className={classes.newAccount} container justify="flex-end" alignItems="center">
-                        <Typography className={classes.label} variant="subheading" color="inherit">
+                        <Typography className={classes.label} variant="subtitle1" color="inherit">
                             Don't have an account?
                             </Typography>
                         <Button className={classes.buttonGS} size="medium" variant="contained">Get Started</Button>
@@ -123,8 +123,8 @@ class Login extends Component {
                         <Card className={classes.cardContainer}>
                             <CardContent className="loginContent">
                                 <div className={classes.formContainer}>
-                                    <Typography align="left" variant="title" className={classes.title}>Sign in to Meu Tutor</Typography>
-                                    <Typography align="left" variant="subheading" className={classes.subheading}>Access your account to use the system</Typography>
+                                    <Typography align="left" variant="h6" className={classes.title}>Sign in to Meu Tutor</Typography>
+                                    <Typography align="left" variant="subtitle1" className={classes.subheading}>Access your account to use the system</Typography>
                                     <Divider />
                                     <div >
                                         <TextField

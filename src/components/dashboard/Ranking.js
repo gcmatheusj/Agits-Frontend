@@ -34,7 +34,7 @@ const Ranking = props => {
     return (
         <Card className={classes.card} >
             <CardContent>
-                <Typography variant="title" style={{ fontWeight: "bold" }}>Ranking</Typography>
+                <Typography variant="h6" style={{ fontWeight: "bold" }}>Ranking</Typography>
                 <div>
                     <List>
                         <ListItem button>

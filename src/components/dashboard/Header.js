@@ -16,6 +16,7 @@ import Tabs from './Tabs'
 
 function TabContainer({ children, dir }) {
     return (
+      //Olhar esse aki
         <Typography component="div" dir={dir} style={{ padding: 8 * 3 }}>
           {children}
         </Typography>
@@ -266,7 +267,7 @@ class Header extends React.Component {
             </IconButton>
             <Typography 
               className={classes.title} 
-              variant="title" 
+              variant="h6" 
               color="inherit" 
               noWrap
             >

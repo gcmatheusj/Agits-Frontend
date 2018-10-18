@@ -33,19 +33,19 @@ const NewsActivities = props => {
     return (
         <Card className={classes.card}>
             <CardContent>
-                <Typography variant="title" style={{ fontWeight: "bold" }}>
+                <Typography variant="h6" style={{ fontWeight: "bold" }}>
                         Last News
                 </Typography>
                 <div>
-                    <Typography variant="subheading">Student 01 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 01 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 02 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 02 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 03 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 03 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 04 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 04 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 05 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 05 performed the ACTIVITYNAME</Typography>
                     <Divider />
                     <CardActions>
                         <Grid container justify='flex-end'>
@@ -56,17 +56,17 @@ const NewsActivities = props => {
                     </CardActions>
                 </div>
                 <Divider />
-                <Typography variant="title" style={{ fontWeight: "bold" }}>Next Activities</Typography>
+                <Typography variant="h6" style={{ fontWeight: "bold" }}>Next Activities</Typography>
                 <div>
-                    <Typography variant="subheading">Student 01 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 01 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 02 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 02 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 03 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 03 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 04 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 04 performed the ACTIVITYNAME</Typography>
                     <Divider />
-                    <Typography variant="subheading">Student 05 performed the ACTIVITYNAME</Typography>
+                    <Typography variant="subtitle1">Student 05 performed the ACTIVITYNAME</Typography>
                     <Divider />
                     <CardActions>
                         <Grid container justify='flex-end'>
