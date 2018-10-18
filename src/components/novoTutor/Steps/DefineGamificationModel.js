@@ -35,8 +35,8 @@ const styles = theme => ({
     img: {
         margin: 'auto',
         display: 'block',
-        maxWidth: '100%',
-        maxHeight: '100%',
+        maxWidth: '20%',
+        maxHeight: '20%',
     },
     icon: {
         maxWidth: 30,
@@ -96,27 +96,27 @@ class DefineGamificationModel extends Component {
                             </Grid>
                         </Grid>
                         <Divider />
-                        <Grid>
+                        <Grid item xs container direction="row">
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={story} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={challenges} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={leaderboard} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={points} />
                             </div>
                         </Grid>
                     </Paper>
@@ -149,28 +149,28 @@ class DefineGamificationModel extends Component {
                         <Divider />
                         <Grid item xs container direction="row">
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={story} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={feedback} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={feedback} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={challenges} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={leaderboard} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={points} />
                             </div>
                         </Grid>
                         <Divider />
@@ -249,24 +249,24 @@ class DefineGamificationModel extends Component {
                             </Grid>
                         </Grid>
                         <Divider />
-                        <Grid>
+                        <Grid item xs container direction="row">
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={story} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={points} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={avatar} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={avatar} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={quests} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={quests} />
                             </div>
                         </Grid>
                     </Paper>
@@ -297,15 +297,15 @@ class DefineGamificationModel extends Component {
                             </Grid>
                         </Grid>
                         <Divider />
-                        <Grid>
+                        <Grid item xs container direction="row">
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={challenges} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={bossfight} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={bossfight} />
                             </div>
                         </Grid>
                     </Paper>
@@ -336,15 +336,15 @@ class DefineGamificationModel extends Component {
                             </Grid>
                         </Grid>
                         <Divider />
-                        <Grid>
+                        <Grid item xs container direction="row">
                             <div >
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={leaderboard} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                                <img style={{ height: 50, width: 50 }} alt="x" src={points} />
                             </div>
                         </Grid>
                     </Paper>
