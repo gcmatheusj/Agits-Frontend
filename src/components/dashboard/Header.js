@@ -1,14 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import {AppBar, Toolbar, IconButton, Typography, Input, Badge, MenuItem, Menu, withStyles, Grid, Drawer, List, Divider, CssBaseline, fade} from '@material-ui/core';
-import {MenuIcon, SearchIcon, AccountCircle, MailIcon, MoreIcon, ChevronLeftIcon, } from '@material-ui/icons';
-import classNames from 'classnames'
+import { AppBar, Toolbar, IconButton, Typography, Input, MenuItem, Menu, List, Divider, Drawer } from '@material-ui/core'
+import { fade } from '@material-ui/core/styles/colorManipulator'
+import { withStyles } from '@material-ui/core/styles'
+import MenuIcon from '@material-ui/icons/Menu'
+import SearchIcon from '@material-ui/icons/Search'
+import AccountCircle from '@material-ui/icons/AccountCircle'
+import SettingsIcon from '@material-ui/icons/Settings'
+import MoreIcon from '@material-ui/icons/MoreVert'
 import { mainListItems } from '../listItems'
-import Tabs from './Tabs'
-import NewsActivities from './News&Activities'
-import Ranking from './Ranking'
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import classNames from 'classnames'
 import Content from './Content'
-import SwipeableViews from 'react-swipeable-views';
+import Tabs from './Tabs'
 
 function TabContainer({ children, dir }) {
     return (

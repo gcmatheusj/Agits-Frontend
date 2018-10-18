@@ -35,7 +35,7 @@ class novoTutor extends Component {
                     </Typography>
                     <Divider style={styles.divider}/>
                     <Grid container>
-                        <Grid container >
+                        <Grid container justify='center'>
                             <VerticalLinearStepper/>
                         </Grid>
                     </Grid>

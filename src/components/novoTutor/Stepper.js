@@ -18,9 +18,6 @@ import DefineReports from "./Steps/DefineReports"
 const styles = theme => ({
     root: {
         width: '100%',
-        ['@media (min-width:780px)']: {
-            width: '100%'
-        }
     },
     button: {
       marginTop: theme.spacing.unit,
@@ -100,7 +97,7 @@ class VerticalLinearStepper extends Component {
                 <Step key={label}>
                     <StepLabel>{label}</StepLabel>
                     <StepContent>
-                    <Typography>{getStepContent(index)}</Typography>
+                    <div>{getStepContent(index)}</div>
                     <div className={classes.actionsContainer}>
                         <div>
                         <Button

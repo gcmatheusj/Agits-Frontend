@@ -9,7 +9,7 @@ import teacher from "../../../assets/teacher.png"
 const styles = theme => ({
     root: {
         flexGrow: 1,
-        maxWidth: 700,
+        maxWidth: '100%',
         padding: theme.spacing.unit * 2,
     },
     image: {
