@@ -33,7 +33,7 @@ const styles = theme => ({
         height: 128,
     },
     img: {
-        margin: 'auto',
+        //margin: 'auto',
         display: 'block',
         maxWidth: '20%',
         maxHeight: '20%',
@@ -73,11 +73,7 @@ class DefineGamificationModel extends Component {
                 </Typography>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
-                            <Grid item>
-                                <div>
-                                    <img className={classes.img} alt="complex" src={participation} />
-                                </div>
-                            </Grid>
+                            <img className={classes.image} alt="complex" src={participation} />
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
@@ -88,7 +84,7 @@ class DefineGamificationModel extends Component {
                                             Select this option if you expect your students to be participative in your
                                             course by interacting with the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Challenges, Levels, Leaderboard, Story,
-                                            Badges, Rewards and Points
+                                            Badges, Rewards and Points.
                                         </Typography>
                                     </Grid>
                                 </Grid>
@@ -122,13 +118,9 @@ class DefineGamificationModel extends Component {
                 <div style={{ marginTop: 10 }} />
                 
                     <Paper className={classes.root}>
-                        <Grid container spacing={16} style={{ alignItems: "center" }}>
-                            <Grid item>
-                                <div>
-                                    <img className={classes.img} alt="complex" src={performance} />
-                                </div>
-                            </Grid>
-                            <Grid container item xs={12} sm container>
+                        <Grid container spacing={16} style={{ alignItems: "flex-start", justifyContent: "flex-start" }}>
+                            <img className={classes.image} alt="complex" src={performance} />
+                            <Grid container item xs={12} sm container >
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
                                         <Typography gutterBottom variant="h6">
@@ -138,14 +130,14 @@ class DefineGamificationModel extends Component {
                                             Select this option if you expect your students to mainly focus on their
                                             learning performance by using the tutor. Enabling this behavior will activate the
                                             following game elements in the system: Story, Feedback, Rewards,
-                                            Badges, Challenges, Leaderboard, Points and Levels
+                                            Badges, Challenges, Leaderboard, Points and Levels.
                                         </Typography>
                                     </Grid>
                                 </Grid>
                             </Grid>
                         </Grid>
                         <Divider />
-                        <Grid item xs container direction="row">
+                        <Grid item xs container direction="row" >
                             <div>
                                 <img style={{ height: 50, width: 50 }} alt="x" src={story} />
                             </div>
@@ -188,11 +180,7 @@ class DefineGamificationModel extends Component {
         
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
-                            <Grid item>
-                                <div>
-                                    <img className={classes.img} alt="complex" src={competition} />
-                                </div>
-                            </Grid>
+                            <img className={classes.image} alt="complex" src={competition} />
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
@@ -209,7 +197,7 @@ class DefineGamificationModel extends Component {
                             </Grid>
                         </Grid>
                         <Divider />
-                        <Grid>
+                        <Grid container direction="row">
                             <div>
                                 <img style={{ height: 50, width: 50}} alt="x" src={leaderboard} />
                             </div>
@@ -222,11 +210,7 @@ class DefineGamificationModel extends Component {
 
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
-                            <Grid item>
-                                <div>
-                                    <img className={classes.img} alt="complex" src={enjoyment} />
-                                </div>
-                            </Grid>
+                            <img className={classes.image} alt="complex" src={enjoyment} />
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
@@ -269,11 +253,7 @@ class DefineGamificationModel extends Component {
 
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
-                            <Grid item>
-                                <div>
-                                    <img className={classes.img} alt="complex" src={exploration} />
-                                </div>
-                            </Grid>
+                            <img className={classes.image} alt="complex" src={exploration} />
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
@@ -306,11 +286,7 @@ class DefineGamificationModel extends Component {
 
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
-                            <Grid item>
-                                <div>
-                                    <img className={classes.img} alt="complex" src={effectiveness} />
-                                </div>
-                            </Grid>
+                            <img className={classes.image} alt="complex" src={effectiveness} />
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
                                     <Grid item xs>
