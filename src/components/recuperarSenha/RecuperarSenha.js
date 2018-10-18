@@ -58,10 +58,10 @@ class RecuperarSenha extends Component {
                         <CardContent >
                             <Grid>
                                 <Grid className={classes.formContainer}>
-                                    <Typography align="center" variant="title" className={classes.title}>
+                                    <Typography align="center" variant="h6" className={classes.title}>
                                         {(this.state.cardNovaSenha) ? "Enter the new password" : "Forgot your password?"}
                                     </Typography>
-                                    <Typography align="center" variant="subheading" className={classes.subheading}>
+                                    <Typography align="center" variant="subtitle1" className={classes.subheading}>
                                         {
                                             (this.state.cardNovaSenha) ? 
                                             "To recover your account, create a new password"

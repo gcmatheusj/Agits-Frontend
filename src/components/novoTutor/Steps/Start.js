@@ -34,7 +34,7 @@ const Start = props => {
                             <Typography gutterBottom variant="h6" align="justify">
                                 Criar seu tutor a partir do zero
                             </Typography>
-                            <Typography align="justify">
+                            <Typography variant="body1" align="justify" gutterBottom>
                                 Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.
                             </Typography>
                         </CardContent>
@@ -45,10 +45,10 @@ const Start = props => {
                     <Card className={classes.card}>
                         <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
                         <CardContent>
-                            <Typography gutterBottom variant="h6" align="justify">
+                            <Typography gutterBottom variant="h6" align="justify" gutterBottom>
                                 Usando modelo
                             </Typography>
-                            <Typography align="justify">
+                            <Typography variant="body1" align="justify" gutterBottom>
                                 Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
                             </Typography>
                         </CardContent>

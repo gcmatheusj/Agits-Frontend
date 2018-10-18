@@ -49,7 +49,7 @@ class Sidebar extends Component {
                             <div align="center" >
                                 <img src={logo} alt=""></img>
                             </div>
-                            <Typography className={classes.content} variant="display1" align="center">
+                            <Typography className={classes.content} variant="h4" align="center">
                                 LOREM IPSUM PORTTITOR AENEAN TACITI SCELERISQUE TEMPUS DONEC.
                             </Typography>
                             <div align="center">

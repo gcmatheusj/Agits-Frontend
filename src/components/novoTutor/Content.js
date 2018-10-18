@@ -30,7 +30,7 @@ class novoTutor extends Component {
         return (
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
-                    <Typography className={classes.pageTitle} variant='h6' >
+                    <Typography className={classes.pageTitle} variant='h6'>
                         Meu Primeiro Tutor Inteligente Gamificado
                     </Typography>
                     <Divider style={styles.divider}/>
@@ -44,7 +44,7 @@ class novoTutor extends Component {
     }
 }
 
-novoTutor.PropTypes = {
+novoTutor.propTypes = {
     classes: PropTypes.object
 };
 
