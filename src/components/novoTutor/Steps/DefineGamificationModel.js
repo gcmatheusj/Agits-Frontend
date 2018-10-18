@@ -75,9 +75,9 @@ class DefineGamificationModel extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={participation} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -97,27 +97,27 @@ class DefineGamificationModel extends Component {
                         </Grid>
                         <Divider />
                         <Grid>
-                            <ButtonBase className={classes.icon}>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                     </Paper>
                 </CardActionArea>
@@ -126,9 +126,9 @@ class DefineGamificationModel extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={performance} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -148,41 +148,41 @@ class DefineGamificationModel extends Component {
                         </Grid>
                         <Divider />
                         <Grid item xs container direction="row">
-                            <ButtonBase className={classes.icon}>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={feedback} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                         <Divider />
                         <Grid container direction="row" alignItems="center">
-                            <ButtonBase style={{ maxWidth: 40, maxHeight: 40, }}>
+                            <div style={{ maxWidth: 40, maxHeight: 40, }}>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                            </ButtonBase>
-                            <Typography style={{ marginTop: 2 }} align="justify">
+                            </div>
+                            <Typography variant='body1' style={{ marginTop: 2 }} align="justify">
                                 Leaderboard: A ranked list of participants, showing the performance of a particular student in
-                            <Typography align="justify">
-                                    comparison to the highest scores and to his friends
                             </Typography>
+                            <Typography variant='body1' align="justify">
+                                comparison to the highest scores and to his friends
                             </Typography>
                         </Grid>
                     </Paper>
@@ -192,9 +192,9 @@ class DefineGamificationModel extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={competition} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -213,12 +213,12 @@ class DefineGamificationModel extends Component {
                         </Grid>
                         <Divider />
                         <Grid>
-                            <ButtonBase className={classes.icon}>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                     </Paper>
                 </CardActionArea>
@@ -228,9 +228,9 @@ class DefineGamificationModel extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={enjoyment} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -250,24 +250,24 @@ class DefineGamificationModel extends Component {
                         </Grid>
                         <Divider />
                         <Grid>
-                            <ButtonBase className={classes.icon}>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={story} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={rewards} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={avatar} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={quests} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                     </Paper>
                 </CardActionArea>
@@ -277,9 +277,9 @@ class DefineGamificationModel extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={exploration} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -298,15 +298,15 @@ class DefineGamificationModel extends Component {
                         </Grid>
                         <Divider />
                         <Grid>
-                            <ButtonBase className={classes.icon}>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={levels} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={challenges} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={bossfight} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                     </Paper>
                 </CardActionArea>
@@ -316,9 +316,9 @@ class DefineGamificationModel extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={effectiveness} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -337,15 +337,15 @@ class DefineGamificationModel extends Component {
                         </Grid>
                         <Divider />
                         <Grid>
-                            <ButtonBase className={classes.icon}>
+                            <div >
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={badge} />
-                            </ButtonBase>
-                            <ButtonBase className={classes.icon}>
+                            </div>
+                            <div>
                                 <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                     </Paper>
                 </CardActionArea>

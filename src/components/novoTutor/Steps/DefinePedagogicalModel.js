@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Typography, ButtonBase, Switch, CardActionArea } from '@material-ui/core'
+import { Grid, Paper, Typography, Button, Switch, CardActionArea } from '@material-ui/core'
 
 import curriculum from "../../../assets/curriculum.png"
 import syllabus from ".././../../assets/syllabus.png"
@@ -51,9 +51,9 @@ class DefinePedagogicalModel extends React.Component {
                         <CardActionArea>
                             <Grid container spacing={16} style={{ alignItems: "center", marginTop: 10 }}>
                                 <Grid item>
-                                    <ButtonBase className={classes.image}>
+                                    <div>
                                         <img className={classes.img} alt="complex" src={curriculum} />
-                                    </ButtonBase>
+                                    </div>
                                 </Grid>
                                 <Grid container item xs={12} sm container>
                                     <Grid item xs container direction="column" spacing={16}>
@@ -69,7 +69,7 @@ class DefinePedagogicalModel extends React.Component {
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                                <Grid justify="center" alignItems="center" >
+                                <Grid container justify="center" alignItems="center" >
                                     <Switch
                                         checked={this.state.checkedA}
                                         onChange={this.handleChange('checkedA')}
@@ -87,9 +87,9 @@ class DefinePedagogicalModel extends React.Component {
                         <CardActionArea>
                             <Grid container spacing={16} style={{ alignItems: "center", marginTop: 10 }}>
                                 <Grid item>
-                                    <ButtonBase className={classes.image}>
+                                    <div>
                                         <img className={classes.img} alt="complex" src={syllabus} />
-                                    </ButtonBase>
+                                    </div>
                                 </Grid>
                                 <Grid container item xs={12} sm container>
                                     <Grid item xs container direction="column" spacing={16}>
@@ -104,7 +104,7 @@ class DefinePedagogicalModel extends React.Component {
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                                <Grid justify="center" alignItems="center" >
+                                <Grid container justify="center" alignItems="center" >
                                     <Switch
                                         checked={this.state.checkedB}
                                         onChange={this.handleChange('checkedB')}
