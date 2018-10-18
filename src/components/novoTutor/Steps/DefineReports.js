@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Grid, Paper, Typography, ButtonBase, Switch, CardActionArea } from '@material-ui/core'
+import { Grid, Paper, Typography, Switch, CardActionArea } from '@material-ui/core'
 
 import student from "../../../assets/student.png"
 import teacher from "../../../assets/teacher.png"
@@ -53,9 +53,9 @@ class DefineReports extends Component {
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
-                            <ButtonBase className={classes.image}>
+                            <div>
                                 <img className={classes.img} alt="complex" src={student} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                         <Grid container item xs={12} sm container>
                             <Grid item xs container direction="column" spacing={16}>
@@ -89,9 +89,9 @@ class DefineReports extends Component {
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
-                            <ButtonBase className={classes.image}>
+                            <div>
                                 <img className={classes.img} alt="complex" src={teacher} />
-                            </ButtonBase>
+                            </div>
                         </Grid>
                         <Grid container item xs={12} sm container>
                             <Grid item xs container direction="column" spacing={16}>
