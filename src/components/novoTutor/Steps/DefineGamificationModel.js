@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import { Grid, Paper, Typography, ButtonBase, Divider, CardActionArea } from '@material-ui/core'
+import { Grid, Paper, Typography, ButtonBase, Divider} from '@material-ui/core'
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 
@@ -71,7 +71,6 @@ class DefineGamificationModel extends Component {
                     behavior options that are positively supported by the literature! Each behavior enables a particular
                     set of gamification elemwnts in your customized tutor
                 </Typography>
-                <CardActionArea>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -120,9 +119,8 @@ class DefineGamificationModel extends Component {
                             </div>
                         </Grid>
                     </Paper>
-                </CardActionArea>
                 <div style={{ marginTop: 10 }} />
-                <CardActionArea>
+                
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -186,9 +184,8 @@ class DefineGamificationModel extends Component {
                             </Typography>
                         </Grid>
                     </Paper>
-                </CardActionArea>
                 <div style={{ marginTop: 10 }} />
-                <CardActionArea>
+        
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -221,10 +218,8 @@ class DefineGamificationModel extends Component {
                             </div>
                         </Grid>
                     </Paper>
-                </CardActionArea>
                 <div style={{ marginTop: 10 }} />
 
-                <CardActionArea>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -270,10 +265,8 @@ class DefineGamificationModel extends Component {
                             </div>
                         </Grid>
                     </Paper>
-                </CardActionArea>
                 <div style={{ marginTop: 10 }} />
 
-                <CardActionArea>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -309,10 +302,8 @@ class DefineGamificationModel extends Component {
                             </div>
                         </Grid>
                     </Paper>
-                </CardActionArea>
                 <div style={{ marginTop: 10 }} />
 
-                <CardActionArea>
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -348,7 +339,6 @@ class DefineGamificationModel extends Component {
                             </div>
                         </Grid>
                     </Paper>
-                </CardActionArea>
             </div>
         )
     }
