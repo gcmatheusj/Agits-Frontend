@@ -71,7 +71,7 @@ class DefineReports extends Component {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid justify="center" alignItems="center" >
+                        <Grid container justify="center" alignItems="center" >
                             <Switch
                                 checked={this.state.checkedA}
                                 onChange={this.handleChange('checkedA')}
@@ -103,7 +103,7 @@ class DefineReports extends Component {
                                 </Grid>
                             </Grid>
                         </Grid>
-                        <Grid justify="center" alignItems="center" >
+                        <Grid container justify="center" alignItems="center" >
                             <Switch
                                 checked={this.state.checkedB}
                                 onChange={this.handleChange('checkedB')}
