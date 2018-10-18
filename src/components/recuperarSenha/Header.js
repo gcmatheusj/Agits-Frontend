@@ -37,11 +37,11 @@ class Header extends Component {
         return (
             <AppBar className={classes.root} position="static">
                 <Toolbar>
-                    <Typography variant="title" color="inherit" >
+                    <Typography variant="h6" color="inherit" >
                         <img className={classes.logo} src={logo} alt=""></img>
                     </Typography>
                     <Grid container justify="flex-end">
-                        <Typography className={classes.label} variant="subheading" color="inherit">
+                        <Typography className={classes.label} variant="subtitle1" color="inherit">
                             Don't have an account?
                         </Typography>
                         <Button className={classes.button} size="small" variant="contained">Get Started</Button>
