@@ -1,14 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import {
-  Grid,
-  Paper,
-  Typography,
-  Card,
-  Switch,
-  CardActionArea
-} from "@material-ui/core";
+import { Grid, Paper, Typography, Card, Switch } from "@material-ui/core";
 
 import curriculum from "../../../assets/curriculum.png";
 import syllabus from ".././../../assets/syllabus.png";
