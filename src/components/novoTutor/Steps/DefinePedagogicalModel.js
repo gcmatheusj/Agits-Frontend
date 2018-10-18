@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
-import { Grid, Paper, Typography, Card, Switch } from "@material-ui/core";
+import { Grid, Typography, Card, Switch, Paper } from "@material-ui/core";
 
 import curriculum from "../../../assets/curriculum.png";
 import syllabus from ".././../../assets/syllabus.png";
@@ -38,7 +38,7 @@ class DefinePedagogicalModel extends React.Component {
   render() {
     const { classes } = this.props;
     return (
-      <div style={{ justifyContent: "center" }}>
+        <div style={{ justifyContent: "center" }}>
         <Typography variant="subtitle1">
           We use the most advanced techniques for providing an adaptive and
           intelligent tutor for your students!
@@ -113,7 +113,7 @@ class DefinePedagogicalModel extends React.Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={this.state.checkedA}
+                    checked={this.state.checkedB}
                     onChange={this.handleChange("checkedB")}
                     value="checkedB"
                     color="primary"

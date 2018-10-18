@@ -31,7 +31,7 @@ class novoTutor extends Component {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                     <Typography className={classes.pageTitle} variant='h6'>
-                        Meu Primeiro Tutor Inteligente Gamificado
+                       My First Gamified Intelligent Tutor
                     </Typography>
                     <Divider style={styles.divider}/>
                     <Grid container>

@@ -29,16 +29,19 @@ const styles = theme => ({
     resetContainer: {
       padding: theme.spacing.unit * 3,
     },
+    teste: {
+        fontWeight: 'bold'
+    }
 });
 
 function getSteps() {
     return [
-        'Início', 
-        'Definir Domínio', 
-        'Definir Modelo Pedagógico',
-        'Definir Modelo de Gamificação',
-        'Definir Métodos de Avaliação',
-        'Define Relatórios'
+        'Start', 
+        'Define Domain', 
+        'Define Pedagogical Model',
+        'Define Gamified Model',
+        'Define Evaluation Methods',
+        'Define Reports'
     ];
 }
 
