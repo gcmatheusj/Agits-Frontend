@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Grid, Paper, Typography, Switch, CardActionArea } from '@material-ui/core'
+import { Grid, Paper, Typography, Switch } from '@material-ui/core'
 
 import student from "../../../assets/student.png"
 import teacher from "../../../assets/teacher.png"
@@ -49,7 +49,6 @@ class DefineReports extends Component {
                 <Typography variant="subtitle1">
                     You can also select which kind of reports the tutor will provide
                 </Typography>
-                <CardActionArea>
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
@@ -82,10 +81,8 @@ class DefineReports extends Component {
                         </Grid>
                     </Grid>
                 </Paper>
-                </CardActionArea>
                 <div style={{marginTop: 10}}/>
 
-                <CardActionArea>
                 <Paper className={classes.root}>
                     <Grid container spacing={16} style={{ alignItems: "center" }}>
                         <Grid item>
@@ -116,7 +113,6 @@ class DefineReports extends Component {
                         </Grid>
                     </Grid>
                 </Paper>
-                </CardActionArea>
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Grid, Paper, Typography, Switch, CardActionArea } from '@material-ui/core'
+import { Grid, Paper, Typography, Switch} from '@material-ui/core'
 
 import quick from "../../../assets/quick.png"
 import custom from "../../../assets/custom.png"
@@ -47,7 +47,7 @@ class EvalutaionMethods extends Component {
                 <Typography variant="subtitle1">
                     We are almost done! You can also select which evalution strategies you can provide for your students.
                 </Typography>
-                <CardActionArea>
+                
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -79,9 +79,9 @@ class EvalutaionMethods extends Component {
                             </Grid>
                         </Grid>
                     </Paper>
-                </CardActionArea>
+                
                 <div style={{ marginTop: 10 }} />
-                <CardActionArea>
+                
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -113,10 +113,10 @@ class EvalutaionMethods extends Component {
                             </Grid>
                         </Grid>
                     </Paper>
-                </CardActionArea>
+                
                 <div style={{ marginTop: 10 }} />
 
-                <CardActionArea>
+                
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
@@ -149,7 +149,6 @@ class EvalutaionMethods extends Component {
                             </Grid>
                         </Grid>
                     </Paper>
-                </CardActionArea>
             </div>
         )
     }
