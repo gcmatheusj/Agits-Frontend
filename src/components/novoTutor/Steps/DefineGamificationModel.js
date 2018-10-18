@@ -211,10 +211,10 @@ class DefineGamificationModel extends Component {
                         <Divider />
                         <Grid>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={leaderboard} />
+                                <img style={{ height: 50, width: 50}} alt="x" src={leaderboard} />
                             </div>
                             <div>
-                                <img style={{ height: "100%", width: "100%" }} alt="x" src={points} />
+                                <img style={{height: 50, width: 50 }} alt="x" src={points} />
                             </div>
                         </Grid>
                     </Paper>
