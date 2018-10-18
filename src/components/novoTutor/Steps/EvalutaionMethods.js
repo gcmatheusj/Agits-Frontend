@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
-import { Grid, Paper, Typography, ButtonBase, Switch, CardActionArea } from '@material-ui/core'
+import { Grid, Paper, Typography, Switch, CardActionArea } from '@material-ui/core'
 
 import quick from "../../../assets/quick.png"
 import custom from "../../../assets/custom.png"
@@ -51,9 +51,9 @@ class EvalutaionMethods extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div >
                                     <img className={classes.img} alt="complex" src={quick} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -85,9 +85,9 @@ class EvalutaionMethods extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={custom} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
@@ -120,9 +120,9 @@ class EvalutaionMethods extends Component {
                     <Paper className={classes.root}>
                         <Grid container spacing={16} style={{ alignItems: "center" }}>
                             <Grid item>
-                                <ButtonBase className={classes.image}>
+                                <div>
                                     <img className={classes.img} alt="complex" src={placement} />
-                                </ButtonBase>
+                                </div>
                             </Grid>
                             <Grid container item xs={12} sm container>
                                 <Grid item xs container direction="column" spacing={16}>
