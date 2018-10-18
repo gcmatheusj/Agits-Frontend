@@ -10,7 +10,8 @@ const styles = theme => ({
     card: {
         maxWidth: 280,
         textAlign: "center",
-        margin: 20,
+        marginTop: 20,
+        marginRight: 150,
         padding: 10,
         //background: "#757575"
     },
@@ -41,19 +42,19 @@ const Start = props => {
                         </CardActionArea>
                     </Card>
 
-                <CardActionArea>
                     <Card className={classes.card}>
-                        <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
-                        <CardContent>
-                            <Typography gutterBottom variant="h6" align="justify" gutterBottom>
-                                Usando modelo
-                            </Typography>
-                            <Typography variant="body1" align="justify" gutterBottom>
-                                Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
-                            </Typography>
-                        </CardContent>
+                        <CardActionArea>
+                            <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
+                            <CardContent>
+                                <Typography gutterBottom variant="h6" align="justify" gutterBottom>
+                                    Usando modelo
+                                </Typography>
+                                <Typography variant="body1" align="justify" gutterBottom>
+                                    Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
+                                </Typography>
+                            </CardContent>
+                        </CardActionArea>
                     </Card>
-                </CardActionArea>
             </Grid>
         </div>
     )
