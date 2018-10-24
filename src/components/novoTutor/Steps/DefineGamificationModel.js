@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Card, Typography, ButtonBase, Divider } from "@material-ui/core";
+import { Grid, Card, Typography, Divider } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -62,8 +62,10 @@ const styles = theme => ({
     }
   },
   image: {
-    width: 128,
-    height: 128
+    [theme.breakpoints.down('sm')]: {
+      width: 10,
+      height: 10,
+    },
   },
   img: {
     margin: 20,
