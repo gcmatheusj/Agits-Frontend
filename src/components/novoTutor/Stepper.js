@@ -10,11 +10,6 @@ import DefineGamificationModel from "./Steps/DefineGamificationModel"
 import EvalutaionMethods from "./Steps/EvalutaionMethods"
 import DefineReports from "./Steps/DefineReports"
 
-/*  (@gustavodlima)
-    Ainda é necessário testar a responsividade dos steps, visto que o step Start.js tem elementos que não
-    funcionam muito bem em telas pequenas, ou seja, menos que 780px já temos um bug no step.
-*/
-
 const styles = theme => ({
     root: {
         width: '100%',
@@ -29,9 +24,6 @@ const styles = theme => ({
     resetContainer: {
       padding: theme.spacing.unit * 3,
     },
-    teste: {
-        fontWeight: 'bold'
-    }
 });
 
 function getSteps() {
