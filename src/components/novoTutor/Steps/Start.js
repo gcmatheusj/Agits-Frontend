@@ -13,7 +13,11 @@ const styles = theme => ({
         marginTop: 20,
         marginRight: 150,
         padding: 10,
-        //background: "#757575"
+        [theme.breakpoints.down('sm')]: {
+            padding: 1,
+            margin: 10,
+            fontSize: '0.8 rem'
+        },
     },
     root: {
         flexGrow: 1,

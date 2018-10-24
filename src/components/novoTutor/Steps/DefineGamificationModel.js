@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid, Card, Typography, ButtonBase, Divider } from "@material-ui/core";
+import { Grid, Card, Typography, Divider } from "@material-ui/core";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -25,21 +25,42 @@ import bossfight from "../../../assets/boss-fight.png";
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 2
+    padding: theme.spacing.unit * 2,
+    [theme.breakpoints.down('sm')]: {
+      padding: 1,
+    },
   },
   image: {
-    width: 128,
-    height: 128
+    [theme.breakpoints.down('sm')]: {
+      width: 10,
+      height: 10,
+    },
   },
   img: {
     margin: 20,
-    width: 128
+    width: 128,
+    [theme.breakpoints.down('sm')]: {
+      width: 60
+    },
   },
-  icon: {
-    maxWidth: 30,
-    maxHeight: 30,
-    margin: 5
-  }
+  textCard: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8rem'
+    },
+  },
+  titleCard: {
+    fontWeight: 'bold',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem',
+      textAlign: 'center'
+    },
+  },
+  gridCard: {
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center'
+    },
+  },
 });
 
 class DefineGamificationModel extends Component {
@@ -72,7 +93,7 @@ class DefineGamificationModel extends Component {
         </Typography>
         <div className={classes.root}>
           <Card>
-            <Grid container spacing={16} style={{ alignItems: "center" }}>
+            <Grid container spacing={16} style={{ alignItems: "center" }} className={classes.gridCard}>
               <img
                 className={classes.img}
                 alt="complex"
@@ -81,13 +102,14 @@ class DefineGamificationModel extends Component {
               <Grid container item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={16}>
                   <Grid item xs>
-                    <Typography gutterBottom variant="h6">
+                    <Typography className={classes.titleCard} gutterBottom variant="h6">
                       Participation
                     </Typography>
                     <Typography
                       gutterBottom
                       variant="subtitle1"
                       align="justify"
+                      className={classes.textCard}
                     >
                       Select this option if you expect your students to be
                       participative in your course by interacting with the
@@ -102,33 +124,25 @@ class DefineGamificationModel extends Component {
             <Divider />
             <Grid item xs container direction="row">
               <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={story} />
+                <img style={{height: 50, width: 50}} alt="x" src={story} className={classes.image}/>
               </div>
               <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
+                <img style={styles.image} alt="x" src={rewards} />
               </div>
               <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
+                <img style={styles.image} alt="x" src={badge} />
               </div>
               <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
+                <img style={styles.image} alt="x" src={levels} />
               </div>
               <div>
-                <img
-                  style={{ height: 50, width: 50 }}
-                  alt="x"
-                  src={challenges}
-                />
+                <img style={styles.image} alt="x" src={challenges}/>
               </div>
               <div>
-                <img
-                  style={{ height: 50, width: 50 }}
-                  alt="x"
-                  src={leaderboard}
-                />
+                <img style={styles.image} alt="x" src={leaderboard}/>
               </div>
               <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={points} />
+                <img style={styles.image} alt="x" src={points} />
               </div>
             </Grid>
           </Card>
@@ -136,19 +150,15 @@ class DefineGamificationModel extends Component {
         <div className={classes.root}>
 
         <Card>
-          <Grid
-            container
-            spacing={16}
-            style={{ alignItems: "flex-start", justifyContent: "flex-start" }}
-          >
+          <Grid container spacing={16} style={{ alignItems: "center" }} className={classes.gridCard}>
             <img className={classes.img} alt="complex" src={performance} />
             <Grid container item xs={12} sm container>
               <Grid item xs container direction="column" spacing={16}>
                 <Grid item xs>
-                  <Typography gutterBottom variant="h6">
+                  <Typography className={classes.titleCard} gutterBottom variant="h6">
                     Performance
                   </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
+                  <Typography gutterBottom variant="subtitle1" align="justify" className={classes.textCard}>
                     Select this option if you expect your students to mainly
                     focus on their learning performance by using the tutor.
                     Enabling this behavior will activate the following game
@@ -162,38 +172,34 @@ class DefineGamificationModel extends Component {
           <Divider />
           <Grid item xs container direction="row">
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={story} />
+              <img style={styles.image} alt="x" src={story} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={feedback} />
+              <img style={styles.image} alt="x" src={feedback} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
+              <img style={styles.image} alt="x" src={rewards} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
+              <img style={styles.image} alt="x" src={badge} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
+              <img style={styles.image} alt="x" src={levels} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={challenges} />
+              <img style={styles.image} alt="x" src={challenges} />
             </div>
             <div>
-              <img
-                style={{ height: 50, width: 50 }}
-                alt="x"
-                src={leaderboard}
-              />
+              <img style={styles.image} alt="x" src={leaderboard}/>
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
+              <img style={styles.image} alt="x" src={points} />
             </div>
           </Grid>
           <Divider />
           <Grid container direction="row" alignItems="center">
             <div style={{ maxWidth: 40, maxHeight: 40 }}>
-              <img
+              <img 
                 style={{ height: "100%", width: "100%" }}
                 alt="x"
                 src={leaderboard}
@@ -216,15 +222,15 @@ class DefineGamificationModel extends Component {
         <div className={classes.root}>
 
         <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
+          <Grid container spacing={16} style={{ alignItems: "center" }} className={classes.gridCard}>
             <img className={classes.img} alt="complex" src={competition} />
             <Grid container item xs={12} sm container>
               <Grid item xs container direction="column" spacing={16}>
                 <Grid item xs>
-                  <Typography gutterBottom variant="h6">
+                  <Typography className={classes.titleCard} gutterBottom variant="h6">
                     Competition
                   </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
+                  <Typography gutterBottom variant="subtitle1" align="justify" className={classes.textCard}>
                     Select this option if you expect to provide competition
                     between students in the tutor. Enabling this behavior will
                     activate the following game elements in the system:
@@ -237,14 +243,10 @@ class DefineGamificationModel extends Component {
           <Divider />
           <Grid container direction="row">
             <div>
-              <img
-                style={{ height: 50, width: 50 }}
-                alt="x"
-                src={leaderboard}
-              />
+              <img style={styles.image} alt="x" src={leaderboard} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
+              <img style={styles.image} alt="x" src={points} />
             </div>
           </Grid>
         </Card>
@@ -252,15 +254,15 @@ class DefineGamificationModel extends Component {
         <div className={classes.root}>
 
         <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
+          <Grid container spacing={16} style={{ alignItems: "center" }} className={classes.gridCard}>
             <img className={classes.img} alt="complex" src={enjoyment} />
             <Grid container item xs={12} sm container>
               <Grid item xs container direction="column" spacing={16}>
                 <Grid item xs>
-                  <Typography gutterBottom variant="h6">
+                  <Typography className={classes.titleCard} gutterBottom variant="h6">
                     Enjoyment
                   </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
+                  <Typography gutterBottom variant="subtitle1" align="justify" className={classes.textCard}>
                     Select this option if you expect your students to be mainly
                     enjoyed by the tutor while they are learning. Enabling this
                     behavior will activate the following game elements in the
@@ -273,22 +275,22 @@ class DefineGamificationModel extends Component {
           <Divider />
           <Grid item xs container direction="row">
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={story} />
+              <img style={styles.image} alt="x" src={story} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
+              <img style={styles.image} alt="x" src={rewards} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
+              <img style={styles.image} alt="x" src={badge} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
+              <img style={styles.image} alt="x" src={points} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={avatar} />
+              <img style={styles.image} alt="x" src={avatar} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={quests} />
+              <img style={styles.image} alt="x" src={quests} />
             </div>
           </Grid>
         </Card>
@@ -297,15 +299,15 @@ class DefineGamificationModel extends Component {
         <div className={classes.root}>
 
         <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
+          <Grid container spacing={16} style={{ alignItems: "center" }} className={classes.gridCard}>
             <img className={classes.img} alt="complex" src={exploration} />
             <Grid container item xs={12} sm container>
               <Grid item xs container direction="column" spacing={16}>
                 <Grid item xs>
-                  <Typography gutterBottom variant="h6">
+                  <Typography className={classes.titleCard} gutterBottom variant="h6">
                     Exploration
                   </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
+                  <Typography gutterBottom variant="subtitle1" align="justify" className={classes.textCard}>
                     Select this option if you expect to incentive the
                     exploration of the tutor by your students.Enabling this
                     behavior will activate the following game elements in the
@@ -318,13 +320,13 @@ class DefineGamificationModel extends Component {
           <Divider />
           <Grid item xs container direction="row">
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
+              <img style={styles.image} alt="x" src={levels} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={challenges} />
+              <img style={styles.image} alt="x" src={challenges} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={bossfight} />
+              <img style={styles.image} alt="x" src={bossfight} />
             </div>
           </Grid>
         </Card>
@@ -332,15 +334,15 @@ class DefineGamificationModel extends Component {
         <div className={classes.root}>
 
         <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
+          <Grid container spacing={16} style={{ alignItems: "center" }} className={classes.gridCard}>
             <img className={classes.img} alt="complex" src={effectiveness} />
             <Grid container item xs={12} sm container>
               <Grid item xs container direction="column" spacing={16}>
                 <Grid item xs>
-                  <Typography gutterBottom variant="h6">
+                  <Typography className={classes.titleCard} gutterBottom variant="h6">
                     Effectiveness
                   </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
+                  <Typography gutterBottom variant="subtitle1" align="justify" className={classes.textCard}>
                     Select this options if you mainly expect your students to be
                     effective when they are using the tutor. Enabling this
                     behavior will activate the following game elements in the
@@ -353,17 +355,13 @@ class DefineGamificationModel extends Component {
           <Divider />
           <Grid item xs container direction="row">
             <div>
-              <img
-                style={{ height: 50, width: 50 }}
-                alt="x"
-                src={leaderboard}
-              />
+              <img style={styles.image} alt="x" src={leaderboard} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
+              <img style={styles.image} alt="x" src={badge} />
             </div>
             <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
+              <img style={styles.image} alt="x" src={points} />
             </div>
           </Grid>
         </Card>
