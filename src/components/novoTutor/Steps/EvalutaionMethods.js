@@ -11,7 +11,40 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     maxWidth: "100%",
-    padding: theme.spacing.unit * 2
+    padding: theme.spacing.unit * 2,
+    [theme.breakpoints.down('sm')]: {
+      padding: 1,
+      marginTop: 10,
+      marginBottom: 20
+    },
+  },
+  gridCard: {
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center'
+    },
+  },
+  gridText: {
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center'
+    },
+  },
+  title: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem'
+    },
+  },
+  titleCard: {
+    fontWeight: 'bold',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem',
+      textAlign: 'center'
+    },
+  },
+  textCard: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8rem'
+    },
   },
   image: {
     width: 128,
@@ -42,7 +75,7 @@ class EvalutaionMethods extends Component {
     const { classes } = this.props;
     return (
       <div style={{ justifyContent: "center" }}>
-        <Typography variant="subtitle1">
+        <Typography className={classes.title} variant="subtitle1">
           We are almost done! You can also select which evalution strategies you
           can provide for your students.
         </Typography>
@@ -54,19 +87,20 @@ class EvalutaionMethods extends Component {
                   container
                   direction="row"
                   spacing={16}
-                  style={{ alignItems: "center" }}
+                  className={classes.gridCard}
                 >
                   <img className={classes.img} alt="complex" src={quick} />
-                  <Grid container item xs={12} sm container>
+                  <Grid className={classes.gridText} container item xs={12} sm container>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
-                        <Typography gutterBottom variant="h6">
+                        <Typography className={classes.titleCard} gutterBottom variant="h6">
                           Quick Test
                         </Typography>
                         <Typography
                           gutterBottom
                           variant="subtitle1"
                           align="justify"
+                          className={classes.textCard}
                         >
                           Enable this feature if you want to provide a quick
                           test for your students to evaluate their learning
@@ -96,19 +130,20 @@ class EvalutaionMethods extends Component {
                   container
                   direction="row"
                   spacing={16}
-                  style={{ alignItems: "center" }}
+                  className={classes.gridCard}
                 >
                   <img className={classes.img} alt="complex" src={custom} />
-                  <Grid container item xs={12} sm container>
+                  <Grid className={classes.gridText} container item xs={12} sm container>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
-                        <Typography gutterBottom variant="h6">
+                        <Typography className={classes.titleCard} gutterBottom variant="h6">
                           Custom Test
                         </Typography>
                         <Typography
                           gutterBottom
                           variant="subtitle1"
                           align="justify"
+                          className={classes.textCard}
                         >
                           Enable this feature if you want to provide a
                           customized test for your students to evaluate their
@@ -138,19 +173,20 @@ class EvalutaionMethods extends Component {
                   container
                   direction="row"
                   spacing={16}
-                  style={{ alignItems: "center" }}
+                  className={classes.gridCard}
                 >
                   <img className={classes.img} alt="complex" src={placement} />
-                  <Grid container item xs={12} sm container>
+                  <Grid className={classes.gridText} container item xs={12} sm container>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
-                        <Typography gutterBottom variant="h6">
+                        <Typography className={classes.titleCard} gutterBottom variant="h6">
                           Placement Test
                         </Typography>
                         <Typography
                           gutterBottom
                           variant="subtitle1"
                           align="justify"
+                          className={classes.textCard}
                         >
                           Enable this feature if you want to define a test for
                           your students to evaluate more advanced subjects that
