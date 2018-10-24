@@ -8,7 +8,10 @@ import VerticalLinearStepper from './Stepper';
 const styles = theme => ({
     pageTitle: {
         margin: '20px',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        [theme.breakpoints.down("sm")]: {
+            fontSize: '1rem'
+          },
     },
     appBarSpacer: theme.mixins.toolbar,
     content: {

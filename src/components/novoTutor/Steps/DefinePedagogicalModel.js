@@ -96,7 +96,6 @@ class DefinePedagogicalModel extends React.Component {
                         <Typography
                           gutterBottom
                           variant="subtitle1"
-                          align="justify"
                           className={classes.textCard}
                         >
                           By default your customized tutor maskes use of current
@@ -138,7 +137,6 @@ class DefinePedagogicalModel extends React.Component {
                         <Typography
                           gutterBottom
                           variant="subtitle1"
-                          align="justify"
                           className={classes.textCard}
                         >
                         Enable this feature if you want to manage the schedule and subjects on which

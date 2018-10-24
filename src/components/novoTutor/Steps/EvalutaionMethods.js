@@ -99,7 +99,7 @@ class EvalutaionMethods extends Component {
                         <Typography
                           gutterBottom
                           variant="subtitle1"
-                          align="justify"
+                          
                           className={classes.textCard}
                         >
                           Enable this feature if you want to provide a quick
@@ -142,7 +142,7 @@ class EvalutaionMethods extends Component {
                         <Typography
                           gutterBottom
                           variant="subtitle1"
-                          align="justify"
+                          
                           className={classes.textCard}
                         >
                           Enable this feature if you want to provide a
@@ -185,7 +185,7 @@ class EvalutaionMethods extends Component {
                         <Typography
                           gutterBottom
                           variant="subtitle1"
-                          align="justify"
+              
                           className={classes.textCard}
                         >
                           Enable this feature if you want to define a test for

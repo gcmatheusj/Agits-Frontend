@@ -25,7 +25,41 @@ import bossfight from "../../../assets/boss-fight.png";
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    padding: theme.spacing.unit * 2
+    padding: theme.spacing.unit * 2,
+    [theme.breakpoints.down("sm")]: {
+      padding: 1,
+      marginTop: 10,
+      marginBottom: 20
+    }
+  },
+  gridCard: {
+    alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center"
+    }
+  },
+  gridText: {
+    [theme.breakpoints.down("sm")]: {
+      justifyContent: "center"
+    }
+  },
+  title: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.9rem"
+    }
+  },
+  titleCard: {
+    fontWeight: "bold",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.9rem",
+      textAlign: "center"
+    }
+  },
+  textCard: {
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "0.8rem",
+      marginBottom: 15
+    }
   },
   image: {
     width: 128,
@@ -33,11 +67,15 @@ const styles = theme => ({
   },
   img: {
     margin: 20,
+    [theme.breakpoints.down("sm")]: {
+      marginTop: 0,
+      marginBottom: 0
+    },
     width: 128
   },
   icon: {
-    maxWidth: 30,
-    maxHeight: 30,
+    height: 50, 
+    width: 50,
     margin: 5
   }
 });
@@ -60,11 +98,11 @@ class DefineGamificationModel extends Component {
     const { classes } = this.props;
     return (
       <div style={{ justifyContent: "center" }}>
-        <Typography variant="h6">
+        <Typography className={classes.title} variant="subtitle1">
           What is the main behavior do you expect from your students when they
           are learning in the gamifed tutor?
         </Typography>
-        <Typography variant="subtitle1">
+        <Typography className={classes.title} variant="subtitle1">
           Using gamificantion you can drive yours students to a motivating
           experience. We provide six target behavior options that are positively
           supported by the literature! Each behavior enables a particular set of
@@ -72,301 +110,389 @@ class DefineGamificationModel extends Component {
         </Typography>
         <div className={classes.root}>
           <Card>
-            <Grid container spacing={16} style={{ alignItems: "center" }}>
-              <img
-                className={classes.img}
-                alt="complex"
-                src={participation}
-              />
-              <Grid container item xs={12} sm container>
-                <Grid item xs container direction="column" spacing={16}>
-                  <Grid item xs>
-                    <Typography gutterBottom variant="h6">
-                      Participation
-                    </Typography>
-                    <Typography
-                      gutterBottom
-                      variant="subtitle1"
-                      align="justify"
-                    >
-                      Select this option if you expect your students to be
-                      participative in your course by interacting with the
-                      tutor. Enabling this behavior will activate the following
-                      game elements in the system: Challenges, Levels,
-                      Leaderboard, Story, Badges, Rewards and Points.
-                    </Typography>
+            <Grid container style={{ padding: 20 }}>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  direction="row"
+                  spacing={16}
+                  className={classes.gridCard}
+                >
+                  <img
+                    className={classes.img}
+                    alt="complex"
+                    src={participation}
+                  />
+                  <Grid
+                    className={classes.gridText}
+                    container
+                    item
+                    xs={12}
+                    sm
+                    container
+                  >
+                    <Grid item xs container direction="column" spacing={16}>
+                      <Grid item xs>
+                        <Typography
+                          className={classes.titleCard}
+                          gutterBottom
+                          variant="h6"
+                        >
+                          Participation
+                        </Typography>
+                        <Typography
+                          className={classes.textCard}
+                          gutterBottom
+                          variant="subtitle1"
+                          
+                        >
+                          Select this option if you expect your students to be
+                          participative in your course by interacting with the
+                          tutor. Enabling this behavior will activate the following
+                          game elements in the system: <strong>Challenges,</strong> <strong>Levels,</strong> <strong>Leaderboard,</strong> <strong>Story,</strong> <strong>Badges,</strong> <strong>Rewards,</strong> and <strong>Points.</strong>
+                        </Typography>
+                      </Grid>
+                    </Grid>
                   </Grid>
                 </Grid>
+                <Divider />
+                <Grid container direction="row">
+                  <img className={classes.icon} alt="x" src={story} />
+                  <img
+                  className={classes.icon}
+                    alt="x"
+                    src={rewards}
+                  />
+                  <img className={classes.icon} alt="x" src={badge} />
+                  <img className={classes.icon} alt="x" src={levels} />
+                  <img className={classes.icon} alt="x" src={challenges} />
+                  <img className={classes.icon} alt="x" src={leaderboard} />
+                  <img className={classes.icon} alt="x" src={points} />
+                </Grid>
               </Grid>
-            </Grid>
-            <Divider />
-            <Grid item xs container direction="row">
-              <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={story} />
-              </div>
-              <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
-              </div>
-              <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
-              </div>
-              <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
-              </div>
-              <div>
-                <img
-                  style={{ height: 50, width: 50 }}
-                  alt="x"
-                  src={challenges}
-                />
-              </div>
-              <div>
-                <img
-                  style={{ height: 50, width: 50 }}
-                  alt="x"
-                  src={leaderboard}
-                />
-              </div>
-              <div>
-                <img style={{ height: 50, width: 50 }} alt="x" src={points} />
-              </div>
             </Grid>
           </Card>
         </div>
         <div className={classes.root}>
-
-        <Card>
-          <Grid
-            container
-            spacing={16}
-            style={{ alignItems: "flex-start", justifyContent: "flex-start" }}
-          >
-            <img className={classes.img} alt="complex" src={performance} />
-            <Grid container item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={16}>
-                <Grid item xs>
-                  <Typography gutterBottom variant="h6">
-                    Performance
-                  </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
-                    Select this option if you expect your students to mainly
-                    focus on their learning performance by using the tutor.
-                    Enabling this behavior will activate the following game
-                    elements in the system: Story, Feedback, Rewards, Badges,
-                    Challenges, Leaderboard, Points and Levels.
-                  </Typography>
+          <Card>
+            <Grid container style={{ padding: 20 }}>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  direction="row"
+                  spacing={16}
+                  className={classes.gridCard}
+                >
+                  <img
+                    className={classes.img}
+                    alt="complex"
+                    src={performance}
+                  />
+                  <Grid
+                    className={classes.gridText}
+                    container
+                    item
+                    xs={12}
+                    sm
+                    container
+                  >
+                    <Grid item xs container direction="column" spacing={16}>
+                      <Grid item xs>
+                        <Typography
+                          className={classes.titleCard}
+                          gutterBottom
+                          variant="h6"
+                        >
+                          Performance
+                        </Typography>
+                        <Typography
+                          className={classes.textCard}
+                          gutterBottom
+                          variant="subtitle1"
+                          
+                        >
+                          Select this option if you expect your students to mainly
+                          focus on their learning performance by using the tutor.
+                          Enabling this behavior will activate the following game
+                          elements in the system: <strong>Story,</strong> <strong>Feedback,</strong> <strong>Rewards,</strong> <strong>Badges,</strong>
+                          <strong>Challenges,</strong> <strong>Leaderboard,</strong> <strong>Points,</strong> and <strong>Levels.</strong>
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid container direction="row">
+                  <img className={classes.icon} alt="x" src={story} />
+                  <img
+                  className={classes.icon}
+                    alt="x"
+                    src={feedback}
+                  />
+                  <img
+                  className={classes.icon}
+                    alt="x"
+                    src={rewards}
+                  />
+                  <img className={classes.icon} alt="x" src={badge} />
+                  <img className={classes.icon} alt="x" src={levels} />
+                  <img
+                  className={classes.icon}
+                    alt="x"
+                    src={challenges}
+                  />
+                  <img className={classes.icon} alt="x" src={leaderboard} />
+                  <img className={classes.icon} alt="x" src={points} />
                 </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Divider />
-          <Grid item xs container direction="row">
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={story} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={feedback} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={challenges} />
-            </div>
-            <div>
-              <img
-                style={{ height: 50, width: 50 }}
-                alt="x"
-                src={leaderboard}
-              />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
-            </div>
-          </Grid>
-          <Divider />
-          <Grid container direction="row" alignItems="center">
-            <div style={{ maxWidth: 40, maxHeight: 40 }}>
-              <img
-                style={{ height: "100%", width: "100%" }}
-                alt="x"
-                src={leaderboard}
-              />
-            </div>
-            <Typography
-              variant="body1"
-              style={{ marginTop: 2 }}
-              align="justify"
-            >
-              Leaderboard: A ranked list of participants, showing the
-              performance of a particular student in
-            </Typography>
-            <Typography variant="body1" align="justify">
-              comparison to the highest scores and to his friends
-            </Typography>
-          </Grid>
-        </Card>
+          </Card>
         </div>
         <div className={classes.root}>
-
-        <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
-            <img className={classes.img} alt="complex" src={competition} />
-            <Grid container item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={16}>
-                <Grid item xs>
-                  <Typography gutterBottom variant="h6">
-                    Competition
-                  </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
-                    Select this option if you expect to provide competition
-                    between students in the tutor. Enabling this behavior will
-                    activate the following game elements in the system:
-                    Leaderboard and Points
-                  </Typography>
+          <Card>
+            <Grid container style={{ padding: 20 }}>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  direction="row"
+                  spacing={16}
+                  className={classes.gridCard}
+                >
+                  <img
+                    className={classes.img}
+                    alt="complex"
+                    src={competition}
+                  />
+                  <Grid
+                    className={classes.gridText}
+                    container
+                    item
+                    xs={12}
+                    sm
+                    container
+                  >
+                    <Grid item xs container direction="column" spacing={16}>
+                      <Grid item xs>
+                        <Typography
+                          className={classes.titleCard}
+                          gutterBottom
+                          variant="h6"
+                        >
+                          Competition
+                        </Typography>
+                        <Typography
+                          className={classes.textCard}
+                          gutterBottom
+                          variant="subtitle1"
+                          
+                        >
+                          Select this option if you expect to provide competition
+                          between students in the tutor. Enabling this behavior will
+                          activate the following game elements in the system:
+                          <strong>Leaderboard</strong> and <strong>Points.</strong>
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid container direction="row">
+                  <img className={classes.icon} alt="x" src={leaderboard} />
+                  <img className={classes.icon} alt="x" src={points} />
                 </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Divider />
-          <Grid container direction="row">
-            <div>
-              <img
-                style={{ height: 50, width: 50 }}
-                alt="x"
-                src={leaderboard}
-              />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
-            </div>
-          </Grid>
-        </Card>
+          </Card>
         </div>
         <div className={classes.root}>
-
-        <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
-            <img className={classes.img} alt="complex" src={enjoyment} />
-            <Grid container item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={16}>
-                <Grid item xs>
-                  <Typography gutterBottom variant="h6">
-                    Enjoyment
-                  </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
-                    Select this option if you expect your students to be mainly
-                    enjoyed by the tutor while they are learning. Enabling this
-                    behavior will activate the following game elements in the
-                    system: Story, Rewards, Badges, Points, Avatar and Quests
-                  </Typography>
+          <Card>
+            <Grid container style={{ padding: 20 }}>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  direction="row"
+                  spacing={16}
+                  className={classes.gridCard}
+                >
+                  <img
+                    className={classes.img}
+                    alt="complex"
+                    src={enjoyment}
+                  />
+                  <Grid
+                    className={classes.gridText}
+                    container
+                    item
+                    xs={12}
+                    sm
+                    container
+                  >
+                    <Grid item xs container direction="column" spacing={16}>
+                      <Grid item xs>
+                        <Typography
+                          className={classes.titleCard}
+                          gutterBottom
+                          variant="h6"
+                        >
+                          Enjoyment
+                        </Typography>
+                        <Typography
+                          className={classes.textCard}
+                          gutterBottom
+                          variant="subtitle1"
+                          
+                        >
+                          Select this option if you expect your students to be mainly
+                      enjoyed by the tutor while they are learning. Enabling this
+                      behavior will activate the following game elements in the
+                      system: <strong>Story,</strong> <strong>Rewards,</strong> <strong>Badges,</strong> <strong>Points,</strong> <strong>Avatar,</strong> and <strong>Quest.</strong>
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid container direction="row">
+                <img className={classes.icon} alt="x" src={story} />
+                <img
+                className={classes.icon}
+                  alt="x"
+                  src={rewards}
+                />
+                <img className={classes.icon} alt="x" src={badge} />
+                  <img
+                  className={classes.icon}
+                    alt="x"
+                    src={points}
+                  />
+                  <img
+                  className={classes.icon}
+                    alt="x"
+                    src={avatar}
+                  />
+                  <img
+                  className={classes.icon}
+                    alt="x"
+                    src={quests}
+                  />
                 </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Divider />
-          <Grid item xs container direction="row">
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={story} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={rewards} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={avatar} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={quests} />
-            </div>
-          </Grid>
-        </Card>
-        </div>
-
-        <div className={classes.root}>
-
-        <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
-            <img className={classes.img} alt="complex" src={exploration} />
-            <Grid container item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={16}>
-                <Grid item xs>
-                  <Typography gutterBottom variant="h6">
-                    Exploration
-                  </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
-                    Select this option if you expect to incentive the
-                    exploration of the tutor by your students.Enabling this
-                    behavior will activate the following game elements in the
-                    system: Levels, Challenges, Feedback, Boos Fight,
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Divider />
-          <Grid item xs container direction="row">
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={levels} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={challenges} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={bossfight} />
-            </div>
-          </Grid>
-        </Card>
+          </Card>
         </div>
         <div className={classes.root}>
-
-        <Card>
-          <Grid container spacing={16} style={{ alignItems: "center" }}>
-            <img className={classes.img} alt="complex" src={effectiveness} />
-            <Grid container item xs={12} sm container>
-              <Grid item xs container direction="column" spacing={16}>
-                <Grid item xs>
-                  <Typography gutterBottom variant="h6">
-                    Effectiveness
-                  </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
-                    Select this options if you mainly expect your students to be
-                    effective when they are using the tutor. Enabling this
-                    behavior will activate the following game elements in the
-                    system: Leaderboard, Badges and Points
-                  </Typography>
+          <Card>
+            <Grid container style={{ padding: 20 }}>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  direction="row"
+                  spacing={16}
+                  className={classes.gridCard}
+                >
+                  <img
+                    className={classes.img}
+                    alt="complex"
+                    src={exploration}
+                  />
+                  <Grid
+                    className={classes.gridText}
+                    container
+                    item
+                    xs={12}
+                    sm
+                    container
+                  >
+                    <Grid item xs container direction="column" spacing={16}>
+                      <Grid item xs>
+                        <Typography
+                          className={classes.titleCard}
+                          gutterBottom
+                          variant="h6"
+                        >
+                          Exploration
+                        </Typography>
+                        <Typography
+                          className={classes.textCard}
+                          gutterBottom
+                          variant="subtitle1"
+                          
+                        >
+                          Select this option if you expect to incentive the
+                          exploration of the tutor by your students.Enabling this
+                          behavior will activate the following game elements in the
+                          system: <strong>Levels,</strong> <strong>Challenges,</strong> <strong>Boss Fight.</strong>
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid container direction="row">
+                  <img className={classes.icon} alt="x" src={levels} />
+                  <img className={classes.icon} alt="x" src={challenges} />
+                  <img className={classes.icon} alt="x" src={bossfight} />
                 </Grid>
               </Grid>
             </Grid>
-          </Grid>
-          <Divider />
-          <Grid item xs container direction="row">
-            <div>
-              <img
-                style={{ height: 50, width: 50 }}
-                alt="x"
-                src={leaderboard}
-              />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={badge} />
-            </div>
-            <div>
-              <img style={{ height: 50, width: 50 }} alt="x" src={points} />
-            </div>
-          </Grid>
-        </Card>
+          </Card>
+        </div>
+        <div className={classes.root}>
+          <Card>
+            <Grid container style={{ padding: 20 }}>
+              <Grid item xs={12}>
+                <Grid
+                  container
+                  direction="row"
+                  spacing={16}
+                  className={classes.gridCard}
+                >
+                  <img
+                    className={classes.img}
+                    alt="complex"
+                    src={effectiveness}
+                  />
+                  <Grid
+                    className={classes.gridText}
+                    container
+                    item
+                    xs={12}
+                    sm
+                    container
+                  >
+                    <Grid item xs container direction="column" spacing={16}>
+                      <Grid item xs>
+                        <Typography
+                          className={classes.titleCard}
+                          gutterBottom
+                          variant="h6"
+                        >
+                        Effectiveness
+                        </Typography>
+                        <Typography
+                          className={classes.textCard}
+                          gutterBottom
+                          variant="subtitle1"
+                          
+                        >
+                        Select this options if you mainly expect your students to be
+                        effective when they are using the tutor. Enabling this
+                        behavior will activate the following game elements in the
+                        system: <strong>Leaderboard,</strong> <strong>Badges,</strong> <strong>Points.</strong>
+                        </Typography>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Divider />
+                <Grid container direction="row">
+                  <img className={classes.icon} alt="x" src={leaderboard} />
+                  <img className={classes.icon} alt="x" src={badge} />
+                  <img className={classes.icon} alt="x" src={points} />
+                </Grid>
+              </Grid>
+            </Grid>
+          </Card>
         </div>
       </div>
     );

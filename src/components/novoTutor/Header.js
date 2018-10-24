@@ -54,6 +54,9 @@ const styles = theme => ({
       marginLeft: theme.spacing.unit * 3,
       width: 'auto',
     },
+    [theme.breakpoints.down("sm")]: {
+      display: 'none'
+    },
   },
   searchIcon: {
     width: theme.spacing.unit * 9,
@@ -61,6 +64,9 @@ const styles = theme => ({
     position: 'absolute',
     pointerEvents: 'none',
     display: 'flex',
+    [theme.breakpoints.down("sm")]: {
+      display: 'none'
+    },
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -116,18 +122,32 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
+    [theme.breakpoints.down('sm')]:{
+      transition: 'none',
+      marginLeft: 'none',
+      width: ''
+    },
   },
   menuButton: {
     marginLeft: 12,
     marginRight: 36,
+    [theme.breakpoints.down("sm")]: {
+      marginRight: 12
+    }
   },
   menuButtonHidden: {
     display: 'none',
+    [theme.breakpoints.down('sm')]:{
+      display: 'block'
+    },
   },
   title: {
     flexGrow: 1,
   },
   drawerPaper: {
+    [theme.breakpoints.down('sm')]:{
+      display: 'none'
+    },
     position: 'relative',
     whiteSpace: 'nowrap',
     width: drawerWidth,
@@ -153,7 +173,7 @@ class Header extends React.Component {
   state = {
     anchorEl: null,
     mobileMoreAnchorEl: null,
-    open: true,
+    open: false,
   };
 
   handleProfileMenuOpen = event => {

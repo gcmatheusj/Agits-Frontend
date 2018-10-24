@@ -72,7 +72,7 @@ function getStepContent(step) {
 
 class VerticalLinearStepper extends Component {
     state = {
-        activeStep: 0,
+        activeStep: 3,
     };
 
     handleNext = () => {
