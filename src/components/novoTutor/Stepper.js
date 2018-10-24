@@ -14,6 +14,12 @@ const styles = theme => ({
     root: {
         width: '100%',
     },
+    stepper: {
+        [theme.breakpoints.down('sm')]: {
+            padding: 15,
+            marginTop: 10
+        },
+    },
     button: {
       marginTop: theme.spacing.unit,
       marginRight: theme.spacing.unit,
@@ -86,7 +92,7 @@ class VerticalLinearStepper extends Component {
 
         return (
         <div className={classes.root}>
-            <Stepper activeStep={activeStep} orientation="vertical">
+            <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
             {steps.map((label, index) => {
                 return (
                 <Step key={label}>

@@ -11,6 +11,39 @@ const styles = theme => ({
         flexGrow: 1,
         maxWidth: '100%',
         padding: theme.spacing.unit * 2,
+        [theme.breakpoints.down('sm')]: {
+          padding: 1,
+          marginTop: 10,
+          marginBottom: 20
+        },
+    },
+    gridCard: {
+      alignItems: 'center',
+      [theme.breakpoints.down('sm')]: {
+        justifyContent: 'center'
+      },
+    },
+    gridText: {
+      [theme.breakpoints.down('sm')]: {
+        justifyContent: 'center'
+      },
+    },
+    title: {
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '0.9rem',
+      },
+    },
+    titleCard: {
+      fontWeight: 'bold',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '0.9rem',
+        textAlign: 'center'
+      },
+    },
+    textCard: {
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '0.8rem'
+      },
     },
     image: {
         width: 128,
@@ -40,10 +73,10 @@ class DefineReports extends Component {
         const { classes } = this.props;
         return (
             <div style={{ justifyContent: "center" }}>
-            <Typography variant="subtitle1">
+            <Typography className={classes.title} variant="subtitle1">
             This is the least step to customize your tutor!
         </Typography>
-        <Typography variant="subtitle1">
+        <Typography className={classes.title} variant="subtitle1">
             You can also select which kind of reports the tutor will provide
         </Typography>
         <div className={classes.root}>
@@ -54,16 +87,16 @@ class DefineReports extends Component {
                   container
                   direction="row"
                   spacing={16}
-                  style={{ alignItems: "center" }}
+                  className={classes.gridCard}
                 >
                   <img className={classes.img} alt="complex" src={student} />
-                  <Grid container item xs={12} sm container>
-                    <Grid item xs container direction="column" spacing={16}>
+                  <Grid className={classes.gridText} container item xs={12} sm container>
+                    <Grid item xs container direction="column" spacing={16} >
                       <Grid item xs>
-                      <Typography gutterBottom variant="h6">
+                      <Typography className={classes.titleCard} gutterBottom variant="h6">
                       Students Reports 
                   </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
+                  <Typography className={classes.textCard} gutterBottom variant="subtitle1" align="justify">
                       Enable this feature if you want to provide for your students different types of 
                       reports regarding her learning performance in the domain. It includes reports on 
                       learning performance in the overall domain or on particular subjects as well as 
@@ -91,16 +124,16 @@ class DefineReports extends Component {
                   container
                   direction="row"
                   spacing={16}
-                  style={{ alignItems: "center" }}
+                  className={classes.gridCard}
                 >
                   <img className={classes.img} alt="complex" src={teacher} />
-                  <Grid container item xs={12} sm container>
+                  <Grid className={classes.gridText} container item xs={12} sm container>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
-                      <Typography gutterBottom variant="h6">
+                      <Typography className={classes.titleCard} gutterBottom variant="h6">
                       Teacher Reports
                   </Typography>
-                  <Typography gutterBottom variant="subtitle1" align="justify">
+                  <Typography className={classes.textCard} gutterBottom variant="subtitle1" align="justify">
                       Enable this feature if you want to visualize reports about the interaction, 
                       learning performance and other interesting reports about your students.
                   </Typography>
