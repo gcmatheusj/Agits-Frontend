@@ -72,9 +72,9 @@ class DefineReports extends Component {
     const { classes } = this.props;
     return (
       <div style={{ justifyContent: "center" }}>
-        <Typography className={classes.title} variant="subtitle1">
+        {/*<Typography className={classes.title} variant="subtitle1">
           This is the least step to customize your tutor!
-        </Typography>
+    </Typography>*/}
         <Typography className={classes.title} variant="subtitle1">
           You can also select which kind of reports the tutor will provide
         </Typography>
@@ -114,9 +114,9 @@ class DefineReports extends Component {
                         >
                           Enable this feature if you want to provide for your
                           students different types of reports regarding her
-                          learning performance in the domain. It includes
-                          reports on learning performance in the overall domain
-                          or on particular subjects as well as tests history
+                          learning performance. It includes reports on learning
+                          performance in the overall domainor on particular 
+                          subjects as well as tests history.
                         </Typography>
                       </Grid>
                     </Grid>

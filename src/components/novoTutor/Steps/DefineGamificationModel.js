@@ -104,12 +104,12 @@ class DefineGamificationModel extends Component {
           What is the main behavior do you expect from your students when they
           are learning in the gamifed tutor?
         </Typography>
-        <Typography className={classes.title} variant="subtitle1">
+        {/*<Typography className={classes.title} variant="subtitle1">
           Using gamificantion you can drive yours students to a motivating
           experience. We provide six target behavior options that are positively
           supported by the literature! Each behavior enables a particular set of
-          gamification elemwnts in your customized tutor
-        </Typography>
+          gamification elements in your customized tutor
+        </Typography>*/}
         <div className={classes.root}>
           <Card>
             <Grid container style={{ padding: 20 }}>
@@ -149,8 +149,7 @@ class DefineGamificationModel extends Component {
                           
                         >
                           Select this option if you expect your students to be
-                          participative in your course by interacting with the
-                          tutor. Enabling this behavior will activate the following
+                          participative in your course. This will activate the following
                           game elements in the system: <strong>Challenges,</strong> <strong>Levels,</strong> <strong>Leaderboard,</strong> <strong>Story,</strong> <strong>Badges,</strong> <strong>Rewards,</strong> and <strong>Points.</strong>
                         </Typography>
                       </Grid>
@@ -214,9 +213,8 @@ class DefineGamificationModel extends Component {
                           
                         >
                           Select this option if you expect your students to mainly
-                          focus on their learning performance by using the tutor.
-                          Enabling this behavior will activate the following game
-                          elements in the system: <strong>Story,</strong> <strong>Feedback,</strong> <strong>Rewards,</strong> <strong>Badges,</strong>
+                          focus on their learning performance. This will activate the
+                          following game elements in the system: <strong>Story,</strong> <strong>Feedback,</strong> <strong>Rewards,</strong> <strong>Badges,</strong>
                           <strong>Challenges,</strong> <strong>Leaderboard,</strong> <strong>Points,</strong> and <strong>Levels.</strong>
                         </Typography>
                       </Grid>
@@ -289,8 +287,8 @@ class DefineGamificationModel extends Component {
                           
                         >
                           Select this option if you expect to provide competition
-                          between students in the tutor. Enabling this behavior will
-                          activate the following game elements in the system:
+                          between students. This will activate the following game 
+                          elements in the system:
                           <strong>Leaderboard</strong> and <strong>Points.</strong>
                         </Typography>
                       </Grid>
@@ -345,8 +343,8 @@ class DefineGamificationModel extends Component {
                           
                         >
                           Select this option if you expect your students to be mainly
-                      enjoyed by the tutor while they are learning. Enabling this
-                      behavior will activate the following game elements in the
+                      enjoyed by the tutor while they are learning. This
+                      will activate the following game elements in the
                       system: <strong>Story,</strong> <strong>Rewards,</strong> <strong>Badges,</strong> <strong>Points,</strong> <strong>Avatar,</strong> and <strong>Quest.</strong>
                         </Typography>
                       </Grid>
@@ -421,8 +419,8 @@ class DefineGamificationModel extends Component {
                           
                         >
                           Select this option if you expect to incentive the
-                          exploration of the tutor by your students.Enabling this
-                          behavior will activate the following game elements in the
+                          exploration of the tutor by your students.This
+                          will activate the following game elements in the
                           system: <strong>Levels,</strong> <strong>Challenges,</strong> <strong>Boss Fight.</strong>
                         </Typography>
                       </Grid>
@@ -478,8 +476,8 @@ class DefineGamificationModel extends Component {
                           
                         >
                         Select this options if you mainly expect your students to be
-                        effective when they are using the tutor. Enabling this
-                        behavior will activate the following game elements in the
+                        effective when they are using the tutor. This
+                        will activate the following game elements in the
                         system: <strong>Leaderboard,</strong> <strong>Badges,</strong> <strong>Points.</strong>
                         </Typography>
                       </Grid>
