@@ -197,13 +197,14 @@ class DefineGamificationModel extends Component {
                           >
                             Participation
                         </Typography>
-                          <Typography
-                            className={classes.textCard}
-                            gutterBottom
-                            variant="subtitle1"
-
-                          >
-                            Select this option will activate the following
+                        <Typography
+                          className={classes.textCard}
+                          gutterBottom
+                          variant="subtitle1"
+                          
+                        >
+                          Select this option if you expect your students to be
+                          participative in your course. This will activate the following
                           game elements in the system: <strong>Challenges,</strong> <strong>Levels,</strong> <strong>Leaderboard,</strong> <strong>Story,</strong> <strong>Badges,</strong> <strong>Rewards,</strong> and <strong>Points.</strong>
                           </Typography>
                         </Grid>
@@ -341,9 +342,8 @@ class DefineGamificationModel extends Component {
 
                         >
                           Select this option if you expect your students to mainly
-                          focus on their learning performance by using the tutor.
-                          Enabling this behavior will activate the following game
-                          elements in the system: <strong>Story,</strong> <strong>Feedback,</strong> <strong>Rewards,</strong> <strong>Badges,</strong>
+                          focus on their learning performance. This will activate the
+                          following game elements in the system: <strong>Story,</strong> <strong>Feedback,</strong> <strong>Rewards,</strong> <strong>Badges,</strong>
                           <strong>Challenges,</strong> <strong>Leaderboard,</strong> <strong>Points,</strong> and <strong>Levels.</strong>
                         </Typography>
                       </Grid>
@@ -416,8 +416,8 @@ class DefineGamificationModel extends Component {
 
                         >
                           Select this option if you expect to provide competition
-                          between students in the tutor. Enabling this behavior will
-                          activate the following game elements in the system:
+                          between students. This will activate the following game 
+                          elements in the system:
                           <strong>Leaderboard</strong> and <strong>Points.</strong>
                         </Typography>
                       </Grid>
@@ -472,8 +472,8 @@ class DefineGamificationModel extends Component {
 
                         >
                           Select this option if you expect your students to be mainly
-                      enjoyed by the tutor while they are learning. Enabling this
-                      behavior will activate the following game elements in the
+                      enjoyed by the tutor while they are learning. This
+                      will activate the following game elements in the
                       system: <strong>Story,</strong> <strong>Rewards,</strong> <strong>Badges,</strong> <strong>Points,</strong> <strong>Avatar,</strong> and <strong>Quest.</strong>
                         </Typography>
                       </Grid>
@@ -548,8 +548,8 @@ class DefineGamificationModel extends Component {
 
                         >
                           Select this option if you expect to incentive the
-                          exploration of the tutor by your students.Enabling this
-                          behavior will activate the following game elements in the
+                          exploration of the tutor by your students.This
+                          will activate the following game elements in the
                           system: <strong>Levels,</strong> <strong>Challenges,</strong> <strong>Boss Fight.</strong>
                         </Typography>
                       </Grid>
