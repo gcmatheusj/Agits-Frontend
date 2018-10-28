@@ -6,6 +6,7 @@ import RecuperarSenha from "./components/recuperarSenha"
 import Cadastro from "./components/cadastro/"
 import Dashboard from "./components/dashboard"
 import NovoTutor from "./components/novoTutor"
+import NewHeader from './components/NewHeader'
 import "./App.css"
 
 const theme = createMuiTheme({
@@ -27,6 +28,7 @@ const App = () =>
         <Route path="/cadastro" component={Cadastro} />
         <Route path="/dashboard" component={Dashboard} />
         <Route path="/novo-tutor" component={NovoTutor} />
+        <Route path="/new-header" component={NewHeader} />
       </div>
     </MuiThemeProvider>
   </Router>

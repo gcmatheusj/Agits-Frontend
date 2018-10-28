@@ -27,7 +27,6 @@ const styles = theme => ({
     },
     label: {
         paddingTop: '30px',
-        paddingBottom: '30px',
         fontSize: '14pt',
     },
     formControl: {
