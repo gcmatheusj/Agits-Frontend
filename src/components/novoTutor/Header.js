@@ -167,7 +167,7 @@ const styles = theme => ({
       width: theme.spacing.unit * 9,
     },
   },
-});
+})
 
 class Header extends React.Component {
   state = {

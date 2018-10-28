@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Grid, Card, Typography, Divider } from "@material-ui/core";
+import { Grid, Card, Typography, Divider, ButtonBase, Button } from "@material-ui/core";
+import Paper from "@material-ui/core/Paper";
+import Collapse from "@material-ui/core/Collapse";
 import PropTypes from "prop-types";
 import { withStyles } from "@material-ui/core/styles";
 
@@ -61,11 +63,28 @@ const styles = theme => ({
       marginBottom: 15
     }
   },
+  cardButton: {
+    display: "block",
+    textAlign: "initial"
+  },
+  gridContent: {
+    padding: 20,
+    paddingBottom: 0
+  },
   image: {
     [theme.breakpoints.down('sm')]: {
       width: 10,
       height: 10,
     },
+  },
+  firstIcon: {
+    width: 50,
+    height: 50,
+    margin: 5,
+    marginLeft: 21,
+  },
+  container: {
+    display: "flex"
   },
   img: {
     margin: 20,
@@ -75,8 +94,28 @@ const styles = theme => ({
     },
     width: 128
   },
+  gridGame: {
+    marginLeft: 20,
+  },
+  paper: {
+    margin: theme.spacing.unit,
+    width: 50,
+    height: 60
+  },
+  svg: {
+    width: 100,
+    height: 100
+  },
+  polygon: {
+    fill: theme.palette.common.white,
+    stroke: theme.palette.divider,
+    strokeWidth: 1
+  },
+  collapse: {
+    width: '100%'
+  },
   icon: {
-    height: 50, 
+    height: 50,
     width: 50,
     margin: 5
   }
@@ -86,10 +125,30 @@ class DefineGamificationModel extends Component {
   constructor(props) {
     super(props);
   }
-
   state = {
-    checkedA: true,
-    checkedB: false
+    checked: '',
+  };
+
+  handleChangeA = () => {
+    this.setState({ checked: 'checkedA' });
+  };
+  handleChangeB = () => {
+    this.setState({ checked: 'checkedB' });
+  };
+  handleChangeC = () => {
+    this.setState({ checked: 'checkedC' });
+  };
+  handleChangeD = () => {
+    this.setState({ checked: 'checkedD' });
+  };
+  handleChangeE = () => {
+    this.setState({ checked: 'checkedE' });
+  };
+  handleChangeF = () => {
+    this.setState({ checked: 'checkedF' });
+  };
+  handleChangeG = () => {
+    this.setState({ checked: 'checkedG' });
   };
 
   handleChange = name => event => {
@@ -98,49 +157,45 @@ class DefineGamificationModel extends Component {
 
   render() {
     const { classes } = this.props;
+    const { checked, checkedB, checkedC } = this.state;
     return (
       <div style={{ justifyContent: "center" }}>
         <Typography className={classes.title} variant="subtitle1">
           What is the main behavior do you expect from your students when they
           are learning in the gamifed tutor?
         </Typography>
-        {/*<Typography className={classes.title} variant="subtitle1">
-          Using gamificantion you can drive yours students to a motivating
-          experience. We provide six target behavior options that are positively
-          supported by the literature! Each behavior enables a particular set of
-          gamification elements in your customized tutor
-        </Typography>*/}
         <div className={classes.root}>
           <Card>
-            <Grid container style={{ padding: 20 }}>
-              <Grid item xs={12}>
-                <Grid
-                  container
-                  direction="row"
-                  spacing={16}
-                  className={classes.gridCard}
-                >
-                  <img
-                    className={classes.img}
-                    alt="complex"
-                    src={participation}
-                  />
+            <ButtonBase className={classes.cardButton}>
+              <Grid className={classes.gridContent} container>
+                <Grid item xs={12}>
                   <Grid
-                    className={classes.gridText}
                     container
-                    item
-                    xs={12}
-                    sm
-                    container
+                    direction="row"
+                    spacing={16}
+                    className={classes.gridCard}
                   >
-                    <Grid item xs container direction="column" spacing={16}>
-                      <Grid item xs>
-                        <Typography
-                          className={classes.titleCard}
-                          gutterBottom
-                          variant="h6"
-                        >
-                          Participation
+                    <img
+                      className={classes.img}
+                      alt="complex"
+                      src={participation}
+                    />
+                    <Grid
+                      className={classes.gridText}
+                      container
+                      item
+                      xs={12}
+                      sm
+                      container
+                    >
+                      <Grid item xs container direction="column" spacing={16}>
+                        <Grid item xs>
+                          <Typography
+                            className={classes.titleCard}
+                            gutterBottom
+                            variant="h6"
+                          >
+                            Participation
                         </Typography>
                         <Typography
                           className={classes.textCard}
@@ -151,27 +206,101 @@ class DefineGamificationModel extends Component {
                           Select this option if you expect your students to be
                           participative in your course. This will activate the following
                           game elements in the system: <strong>Challenges,</strong> <strong>Levels,</strong> <strong>Leaderboard,</strong> <strong>Story,</strong> <strong>Badges,</strong> <strong>Rewards,</strong> and <strong>Points.</strong>
-                        </Typography>
+                          </Typography>
+                        </Grid>
                       </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
-                <Divider />
-                <Grid container direction="row">
-                  <img className={classes.icon} alt="x" src={story} />
-                  <img
-                  className={classes.icon}
-                    alt="x"
-                    src={rewards}
-                  />
-                  <img className={classes.icon} alt="x" src={badge} />
-                  <img className={classes.icon} alt="x" src={levels} />
-                  <img className={classes.icon} alt="x" src={challenges} />
-                  <img className={classes.icon} alt="x" src={leaderboard} />
-                  <img className={classes.icon} alt="x" src={points} />
+                  <Divider />
                 </Grid>
               </Grid>
-            </Grid>
+            </ButtonBase>
+            <div className={classes.gridGame}>
+              <Button onClick={this.handleChangeA}><img className={classes.icon} alt="x" src={story} /></Button>
+              <Button onClick={this.handleChangeB}><img className={classes.icon} alt="x" src={rewards} /></Button>
+              <Button onClick={this.handleChangeC}><img className={classes.icon} alt="x" src={badge} /></Button>
+              <Button onClick={this.handleChangeD}><img className={classes.icon} alt="x" src={levels} /></Button>
+              <Button onClick={this.handleChangeE}><img className={classes.icon} alt="x" src={challenges} /></Button>
+              <Button onClick={this.handleChangeF}><img className={classes.icon} alt="x" src={leaderboard} /></Button>
+              <Button onClick={this.handleChangeG}><img className={classes.icon} alt="x" src={points} /></Button>
+              <div className={classes.container}>
+                <Collapse className={classes.collapse} in={checked === "checkedA"}>
+                  <Divider />
+                  <Grid container direction="row" alignItems="center">
+                    <Paper elevation={4} className={classes.paper}>
+
+                    </Paper>
+                    <Typography>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </Typography>
+                  </Grid>
+                </Collapse>
+              </div>
+              <div className={classes.container}>
+                <Collapse className={classes.collapse} in={checked === "checkedB"}>
+                  <Divider />
+                  <Grid container direction="row" alignItems="center">
+                    <Paper elevation={4} className={classes.paper}>
+
+                    </Paper>
+                    <Typography>Lorem Ipsum B is simply dummy text of the printing and typesetting industry. </Typography>
+                  </Grid>
+                </Collapse>
+              </div>
+              <div className={classes.container}>
+                <Collapse className={classes.collapse} in={checked === "checkedC"}>
+                  <Divider />
+                  <Grid container direction="row" alignItems="center">
+                    <Paper elevation={4} className={classes.paper}>
+
+                    </Paper>
+                    <Typography>Lorem Ipsum C is simply dummy text of the printing and typesetting industry. </Typography>
+                  </Grid>
+                </Collapse>
+              </div>
+              <div className={classes.container}>
+                <Collapse className={classes.collapse} in={checked === "checkedD"}>
+                  <Divider />
+                  <Grid container direction="row" alignItems="center">
+                    <Paper elevation={4} className={classes.paper}>
+
+                    </Paper>
+                    <Typography>Lorem Ipsum D is simply dummy text of the printing and typesetting industry. </Typography>
+                  </Grid>
+                </Collapse>
+              </div>
+              <div className={classes.container}>
+                <Collapse className={classes.collapse} in={checked === "checkedE"}>
+                  <Divider />
+                  <Grid container direction="row" alignItems="center">
+                    <Paper elevation={4} className={classes.paper}>
+
+                    </Paper>
+                    <Typography>Lorem Ipsum E is simply dummy text of the printing and typesetting industry. </Typography>
+                  </Grid>
+                </Collapse>
+              </div>
+              <div className={classes.container}>
+                <Collapse className={classes.collapse} in={checked === "checkedF"}>
+                  <Divider />
+                  <Grid container direction="row" alignItems="center">
+                    <Paper elevation={4} className={classes.paper}>
+
+                    </Paper>
+                    <Typography>Lorem Ipsum F is simply dummy text of the printing and typesetting industry. </Typography>
+                  </Grid>
+                </Collapse>
+              </div>
+              <div className={classes.container}>
+                <Collapse className={classes.collapse} in={checked === "checkedG"}>
+                  <Divider />
+                  <Grid container direction="row" alignItems="center">
+                    <Paper elevation={4} className={classes.paper}>
+
+                    </Paper>
+                    <Typography>Lorem Ipsum G is simply dummy text of the printing and typesetting industry. </Typography>
+                  </Grid>
+                </Collapse>
+              </div>
+            </div>
           </Card>
         </div>
         <div className={classes.root}>
@@ -210,7 +339,7 @@ class DefineGamificationModel extends Component {
                           className={classes.textCard}
                           gutterBottom
                           variant="subtitle1"
-                          
+
                         >
                           Select this option if you expect your students to mainly
                           focus on their learning performance. This will activate the
@@ -225,19 +354,19 @@ class DefineGamificationModel extends Component {
                 <Grid container direction="row">
                   <img className={classes.icon} alt="x" src={story} />
                   <img
-                  className={classes.icon}
+                    className={classes.icon}
                     alt="x"
                     src={feedback}
                   />
                   <img
-                  className={classes.icon}
+                    className={classes.icon}
                     alt="x"
                     src={rewards}
                   />
                   <img className={classes.icon} alt="x" src={badge} />
                   <img className={classes.icon} alt="x" src={levels} />
                   <img
-                  className={classes.icon}
+                    className={classes.icon}
                     alt="x"
                     src={challenges}
                   />
@@ -284,7 +413,7 @@ class DefineGamificationModel extends Component {
                           className={classes.textCard}
                           gutterBottom
                           variant="subtitle1"
-                          
+
                         >
                           Select this option if you expect to provide competition
                           between students. This will activate the following game 
@@ -340,7 +469,7 @@ class DefineGamificationModel extends Component {
                           className={classes.textCard}
                           gutterBottom
                           variant="subtitle1"
-                          
+
                         >
                           Select this option if you expect your students to be mainly
                       enjoyed by the tutor while they are learning. This
@@ -353,25 +482,25 @@ class DefineGamificationModel extends Component {
                 </Grid>
                 <Divider />
                 <Grid container direction="row">
-                <img className={classes.icon} alt="x" src={story} />
-                <img
-                className={classes.icon}
-                  alt="x"
-                  src={rewards}
-                />
-                <img className={classes.icon} alt="x" src={badge} />
+                  <img className={classes.icon} alt="x" src={story} />
                   <img
-                  className={classes.icon}
+                    className={classes.icon}
+                    alt="x"
+                    src={rewards}
+                  />
+                  <img className={classes.icon} alt="x" src={badge} />
+                  <img
+                    className={classes.icon}
                     alt="x"
                     src={points}
                   />
                   <img
-                  className={classes.icon}
+                    className={classes.icon}
                     alt="x"
                     src={avatar}
                   />
                   <img
-                  className={classes.icon}
+                    className={classes.icon}
                     alt="x"
                     src={quests}
                   />
@@ -416,7 +545,7 @@ class DefineGamificationModel extends Component {
                           className={classes.textCard}
                           gutterBottom
                           variant="subtitle1"
-                          
+
                         >
                           Select this option if you expect to incentive the
                           exploration of the tutor by your students.This
@@ -467,17 +596,17 @@ class DefineGamificationModel extends Component {
                           gutterBottom
                           variant="h6"
                         >
-                        Effectiveness
+                          Effectiveness
                         </Typography>
                         <Typography
                           className={classes.textCard}
                           gutterBottom
                           variant="subtitle1"
-                          
+
                         >
-                        Select this options if you mainly expect your students to be
-                        effective when they are using the tutor. This
-                        will activate the following game elements in the
+                          Select this options if you mainly expect your students to be
+                          effective when they are using the tutor. Enabling this
+                          behavior will activate the following game elements in the
                         system: <strong>Leaderboard,</strong> <strong>Badges,</strong> <strong>Points.</strong>
                         </Typography>
                       </Grid>
