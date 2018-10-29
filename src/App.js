@@ -1,25 +1,25 @@
-import React from "react"
-import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles"
-import { BrowserRouter as Router, Route } from "react-router-dom"
-import Login from "./components/login"
-import RecuperarSenha from "./components/recuperarSenha"
-import Cadastro from "./components/cadastro/"
-import Dashboard from "./components/dashboard"
-import NovoTutor from "./components/novoTutor"
-import NewHeader from './components/NewHeader'
-import "./App.css"
+import React from 'react';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Login from './components/login';
+import RecuperarSenha from './components/recuperarSenha';
+import Cadastro from './components/cadastro';
+import Dashboard from './components/dashboard';
+import NovoTutor from './components/novoTutor';
+import NewHeader from './components/NewHeader';
+import './App.css';
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: "#445aa4",
-      main: "#003175",
-      dark: "#000a49"
-    }
-  }
-})
+      light: '#445aa4',
+      main: '#003175',
+      dark: '#000a49',
+    },
+  },
+});
 
-const App = () => 
+const App = () => (
   <Router>
     <MuiThemeProvider theme={theme}>
       <div>
@@ -32,6 +32,6 @@ const App = () =>
       </div>
     </MuiThemeProvider>
   </Router>
+);
 
-
-export default App
+export default App;
