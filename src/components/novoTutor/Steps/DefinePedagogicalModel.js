@@ -1,114 +1,104 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
-import { Grid, Typography, Card, Switch, Paper } from "@material-ui/core";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import {
+  Grid, Typography, Card, Switch,
+} from '@material-ui/core';
 
-import curriculum from "../../../assets/curriculum.png";
-import syllabus from ".././../../assets/syllabus.png";
+import curriculum from '../../../assets/curriculum.png';
+import syllabus from '../../../assets/syllabus.png';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    maxWidth: "100%",
+    maxWidth: '100%',
     padding: theme.spacing.unit * 2,
     [theme.breakpoints.down('sm')]: {
       padding: 1,
       marginTop: 10,
-      marginBottom: 20
+      marginBottom: 20,
     },
   },
   gridCard: {
     alignItems: 'center',
     [theme.breakpoints.down('sm')]: {
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
   },
   gridText: {
     [theme.breakpoints.down('sm')]: {
-      justifyContent: 'center'
+      justifyContent: 'center',
     },
   },
   title: {
     [theme.breakpoints.down('sm')]: {
-      fontSize: '0.9rem'
+      fontSize: '0.9rem',
     },
   },
   titleCard: {
     fontWeight: 'bold',
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.9rem',
-      textAlign: 'center'
+      textAlign: 'center',
     },
   },
   textCard: {
     [theme.breakpoints.down('sm')]: {
-      fontSize: '0.8rem'
+      fontSize: '0.8rem',
     },
   },
   image: {
     width: 128,
-    height: 128
+    height: 128,
   },
   img: {
-    margin: 20
-  }
+    margin: 20,
+  },
 });
 
 class DefinePedagogicalModel extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   state = {
     checkedA: true,
-    checkedB: false
+    checkedB: false,
   };
 
-  handleChange = name => event => {
+  handleChange = name => (event) => {
     this.setState({ [name]: event.target.checked });
   };
 
   render() {
     const { classes } = this.props;
+    const { checkedA, checkedB } = this.state;
+
     return (
-        <div style={{ justifyContent: "center" }}>
+      <div style={{ justifyContent: 'center' }}>
         <Typography className={classes.title} variant="subtitle1">
-          We use the most advanced techniques for providing an adaptive and
-          intelligent tutor for your students!
+          We use the most advanced techniques for providing an adaptive and intelligent tutor for
+          your students!
         </Typography>
         <div className={classes.root}>
           <Card>
             <Grid container style={{ padding: 20 }}>
               <Grid item xs={12}>
-                <Grid
-                  container
-                  direction="row"
-                  spacing={16}
-                  className={classes.gridCard}
-                >
+                <Grid container direction="row" spacing={16} className={classes.gridCard}>
                   <img className={classes.img} alt="complex" src={curriculum} />
-                  <Grid className={classes.gridText} container item xs={12} sm container>
+                  <Grid className={classes.gridText} container item xs={12} sm>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
                         <Typography className={classes.titleCard} gutterBottom variant="h6">
                           Knowledge tracing and curriculum sequence
                         </Typography>
-                        <Typography
-                          gutterBottom
-                          variant="subtitle1"
-                          className={classes.textCard}
-                        >
-                          By default your customized tutor maskes use of current
-                          intelligent techniques that model student's knowledge
-                          to accurately decide which problems it should give to
-                          students at any given time.
+                        <Typography gutterBottom variant="subtitle1" className={classes.textCard}>
+                          By default your customized tutor maskes use of current intelligent
+                          techniques that model student&apos;s knowledge to accurately decide which
+                          problems it should give to students at any given time.
                         </Typography>
                       </Grid>
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={this.state.checkedA}
-                    onChange={this.handleChange("checkedA")}
+                    checked={checkedA}
+                    onChange={this.handleChange('checkedA')}
                     value="checkedA"
                     color="primary"
                   />
@@ -121,33 +111,24 @@ class DefinePedagogicalModel extends React.Component {
           <Card>
             <Grid container style={{ padding: 20 }}>
               <Grid item xs={12}>
-                <Grid
-                  container
-                  direction="row"
-                  spacing={16}
-                  className={classes.gridCard}
-                >
+                <Grid container direction="row" spacing={16} className={classes.gridCard}>
                   <img className={classes.img} alt="complex" src={syllabus} />
-                  <Grid className={classes.gridText} container item xs={12} sm container>
+                  <Grid className={classes.gridText} container item xs={12} sm>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
                         <Typography className={classes.titleCard} gutterBottom variant="h6">
                           Syllabus
                         </Typography>
-                        <Typography
-                          gutterBottom
-                          variant="subtitle1"
-                          className={classes.textCard}
-                        >
-                        Enable this feature if you want to manage the schedule and subjects on which
-                        your students will learn using the tutor
+                        <Typography gutterBottom variant="subtitle1" className={classes.textCard}>
+                          Enable this feature if you want to manage the schedule and subjects on
+                          which your students will learn using the tutor
                         </Typography>
                       </Grid>
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={this.state.checkedB}
-                    onChange={this.handleChange("checkedB")}
+                    checked={checkedB}
+                    onChange={this.handleChange('checkedB')}
                     value="checkedB"
                     color="primary"
                   />
@@ -162,7 +143,7 @@ class DefinePedagogicalModel extends React.Component {
 }
 
 DefinePedagogicalModel.propTypes = {
-  classes: PropTypes.object.isRequired
+  classes: PropTypes.shape.isRequired,
 };
 
 export default withStyles(styles)(DefinePedagogicalModel);

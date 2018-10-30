@@ -1,45 +1,40 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
-import {withStyles, Card, CardActions, CardContent, Button, Typography, Grid, Divider} from '@material-ui/core';
-
+import { withStyles, Card, CardContent } from '@material-ui/core';
 
 const styles = {
-    card: {
-        width: '100%',
-    },
-    divider: {
-        width: '100%'
-    },
-    bullet: {
-        display: 'inline-block',
-        margin: '0 2px',
-        transform: 'scale(0.8)',
-    },
-    title: {
-        marginBottom: 16,
-        fontSize: 14,
-    },
-    pos: {
-        marginBottom: 12,
-    },
+  card: {
+    width: '100%',
+  },
+  divider: {
+    width: '100%',
+  },
+  bullet: {
+    display: 'inline-block',
+    margin: '0 2px',
+    transform: 'scale(0.8)',
+  },
+  title: {
+    marginBottom: 16,
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
 };
 
-const Content = props => {
-    const { classes } = props;
-    const bull = <span className={classes.bullet}>•</span>;
+const Content = (props) => {
+  const { classes } = props;
 
-    return (
-        <Card className={classes.card}>
-                <CardContent>
-                    New Content
-                </CardContent>
-            </Card>
-    )
-}
-
+  return (
+    <Card className={classes.card}>
+      <CardContent>New Content</CardContent>
+    </Card>
+  );
+};
 
 Content.propTypes = {
-    classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape.isRequired,
 };
 
-export default withStyles(styles)(Content)
+export default withStyles(styles)(Content);

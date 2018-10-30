@@ -1,16 +1,14 @@
-import React, { Component } from 'react'
-import Sidebar from '../Sidebar'
+import React from 'react';
+import Sidebar from '../Sidebar';
 import Cadastro from './Cadastro';
 
-class TelaCadastro extends Component {
-  render() {
-    return (
-      <div style={{ display: "flex", }}>
-        <Sidebar /> 
-        <Cadastro />        
-      </div>
-    )
-  }
+function TelaCadastro() {
+  return (
+    <div style={{ display: 'flex' }}>
+      <Sidebar />
+      <Cadastro />
+    </div>
+  );
 }
 
-export default TelaCadastro
+export default TelaCadastro;

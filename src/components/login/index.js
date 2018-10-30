@@ -1,16 +1,12 @@
-import React, { Component } from 'react'
-import Login from './Login'
-import Sidebar from '../Sidebar'
+import React from 'react';
+import Login from './Login';
+import Sidebar from '../Sidebar';
 
-class TelaLogin extends Component {
-  render() {
-    return (
-      <div style={{ display: "flex", }}>
-        <Sidebar></Sidebar> 
-         <Login></Login>         
-      </div>
-    )
-  }
-}
+const TelaLogin = () => (
+  <div style={{ display: 'flex' }}>
+    <Sidebar />
+    <Login />
+  </div>
+);
 
-export default TelaLogin
+export default TelaLogin;
