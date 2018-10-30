@@ -1,11 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
+import {
+  withStyles, AppBar, Tabs, Tab, Typography, Grid,
+} from '@material-ui/core';
 import Content from './Content';
 import Ranking from './Ranking';
-import SwipeableViews from 'react-swipeable-views';
 import NewsActivities from './News&Activities';
-import { withStyles, AppBar, Tabs, Tab,  Typography, Grid} from '@material-ui/core';
-
 
 function TabContainer({ children, dir }) {
   return (
@@ -43,52 +44,53 @@ class FullWidthTabs extends React.Component {
     this.setState({ value });
   };
 
-  handleChangeIndex = index => {
+  handleChangeIndex = (index) => {
     this.setState({ value: index });
   };
 
   render() {
     const { classes, theme } = this.props;
+    const { value } = this.state;
 
     return (
       <main className={classes.content}>
         <div className={classes.appBarSpacer}>
-        <AppBar position="static" color="default">
-          <Tabs
-              style={{ backgroundColor: '#fff'}}
-              value={this.state.value}
+          <AppBar position="static" color="default">
+            <Tabs
+              style={{ backgroundColor: '#fff' }}
+              value={value}
               onChange={this.handleChange}
               indicatorColor="primary"
               textColor="primary"
               fullWidth
-          >
-            <Tab label="Turma  1" />
-            <Tab label="Turma 2" />
-          </Tabs>
-        </AppBar>
-        <SwipeableViews
-            style={{ backgroundColor: '#f1f1f1'}}
+            >
+              <Tab label="Turma  1" />
+              <Tab label="Turma 2" />
+            </Tabs>
+          </AppBar>
+          <SwipeableViews
+            style={{ backgroundColor: '#f1f1f1' }}
             axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-            index={this.state.value}
+            index={value}
             onChangeIndex={this.handleChangeIndex}
-        >
-          <TabContainer dir={theme.direction} >
-          <Grid container >
-            <Grid container direction='row' item xs={12} sm={8}>
-              <NewsActivities />
-            </Grid>
-            <Grid container item xs={12} sm={4}>
-              <Grid container direction='column'> 
-                <Ranking />
+          >
+            <TabContainer dir={theme.direction}>
+              <Grid container>
+                <Grid container direction="row" item xs={12} sm={8}>
+                  <NewsActivities />
+                </Grid>
+                <Grid container item xs={12} sm={4}>
+                  <Grid container direction="column">
+                    <Ranking />
+                  </Grid>
+                  <Grid container direction="column">
+                    <Content />
+                  </Grid>
+                </Grid>
               </Grid>
-              <Grid container direction='column'> 
-                <Content />
-              </Grid>
-            </Grid>
-          </Grid>
-          </TabContainer>
-          <TabContainer dir={theme.direction}>Turma 2</TabContainer>
-        </SwipeableViews>
+            </TabContainer>
+            <TabContainer dir={theme.direction}>Turma 2</TabContainer>
+          </SwipeableViews>
         </div>
       </main>
     );
@@ -96,8 +98,8 @@ class FullWidthTabs extends React.Component {
 }
 
 FullWidthTabs.propTypes = {
-  classes: PropTypes.object.isRequired,
-  theme: PropTypes.object.isRequired,
+  classes: PropTypes.shape.isRequired,
+  theme: PropTypes.shape.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(FullWidthTabs);
