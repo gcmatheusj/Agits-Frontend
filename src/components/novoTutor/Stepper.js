@@ -34,7 +34,6 @@ const styles = theme => ({
 
 function getSteps() {
     return [
-        'Start', 
         'Define Domain', 
         'Define Pedagogical Model',
         'Define Gamified Model',
@@ -45,8 +44,6 @@ function getSteps() {
 
 function getStepContent(step) {
     switch (step) {
-        case 0:
-            return <Start/>;
         case 1:
             return <DefineDomainAndSubject/>;
         case 2:
@@ -64,7 +61,7 @@ function getStepContent(step) {
 
 class VerticalLinearStepper extends Component {
     state = {
-        activeStep: 3,
+        activeStep: 1,
     };
 
     handleNext = () => {
@@ -102,7 +99,7 @@ class VerticalLinearStepper extends Component {
                     <div className={classes.actionsContainer}>
                         <div>
                         <Button
-                            disabled={activeStep === 0}
+                            disabled={activeStep === 1}
                             onClick={this.handleBack}
                             className={classes.button}
                         >
