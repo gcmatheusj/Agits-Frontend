@@ -1,36 +1,45 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Toolbar, IconButton, Typography, Input, MenuItem, Menu, List, Divider, Drawer } from '@material-ui/core'
-import { fade } from '@material-ui/core/styles/colorManipulator'
-import { withStyles } from '@material-ui/core/styles'
-import MenuIcon from '@material-ui/icons/Menu'
-import SearchIcon from '@material-ui/icons/Search'
-import AccountCircle from '@material-ui/icons/AccountCircle'
-import SettingsIcon from '@material-ui/icons/Settings'
-import MoreIcon from '@material-ui/icons/MoreVert'
-import { mainListItems } from '../listItems'
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
-import classNames from 'classnames'
-import Content from './Content'
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Input,
+  MenuItem,
+  Menu,
+  List,
+  Divider,
+  Drawer,
+} from '@material-ui/core';
+import { fade } from '@material-ui/core/styles/colorManipulator';
+import { withStyles } from '@material-ui/core/styles';
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+import AccountCircle from '@material-ui/icons/AccountCircle';
+import SettingsIcon from '@material-ui/icons/Settings';
+import MoreIcon from '@material-ui/icons/MoreVert';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import classNames from 'classnames';
+import { mainListItems } from '../listItems';
+import Content from './Content';
 
 const drawerWidth = 240;
 
 const styles = theme => ({
   root: {
-    //width: '100%',
-    display: 'flex'
+    // width: '100%',
+    display: 'flex',
   },
   appBarSpacer: theme.mixins.toolbar,
   content: {
     flexGrow: 1,
-    //marginTop: 80,
-    //padding: theme.spacing.unit * 3,
+    // marginTop: 80,
+    // padding: theme.spacing.unit * 3,
     height: '100vh',
     overflow: 'auto',
   },
-  bar: {
-
-  },
+  bar: {},
   grow: {
     flexGrow: 1,
   },
@@ -39,6 +48,7 @@ const styles = theme => ({
     [theme.breakpoints.up('sm')]: {
       display: 'block',
     },
+    flexGrow: 1,
   },
   search: {
     position: 'relative',
@@ -54,8 +64,8 @@ const styles = theme => ({
       marginLeft: theme.spacing.unit * 3,
       width: 'auto',
     },
-    [theme.breakpoints.down("sm")]: {
-      display: 'none'
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
   },
   searchIcon: {
@@ -64,8 +74,8 @@ const styles = theme => ({
     position: 'absolute',
     pointerEvents: 'none',
     display: 'flex',
-    [theme.breakpoints.down("sm")]: {
-      display: 'none'
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
     alignItems: 'center',
     justifyContent: 'center',
@@ -122,31 +132,28 @@ const styles = theme => ({
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
     }),
-    [theme.breakpoints.down('sm')]:{
+    [theme.breakpoints.down('sm')]: {
       transition: 'none',
       marginLeft: 'none',
-      width: ''
+      width: '',
     },
   },
   menuButton: {
     marginLeft: 12,
     marginRight: 36,
-    [theme.breakpoints.down("sm")]: {
-      marginRight: 12
-    }
+    [theme.breakpoints.down('sm')]: {
+      marginRight: 12,
+    },
   },
   menuButtonHidden: {
     display: 'none',
-    [theme.breakpoints.down('sm')]:{
-      display: 'block'
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
     },
   },
-  title: {
-    flexGrow: 1,
-  },
   drawerPaper: {
-    [theme.breakpoints.down('sm')]:{
-      display: 'none'
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
     },
     position: 'relative',
     whiteSpace: 'nowrap',
@@ -167,7 +174,7 @@ const styles = theme => ({
       width: theme.spacing.unit * 9,
     },
   },
-})
+});
 
 class Header extends React.Component {
   state = {
@@ -176,7 +183,7 @@ class Header extends React.Component {
     open: false,
   };
 
-  handleProfileMenuOpen = event => {
+  handleProfileMenuOpen = (event) => {
     this.setState({ anchorEl: event.currentTarget });
   };
 
@@ -185,7 +192,7 @@ class Header extends React.Component {
     this.handleMobileMenuClose();
   };
 
-  handleMobileMenuOpen = event => {
+  handleMobileMenuOpen = (event) => {
     this.setState({ mobileMoreAnchorEl: event.currentTarget });
   };
 
@@ -202,7 +209,7 @@ class Header extends React.Component {
   };
 
   render() {
-    const { anchorEl, mobileMoreAnchorEl } = this.state;
+    const { anchorEl, mobileMoreAnchorEl, open } = this.state;
     const { classes } = this.props;
     const isMenuOpen = Boolean(anchorEl);
     const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
@@ -245,9 +252,20 @@ class Header extends React.Component {
 
     return (
       <div className={classes.root}>
-        <AppBar className={classNames(classes.appBar, this.state.open && classes.appBarShift)} position="absolute">
-          <Toolbar disableGutters={!this.state.open} className={classes.toolbar}>
-            <IconButton className={classNames(classes.menuButton, this.state.open && classes.menuButtonHidden)} color="inherit" aria-label="Open drawer" onClick={this.handleDrawerOpen}>
+        <AppBar
+          className={classNames(classes.appBar, open && classes.appBarShift)}
+          position="absolute"
+        >
+          <Toolbar disableGutters={!open} className={classes.toolbar}>
+            <IconButton
+              className={classNames(
+                classes.menuButton,
+                open && classes.menuButtonHidden,
+              )}
+              color="inherit"
+              aria-label="Open drawer"
+              onClick={this.handleDrawerOpen}
+            >
               <MenuIcon />
             </IconButton>
             <Typography className={classes.title} variant="h6" color="inherit" noWrap>
@@ -290,9 +308,9 @@ class Header extends React.Component {
         <Drawer
           variant="permanent"
           classes={{
-            paper: classNames(classes.drawerPaper, !this.state.open && classes.drawerPaperClose),
+            paper: classNames(classes.drawerPaper, !open && classes.drawerPaperClose),
           }}
-          open={this.state.open}
+          open={open}
         >
           <div className={classes.toolbarIcon}>
             <IconButton onClick={this.handleDrawerClose}>
@@ -302,7 +320,7 @@ class Header extends React.Component {
           <Divider />
           <List>{mainListItems}</List>
         </Drawer>
-        <Content/>
+        <Content />
         {renderMenu}
         {renderMobileMenu}
       </div>
@@ -311,7 +329,7 @@ class Header extends React.Component {
 }
 
 Header.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.shape.isRequired,
 };
 
 export default withStyles(styles)(Header);
