@@ -2,9 +2,9 @@ import React from "react"
 import { withStyles } from '@material-ui/core/styles'
 import { Grid, Typography, Card, CardContent, CardActionArea, Button} from '@material-ui/core'
 import PropTypes from 'prop-types'
+
 import scratch from '../../../assets/scratch.png'
 import template from '../../../assets/template.png'
-
 
 const styles = theme => ({
     card: {

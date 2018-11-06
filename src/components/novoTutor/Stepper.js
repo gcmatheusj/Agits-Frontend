@@ -23,6 +23,7 @@ const styles = theme => ({
     width: '100%',
   },
   stepper: {
+    background: 'none',
     [theme.breakpoints.down('sm')]: {
       padding: 15,
       marginTop: 10,

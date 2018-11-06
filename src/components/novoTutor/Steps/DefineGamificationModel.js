@@ -29,6 +29,7 @@ import bossfight from '../../../assets/boss-fight.png';
 const styles = theme => ({
   root: {
     flexGrow: 1,
+    paddingLeft: 1,
     padding: theme.spacing.unit * 2,
     [theme.breakpoints.down('sm')]: {
       padding: 1,
@@ -48,6 +49,7 @@ const styles = theme => ({
     },
   },
   title: {
+    padding: 1,
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.9rem',
     },
@@ -98,11 +100,12 @@ const styles = theme => ({
   },
   gridGame: {
     marginLeft: 20,
+    marginRight: 20
   },
   paper: {
     margin: theme.spacing.unit,
     width: 50,
-    height: 60,
+    height: 50,
   },
   svg: {
     width: 100,
@@ -126,6 +129,10 @@ const styles = theme => ({
 class DefineGamificationModel extends Component {
   state = {
     checked: '',
+  };
+
+  handleChangeIcon = name => (event) => {
+    this.setState({ [name]: event.target.checked });
   };
 
   handleChangeA = () => {
@@ -199,7 +206,7 @@ class DefineGamificationModel extends Component {
                             {' '}
                             <strong>Rewards,</strong>
                             {' '}
-and
+                            and
                             {' '}
                             <strong>Points.</strong>
                           </Typography>
@@ -237,7 +244,7 @@ and
                 <Collapse className={classes.collapse} in={checked === 'checkedA'}>
                   <Divider />
                   <Grid container direction="row" alignItems="center">
-                    <Paper elevation={4} className={classes.paper} />
+                    <img className={classes.paper} src={story} alt="" />
                     <Typography>
                       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
                       {' '}
@@ -249,7 +256,7 @@ and
                 <Collapse className={classes.collapse} in={checked === 'checkedB'}>
                   <Divider />
                   <Grid container direction="row" alignItems="center">
-                    <Paper elevation={4} className={classes.paper} />
+                    <img className={classes.paper} src={rewards} alt="" />
                     <Typography>
                       Lorem Ipsum B is simply dummy text of the printing and typesetting industry.
                       {' '}
@@ -261,7 +268,7 @@ and
                 <Collapse className={classes.collapse} in={checked === 'checkedC'}>
                   <Divider />
                   <Grid container direction="row" alignItems="center">
-                    <Paper elevation={4} className={classes.paper} />
+                    <img className={classes.paper} src={badge} alt="" />
                     <Typography>
                       Lorem Ipsum C is simply dummy text of the printing and typesetting industry.
                       {' '}
@@ -273,7 +280,7 @@ and
                 <Collapse className={classes.collapse} in={checked === 'checkedD'}>
                   <Divider />
                   <Grid container direction="row" alignItems="center">
-                    <Paper elevation={4} className={classes.paper} />
+                    <img className={classes.paper} src={levels} alt="" />
                     <Typography>
                       Lorem Ipsum D is simply dummy text of the printing and typesetting industry.
                       {' '}
@@ -285,7 +292,7 @@ and
                 <Collapse className={classes.collapse} in={checked === 'checkedE'}>
                   <Divider />
                   <Grid container direction="row" alignItems="center">
-                    <Paper elevation={4} className={classes.paper} />
+                    <img className={classes.paper} src={challenges} alt="" />
                     <Typography>
                       Lorem Ipsum E is simply dummy text of the printing and typesetting industry.
                       {' '}
@@ -297,7 +304,7 @@ and
                 <Collapse className={classes.collapse} in={checked === 'checkedF'}>
                   <Divider />
                   <Grid container direction="row" alignItems="center">
-                    <Paper elevation={4} className={classes.paper} />
+                    <img className={classes.paper} src={leaderboard} alt="" />
                     <Typography>
                       Lorem Ipsum F is simply dummy text of the printing and typesetting industry.
                       {' '}
@@ -309,7 +316,7 @@ and
                 <Collapse className={classes.collapse} in={checked === 'checkedG'}>
                   <Divider />
                   <Grid container direction="row" alignItems="center">
-                    <Paper elevation={4} className={classes.paper} />
+                    <img className={classes.paper} src={points} alt="" />
                     <Typography>
                       Lorem Ipsum G is simply dummy text of the printing and typesetting industry.
                       {' '}

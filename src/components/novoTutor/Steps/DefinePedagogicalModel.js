@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
-  Grid, Typography, Card, Switch,
+  Grid, Typography, Card, Switch, Button
 } from '@material-ui/core';
 
 import curriculum from '../../../assets/curriculum.png';

@@ -41,11 +41,12 @@ const styles = theme => ({
   },
   content: {
     flexGrow: 1,
+    paddingTop: 0,
     padding: theme.spacing.unit * 3,
   },
 });
 
-class NovoHeader extends Component {
+class Header extends Component {
   state = {
     mobileOpen: false,
   };
@@ -55,7 +56,7 @@ class NovoHeader extends Component {
   };
 
   render() {
-    const { classes, container } = this.props;
+    const { classes, container, children, title } = this.props;
     const { mobileOpen } = this.state;
 
     const drawer = (
@@ -64,7 +65,7 @@ class NovoHeader extends Component {
           <div className={classes.toolbar} />
         </Hidden>
         <Divider />
-        Hello Drawer
+        <Typography>Menu Drawer</Typography>
       </div>
     );
 
@@ -83,7 +84,7 @@ class NovoHeader extends Component {
                 <Menu />
               </IconButton>
               <Typography variant="h6" color="inherit" noWrap>
-                Responsive drawer
+                {title}
               </Typography>
             </Toolbar>
           </AppBar>
@@ -119,21 +120,7 @@ class NovoHeader extends Component {
           </nav>
           <main className={classes.content}>
             <div className={classes.toolbar} />
-            <Card style={{ padding: 10 }}>
-              <Typography paragraph>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent
-                elementum facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in
-                hendrerit gravida rutrum quisque non tellus. Convallis convallis tellus id interdum
-                velit laoreet id donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing.
-                Amet nisl suscipit adipiscing bibendum est ultricies integer quis. Cursus euismod
-                quis viverra nibh cras. Metus vulputate eu scelerisque felis imperdiet proin
-                fermentum leo. Mauris commodo quis imperdiet massa tincidunt. Cras tincidunt
-                lobortis feugiat vivamus at augue. At augue eget arcu dictum varius duis at
-                consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem donec massa sapien
-                faucibus et molestie ac.
-              </Typography>
-            </Card>
+            {children}
           </main>
         </div>
       </Fragment>
@@ -141,9 +128,9 @@ class NovoHeader extends Component {
   }
 }
 
-NovoHeader.propTypes = {
+Header.propTypes = {
   classes: PropTypes.shape.isRequired,
   container: PropTypes.shape.isRequired,
 };
 
-export default withStyles(styles)(NovoHeader);
+export default withStyles(styles)(Header);
