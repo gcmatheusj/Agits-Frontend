@@ -543,4 +543,8 @@ DefineGamificationModel.propTypes = {
   classes: PropTypes.shape.isRequired,
 };
 
+/**
+ *Quando conectado com o Redux utilizar a seguinte abordagem:
+ *export default withStyles(styles)(connect(props...)(DefineGamificationModel))
+*/
 export default withStyles(styles)(DefineGamificationModel);

@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { createStore, applyMiddleware } from 'redux'
-import { Provider } from 'react-redux'
-import createSagaMiddleware from 'redux-saga'
-import reducers from './reducers'
+import { Provider } from 'react-redux';
+import store from './redux';
 
 import Login from './components/Login';
 import RecuperarSenha from './components/RecuperarSenha';
@@ -13,20 +12,7 @@ import Dashboard from './components/Dashboard';
 import NovoTutor from './components/novoTutor';
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
-import './App.css';
 
-const sagaMiddleware = createSagaMiddleware()
-
-const store = createStore(
-  reducers,
-  applyMiddleware(sagaMiddleware)
-)
-
-function *teste(){
-  console.log('testando redux-saga')
-}
-
-sagaMiddleware.run(teste)
 
 const theme = createMuiTheme({
   palette: {
@@ -41,17 +27,20 @@ const theme = createMuiTheme({
 const App = () => (
   <Provider store={store}>
     <Router>
-      <MuiThemeProvider theme={theme}>
-        <div>
-          <Route exact path="/" component={Login} />
-          <Route path="/recuperar-senha" component={RecuperarSenha} />
-          <Route path="/cadastro" component={Cadastro} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/novo-tutor" component={NovoTutor} />
-          <Route path="/escolha-do-modelo" component={EscolhaDoModelo} />
-          <Route path="/passo-a-passo" component={StepperPassoaPasso} />
-        </div>
-      </MuiThemeProvider>
+      <Fragment>
+        <CssBaseline />
+        <MuiThemeProvider theme={theme}>
+          <div>
+            <Route exact path="/" component={Login} />
+            <Route path="/recuperar-senha" component={RecuperarSenha} />
+            <Route path="/cadastro" component={Cadastro} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/novo-tutor" component={NovoTutor} />
+            <Route path="/escolha-do-modelo" component={EscolhaDoModelo} />
+            <Route path="/passo-a-passo" component={StepperPassoaPasso} />
+          </div>
+        </MuiThemeProvider>
+      </Fragment>
     </Router>
   </Provider>
 );

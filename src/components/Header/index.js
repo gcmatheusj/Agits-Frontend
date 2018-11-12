@@ -9,7 +9,6 @@ import {
   Drawer,
   Divider,
   CssBaseline,
-  Card,
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import { Menu } from '@material-ui/icons';
@@ -56,7 +55,9 @@ class Header extends Component {
   };
 
   render() {
-    const { classes, container, children, title } = this.props;
+    const {
+      classes, container, children, title,
+    } = this.props;
     const { mobileOpen } = this.state;
 
     const drawer = (
@@ -131,6 +132,8 @@ class Header extends Component {
 Header.propTypes = {
   classes: PropTypes.shape.isRequired,
   container: PropTypes.shape.isRequired,
+  children: PropTypes.shape.isRequired,
+  title: PropTypes.shape.isRequired,
 };
 
 export default withStyles(styles)(Header);

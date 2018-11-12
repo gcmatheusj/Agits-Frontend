@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import ActionCreators from '../../../redux/actions/tutor'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
-  Grid, Typography, Card, Switch, Button
+  Grid, Typography, Card, Switch,
 } from '@material-ui/core';
 
 import curriculum from '../../../assets/curriculum.png';
 import syllabus from '../../../assets/syllabus.png';
+import { dispatch } from 'rxjs/internal/observable/range';
 
 const styles = theme => ({
   root: {
@@ -58,7 +61,6 @@ const styles = theme => ({
 
 class DefinePedagogicalModel extends React.Component {
   state = {
-    checkedA: true,
     checkedB: false,
   };
 
@@ -67,8 +69,8 @@ class DefinePedagogicalModel extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-    const { checkedA, checkedB } = this.state;
+    const { classes, switchKnowledgetcs, knowledgetcs } = this.props;
+    const { checkedB } = this.state;
 
     return (
       <div style={{ justifyContent: 'center' }}>
@@ -97,8 +99,8 @@ class DefinePedagogicalModel extends React.Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedA}
-                    onChange={this.handleChange('checkedA')}
+                    checked={knowledgetcs}
+                    onChange={switchKnowledgetcs}
                     value="checkedA"
                     color="primary"
                   />
@@ -144,6 +146,20 @@ class DefinePedagogicalModel extends React.Component {
 
 DefinePedagogicalModel.propTypes = {
   classes: PropTypes.shape.isRequired,
+  knowledgetcs: PropTypes.shape.isRequired,
+  switchKnowledgetcs: PropTypes.shape.isRequired,
 };
 
-export default withStyles(styles)(DefinePedagogicalModel);
+const mapStateToProps = state => {
+  return {
+    tutor: state.tutor,
+  }
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    switchKnowledgetcs: () => dispatch(ActionCreators.knowledgetcs()),
+  }
+}
+
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(DefinePedagogicalModel));

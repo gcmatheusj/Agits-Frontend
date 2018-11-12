@@ -73,7 +73,7 @@ function getStepContent(step) {
 
 class VerticalLinearStepper extends Component {
   state = {
-    activeStep: 3,
+    activeStep: 2,
   };
 
   handleNext = () => {
@@ -109,18 +109,12 @@ class VerticalLinearStepper extends Component {
                 <div>{getStepContent(index)}</div>
                 <div className={classes.actionsContainer}>
                   <div>
+                    <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
                     <Button
-                      disabled={activeStep === 0}
-                      onClick={this.handleBack}
                       className={classes.button}
-                    >
-                      Back
-                    </Button>
-                    <Button
                       variant="contained"
                       color="primary"
                       onClick={this.handleNext}
-                      className={classes.button}
                     >
                       {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                     </Button>
@@ -133,9 +127,7 @@ class VerticalLinearStepper extends Component {
         {activeStep === steps.length && (
           <Paper square elevation={0} className={classes.resetContainer}>
             <Typography>All steps completed - you&quot;re finished</Typography>
-            <Button onClick={this.handleReset} className={classes.button}>
-              Reset
-            </Button>
+            <Button className={classes.button} onClick={this.handleReset}>Reset</Button>
           </Paper>
         )}
       </div>
