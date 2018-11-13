@@ -127,7 +127,7 @@ class StepperPassoaPasso extends Component {
 }
 
 StepperPassoaPasso.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object,
 };
 
 export default withStyles(styles)(StepperPassoaPasso);

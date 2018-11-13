@@ -136,7 +136,7 @@ class VerticalLinearStepper extends Component {
 }
 
 VerticalLinearStepper.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object,
 };
 
 export default withStyles(styles)(VerticalLinearStepper);

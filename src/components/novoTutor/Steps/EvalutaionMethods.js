@@ -178,7 +178,7 @@ class EvalutaionMethods extends Component {
 }
 
 EvalutaionMethods.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(EvalutaionMethods);

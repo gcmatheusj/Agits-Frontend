@@ -1,15 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import ActionCreators from '../../../redux/actions/tutor'
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
   Grid, Typography, Card, Switch,
 } from '@material-ui/core';
+import ActionCreators from '../../../redux/actions/tutor';
 
 import curriculum from '../../../assets/curriculum.png';
 import syllabus from '../../../assets/syllabus.png';
-import { dispatch } from 'rxjs/internal/observable/range';
 
 const styles = theme => ({
   root: {
@@ -145,9 +144,8 @@ class DefinePedagogicalModel extends React.Component {
 }
 
 DefinePedagogicalModel.propTypes = {
-  classes: PropTypes.shape.isRequired,
-  knowledgetcs: PropTypes.shape.isRequired,
-  switchKnowledgetcs: PropTypes.shape.isRequired,
+  classes: PropTypes.object,
+  switchKnowledgetcs: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => {

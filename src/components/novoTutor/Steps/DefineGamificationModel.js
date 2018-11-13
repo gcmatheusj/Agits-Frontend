@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import {
   Grid, Card, Typography, Divider, ButtonBase, Button,
 } from '@material-ui/core';
-import Paper from '@material-ui/core/Paper';
 import Collapse from '@material-ui/core/Collapse';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
@@ -169,7 +168,7 @@ class DefineGamificationModel extends Component {
 
   render() {
     const { classes } = this.props;
-    const { checked, checkedB, checkedC } = this.state;
+    const { checked } = this.state;
     return (
       <div style={{ justifyContent: 'center' }}>
         <Typography className={classes.title} variant="subtitle1">
@@ -540,7 +539,7 @@ and
 }
 
 DefineGamificationModel.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object,
 };
 
 /**

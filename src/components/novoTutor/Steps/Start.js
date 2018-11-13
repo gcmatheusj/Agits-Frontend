@@ -82,7 +82,7 @@ const Start = (props) => {
 };
 
 Start.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Start);

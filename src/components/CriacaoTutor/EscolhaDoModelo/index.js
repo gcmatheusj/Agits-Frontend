@@ -67,10 +67,10 @@ const EscolhaDoModelo = props => {
                         Create tutor.
                     </Typography>
                 </Grid>
-                <Grid container className={classes.root} container justify="center">
+                <Grid container className={classes.root} justify="center">
                         <Card className={classes.card}>
                         <CardActionArea>
-                            <img src={scratch} />
+                            <img src={scratch} alt="" />
                             <CardContent>
                                 <Typography className={classes.titleCard} gutterBottom variant="h6" align="center">
                                     Criar seu tutor do zero
@@ -84,9 +84,9 @@ const EscolhaDoModelo = props => {
 
                         <Card className={classes.card}>
                             <CardActionArea>
-                                <img src={template} style={{ justifyContent: 'center', alignItems: 'center' }} />
+                                <img src={template} alt="" style={{ justifyContent: 'center', alignItems: 'center' }} />
                                 <CardContent>
-                                    <Typography className={classes.titleCard} gutterBottom variant="h6" align="center" gutterBottom>
+                                    <Typography className={classes.titleCard} variant="h6" align="center" gutterBottom>
                                         Usando modelo
                                     </Typography>
                                     <Typography className={classes.textCard} variant="body1" gutterBottom>

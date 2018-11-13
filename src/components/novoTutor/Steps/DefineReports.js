@@ -147,7 +147,7 @@ class DefineReports extends Component {
 }
 
 DefineReports.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(DefineReports);

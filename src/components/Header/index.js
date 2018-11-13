@@ -130,10 +130,8 @@ class Header extends Component {
 }
 
 Header.propTypes = {
-  classes: PropTypes.shape.isRequired,
-  container: PropTypes.shape.isRequired,
-  children: PropTypes.shape.isRequired,
-  title: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
+  container: PropTypes.object,
 };
 
 export default withStyles(styles)(Header);

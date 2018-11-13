@@ -68,7 +68,6 @@ const styles = theme => ({
 class DefineDomainAndSubject extends Component {
   state = {
     domainArray: '',
-    subjectArray: '',
   };
 
   handleChange = (event) => {
@@ -77,7 +76,7 @@ class DefineDomainAndSubject extends Component {
 
   render() {
     const { classes } = this.props;
-    const { domainArray, subjectArray } = this.state;
+    const { domainArray } = this.state;
 
     return (
       <div className={classes.root}>
@@ -158,6 +157,6 @@ class DefineDomainAndSubject extends Component {
 }
 
 DefineDomainAndSubject.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object,
 };
 export default withStyles(styles)(DefineDomainAndSubject);
