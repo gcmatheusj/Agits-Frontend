@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
   Grid, Card, Typography, Switch,
 } from '@material-ui/core';
+import ActionCreators from '../../../redux/actions/tutor';
 
 import quick from '../../../assets/quick.png';
 import custom from '../../../assets/custom.png';
@@ -13,7 +15,9 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     maxWidth: '100%',
-    padding: theme.spacing.unit * 2,
+    padding: 1,
+    paddingTop: 10,
+    paddingBottom: 10,
     [theme.breakpoints.down('sm')]: {
       padding: 1,
       marginTop: 10,
@@ -57,21 +61,11 @@ const styles = theme => ({
   },
 });
 
-class EvalutaionMethods extends Component {
-  state = {
-    checkedA: true,
-    checkedB: false,
-    checkedC: false,
-  };
-
-  handleChange = name => (event) => {
-    this.setState({ [name]: event.target.checked });
-  };
-
-  render() {
-    const { classes } = this.props;
-    const { checkedA, checkedB, checkedC } = this.state;
-
+const EvalutaionMethods = (props) => {
+  const {
+    classes, switchQuickTest, switchCustomTest, switchPlacementTest, 
+    quickTest, customTest, placementTest, 
+  } = props;
     return (
       <div style={{ justifyContent: 'center' }}>
         <Typography className={classes.title} variant="subtitle1">
@@ -99,8 +93,8 @@ class EvalutaionMethods extends Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedA}
-                    onChange={this.handleChange('checkedA')}
+                    checked={quickTest}
+                    onChange={switchQuickTest}
                     value="checkedA"
                     color="primary"
                   />
@@ -130,8 +124,8 @@ class EvalutaionMethods extends Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedB}
-                    onChange={this.handleChange('checkedB')}
+                    checked={customTest}
+                    onChange={switchCustomTest}
                     value="checkedB"
                     color="primary"
                   />
@@ -162,8 +156,8 @@ class EvalutaionMethods extends Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedC}
-                    onChange={this.handleChange('checkedC')}
+                    checked={placementTest}
+                    onChange={switchPlacementTest}
                     value="checkedC"
                     color="primary"
                   />
@@ -174,11 +168,22 @@ class EvalutaionMethods extends Component {
         </div>
       </div>
     );
-  }
-}
+  };
 
 EvalutaionMethods.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(EvalutaionMethods);
+const mapStateToProps = state => ({
+  tutor: state.tutor,
+});
+
+const mapDispatchToProps = dispatch => ({
+  switchQuickTest: () => dispatch(ActionCreators.quicktest()),
+  switchCustomTest: () => dispatch(ActionCreators.customtest()),
+  switchPlacementTest: () => dispatch(ActionCreators.placementtest()),
+});
+
+export default withStyles(styles)(
+  connect(mapStateToProps, mapDispatchToProps)(EvalutaionMethods),
+);

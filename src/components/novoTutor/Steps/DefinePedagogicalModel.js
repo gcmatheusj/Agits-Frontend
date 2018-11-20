@@ -8,13 +8,15 @@ import {
 import ActionCreators from '../../../redux/actions/tutor';
 
 import curriculum from '../../../assets/curriculum.png';
-import syllabus from '../../../assets/syllabus.png';
+import syllabusimg from '../../../assets/syllabus.png';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     maxWidth: '100%',
-    padding: theme.spacing.unit * 2,
+    padding: 1,
+    paddingBottom: 10,
+    paddingTop: 10,
     [theme.breakpoints.down('sm')]: {
       padding: 1,
       marginTop: 10,
@@ -58,18 +60,11 @@ const styles = theme => ({
   },
 });
 
-class DefinePedagogicalModel extends React.Component {
-  state = {
-    checkedB: false,
-  };
-
-  handleChange = name => (event) => {
-    this.setState({ [name]: event.target.checked });
-  };
-
-  render() {
-    const { classes, switchKnowledgetcs, knowledgetcs } = this.props;
-    const { checkedB } = this.state;
+const DefinePedagogicalModel = (props) => {
+  const {
+    classes, switchKnowledgetcs, knowledgetcs, 
+    syllabus, switchSyllabus 
+  } = props;
 
     return (
       <div style={{ justifyContent: 'center' }}>
@@ -113,7 +108,7 @@ class DefinePedagogicalModel extends React.Component {
             <Grid container style={{ padding: 20 }}>
               <Grid item xs={12}>
                 <Grid container direction="row" spacing={16} className={classes.gridCard}>
-                  <img className={classes.img} alt="complex" src={syllabus} />
+                  <img className={classes.img} alt="complex" src={syllabusimg} />
                   <Grid className={classes.gridText} container item xs={12} sm>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
@@ -128,8 +123,8 @@ class DefinePedagogicalModel extends React.Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedB}
-                    onChange={this.handleChange('checkedB')}
+                    checked={syllabus}
+                    onChange={switchSyllabus}
                     value="checkedB"
                     color="primary"
                   />
@@ -141,23 +136,21 @@ class DefinePedagogicalModel extends React.Component {
       </div>
     );
   }
-}
 
 DefinePedagogicalModel.propTypes = {
   classes: PropTypes.object,
   switchKnowledgetcs: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => {
-  return {
-    tutor: state.tutor,
-  }
-};
+const mapStateToProps = state => ({
+  tutor: state.tutor,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    switchKnowledgetcs: () => dispatch(ActionCreators.knowledgetcs()),
-  }
-}
+const mapDispatchToProps = dispatch => ({
+  switchKnowledgetcs: () => dispatch(ActionCreators.knowledgetcs()),
+  switchSyllabus: () => dispatch(ActionCreators.syllabus()),
+});
 
-export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(DefinePedagogicalModel));
+export default withStyles(styles)(
+  connect(mapStateToProps, mapDispatchToProps)(DefinePedagogicalModel),
+);

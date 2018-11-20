@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
@@ -10,6 +11,7 @@ import {
   Paper,
   Typography,
 } from '@material-ui/core';
+import ActionCreators from '../../redux/actions/tutor';
 
 import DefineDomainAndSubject from './Steps/DefineDomainAndSubject';
 import Start from './Steps/Start';
@@ -74,6 +76,7 @@ function getStepContent(step) {
 class VerticalLinearStepper extends Component {
   state = {
     activeStep: 2,
+    tutor: this.props.tutor,
   };
 
   handleNext = () => {
@@ -94,8 +97,12 @@ class VerticalLinearStepper extends Component {
     });
   };
 
+  createTutorRequest = () => {
+    this.props.createTutor(this.state.tutor);
+  };
+
   render() {
-    const { classes } = this.props;
+    const { classes, tutor, createTutor } = this.props;
     const steps = getSteps();
     const { activeStep } = this.state;
 
@@ -110,14 +117,11 @@ class VerticalLinearStepper extends Component {
                 <div className={classes.actionsContainer}>
                   <div>
                     <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
-                    <Button
-                      className={classes.button}
-                      variant="contained"
-                      color="primary"
-                      onClick={this.handleNext}
-                    >
-                      {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                    </Button>
+                    { activeStep === steps.length - 1 ? (
+                      <Button className={classes.button} variant="contained" color="primary" onClick={this.createTutorRequest}>Finish</Button>
+                    ) : (
+                      <Button className={classes.button} variant="contained" color="primary" onClick={this.handleNext}>Next</Button>
+                    )}
                   </div>
                 </div>
               </StepContent>
@@ -139,4 +143,14 @@ VerticalLinearStepper.propTypes = {
   classes: PropTypes.object,
 };
 
-export default withStyles(styles)(VerticalLinearStepper);
+const mapStateToProps = state => ({
+  tutor: state.tutor,
+});
+
+const mapDispatchToProps = dispatch => ({
+  createTutor: tutor => dispatch(ActionCreators.createtutorRequest(tutor)),
+});
+
+export default withStyles(styles)(
+  connect(mapStateToProps, mapDispatchToProps)(VerticalLinearStepper),
+);

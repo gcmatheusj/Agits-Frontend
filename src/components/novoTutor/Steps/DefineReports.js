@@ -1,9 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
   Grid, Card, Typography, Switch,
 } from '@material-ui/core';
+import ActionCreators from '../../../redux/actions/tutor';
 
 import student from '../../../assets/student.png';
 import teacher from '../../../assets/teacher.png';
@@ -12,7 +14,9 @@ const styles = theme => ({
   root: {
     flexGrow: 1,
     maxWidth: '100%',
-    padding: theme.spacing.unit * 2,
+    padding: 1,
+    paddingTop: 10,
+    paddingBottom: 10,
     [theme.breakpoints.down('sm')]: {
       padding: 1,
       marginTop: 10,
@@ -56,20 +60,8 @@ const styles = theme => ({
   },
 });
 
-class DefineReports extends Component {
-  state = {
-    checkedA: true,
-    checkedB: false,
-  };
-
-  handleChange = name => (event) => {
-    this.setState({ [name]: event.target.checked });
-  };
-
-  render() {
-    const { classes } = this.props;
-    const { checkedA, checkedB } = this.state;
-
+const DefineReports = (props) => {
+    const { classes, switchStudentsReports, switchTeacherReports, studentsReports, teacherReports } = props;
     return (
       <div style={{ justifyContent: 'center' }}>
         {/* <Typography className={classes.title} variant="subtitle1">
@@ -100,8 +92,8 @@ class DefineReports extends Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedA}
-                    onChange={this.handleChange('checkedA')}
+                    checked={studentsReports}
+                    onChange={switchStudentsReports}
                     value="checkedA"
                     color="primary"
                   />
@@ -131,8 +123,8 @@ class DefineReports extends Component {
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedB}
-                    onChange={this.handleChange('checkedB')}
+                    checked={teacherReports}
+                    onChange={switchTeacherReports}
                     value="checkedB"
                     color="primary"
                   />
@@ -144,10 +136,18 @@ class DefineReports extends Component {
       </div>
     );
   }
-}
+
 
 DefineReports.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(DefineReports);
+const mapStateToProps = state => ({
+  tutor: state.tutor,
+});
+
+const mapDispatchToProps = dispatch => ({
+  switchStudentsReports: () => dispatch(ActionCreators.studentsreports()),
+  switchTeacherReports: () => dispatch(ActionCreators.teacherreports()),
+});
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(DefineReports));
