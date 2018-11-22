@@ -11,35 +11,35 @@ export const INITIAL_STATE = {
   teacherReports: false,
 };
 
-export const knowledgeTCS = (state = INITIAL_STATE) => ({
+export const knowledgeTCS = (state = INITIAL_STATE, action) => ({
   ...state,
   knowledgetcs: !state.knowledgetcs,
 });
-export const syllabus = (state = INITIAL_STATE) => ({
+export const syllabus = (state = INITIAL_STATE, action) => ({
   ...state,
   syllabus: !state.syllabus,
 });
-export const quickTest = (state = INITIAL_STATE) => ({
+export const quickTest = (state = INITIAL_STATE, action) => ({
   ...state,
   quickTest: !state.quickTest,
 });
-export const customTest = (state = INITIAL_STATE) => ({
+export const customTest = (state = INITIAL_STATE, action) => ({
   ...state,
   customTest: !state.customTest,
 });
-export const placementTest = (state = INITIAL_STATE) => ({
+export const placementTest = (state = INITIAL_STATE, action) => ({
   ...state,
   placementTest: !state.placementTest,
 });
-export const studentsReports = (state = INITIAL_STATE) => ({
+export const studentsReports = (state = INITIAL_STATE, action) => ({
   ...state,
   studentsReports: !state.studentsReports,
 });
-export const teacherReports = (state = INITIAL_STATE) => ({
+export const teacherReports = (state = INITIAL_STATE, action) => ({
   ...state,
   teacherReports: !state.teacherReports,
 });
-export const createTutorRequest = (state = INITIAL_STATE) => ({
+export const createtutorRequest = (state = INITIAL_STATE, action) => ({
   ...state,
 });
 
@@ -52,7 +52,7 @@ export const HANDLERS = {
   [Types.STUDENTSREPORTS]: studentsReports,
   [Types.TEACHERREPORTS]: teacherReports,
 
-  [Types.CREATETUTOR_REQUEST]: createTutorRequest,
+  [Types.CREATETUTOR_REQUEST]: createtutorRequest,
 };
 
 export default createReducer(INITIAL_STATE, HANDLERS);

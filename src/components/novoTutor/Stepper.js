@@ -76,7 +76,6 @@ function getStepContent(step) {
 class VerticalLinearStepper extends Component {
   state = {
     activeStep: 2,
-    tutor: this.props.tutor,
   };
 
   handleNext = () => {
@@ -98,11 +97,11 @@ class VerticalLinearStepper extends Component {
   };
 
   createTutorRequest = () => {
-    this.props.createTutor(this.state.tutor);
+    this.props.createTutor(this.props.tutor);
   };
 
   render() {
-    const { classes, tutor, createTutor } = this.props;
+    const { classes, } = this.props;
     const steps = getSteps();
     const { activeStep } = this.state;
 
