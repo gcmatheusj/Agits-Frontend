@@ -9,7 +9,7 @@ import Login from './components/Login';
 import RecuperarSenha from './components/RecuperarSenha';
 import Cadastro from './components/Cadastro';
 import Dashboard from './components/Dashboard';
-import NovoTutor from './components/novoTutor';
+import NovoTutor from './components/NovoTutor';
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
 
