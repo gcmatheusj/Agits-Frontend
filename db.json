@@ -1,0 +1,81 @@
+{
+  "tutores": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "tutor": {
+        "knowledgetcs": false,
+        "syllabus": false,
+        "quickTest": false,
+        "customTest": false,
+        "placementTest": false,
+        "studentsReports": false,
+        "teacherReports": false
+      },
+      "id": 2
+    },
+    {
+      "tutor": {
+        "knowledgetcs": false,
+        "syllabus": false,
+        "quickTest": false,
+        "customTest": false,
+        "placementTest": false,
+        "studentsReports": false,
+        "teacherReports": false
+      },
+      "id": 3
+    },
+    {
+      "tutor": {
+        "knowledgetcs": false,
+        "syllabus": false,
+        "quickTest": false,
+        "customTest": false,
+        "placementTest": false,
+        "studentsReports": false,
+        "teacherReports": false
+      },
+      "id": 4
+    },
+    {
+      "tutor": {
+        "knowledgetcs": false,
+        "syllabus": false,
+        "quickTest": false,
+        "customTest": false,
+        "placementTest": false,
+        "studentsReports": false,
+        "teacherReports": false
+      },
+      "id": 5
+    },
+    {
+      "tutor": {
+        "knowledgetcs": true,
+        "syllabus": true,
+        "quickTest": true,
+        "customTest": true,
+        "placementTest": true,
+        "studentsReports": true,
+        "teacherReports": true
+      },
+      "id": 6
+    },
+    {
+      "tutor": {
+        "knowledgetcs": true,
+        "syllabus": false,
+        "quickTest": false,
+        "customTest": false,
+        "placementTest": true,
+        "studentsReports": false,
+        "teacherReports": true
+      },
+      "id": 7
+    }
+  ]
+}

@@ -1,18 +1,22 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
-  Grid, Card, Typography, Switch,
+  Grid, Typography, Card, Switch,
 } from '@material-ui/core';
+import ActionCreators from '../../../redux/actions/tutor';
 
-import student from '../../../assets/student.png';
-import teacher from '../../../assets/teacher.png';
+import curriculum from '../../../assets/curriculum.png';
+import syllabusimg from '../../../assets/syllabus.png';
 
 const styles = theme => ({
   root: {
     flexGrow: 1,
     maxWidth: '100%',
-    padding: theme.spacing.unit * 2,
+    padding: 1,
+    paddingBottom: 10,
+    paddingTop: 10,
     [theme.breakpoints.down('sm')]: {
       padding: 1,
       marginTop: 10,
@@ -56,52 +60,41 @@ const styles = theme => ({
   },
 });
 
-class DefineReports extends Component {
-  state = {
-    checkedA: true,
-    checkedB: false,
-  };
-
-  handleChange = name => (event) => {
-    this.setState({ [name]: event.target.checked });
-  };
-
-  render() {
-    const { classes } = this.props;
-    const { checkedA, checkedB } = this.state;
+const DefinePedagogicalModel = (props) => {
+  const {
+    classes, switchKnowledgetcs, knowledgetcs, 
+    syllabus, switchSyllabus 
+  } = props;
 
     return (
       <div style={{ justifyContent: 'center' }}>
-        {/* <Typography className={classes.title} variant="subtitle1">
-          This is the least step to customize your tutor!
-    </Typography> */}
         <Typography className={classes.title} variant="subtitle1">
-          You can also select which kind of reports the tutor will provide
+          We use the most advanced techniques for providing an adaptive and intelligent tutor for
+          your students!
         </Typography>
         <div className={classes.root}>
           <Card>
             <Grid container style={{ padding: 20 }}>
               <Grid item xs={12}>
                 <Grid container direction="row" spacing={16} className={classes.gridCard}>
-                  <img className={classes.img} alt="complex" src={student} />
+                  <img className={classes.img} alt="complex" src={curriculum} />
                   <Grid className={classes.gridText} container item xs={12} sm>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
                         <Typography className={classes.titleCard} gutterBottom variant="h6">
-                          Students Reports
+                          Knowledge tracing and curriculum sequence
                         </Typography>
-                        <Typography className={classes.textCard} gutterBottom variant="subtitle1">
-                          Enable this feature if you want to provide for your students different
-                          types of reports regarding her learning performance. It includes reports
-                          on learning performance in the overall domainor on particular subjects as
-                          well as tests history.
+                        <Typography gutterBottom variant="subtitle1" className={classes.textCard}>
+                          By default your customized tutor maskes use of current intelligent
+                          techniques that model student&apos;s knowledge to accurately decide which
+                          problems it should give to students at any given time.
                         </Typography>
                       </Grid>
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedA}
-                    onChange={this.handleChange('checkedA')}
+                    checked={knowledgetcs}
+                    onChange={switchKnowledgetcs}
                     value="checkedA"
                     color="primary"
                   />
@@ -115,24 +108,23 @@ class DefineReports extends Component {
             <Grid container style={{ padding: 20 }}>
               <Grid item xs={12}>
                 <Grid container direction="row" spacing={16} className={classes.gridCard}>
-                  <img className={classes.img} alt="complex" src={teacher} />
+                  <img className={classes.img} alt="complex" src={syllabusimg} />
                   <Grid className={classes.gridText} container item xs={12} sm>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
                         <Typography className={classes.titleCard} gutterBottom variant="h6">
-                          Teacher Reports
+                          Syllabus
                         </Typography>
-                        <Typography className={classes.textCard} gutterBottom variant="subtitle1">
-                          Enable this feature if you want to visualize reports about the
-                          interaction, learning performance and other interesting reports about your
-                          students.
+                        <Typography gutterBottom variant="subtitle1" className={classes.textCard}>
+                          Enable this feature if you want to manage the schedule and subjects on
+                          which your students will learn using the tutor
                         </Typography>
                       </Grid>
                     </Grid>
                   </Grid>
                   <Switch
-                    checked={checkedB}
-                    onChange={this.handleChange('checkedB')}
+                    checked={syllabus}
+                    onChange={switchSyllabus}
                     value="checkedB"
                     color="primary"
                   />
@@ -144,10 +136,21 @@ class DefineReports extends Component {
       </div>
     );
   }
-}
 
-DefineReports.propTypes = {
-  classes: PropTypes.object.isRequired,
+DefinePedagogicalModel.propTypes = {
+  classes: PropTypes.object,
+  switchKnowledgetcs: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(DefineReports);
+const mapStateToProps = state => ({
+  tutor: state.tutor,
+});
+
+const mapDispatchToProps = dispatch => ({
+  switchKnowledgetcs: () => dispatch(ActionCreators.knowledgetcs()),
+  switchSyllabus: () => dispatch(ActionCreators.syllabus()),
+});
+
+export default withStyles(styles)(
+  connect(mapStateToProps, mapDispatchToProps)(DefinePedagogicalModel),
+);

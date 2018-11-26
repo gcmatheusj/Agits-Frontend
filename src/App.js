@@ -10,6 +10,7 @@ import RecuperarSenha from './components/recuperarSenha';
 import Cadastro from './components/cadastro';
 import Dashboard from './components/dashboard';
 import NovoTutor from './components/novoTutor';
+
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
 import StepperUsandoModelo from "./components/CriacaoTutor/UsandoModelo";
