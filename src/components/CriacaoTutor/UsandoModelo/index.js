@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import {
-    Stepper,
-    Step,
-    StepLabel,
-    StepContent,
-    Button,
-    Paper,
-    Typography,
-    Grid,
-    Divider
-} from '@material-ui/core';
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Divider } from '@material-ui/core';
 
 import Header from "../../Header"
-import DefineGamificationModel from '../../novoTutor/Steps/DefineGamificationModel';
-//import DefineEducationLevel from './DefineEducationLevel';
+import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
+import DefineEducationLevel from '../../NovoTutor/Steps/DefineEducationLevel';
 
 const styles = theme => ({
     root: {
@@ -61,12 +51,15 @@ const styles = theme => ({
 function getSteps() {
     return [
         'Define Gamified Model',
+        'Define Education Level',
     ];
 }
 
 function getStepContent(step) {
     switch (step) {
         case 0:
+            return <DefineEducationLevel />;
+        case 1:
             return <DefineGamificationModel />;
         default:
             return 'Unknown step';

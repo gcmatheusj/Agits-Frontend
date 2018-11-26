@@ -5,11 +5,11 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux';
 
-import Login from './components/login';
-import RecuperarSenha from './components/recuperarSenha';
-import Cadastro from './components/cadastro';
-import Dashboard from './components/dashboard';
-import NovoTutor from './components/novoTutor';
+import Login from './components/Login';
+import RecuperarSenha from './components/RecuperarSenha';
+import Cadastro from './components/Cadastro';
+import Dashboard from './components/Dashboard';
+import NovoTutor from './components/NovoTutor'
 
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';

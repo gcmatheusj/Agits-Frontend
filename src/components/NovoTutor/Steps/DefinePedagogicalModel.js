@@ -2,9 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import {
-  Grid, Typography, Card, Switch,
-} from '@material-ui/core';
+import { Grid, Typography, Card, Switch } from '@material-ui/core';
 import ActionCreators from '../../../redux/actions/tutor';
 
 import curriculum from '../../../assets/curriculum.png';

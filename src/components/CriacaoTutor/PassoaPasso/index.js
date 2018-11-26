@@ -1,15 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import {
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
-  Button,
-  Paper,
-  Typography,
-} from '@material-ui/core';
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography } from '@material-ui/core';
 
 import DefinePedagogicalModel from '../../NovoTutor/Steps/DefinePedagogicalModel';
 import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
