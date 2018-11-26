@@ -5,14 +5,14 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux';
 
-import Login from './components/Login';
-import RecuperarSenha from './components/RecuperarSenha';
-import Cadastro from './components/Cadastro';
-import Dashboard from './components/Dashboard';
+import Login from './components/login';
+import RecuperarSenha from './components/recuperarSenha';
+import Cadastro from './components/cadastro';
+import Dashboard from './components/dashboard';
 import NovoTutor from './components/novoTutor';
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
-
+import StepperUsandoModelo from "./components/CriacaoTutor/UsandoModelo";
 
 const theme = createMuiTheme({
   palette: {
@@ -38,6 +38,7 @@ const App = () => (
             <Route path="/novo-tutor" component={NovoTutor} />
             <Route path="/escolha-do-modelo" component={EscolhaDoModelo} />
             <Route path="/passo-a-passo" component={StepperPassoaPasso} />
+            <Route path="/usando-modelo" component={StepperUsandoModelo} />
           </div>
         </MuiThemeProvider>
       </Fragment>
