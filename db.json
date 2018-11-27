@@ -76,6 +76,18 @@
         "teacherReports": true
       },
       "id": 7
+    },
+    {
+      "tutor": {
+        "knowledgetcs": true,
+        "syllabus": true,
+        "quickTest": true,
+        "customTest": true,
+        "placementTest": true,
+        "studentsReports": true,
+        "teacherReports": true
+      },
+      "id": 8
     }
   ]
 }

@@ -28,9 +28,9 @@ function novoTutor(props) {
 
   const { classes } = props;
   return (
-    <Header title='Customizing Tutor'>
+    <Header title='AGITS'>
       <Typography className={classes.pageTitle} variant="h6">
-        My First Gamified Intelligent Tutor
+        Customizing Tutor
       </Typography>
       <Divider style={styles.divider} />
       <Grid container>

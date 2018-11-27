@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react';
+import { Link, withRouter } from 'react-router-dom'
+import { compose } from 'recompose'
 import PropTypes from 'prop-types';
 import {
   AppBar,
@@ -7,9 +9,14 @@ import {
   Typography,
   Hidden,
   Drawer,
-  Divider,
+  MenuList,
+  MenuItem,
+  ListItemIcon,
   CssBaseline,
 } from '@material-ui/core';
+import HomeIcon from '@material-ui/icons/Home'
+import DashboardIcon from '@material-ui/icons/Dashboard'
+import AddIcon from '@material-ui/icons/Add'
 import { withStyles } from '@material-ui/core/styles';
 import { Menu } from '@material-ui/icons';
 
@@ -56,7 +63,7 @@ class Header extends Component {
 
   render() {
     const {
-      classes, container, children, title,
+      classes, container, location: { pathname }, children, title,
     } = this.props;
     const { mobileOpen } = this.state;
 
@@ -65,8 +72,26 @@ class Header extends Component {
         <Hidden smDown>
           <div className={classes.toolbar} />
         </Hidden>
-        <Divider />
-        <Typography>Menu Drawer</Typography>
+        <MenuList>
+          <MenuItem component={Link} to='/novo-tutor' selected={'/novo-tutor' === pathname}>
+            <ListItemIcon>
+              <AddIcon />
+            </ListItemIcon>
+            Create Tutor
+          </MenuItem>
+          <MenuItem component={Link} to='/'>
+            <ListItemIcon>
+              <HomeIcon />
+            </ListItemIcon>
+            Home
+          </MenuItem>
+          <MenuItem>
+            <ListItemIcon>
+              <DashboardIcon />
+            </ListItemIcon>
+            Dashboard
+          </MenuItem>
+        </MenuList>
       </div>
     );
 
@@ -134,4 +159,7 @@ Header.propTypes = {
   container: PropTypes.object,
 };
 
-export default withStyles(styles)(Header);
+export default compose(
+  withRouter,
+  withStyles(styles)
+)(Header);

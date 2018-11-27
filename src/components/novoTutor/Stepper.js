@@ -10,8 +10,11 @@ import {
   Button,
   Paper,
   Typography,
+  Snackbar
 } from '@material-ui/core';
 import ActionCreators from '../../redux/actions/tutor';
+
+import MySnackbarContentWrapper from '../ToastSuccess'
 
 import DefineDomainAndSubject from './Steps/DefineDomainAndSubject';
 import Start from './Steps/Start';
@@ -45,8 +48,6 @@ const styles = theme => ({
 
 function getSteps() {
   return [
-    'Start',
-    'Define Domain',
     'Define Pedagogical Model',
     'Define Gamified Model',
     'Define Evaluation Methods',
@@ -57,16 +58,12 @@ function getSteps() {
 function getStepContent(step) {
   switch (step) {
     case 0:
-      return <Start />;
-    case 1:
-      return <DefineDomainAndSubject />;
-    case 2:
       return <DefinePedagogicalModel />;
-    case 3:
+    case 1:
       return <DefineGamificationModel />;
-    case 4:
+    case 2:
       return <EvalutaionMethods />;
-    case 5:
+    case 3:
       return <DefineReports />;
     default:
       return 'Unknown step';
@@ -75,7 +72,8 @@ function getStepContent(step) {
 
 class VerticalLinearStepper extends Component {
   state = {
-    activeStep: 2,
+    activeStep: 0,
+    open: false
   };
 
   handleNext = () => {
@@ -96,8 +94,21 @@ class VerticalLinearStepper extends Component {
     });
   };
 
+  handleClick = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    this.setState({ open: false });
+  };
+
   createTutorRequest = () => {
     this.props.createTutor(this.props.tutor);
+    this.handleClick()
   };
 
   render() {
@@ -116,13 +127,28 @@ class VerticalLinearStepper extends Component {
                 <div className={classes.actionsContainer}>
                   <div>
                     <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
-                    { activeStep === steps.length - 1 ? (
+                    {activeStep === steps.length - 1 ? (
                       <Button className={classes.button} variant="contained" color="primary" onClick={this.createTutorRequest}>Finish</Button>
                     ) : (
-                      <Button className={classes.button} variant="contained" color="primary" onClick={this.handleNext}>Next</Button>
-                    )}
+                        <Button className={classes.button} variant="contained" color="primary" onClick={this.handleNext}>Next</Button>
+                      )}
                   </div>
                 </div>
+                <Snackbar
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'right',
+                  }}
+                  open={this.state.open}
+                  autoHideDuration={3000}
+                  onClose={this.handleClose}
+                >
+                  <MySnackbarContentWrapper
+                    onClose={this.handleClose}
+                    variant="success"
+                    message="Success in creating the tutor!"
+                  />
+                </Snackbar>
               </StepContent>
             </Step>
           ))}
