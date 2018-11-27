@@ -15,6 +15,8 @@ import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
 import StepperUsandoModelo from "./components/CriacaoTutor/UsandoModelo";
 
+import VisualizarTutores from './components/VisualizarTutores'
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -40,6 +42,7 @@ const App = () => (
             <Route path="/escolha-do-modelo" component={EscolhaDoModelo} />
             <Route path="/passo-a-passo" component={StepperPassoaPasso} />
             <Route path="/usando-modelo" component={StepperUsandoModelo} />
+            <Route path="/visualizar-tutores" component={VisualizarTutores} />
           </div>
         </MuiThemeProvider>
       </Fragment>
