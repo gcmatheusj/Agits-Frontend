@@ -50,8 +50,8 @@ const styles = theme => ({
 
 function getSteps() {
     return [
-        'Define Gamified Model',
         'Define Education Level',
+        'Define Gamified Model',
     ];
 }
 
