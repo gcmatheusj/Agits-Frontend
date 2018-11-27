@@ -1,20 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import {
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
-  Button,
-  Paper,
-  Typography,
-} from '@material-ui/core';
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography } from '@material-ui/core';
 
-import DefinePedagogicalModel from '../../novoTutor/Steps/DefinePedagogicalModel';
-import DefineGamificationModel from '../../novoTutor/Steps/DefineGamificationModel';
-import EvalutaionMethods from '../../novoTutor/Steps/EvalutaionMethods';
-import DefineReports from '../../novoTutor/Steps/DefineReports';
+import DefinePedagogicalModel from '../../NovoTutor/Steps/DefinePedagogicalModel';
+import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
+import EvalutaionMethods from '../../NovoTutor/Steps/EvalutaionMethods';
+import DefineReports from '../../NovoTutor/Steps/DefineReports';
 
 const styles = theme => ({
   root: {
