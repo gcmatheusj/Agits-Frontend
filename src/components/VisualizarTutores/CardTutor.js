@@ -58,7 +58,7 @@ class CardTutor extends React.Component {
                         <Typography component="p">
                             Functions, geometry, equations, trigonometry, and others 10 subjects
                             with performance gamification method and teacher reports.
-                            </Typography>
+                        </Typography>
                     </CardContent>
                 </CardActionArea>
                 <Divider />
