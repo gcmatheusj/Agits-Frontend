@@ -127,43 +127,45 @@ const styles = theme => ({
 
 class DefineGamificationModel extends Component {
   state = {
-    checked: '',
+    checked: ''
   };
 
   handleChangeIcon = name => (event) => {
     this.setState({ [name]: event.target.checked });
   };
 
-  handleChangeA = () => {
-    this.setState({ checked: 'checkedA' });
-  };
+  // handleChangeA = () => {
+  //   this.setState({ checked: 'checkedA' });
+  // };
 
-  handleChangeB = () => {
-    this.setState({ checked: 'checkedB' });
-  };
+  // handleChangeB = () => {
+  //   this.setState({ checked: 'checkedB' });
+  // };
 
-  handleChangeC = () => {
-    this.setState({ checked: 'checkedC' });
-  };
+  // handleChangeC = () => {
+  //   this.setState({ checked: 'checkedC' });
+  // };
 
-  handleChangeD = () => {
-    this.setState({ checked: 'checkedD' });
-  };
+  // handleChangeD = () => {
+  //   this.setState({ checked: 'checkedD' });
+  // };
 
-  handleChangeE = () => {
-    this.setState({ checked: 'checkedE' });
-  };
+  // handleChangeE = () => {
+  //   this.setState({ checked: 'checkedE' });
+  // };
 
-  handleChangeF = () => {
-    this.setState({ checked: 'checkedF' });
-  };
+  // handleChangeF = () => {
+  //   this.setState({ checked: 'checkedF' });
+  // };
 
-  handleChangeG = () => {
-    this.setState({ checked: 'checkedG' });
-  };
+  // handleChangeG = () => {
+  //   this.setState({ checked: 'checkedG' });
+  // };
 
-  handleChange = name => (event) => {
-    this.setState({ [name]: event.target.checked });
+  handleChange = name => event => {
+    this.state.checked === '' || this.state.checked !== event.currentTarget.value ?
+    this.setState({ [name]: event.currentTarget.value }) : 
+    this.setState({checked: ''})
   };
 
   render() {
@@ -218,25 +220,25 @@ class DefineGamificationModel extends Component {
               </Grid>
             </ButtonBase>
             <div className={classes.gridGame}>
-              <Button onClick={this.handleChangeA}>
+              <Button value='checkedA' onClick={this.handleChange('checked')}>
                 <img className={classes.icon} alt="x" src={story} />
               </Button>
-              <Button onClick={this.handleChangeB}>
+              <Button value='checkedB' onClick={this.handleChange('checked')}>
                 <img className={classes.icon} alt="x" src={rewards} />
               </Button>
-              <Button onClick={this.handleChangeC}>
+              <Button value='checkedC' onClick={this.handleChange('checked')}>
                 <img className={classes.icon} alt="x" src={badge} />
               </Button>
-              <Button onClick={this.handleChangeD}>
+              <Button value='checkedD' onClick={this.handleChange('checked')}>
                 <img className={classes.icon} alt="x" src={levels} />
               </Button>
-              <Button onClick={this.handleChangeE}>
+              <Button value='checkedE' onClick={this.handleChange('checked')}>
                 <img className={classes.icon} alt="x" src={challenges} />
               </Button>
-              <Button onClick={this.handleChangeF}>
+              <Button value='checkedF' onClick={this.handleChange('checked')}>
                 <img className={classes.icon} alt="x" src={leaderboard} />
               </Button>
-              <Button onClick={this.handleChangeG}>
+              <Button value='checkedG' onClick={this.handleChange('checked')}>
                 <img className={classes.icon} alt="x" src={points} />
               </Button>
               <div className={classes.container}>
