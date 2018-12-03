@@ -3,10 +3,15 @@ import { withStyles } from '@material-ui/core/styles'
 import { Grid, Typography, Card, CardContent, CardActionArea, Button} from '@material-ui/core'
 import PropTypes from 'prop-types'
 
+import Header from "../../Header";
+
 import scratch from '../../../assets/scratch.png'
 import template from '../../../assets/template.png'
 
 const styles = theme => ({
+    root: {
+        width: '100%',
+      },
     card: {
         maxWidth: 280,
         textAlign: "center",
@@ -40,7 +45,7 @@ const styles = theme => ({
             fontSize: '0.8rem'
         }
     },
-    root: {
+    container: {
         flexGrow: 1,
     },
     buttonContainer: {
@@ -61,13 +66,14 @@ const styles = theme => ({
 const EscolhaDoModelo = props => {
     const { classes } = props
         return (
-            <div>
-                <Grid className={classes.titleContainer}>
-                    <Typography className={classes.title}  variant="subtitle1">
-                        Create tutor.
-                    </Typography>
-                </Grid>
-                <Grid container className={classes.root} justify="center">
+            <div className={classes.root}>
+                <Header>
+                    <Grid className={classes.titleContainer}>
+                        <Typography className={classes.title}  variant="subtitle1">
+                            Create tutor.
+                        </Typography>
+                    </Grid>
+                    <Grid container className={classes.container} justify="center">
                         <Card className={classes.card}>
                         <CardActionArea>
                             <img src={scratch} alt="" />
@@ -95,22 +101,23 @@ const EscolhaDoModelo = props => {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                </Grid>
-                <Grid 
-                    container
-                    direction="row"   
-                    justify="center" 
-                    className={classes.buttonContainer}   
-                >
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        onClick={this.handleNext}
-                        className={classes.button}
+                    </Grid>
+                    <Grid 
+                        container
+                        direction="row"   
+                        justify="center" 
+                        className={classes.buttonContainer}   
                     >
-                        Next
-                    </Button>
-                </Grid>
+                        <Button
+                            variant="contained"
+                            color="primary"
+                            onClick={this.handleNext}
+                            className={classes.button}
+                        >
+                            Next
+                        </Button>
+                    </Grid>
+                </Header>
             </div>
         )
     }

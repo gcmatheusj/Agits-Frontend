@@ -9,7 +9,8 @@ import Login from './components/Login';
 import RecuperarSenha from './components/RecuperarSenha';
 import Cadastro from './components/Cadastro';
 import Dashboard from './components/Dashboard';
-import NovoTutor from './components/NovoTutor'
+import NovoTutor from './components/NovoTutor';
+import DefineDomain from './components/DefineDomain';
 
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
@@ -40,6 +41,7 @@ const App = () => (
             <Route path="/escolha-do-modelo" component={EscolhaDoModelo} />
             <Route path="/passo-a-passo" component={StepperPassoaPasso} />
             <Route path="/usando-modelo" component={StepperUsandoModelo} />
+            <Route path="/define-domain" component={DefineDomain} />
           </div>
         </MuiThemeProvider>
       </Fragment>

@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography } from '@material-ui/core';
 
+import Header from "../../Header";
+
 import DefinePedagogicalModel from '../../NovoTutor/Steps/DefinePedagogicalModel';
 import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
 import EvalutaionMethods from '../../NovoTutor/Steps/EvalutaionMethods';
@@ -84,35 +86,37 @@ class StepperPassoaPasso extends Component {
 
     return (
       <div className={classes.root}>
-        <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
-          {steps.map((label, index) => (
-            <Step key={label}>
-              <StepLabel>{label}</StepLabel>
-              <StepContent>
-                <div>{getStepContent(index)}</div>
-                <div className={classes.actionsContainer}>
-                  <div>
-                    <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
-                    <Button
-                      className={classes.button}
-                      variant="contained"
-                      color="primary"
-                      onClick={this.handleNext}
-                    >
-                      {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                    </Button>
-                  </div>
-                </div>
-              </StepContent>
-            </Step>
-          ))}
-        </Stepper>
-        {activeStep === steps.length && (
-          <Paper square elevation={0} className={classes.resetContainer}>
-            <Typography>All steps completed - you&quot;re finished</Typography>
-            <Button className={classes.button} onClick={this.handleReset}>Reset</Button>
-          </Paper>
-        )}
+        <Header>
+            <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
+              {steps.map((label, index) => (
+                <Step key={label}>
+                  <StepLabel>{label}</StepLabel>
+                  <StepContent>
+                    <div>{getStepContent(index)}</div>
+                    <div className={classes.actionsContainer}>
+                      <div>
+                        <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
+                        <Button
+                          className={classes.button}
+                          variant="contained"
+                          color="primary"
+                          onClick={this.handleNext}
+                        >
+                          {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                        </Button>
+                      </div>
+                    </div>
+                  </StepContent>
+                </Step>
+              ))}
+          </Stepper>
+          {activeStep === steps.length && (
+            <Paper square elevation={0} className={classes.resetContainer}>
+              <Typography>All steps completed - you&quot;re finished</Typography>
+              <Button className={classes.button} onClick={this.handleReset}>Reset</Button>
+            </Paper>
+          )}    
+        </Header>
       </div>
     );
   }

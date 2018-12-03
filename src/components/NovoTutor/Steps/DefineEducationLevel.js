@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
-//import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { CardContent, Typography, Grid, Card, Button, Divider } from '@material-ui/core';
-//import ActionCreators from '../../../redux/actions/tutor';
+import { Typography, Grid, Card, Button, Divider } from '@material-ui/core';
 
 import img1 from "../../../assets/middle-school.png"
 import img2 from "../../../assets/high-school.png"
