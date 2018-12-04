@@ -90,7 +90,7 @@ const EscolhaDoModelo = props => {
 
                         <Card className={classes.card}>
                             <CardActionArea>
-                                <img src={template} alt="" style={{ justifyContent: 'center', alignItems: 'center' }} />
+                                <img src={template} alt="" style={{ width: 160, height: 210 }} />
                                 <CardContent>
                                     <Typography className={classes.titleCard} variant="h6" align="center" gutterBottom>
                                         Usando modelo
