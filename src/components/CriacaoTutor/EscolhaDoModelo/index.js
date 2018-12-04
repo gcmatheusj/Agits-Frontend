@@ -12,7 +12,7 @@ import Slide from '@material-ui/core/Slide';
 
 import Header from "../../Header";
 
-import scratch from '../../../assets/scratch.png'
+import scratch from '../../../assets/scratch2.png'
 import template from '../../../assets/template.png'
 
 const styles = theme => ({
@@ -158,13 +158,8 @@ class EscolhaDoModelo extends React.Component {
                         </Card>
 
                         <Card className={classes.card}>
-<<<<<<< HEAD
-                            <CardActionArea>
-                                <img src={template} alt="" style={{ width: 160, height: 210 }} />
-=======
                             <CardActionArea onClick={this.handleClickOpen}>
                                 <img src={template} alt="" className={classes.img} />
->>>>>>> f55bc588207a25c1be790b9b16b48aeccf5ee370
                                 <CardContent>
                                     <Typography className={classes.titleCard} align="center" gutterBottom>
                                         Usando modelo
