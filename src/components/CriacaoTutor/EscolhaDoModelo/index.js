@@ -1,4 +1,5 @@
 import React from "react"
+import { Redirect } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
 import { Grid, Typography, Card, CardContent, CardActionArea, Button } from '@material-ui/core'
 import PropTypes from 'prop-types'
@@ -81,7 +82,19 @@ function Transition(props) {
 class EscolhaDoModelo extends React.Component {
     state = {
         open: false,
+        redirect: false
     };
+
+    setRedirect = () => {
+        this.setState({
+          redirect: true
+        })
+      }
+      renderRedirect = () => {
+        if (this.state.redirect) {
+          return <Redirect to='/target' />
+        }
+      }
 
     handleClickOpen = () => {
         this.setState({ open: true });
@@ -157,21 +170,6 @@ class EscolhaDoModelo extends React.Component {
                                 </CardContent>
                             </CardActionArea>
                         </Card>
-                    </Grid>
-                    <Grid
-                        container
-                        direction="row"
-                        justify="center"
-                        className={classes.buttonContainer}
-                    >
-                        <Button
-                            variant="contained"
-                            color="primary"
-                            onClick={this.handleNext}
-                            className={classes.button}
-                        >
-                            Next
-                            </Button>
                     </Grid>
                 </Header>
             </div>
