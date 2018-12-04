@@ -1,12 +1,23 @@
-import React from "react"
-import { withStyles } from '@material-ui/core/styles'
-import { Grid, Typography, Card, CardContent, CardActionArea, Button} from '@material-ui/core'
-import PropTypes from 'prop-types'
+import React from "react";
+import PropTypes from 'prop-types';
+import { Route } from 'react-router-dom';
+import { withStyles } from '@material-ui/core/styles';
+import { 
+    Grid, 
+    Typography, 
+    Card, 
+    CardContent, 
+    CardActionArea, 
+    Button,
+    Divider
+} from '@material-ui/core';
+
 
 import Header from "../../Header";
+import StepperPassoaPasso from "../PassoaPasso"
 
-import scratch from '../../../assets/scratch.png'
-import template from '../../../assets/template.png'
+import scratch from '../../../assets/scratch.png';
+import template from '../../../assets/template.png';
 
 const styles = theme => ({
     root: {
@@ -29,7 +40,9 @@ const styles = theme => ({
     },
     title: {
         fontWeight:'bold',
-        fontSize: 20,
+        fontSize: 30,
+        marginTop: '5px',
+        marginBottom: '10px',
         [theme.breakpoints.down('sm')]: {
             fontSize: '1rem'
         },
@@ -45,7 +58,7 @@ const styles = theme => ({
             fontSize: '0.8rem'
         }
     },
-    container: {
+    containerCard: {
         flexGrow: 1,
     },
     buttonContainer: {
@@ -70,11 +83,13 @@ const EscolhaDoModelo = props => {
                 <Header>
                     <Grid className={classes.titleContainer}>
                         <Typography className={classes.title}  variant="subtitle1">
-                            Create tutor.
+                            Select a creation method
                         </Typography>
                     </Grid>
-                    <Grid container className={classes.container} justify="center">
+                    <Divider />
+                    <Grid container className={classes.containerCard} justify="center">
                         <Card className={classes.card}>
+                        <Route exact path={this.props.match.url} component={StepperPassoaPasso} />
                         <CardActionArea>
                             <img src={scratch} alt="" />
                             <CardContent>
@@ -92,10 +107,10 @@ const EscolhaDoModelo = props => {
                             <CardActionArea>
                                 <img src={template} alt="" style={{ justifyContent: 'center', alignItems: 'center' }} />
                                 <CardContent>
-                                    <Typography className={classes.titleCard} variant="h6" align="center" gutterBottom>
+                                    <Typography className={classes.titleCard} variant="h6" align="center" gutterBottom >
                                         Usando modelo
                                     </Typography>
-                                    <Typography className={classes.textCard} variant="body1" gutterBottom>
+                                    <Typography className={classes.textCard} variant="body1" gutterBottom >
                                         Economize tempo usando um tutor já configurado para uso! Mas fique à vontade para modificar o que você precisar.
                                     </Typography>
                                 </CardContent>
