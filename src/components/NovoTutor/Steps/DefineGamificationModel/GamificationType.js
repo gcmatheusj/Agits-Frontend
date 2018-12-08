@@ -79,12 +79,6 @@ const styles = theme => ({
             height: 10,
         },
     },
-    firstIcon: {
-        width: 50,
-        height: 50,
-        margin: 5,
-        marginLeft: 21,
-    },
     container: {
         display: 'flex',
     },
@@ -104,15 +98,6 @@ const styles = theme => ({
         margin: theme.spacing.unit,
         width: 50,
         height: 50,
-    },
-    svg: {
-        width: 100,
-        height: 100,
-    },
-    polygon: {
-        fill: theme.palette.common.white,
-        stroke: theme.palette.divider,
-        strokeWidth: 1,
     },
     collapse: {
         width: '100%',
@@ -180,15 +165,17 @@ const text = {
     }
 }
 
-const checkeds = [
-    {checkedA: 'Lorem Ipsum A is simply dummy text of the printing and typesetting industry.'},
-    {checkedB: 'Lorem Ipsum B is simply dummy text of the printing and typesetting industry.'},
-    {checkedC: 'Lorem Ipsum C is simply dummy text of the printing and typesetting industry.'},
-    {checkedD: 'Lorem Ipsum D is simply dummy text of the printing and typesetting industry.'},
-    {checkedE: 'Lorem Ipsum E is simply dummy text of the printing and typesetting industry.'},
-    {checkedF: 'Lorem Ipsum F is simply dummy text of the printing and typesetting industry.'},
-    {checkedG: 'Lorem Ipsum G is simply dummy text of the printing and typesetting industry.'},
-    {checkedH: 'Lorem Ipsum H is simply dummy text of the printing and typesetting industry.'}
+const pChecked = ["checkedA", "checkedB", "checkedC", "checkedD", "checkedE", "checkedF", "checkedG", "checkedH"]
+
+const checkedsbuttons = [
+    'Lorem Ipsum A is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum B is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum C is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum D is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum E is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum F is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum G is simply dummy text of the printing and typesetting industry.',
+    'Lorem Ipsum H is simply dummy text of the printing and typesetting industry.'
 ]
 
 class GamificationType extends Component {
@@ -245,11 +232,10 @@ class GamificationType extends Component {
                                 )
                             }))
                         }
-
-                        {checkeds.map((v, k) => {
+                        {checkedsbuttons.map((v, k) => {
                                     return (
                                         <div className={classes.container}>
-                                            <Collapse className={classes.collapse} in={checked === (textprops.checkeds)[k]} >
+                                            <Collapse className={classes.collapse} in={checked === pChecked[k]} >
                                                 <Divider />
                                                 <Grid container direction="row" alignItems="center">
                                                     <img className={classes.paper} src={(textprops.imagesbuttons)[k]} alt="" />
@@ -261,103 +247,6 @@ class GamificationType extends Component {
                                         </div>
                                     )
                                 })}
-
-                        {/* <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedA'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={story} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                      {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div>
-                        <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedB'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={rewards} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum B is simply dummy text of the printing and typesetting industry.
-                      {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div>
-                        <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedC'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={badge} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum C is simply dummy text of the printing and typesetting industry.
-                      {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div>
-                        <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedD'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={levels} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum D is simply dummy text of the printing and typesetting industry.
-                      {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div>
-                        <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedE'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={challenges} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum E is simply dummy text of the printing and typesetting industry.
-                            {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div>
-                        <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedF'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={leaderboard} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum F is simply dummy text of the printing and typesetting industry.
-                      {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div>
-                        <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedG'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={points} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum G is simply dummy text of the printing and typesetting industry.
-                            {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div>
-                        <div className={classes.container}>
-                            <Collapse className={classes.collapse} in={checked === 'checkedH'}>
-                                <Divider />
-                                <Grid container direction="row" alignItems="center">
-                                    <img className={classes.paper} src={points} alt="" />
-                                    <Typography>
-                                        Lorem Ipsum H is simply dummy text of the printing and typesetting industry.
-                            {' '}
-                                    </Typography>
-                                </Grid>
-                            </Collapse>
-                        </div> */}
                     </div>
                 </Card>
             </div>
