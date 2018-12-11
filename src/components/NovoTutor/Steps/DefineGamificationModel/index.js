@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Grid, Card, Typography, Divider, ButtonBase, Button,
-} from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 

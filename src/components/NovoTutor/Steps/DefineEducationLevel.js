@@ -57,7 +57,7 @@ class DefineEducationLevel extends Component {
                                     <Button className={classes.button}>
                                         <Grid container direction="column">
                                             <div >
-                                                <img src={imgs[key]} style={{ height: 120, width: 150 }} />
+                                                <img src={imgs[key]} style={{ height: 120, width: 150 }} alt=""/>
                                             </div>
                                             <Typography variant="body1">
                                                 {value}
@@ -80,11 +80,11 @@ class DefineEducationLevel extends Component {
                                 </Typography>
                                 <Grid container direction="row">
                                     <Grid style={{ width: "50%" }}>
-                                        <img src={curriculum} className={classes.img} />
+                                        <img src={curriculum} className={classes.img} alt="" />
                                         <Typography>Knowledge tracing and curriculum sequencing</Typography>
                                     </Grid>
                                     <Grid style={{ width: "50%" }}>
-                                        <img src={syllabus} className={classes.img} />
+                                        <img src={syllabus} className={classes.img} alt="" />
                                         <Typography>Syllabus</Typography>
                                     </Grid>
                                 </Grid>
@@ -96,7 +96,7 @@ class DefineEducationLevel extends Component {
                                     Evaluation Methods
                                 </Typography>
                                 <Grid>
-                                    <img src={quick} className={classes.img} />
+                                    <img src={quick} className={classes.img} alt="" />
                                     <Typography>Quick Test</Typography>
                                 </Grid>
                             </Grid>
@@ -107,7 +107,7 @@ class DefineEducationLevel extends Component {
                                     Reports Types
                                 </Typography>
                                 <Grid>
-                                    <img src={teacher} className={classes.img} />
+                                    <img src={teacher} className={classes.img} alt="" />
                                     <Typography>Teacher Reports</Typography>
                                 </Grid>
                             </Grid>

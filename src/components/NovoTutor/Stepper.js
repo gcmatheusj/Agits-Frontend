@@ -16,8 +16,6 @@ import ActionCreators from '../../redux/actions/tutor';
 
 import MySnackbarContentWrapper from '../ToastSuccess'
 
-import DefineDomainAndSubject from './Steps/DefineDomainAndSubject';
-import Start from './Steps/Start';
 import DefinePedagogicalModel from './Steps/DefinePedagogicalModel';
 import DefineGamificationModel from './Steps/DefineGamificationModel';
 import EvalutaionMethods from './Steps/EvalutaionMethods';
