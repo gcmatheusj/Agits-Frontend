@@ -32,7 +32,7 @@ function novoTutor(props) {
       <Typography className={classes.pageTitle} variant="h6">
         Customizing Tutor
       </Typography>
-      <Divider style={styles.divider} />
+      <Divider />
       <Grid container>
         <Grid container justify="center">
           <VerticalLinearStepper />

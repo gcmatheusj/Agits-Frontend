@@ -1,80 +1,21 @@
 import React from "react"
-import { Redirect } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles'
-import { Grid, Typography, Card, CardContent, CardActionArea, Button } from '@material-ui/core'
+import { Link } from 'react-router-dom'
+import { Grid, Typography, Card, CardContent, CardActionArea, Button, Divider } from '@material-ui/core'
 import PropTypes from 'prop-types'
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import Slide from '@material-ui/core/Slide';
+import Dialog from '@material-ui/core/Dialog'
+import DialogActions from '@material-ui/core/DialogActions'
+import DialogContent from '@material-ui/core/DialogContent'
+import DialogContentText from '@material-ui/core/DialogContentText'
+import DialogTitle from '@material-ui/core/DialogTitle'
+import Slide from '@material-ui/core/Slide'
 
-import Header from "../../Header";
-import StepperPassoaPasso from "../PassoaPasso"
+import Header from "../../Header"
+
+import { styles } from './styles'
 
 import scratch from '../../../assets/scratch2.png'
 import template from '../../../assets/template.png'
-
-const styles = theme => ({
-    root: {
-        flex: 1,
-        width: '100%',
-    },
-    card: {
-        maxWidth: 280,
-        textAlign: "center",
-        padding: 10,
-        margin: 30,
-        [theme.breakpoints.down('sm')]: {
-            padding: 1,
-            margin: 10,
-        }
-    },
-    titleContainer: {
-        marginTop: 10,
-        textAlign: 'center',
-    },
-    title: {
-        fontWeight: 'bold',
-        fontSize: 20,
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '1rem'
-        },
-    },
-    titleCard: {
-        fontWeight: 'bold',
-        fontSize: '1 rem',
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.9rem'
-        }
-    },
-    textCard: {
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.8rem'
-        }
-    },
-    img: {
-        height: 200,
-        width: 200
-    },
-    container: {
-        flexGrow: 1,
-    },
-    buttonContainer: {
-        marginBottom: theme.spacing.unit * 2,
-        marginTop: 50,
-        [theme.breakpoints.down('sm')]: {
-            marginTop: 20
-        }
-    },
-    button: {
-        marginTop: theme.spacing.unit,
-        marginRight: theme.spacing.unit,
-        justify: 'center'
-
-    },
-})
 
 function Transition(props) {
     return <Slide direction="down" {...props} />;
@@ -83,19 +24,15 @@ function Transition(props) {
 class EscolhaDoModelo extends React.Component {
     state = {
         open: false,
-        redirect: false
+        redirect: false,
+        selectedModel: ''
     };
 
     setRedirect = () => {
         this.setState({
-          redirect: true
+            redirect: true
         })
-      }
-      renderRedirect = () => {
-        if (this.state.redirect) {
-          return <Redirect to='/target' />
-        }
-      }
+    }
 
     handleClickOpen = () => {
         this.setState({ open: true });
@@ -109,18 +46,20 @@ class EscolhaDoModelo extends React.Component {
         const { classes } = this.props
         return (
             <div className={classes.root}>
-                <Header>
-                    <Grid className={classes.titleContainer}>
-                        <Typography className={classes.title} variant="subtitle1">
-                            Create Tutor
-                        </Typography>
-                    </Grid>
+                <Header title="AGITS">
+                    <Typography className={classes.title} variant="subtitle1">
+                        Create Tutor
+                    </Typography>
+                    <Divider />
+                    <Typography className={classes.subtitle} variant="subtitle1">
+                        You can start by selecting create tutor from scratch or using template.
+                    </Typography>
                     <Grid container
                         className={classes.container}
                         justify="center"
                         alignItems="center">
                         <Card className={classes.card}>
-                            <CardActionArea onClick={this.handleClickOpen}>
+                            <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen}>
                                 <img src={scratch} alt="" className={classes.img} />
                                 <CardContent>
                                     <Typography className={classes.titleCard} gutterBottom align="center">
@@ -132,34 +71,32 @@ class EscolhaDoModelo extends React.Component {
                                 </CardContent>
                             </CardActionArea>
                             <Dialog
-                            open={this.state.open}
-                            TransitionComponent={Transition}
-                            keepMounted
-                            onClose={this.handleClose}
-                            aria-labelledby="alert-dialog-slide-title"
-                            aria-describedby="alert-dialog-slide-description">
-                            <DialogTitle id="alert-dialog-slide-title">
-                                {"Use Google's location service?"}
-                            </DialogTitle>
-                            <DialogContent>
-                                <DialogContentText id="alert-dialog-slide-description">
-                                    Let Google help apps determine location. This means sending anonymous location data to
-                                    Google, even when no apps are running.
-                                          </DialogContentText>
-                            </DialogContent>
-                            <DialogActions>
-                                <Button onClick={this.handleClose} color="primary">
-                                    Disagree
+                                open={this.state.open}
+                                TransitionComponent={Transition}
+                                keepMounted
+                                onClose={this.handleClose}
+                                aria-labelledby="alert-dialog-slide-title"
+                                aria-describedby="alert-dialog-slide-description">
+                                <DialogTitle id="alert-dialog-slide-title">
+                                    {"Confirmation"}
+                                </DialogTitle>
+                                <DialogContent>
+                                    <DialogContentText id="alert-dialog-slide-description">
+                                        Are you sure you want to choose this one?
+                                    </DialogContentText>
+                                </DialogContent>
+                                <DialogActions>
+                                    <Button onClick={this.handleClose} color="primary">
+                                        No
                                 </Button>
-                                <Button onClick={this.handleClose} color="primary">
-                                    Agree
+                                    <Button component={Link} to='/novo-tutor' nClick={this.handleClose} color="primary">
+                                        Yes
                                 </Button>
-                            </DialogActions>
-                        </Dialog>
+                                </DialogActions>
+                            </Dialog>
                         </Card>
-
                         <Card className={classes.card}>
-                            <CardActionArea onClick={this.handleClickOpen}>
+                            <CardActionArea className={classes.cardAction} onClick={this.handleClickOpen}>
                                 <img src={template} alt="" className={classes.img} />
                                 <CardContent>
                                     <Typography className={classes.titleCard} align="center" gutterBottom>
