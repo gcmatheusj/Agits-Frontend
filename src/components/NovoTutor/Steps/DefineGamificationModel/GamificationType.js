@@ -3,111 +3,28 @@ import Collapse from '@material-ui/core/Collapse'
 import {
     Grid, Card, Typography, Divider, ButtonBase, Button,
 } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles'
 
-import participation from '../../../../assets/participation.png';
-import performance from '../../../../assets/performance.png';
-import competition from '../../../../assets/competition.png';
-import enjoyment from '../../../../assets/enjoyment.png';
-import exploration from '../../../../assets/exploration.png';
-import effectiveness from '../../../../assets/effectiveness.png';
+import { styles } from './styles'
 
-import story from '../../../../assets/story.png';
-import rewards from '../../../../assets/rewards.png';
-import badge from '../../../../assets/badge.png';
-import levels from '../../../../assets/levels.png';
-import challenges from '../../../../assets/challenges.png';
-import leaderboard from '../../../../assets/leaderboard.png';
-import points from '../../../../assets/points.png';
-import feedback from '../../../../assets/feedback.png';
-import avatar from '../../../../assets/avatar.png';
-import quests from '../../../../assets/quests.png';
-import bossfight from '../../../../assets/boss-fight.png';
+import participation from '../../../../assets/participation.png'
+import performance from '../../../../assets/performance.png'
+import competition from '../../../../assets/competition.png'
+import enjoyment from '../../../../assets/enjoyment.png'
+import exploration from '../../../../assets/exploration.png'
+import effectiveness from '../../../../assets/effectiveness.png'
 
-const styles = theme => ({
-    root: {
-        flexGrow: 1,
-        paddingLeft: 1,
-        padding: theme.spacing.unit * 2,
-        [theme.breakpoints.down('sm')]: {
-            padding: 1,
-            marginTop: 10,
-            marginBottom: 20,
-        },
-    },
-    gridCard: {
-        alignItems: 'center',
-        [theme.breakpoints.down('sm')]: {
-            justifyContent: 'center',
-        },
-    },
-    gridText: {
-        [theme.breakpoints.down('sm')]: {
-            justifyContent: 'center',
-        },
-    },
-    title: {
-        padding: 1,
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.9rem',
-        },
-    },
-    titleCard: {
-        fontWeight: 'bold',
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.9rem',
-            textAlign: 'center',
-        },
-    },
-    textCard: {
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '0.8rem',
-            marginBottom: 15,
-        },
-    },
-    cardButton: {
-        display: 'block',
-        textAlign: 'initial',
-    },
-    gridContent: {
-        padding: 20,
-        paddingBottom: 0,
-    },
-    image: {
-        [theme.breakpoints.down('sm')]: {
-            width: 10,
-            height: 10,
-        },
-    },
-    container: {
-        display: 'flex',
-    },
-    img: {
-        margin: 20,
-        [theme.breakpoints.down('sm')]: {
-            marginTop: 0,
-            marginBottom: 0,
-        },
-        width: 128,
-    },
-    gridGame: {
-        marginLeft: 20,
-        marginRight: 20
-    },
-    paper: {
-        margin: theme.spacing.unit,
-        width: 50,
-        height: 50,
-    },
-    collapse: {
-        width: '100%',
-    },
-    icon: {
-        height: 50,
-        width: 50,
-        margin: 5,
-    },
-});
+import story from '../../../../assets/story.png'
+import rewards from '../../../../assets/rewards.png'
+import badge from '../../../../assets/badge.png'
+import levels from '../../../../assets/levels.png'
+import challenges from '../../../../assets/challenges.png'
+import leaderboard from '../../../../assets/leaderboard.png'
+import points from '../../../../assets/points.png'
+import feedback from '../../../../assets/feedback.png'
+import avatar from '../../../../assets/avatar.png'
+import quests from '../../../../assets/quests.png'
+import bossfight from '../../../../assets/boss-fight.png'
 
 const text = {
     'participation': {
@@ -125,7 +42,6 @@ const text = {
         'image': performance,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF', 'checkedG', 'checkedH'],
         'imagesbuttons': [challenges, feedback, levels, leaderboard, story, badge, rewards, points]
-
     },
     'competition': {
         'title': 'Competition',
@@ -134,7 +50,6 @@ const text = {
         'image': competition,
         'checkeds': ['checkedA', 'checkedB'],
         'imagesbuttons': [leaderboard, points]
-
     },
     'enjoyment': {
         'title': 'Enjoyment',
@@ -143,7 +58,6 @@ const text = {
         'image': enjoyment,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF'],
         'imagesbuttons': [quests, avatar, story, badge, rewards, points]
-
     },
     'exploration': {
         'title': 'Exploration',
@@ -152,7 +66,6 @@ const text = {
         'image': exploration,
         'checkeds': ['checkedA', 'checkedB', 'checkedC'],
         'imagesbuttons': [challenges, levels, bossfight]
-
     },
     'effectiveness': {
         'title': 'Effectiveness',
@@ -161,7 +74,6 @@ const text = {
         'image': effectiveness,
         'checkeds': ['checkedA', 'checkedB', 'checkedC'],
         'imagesbuttons': [leaderboard, badge, points]
-
     }
 }
 
@@ -181,7 +93,8 @@ const checkedsbuttons = [
 class GamificationType extends Component {
 
     state = {
-        checked: ''
+        checked: '',
+        select: ''
     };
 
     handleChange = name => event => {
@@ -233,20 +146,20 @@ class GamificationType extends Component {
                             }))
                         }
                         {checkedsbuttons.map((v, k) => {
-                                    return (
-                                        <div className={classes.container}>
-                                            <Collapse className={classes.collapse} in={checked === pChecked[k]} >
-                                                <Divider />
-                                                <Grid container direction="row" alignItems="center">
-                                                    <img className={classes.paper} src={(textprops.imagesbuttons)[k]} alt="" />
-                                                    <Typography>
-                                                        {v}
-                                                    </Typography>
-                                                </Grid>
-                                            </Collapse>
-                                        </div>
-                                    )
-                                })}
+                            return (
+                                <div key={k} className={classes.container}>
+                                    <Collapse className={classes.collapse} in={checked === pChecked[k]} >
+                                        <Divider />
+                                        <Grid container direction="row" alignItems="center">
+                                            <img className={classes.paper} src={(textprops.imagesbuttons)[k]} alt="" />
+                                            <Typography>
+                                                {v}
+                                            </Typography>
+                                        </Grid>
+                                    </Collapse>
+                                </div>
+                            )
+                        })}
                     </div>
                 </Card>
             </div>
