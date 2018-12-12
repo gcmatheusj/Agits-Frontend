@@ -73,7 +73,7 @@ class Header extends Component {
           <div className={classes.toolbar} />
         </Hidden>
         <MenuList>
-          <MenuItem component={Link} to='/novo-tutor' selected={'/novo-tutor' === pathname}>
+          <MenuItem component={Link} to='/escolha-do-modelo' selected={'/escolha-do-modelo' === pathname}>
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>

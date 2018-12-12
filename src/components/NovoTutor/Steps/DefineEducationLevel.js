@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Card, Button, Divider } from '@material-ui/core';
+import { Typography, Grid, Card, Paper, CardActionArea, Divider } from '@material-ui/core';
 
 import img1 from "../../../assets/middle-school.png"
 import img2 from "../../../assets/high-school.png"
@@ -19,11 +19,15 @@ const styles = theme => ({
     root: {
         width: '100%',
     },
+    grid: {
+        width: '100%'
+    },
     button: {
+        margin: 20,
         width: 180,
-        height: 180,
-        margin: 8,
-        marginBottom: 10
+    },
+    cardAction: {
+        padding: 10,
     },
     media: {
         height: 120,
@@ -49,71 +53,117 @@ class DefineEducationLevel extends Component {
         const { classes } = this.props;
         return (
             <div className={classes.root}>
-                <Grid container direction="row" spacing={16}>
-                    {
-                        names.map((value, key) => {
-                            return (
-                                <Grid>
-                                    <Button className={classes.button}>
-                                        <Grid container direction="column">
-                                            <div >
-                                                <img src={imgs[key]} style={{ height: 120, width: 150 }} alt=""/>
-                                            </div>
-                                            <Typography variant="body1">
-                                                {value}
-                                            </Typography>
-                                        </Grid>
-                                    </Button>
-                                </Grid>
-                            )
-                        })
-                    }
-                </Grid>
-                <Divider />
-
-                <Card style={{ marginTop: 20, width: 960 }}>
-                    <Grid container direction="row">
-                        <Card>
-                            <Grid style={{ padding: 20, textAlign: "center", width: 320 }}>
-                                <Typography variant="h6" gutterBottom>
-                                    Pedagogical Model
-                                </Typography>
-                                <Grid container direction="row">
-                                    <Grid style={{ width: "50%" }}>
-                                        <img src={curriculum} className={classes.img} alt="" />
-                                        <Typography>Knowledge tracing and curriculum sequencing</Typography>
-                                    </Grid>
-                                    <Grid style={{ width: "50%" }}>
-                                        <img src={syllabus} className={classes.img} alt="" />
-                                        <Typography>Syllabus</Typography>
-                                    </Grid>
-                                </Grid>
-                            </Grid>
-                        </Card>
-                        <Card>
-                            <Grid style={{ padding: 20, textAlign: "center", width: 320 }}>
-                                <Typography variant="h6" gutterBottom>
-                                    Evaluation Methods
-                                </Typography>
-                                <Grid>
-                                    <img src={quick} className={classes.img} alt="" />
-                                    <Typography>Quick Test</Typography>
-                                </Grid>
-                            </Grid>
-                        </Card>
-                        <Card>
-                            <Grid style={{ padding: 20, textAlign: "center", width: 320 }}>
-                                <Typography variant="h6" gutterBottom>
-                                    Reports Types
-                                </Typography>
-                                <Grid>
-                                    <img src={teacher} className={classes.img} alt="" />
-                                    <Typography>Teacher Reports</Typography>
-                                </Grid>
-                            </Grid>
-                        </Card>
+                <Typography style={{ margin: 10 }} variant="subtitle1">
+                    Select the educational level context on which you will use the gamified tutor:
+                </Typography>
+                <Paper>
+                    <Grid className={classes.grid} container justify="space-between" direction="row">
+                        {
+                            names.map((value, key) => {
+                                return (
+                                    <Card className={classes.button}>
+                                        <CardActionArea className={classes.cardAction}>
+                                            <Grid container justify="center" alignItems="center" direction="row">
+                                                <div>
+                                                    <img src={imgs[key]} style={{ height: 120, width: 150 }} alt="" />
+                                                </div>
+                                                <Typography variant="body1">
+                                                    {value}
+                                                </Typography>
+                                            </Grid>
+                                        </CardActionArea>
+                                    </Card>
+                                )
+                            })
+                        }
                     </Grid>
-                </Card>
+                    <div style={{ padding: 20, paddingTop: 0 }}>
+                        <Divider />
+                        <Typography variant="h6" style={{ fontWeight: 'bold', marginTop: 10 }}>
+                            Middle School Class
+                        </Typography>
+                        <Typography>
+                            This template provides features that give control to the teachers in the gamified tutor (e.g., defining the course's syllabus) as well as personalized learning for the students.
+                        </Typography>
+                        <Typography variant="subtitle2" style={{ fontWeight: 'bold'}}>
+                            Check on below the enabled features for this template:
+                        </Typography>
+                        <Grid container direction="row" justify="flex-start">
+                            <Grid container justify="flex-start" style={{ width: 225 }}>
+                                <img style={{ margin: 20 }} src={curriculum} alt=""/>
+                                <img style={{ margin: 20 }} src={syllabus} alt=""/>
+                                <img style={{ margin: 20 }} src={quick} alt=""/>
+                                <img style={{ margin: 20 }} src={teacher} alt=""/>
+                            </Grid>
+                            <div style={{ maxWidth: 850 }}>
+                                <Typography variant="subtitle2" style={{ fontWeight: 'bold'}}>
+                                    - Pedagogical Model
+                                </Typography>
+                                <Typography>
+                                    Your customized tutor makes use of current intelligent techniques that model student's knowledge to accurately decide which problems it should give to students at any given time. We enable the Syllabus feature to allow you to manage the schedule and subjects on which your students will learn using the tutor.
+                                </Typography>
+                                <Typography variant="subtitle2" style={{ fontWeight: 'bold'}}>
+                                    - Evaluation Methods
+                                </Typography>
+                                <Typography>
+                                    Quick Tests: provide a quick test for your students to evaluate their learning while using the tutor. This test can be automatically generated by the tutor every time a student wants to test her current knowledge.
+                                </Typography>
+                                <Typography variant="subtitle2" style={{ fontWeight: 'bold'}}>
+                                    - Reports
+                                </Typography>
+                                <Typography>
+                                    Teacher Reports: You are able to visualize reports about the interaction, learning perfomance and other interesting reports about your students.
+                                </Typography>
+                                </div>
+                            </Grid>
+                       
+                    </div>
+                </Paper>
+                {/**
+                    <Card style={{ marginTop: 20, width: 960 }}>
+                        <Grid container direction="row">
+                            <Card>
+                                <Grid style={{ padding: 20, textAlign: "center", width: 320 }}>
+                                    <Typography variant="h6" gutterBottom>
+                                        Pedagogical Model
+                                    </Typography>
+                                    <Grid container direction="row">
+                                        <Grid style={{ width: "50%" }}>
+                                            <img src={curriculum} className={classes.img} alt="" />
+                                            <Typography>Knowledge tracing and curriculum sequencing</Typography>
+                                        </Grid>
+                                        <Grid style={{ width: "50%" }}>
+                                            <img src={syllabus} className={classes.img} alt="" />
+                                            <Typography>Syllabus</Typography>
+                                        </Grid>
+                                    </Grid>
+                                </Grid>
+                            </Card>
+                            <Card>
+                                <Grid style={{ padding: 20, textAlign: "center", width: 320 }}>
+                                    <Typography variant="h6" gutterBottom>
+                                        Evaluation Methods
+                                    </Typography>
+                                    <Grid>
+                                        <img src={quick} className={classes.img} alt="" />
+                                        <Typography>Quick Test</Typography>
+                                    </Grid>
+                                </Grid>
+                            </Card>
+                            <Card>
+                                <Grid style={{ padding: 20, textAlign: "center", width: 320 }}>
+                                    <Typography variant="h6" gutterBottom>
+                                        Reports Types
+                                    </Typography>
+                                    <Grid>
+                                        <img src={teacher} className={classes.img} alt="" />
+                                        <Typography>Teacher Reports</Typography>
+                                    </Grid>
+                                </Grid>
+                            </Card>
+                        </Grid>
+                    </Card>
+                 */}
             </div>
         )
     }

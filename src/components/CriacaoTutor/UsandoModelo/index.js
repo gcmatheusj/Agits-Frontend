@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Grid, Divider } from '@material-ui/core';
+import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Divider } from '@material-ui/core';
 
 import Header from "../../Header"
 import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
@@ -96,12 +96,10 @@ class StepperUsandoModelo extends Component {
 
         return (
             <div className={classes.root}>
-                <Header>
-                    <Grid className={classes.titleContainer}>
-                        <Typography className={classes.pageTitle} variant="h6">
-                            Customize Your Tutor
-                     </Typography>
-                    </Grid>
+                <Header title="AGITS">
+                    <Typography className={classes.pageTitle} variant="h6">
+                        Customize Your Tutor
+                    </Typography>
                     <Divider style={styles.divider} />
                     <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
                         {steps.map((label, index) => (
@@ -110,7 +108,7 @@ class StepperUsandoModelo extends Component {
                                 <StepContent>
                                     <div>{getStepContent(index)}</div>
                                     <div className={classes.actionsContainer}>
-                                        <div>
+                                        <div style={{ marginTop: 10 }}>
                                             <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
                                             <Button
                                                 className={classes.button}
