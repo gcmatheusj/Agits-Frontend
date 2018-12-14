@@ -15,6 +15,13 @@ const styles = (theme) => ({
         [theme.breakpoints.down('sm')]: {
             fontSize: '1rem',
         },
+    },
+
+    grid: {
+        justifyContent: 'flex-start',
+        [theme.breakpoints.down('sm')]: {
+            justifyContent: 'center',
+        },
     }
 });
 
@@ -23,11 +30,11 @@ function VisualizarTutores(props) {
     return (
         <Fragment>
             <Header title='AGITS'>
-                <Typography className={classes.pageTitle} variant="h6">
+                <Typography className={classes.pageTitle} variant="title">
                     These Are Your Intelligent Tutor
                 </Typography>
                 <Divider style={styles.divider} />
-                <Grid container direction="row" justify="flex-start">
+                <Grid className={classes.grid} container direction="row">
                     <CardTutor />
                     <CardTutor />
                     <CardTutor />

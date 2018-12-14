@@ -7,7 +7,7 @@ import {
     CardActions,
     CardContent,
     CardMedia,
-    Button,
+    IconButton,
     Typography,
     Grid,
     Divider
@@ -19,7 +19,9 @@ const styles = theme => ({
     card: {
         maxWidth: 280,
         marginTop: 20,
-        marginLeft: 20,
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: 20,
+        },
     },
     media: {
         height: 140,
@@ -43,11 +45,8 @@ class CardTutor extends React.Component {
         return (
             <Card className={classes.card}>
                 <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="/static/images/cards/contemplative-reptile.jpg"
-                        title="Contemplative Reptile">
-                        <Typography className={classes.top} variant="h6" gutterBottom> Basic math for 9th graders students </Typography>
+                    <CardMedia className={classes.media}>
+                        <Typography className={classes.top} variant="title" gutterBottom> Basic math for 9th graders students </Typography>
                         <Typography className={classes.top} variant="subtitle1" gutterBottom> 12 students </Typography>
                     </CardMedia>
                     <CardContent>
@@ -60,9 +59,9 @@ class CardTutor extends React.Component {
                 <Divider />
                 <Grid container direction="row" justify="flex-end">
                     <CardActions>
-                        <Button size="small" color="primary" style={{ alignItems: 'flex-end' }}>
+                        <IconButton>
                             <IconSettings className={classes.iconSettings} />
-                        </Button>
+                        </IconButton>
                     </CardActions>
                 </Grid>
             </Card>
