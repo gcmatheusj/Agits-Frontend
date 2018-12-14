@@ -28,6 +28,11 @@ const styles = theme => ({
         backgroundColor: theme.palette.primary.main,
     },
 
+    content: {
+        height: 120,
+        padding: 20
+    },
+
     top: {
         color: '#ffffff',
     },
@@ -45,13 +50,12 @@ class CardTutor extends React.Component {
             <Card className={classes.card}>
                 <CardActionArea>
                     <CardContent className={classes.media}>
-                        <Typography className={classes.top} variant="title" gutterBottom> Basic math for 9th graders students </Typography>
-                        <Typography className={classes.top} variant="subtitle1" gutterBottom> 12 students </Typography>
+                        <Typography className={classes.top} variant="title" gutterBottom> { this.props.name } </Typography>
+                        <Typography className={classes.top} variant="subtitle1" gutterBottom> { this.props.studentsNumber } students </Typography>
                     </CardContent>
-                    <CardContent>
+                    <CardContent className={classes.content}>
                         <Typography component="p">
-                            Functions, geometry, equations, trigonometry, and others 10 subjects
-                            with performance gamification method and teacher reports.
+                            { this.props.abstract }
                         </Typography>
                     </CardContent>
                 </CardActionArea>
