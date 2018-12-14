@@ -50,7 +50,7 @@ class CardTutor extends React.Component {
             <Card className={classes.card}>
                 <CardActionArea>
                     <CardContent className={classes.media}>
-                        <Typography className={classes.top} variant="title" gutterBottom> { this.props.name } </Typography>
+                        <Typography className={classes.top} variant="h6" gutterBottom> { this.props.name } </Typography>
                         <Typography className={classes.top} variant="subtitle1" gutterBottom> { this.props.studentsNumber } students </Typography>
                     </CardContent>
                     <CardContent className={classes.content}>

@@ -50,7 +50,7 @@ function VisualizarTutores(props) {
     return (
         <Fragment>
             <Header title='AGITS'>
-                <Typography className={classes.pageTitle} variant="title">
+                <Typography className={classes.pageTitle} variant="h6">
                     These Are Your Intelligent Tutor
                 </Typography>
                 <Divider style={styles.divider} />
