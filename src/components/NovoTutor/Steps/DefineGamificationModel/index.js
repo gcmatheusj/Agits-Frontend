@@ -18,6 +18,14 @@ const name = ['participation', 'performance', 'competition', 'enjoyment', 'explo
 
 class DefineGamificationModel extends Component {
 
+  state = {
+    checkedSwitch: ''
+  }
+
+  changeSwitch = name => event => {
+    this.setState({ checkedSwitch: event.target.value })
+  }
+
   render() {
     const { classes } = this.props;
 
@@ -27,8 +35,17 @@ class DefineGamificationModel extends Component {
           What is the main behavior do you expect from your students when they are learning in the
           gamifed tutor?
         </Typography>
-        
-        {name.map((value, key) => <GamificationType name={value} key={key} />)}
+
+        {name.map((value, key) => {
+          return (
+            <GamificationType
+              name={value}
+              key={key}
+              checkedSwitch={this.state.checkedSwitch}
+              changeSwitch={this.changeSwitch}
+            />
+          )
+        })}
 
       </div>
     );
