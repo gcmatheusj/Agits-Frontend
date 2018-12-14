@@ -85,7 +85,7 @@ class Header extends Component {
             </ListItemIcon>
             Home
           </MenuItem>
-          <MenuItem>
+          <MenuItem component={Link} to='/visualizar-tutores'>
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
