@@ -6,7 +6,6 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    CardMedia,
     IconButton,
     Typography,
     Grid,
@@ -24,7 +23,7 @@ const styles = theme => ({
         },
     },
     media: {
-        height: 140,
+        height: 120,
         padding: 20,
         backgroundColor: theme.palette.primary.main,
     },
@@ -45,10 +44,10 @@ class CardTutor extends React.Component {
         return (
             <Card className={classes.card}>
                 <CardActionArea>
-                    <CardMedia className={classes.media}>
+                    <CardContent className={classes.media}>
                         <Typography className={classes.top} variant="title" gutterBottom> Basic math for 9th graders students </Typography>
                         <Typography className={classes.top} variant="subtitle1" gutterBottom> 12 students </Typography>
-                    </CardMedia>
+                    </CardContent>
                     <CardContent>
                         <Typography component="p">
                             Functions, geometry, equations, trigonometry, and others 10 subjects
