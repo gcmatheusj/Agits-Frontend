@@ -25,7 +25,8 @@ class EscolhaDoModelo extends React.Component {
     state = {
         open: false,
         redirect: false,
-        selectedModel: ''
+        selectedModel: '',
+        adress: '#'
     };
 
     setRedirect = () => {
@@ -34,12 +35,12 @@ class EscolhaDoModelo extends React.Component {
         })
     }
 
-    handleClickOpen = () => {
-        this.setState({ open: true });
+    handleClickOpen = value => event => {
+        this.setState({ open: true, adress: value });
     };
 
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ open: false, adress: '' });
     };
 
     render() {
@@ -59,7 +60,7 @@ class EscolhaDoModelo extends React.Component {
                         justify="center"
                         alignItems="center">
                         <Card className={classes.card}>
-                            <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen}>
+                            <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen('/novo-tutor')}>
                                 <img src={scratch} alt="" className={classes.img} />
                                 <CardContent>
                                     <Typography className={classes.titleCard} gutterBottom align="center">
@@ -89,14 +90,14 @@ class EscolhaDoModelo extends React.Component {
                                     <Button onClick={this.handleClose} color="primary">
                                         No
                                 </Button>
-                                    <Button component={Link} to='/novo-tutor' nClick={this.handleClose} color="primary">
+                                    <Button component={Link} to={this.state.adress} onClick={this.handleClose} color="primary">
                                         Yes
                                 </Button>
                                 </DialogActions>
                             </Dialog>
                         </Card>
                         <Card className={classes.card}>
-                            <CardActionArea className={classes.cardAction} onClick={this.handleClickOpen}>
+                            <CardActionArea className={classes.cardAction} onClick={this.handleClickOpen('/usando-modelo')}>
                                 <img src={template} alt="" className={classes.img} />
                                 <CardContent>
                                     <Typography className={classes.titleCard} align="center" gutterBottom>
