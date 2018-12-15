@@ -12,6 +12,21 @@ import { styles } from './styles'
 import scratch from '../../../assets/scratch2.png'
 import template from '../../../assets/template.png'
 
+const opcoesModelo = [
+    {
+        adress: '/novo-tutor',
+        img: scratch,
+        title: 'Criar seu tutor do zero',
+        subtitle: 'Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.'
+    },
+    {
+        adress: '/usando-modelo',
+        img: template,
+        title: 'Usando modelo',
+        subtitle: 'Economize tempo usando tutor já configurado para uso! Mas fique à vontade para modificar.'
+    }
+]
+
 class EscolhaDoModelo extends React.Component {
     state = {
         open: false,
@@ -50,32 +65,24 @@ class EscolhaDoModelo extends React.Component {
                         className={classes.container}
                         justify="center"
                         alignItems="center">
-                        <Card className={classes.card}>
-                            <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen('/novo-tutor')}>
-                                <img src={scratch} alt="" className={classes.img} />
-                                <CardContent>
-                                    <Typography className={classes.titleCard} gutterBottom align="center">
-                                        Criar seu tutor do zero
-                                    </Typography>
-                                    <Typography className={classes.textCard} variant="body1" gutterBottom>
-                                        Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
-                        <Card className={classes.card}>
-                            <CardActionArea className={classes.cardAction} onClick={this.handleClickOpen('/usando-modelo')}>
-                                <img src={template} alt="" className={classes.img} />
-                                <CardContent>
-                                    <Typography className={classes.titleCard} align="center" gutterBottom>
-                                        Usando modelo
-                                        </Typography>
-                                    <Typography className={classes.textCard} variant="body1" gutterBottom>
-                                        Economize tempo usando tutor já configurado para uso! Mas fique à vontade para modificar.
-                                        </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+
+                        {opcoesModelo.map((v, k) => {
+                            return (
+                                <Card key={k} className={classes.card}>
+                                    <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen(v.adress)}>
+                                        <img src={v.img} alt="" className={classes.img} />
+                                        <CardContent>
+                                            <Typography className={classes.titleCard} gutterBottom align="center">
+                                                {v.title}
+                                            </Typography>
+                                            <Typography className={classes.textCard} variant="body1" gutterBottom>
+                                                {v.subtitle}
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            )
+                        })}
                     </Grid>
                     <AlertDialogSlide
                         adress={this.state.adress}
