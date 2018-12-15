@@ -22,8 +22,12 @@ class DefineGamificationModel extends Component {
     checkedSwitch: ''
   }
 
-  changeSwitch = name => event => {
+  enableSwitch = name => event => {
     this.setState({ checkedSwitch: event.target.value })
+  }
+
+  unableSwitch = name => event => {
+    this.setState({ checkedSwitch: '' })
   }
 
   render() {
@@ -42,11 +46,11 @@ class DefineGamificationModel extends Component {
               name={value}
               key={key}
               checkedSwitch={this.state.checkedSwitch}
-              changeSwitch={this.changeSwitch}
+              enableSwitch={this.enableSwitch}
+              unableSwitch={this.unableSwitch}
             />
           )
         })}
-
       </div>
     );
   }

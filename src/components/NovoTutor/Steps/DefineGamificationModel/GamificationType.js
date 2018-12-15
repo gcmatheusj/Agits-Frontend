@@ -106,7 +106,7 @@ class GamificationType extends Component {
     render() {
         const { classes } = this.props;
         const { checked } = this.state;
-
+        const enabled = (this.props.checkedSwitch === this.props.name)
         const textprops = text[this.props.name];
 
         return (
@@ -130,8 +130,8 @@ class GamificationType extends Component {
                                     </Grid>
                                 </Grid>
                                 <Switch
-                                    checked={this.props.checkedSwitch === this.props.name}
-                                    onChange={this.props.changeSwitch(this.props.name)}
+                                    checked={enabled}
+                                    onChange={(enabled ? this.props.unableSwitch() : this.props.enableSwitch(this.props.name))}
                                     value={this.props.name}
                                     color='primary'
                                 />
