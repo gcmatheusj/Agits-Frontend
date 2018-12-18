@@ -3,6 +3,7 @@ import Collapse from '@material-ui/core/Collapse'
 import {
     Grid, Card, CardActionArea, Typography, Divider, Button
 } from '@material-ui/core';
+import { ExpandMore } from '@material-ui/icons'
 import { withStyles } from '@material-ui/core/styles'
 
 import { styles } from './styles'
