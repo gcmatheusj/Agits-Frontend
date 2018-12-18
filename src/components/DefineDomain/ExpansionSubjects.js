@@ -25,7 +25,7 @@ class ExpansionSubjects extends Component {
 
         return (
             <Fragment>
-                <ExpansionPanel style={{ marginTop: 10 }} expanded={ this.props.expanded === 'panel4'} onChange={this.props.handleChange('panel4')}>
+                <ExpansionPanel style={{ marginTop: 10 }} expanded={ this.props.expanded === this.props.name } onChange={this.props.handleChange(this.props.name)}>
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
                         <Typography className={classes.heading}>Personal data</Typography>
                     </ExpansionPanelSummary>

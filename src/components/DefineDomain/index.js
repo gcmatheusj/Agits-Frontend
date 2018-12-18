@@ -117,7 +117,7 @@ class DefineDomain extends Component {
                             <Paper className={classes.paper}>
                                 <Typography variant='subtitle1' style={{ marginBottom: 10 }}>Subjects</Typography>
                                 <Divider />
-                                <ExpansionSubjects expanded={expanded} handleChange={this.handleChange}/>
+                                <ExpansionSubjects name={'geometry'} expanded={expanded} handleChange={this.handleChange}/>
                             </Paper>
                         </Grid>
                     </Grid>
