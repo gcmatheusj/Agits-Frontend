@@ -5,7 +5,7 @@ import { Add, Store } from '@material-ui/icons'
 
 import ExpansionSubjects from './ExpansionSubjects'
 
-import { Paper, Button, TextField, Typography, Grid, Divider, ExpansionPanel, ExpansionPanelDetails, ExpansionPanelSummary } from '@material-ui/core';
+import { Paper, Button, TextField, Typography, Grid, Divider } from '@material-ui/core';
 
 //import AddIcons from '../../assets/AddIcons';
 import Header from "../Header";
