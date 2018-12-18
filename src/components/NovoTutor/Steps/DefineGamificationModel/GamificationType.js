@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Collapse from '@material-ui/core/Collapse'
 import {
-    Grid, Card, Typography, Divider, Button, Switch
+    Grid, Card, CardActionArea, Typography, Divider, Button
 } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles'
 
@@ -103,6 +103,10 @@ class GamificationType extends Component {
             this.setState({ checked: '' })
     };
 
+    handleSelect = (event) => {
+        this.props.handleSelect(event)
+    }
+
     render() {
         const { classes } = this.props;
         const { checked } = this.state;
@@ -111,34 +115,30 @@ class GamificationType extends Component {
 
         return (
             <div className={classes.root}>
-                <Card>
-                    <Grid className={classes.gridContent} container>
-                        <Grid item xs={12}>
-                            <Grid container direction="row" spacing={16} className={classes.gridCard}>
-                                <img className={classes.img} alt="complex" src={(text[this.props.name].image)} />
-                                <Grid className={classes.gridText} container item xs={12} sm>
-                                    <Grid item xs container direction="column" spacing={16}>
-                                        <Grid item xs>
-                                            <Typography className={classes.titleCard} gutterBottom variant="h6">
-                                                {(textprops.title)}
-                                            </Typography>
-                                            <Typography className={classes.textCard} gutterBottom variant="subtitle1">
-                                                {(textprops.description)}
-                                                {((textprops.names).map((v, k) => <strong key={k}>{v}</strong>))}
-                                            </Typography>
+                <Card className={ this.props.select === this.props.name ? classes.select : '' }>
+                    <CardActionArea value={this.props.name} onClick={this.handleSelect}>
+                        <Grid className={classes.gridContent} container>
+                            <Grid item xs={12}>
+                                <Grid container direction="row" spacing={16} className={classes.gridCard}>
+                                    <img className={classes.img} alt="complex" src={(text[this.props.name].image)} />
+                                    <Grid className={classes.gridText} container item xs={12} sm>
+                                        <Grid item xs container direction="column" spacing={16}>
+                                            <Grid item xs>
+                                                <Typography className={classes.titleCard} gutterBottom variant="h6">
+                                                    {(textprops.title)}
+                                                </Typography>
+                                                <Typography className={classes.textCard} gutterBottom variant="subtitle1">
+                                                    {(textprops.description)}
+                                                    {((textprops.names).map((v, k) => <strong key={k}>{v}</strong>))}
+                                                </Typography>
+                                            </Grid>
                                         </Grid>
                                     </Grid>
                                 </Grid>
-                                <Switch
-                                    checked={enabled}
-                                    onChange={(enabled ? this.props.unableSwitch() : this.props.enableSwitch(this.props.name))}
-                                    value={this.props.name}
-                                    color='primary'
-                                />
+                                <Divider />
                             </Grid>
-                            <Divider />
                         </Grid>
-                    </Grid>
+                    </CardActionArea>
                     <div className={classes.gridGame}>
                         {
                             ((textprops.checkeds).map((v, k) => {

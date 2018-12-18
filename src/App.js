@@ -21,9 +21,9 @@ import VisualizarTutores from './components/VisualizarTutores'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#445aa4',
-      main: '#003175',
-      dark: '#000a49',
+      light: '#63a4ff',
+      main: '#1976d2',
+      dark: '#004ba0',
     },
   },
 });

@@ -9,6 +9,9 @@ export const styles = theme => ({
             marginBottom: 20,
         },
     },
+    select: {
+       boxShadow: '0 0 9px #1976d2, 0 0 15px #1976d2'
+    },
     gridCard: {
         alignItems: 'center',
         [theme.breakpoints.down('sm')]: {

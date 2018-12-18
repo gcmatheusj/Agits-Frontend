@@ -9,7 +9,7 @@ import img3 from "../../../assets/college.png"
 import img4 from "../../../assets/test.png"
 import img5 from "../../../assets/other-school.png"
 
-import curriculum from "../../../assets/curriculum.png"
+import education from "../../../assets/education1.png"
 import syllabus from "../../../assets/syllabus.png"
 import quick from "../../../assets/quick-test.png"
 import teacher from "../../../assets/teacher-reports.png"
@@ -18,6 +18,9 @@ import teacher from "../../../assets/teacher-reports.png"
 const styles = theme => ({
     root: {
         width: '100%',
+    },
+    select: {
+        boxShadow: '0 0 9px #1976d2, 0 0 15px #1976d2'
     },
     grid: {
         width: '100%'
@@ -49,6 +52,14 @@ const names = [
 const imgs = [img1, img2, img3, img4, img5]
 
 class DefineEducationLevel extends Component {
+    state = {
+        select: ''
+    }
+
+    handleSelect = event => {
+        this.setState({ select: event.currentTarget.value })
+    }
+
     render() {
         const { classes } = this.props;
         return (
@@ -61,8 +72,8 @@ class DefineEducationLevel extends Component {
                         {
                             names.map((value, key) => {
                                 return (
-                                    <Card key={key} className={classes.button}>
-                                        <CardActionArea className={classes.cardAction}>
+                                    <Card key={key} className={[classes.button, this.state.select === value ? classes.select : '']}>
+                                        <CardActionArea value={value} onClick={this.handleSelect} className={classes.cardAction}>
                                             <Grid container justify="center" alignItems="center" direction="row">
                                                 <div>
                                                     <img src={imgs[key]} style={{ height: 120, width: 150 }} alt="" />
@@ -89,13 +100,8 @@ class DefineEducationLevel extends Component {
                             Check on below the enabled features for this template:
                         </Typography>
                         <Grid container direction="row" justify="flex-start">
-                            <Grid container justify="flex-start" style={{ width: 225 }}>
-                                <img style={{ margin: 20 }} src={curriculum} alt=""/>
-                                <img style={{ margin: 20 }} src={syllabus} alt=""/>
-                                <img style={{ margin: 20 }} src={quick} alt=""/>
-                                <img style={{ margin: 20 }} src={teacher} alt=""/>
-                            </Grid>
-                            <div style={{ maxWidth: 850 }}>
+                            <img style={{maxWidth: '25%', width: 230, height: 230}} src={education} alt=""/>
+                            <div style={{ maxWidth: '75%' }}>
                                 <Typography variant="subtitle2" style={{ fontWeight: 'bold'}}>
                                     - Pedagogical Model
                                 </Typography>

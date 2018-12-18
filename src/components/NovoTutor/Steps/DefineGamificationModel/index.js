@@ -19,15 +19,11 @@ const name = ['participation', 'performance', 'competition', 'enjoyment', 'explo
 class DefineGamificationModel extends Component {
 
   state = {
-    checkedSwitch: ''
+    select: ''
   }
 
-  enableSwitch = name => event => {
-    this.setState({ checkedSwitch: event.target.value })
-  }
-
-  unableSwitch = name => event => {
-    this.setState({ checkedSwitch: '' })
+  handleSelect = event => {
+    this.setState({ select: event.currentTarget.value })
   }
 
   render() {
@@ -45,9 +41,9 @@ class DefineGamificationModel extends Component {
             <GamificationType
               name={value}
               key={key}
-              checkedSwitch={this.state.checkedSwitch}
-              enableSwitch={this.enableSwitch}
-              unableSwitch={this.unableSwitch}
+
+              handleSelect={this.handleSelect}
+              select={this.state.select}
             />
           )
         })}
