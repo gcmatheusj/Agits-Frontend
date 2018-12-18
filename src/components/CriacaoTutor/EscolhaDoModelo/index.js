@@ -1,31 +1,38 @@
 import React from "react"
 import { withStyles } from '@material-ui/core/styles'
-import { Link } from 'react-router-dom'
-import { Grid, Typography, Card, CardContent, CardActionArea, Button, Divider } from '@material-ui/core'
+import { Grid, Typography, Card, CardContent, CardActionArea, Divider } from '@material-ui/core'
 import PropTypes from 'prop-types'
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import Slide from '@material-ui/core/Slide'
 
 import Header from "../../Header"
+
+import AlertDialogSlide from './Dialog'
 
 import { styles } from './styles'
 
 import scratch from '../../../assets/scratch2.png'
 import template from '../../../assets/template.png'
 
-function Transition(props) {
-    return <Slide direction="down" {...props} />;
-}
+const opcoesModelo = [
+    {
+        adress: '/novo-tutor',
+        img: scratch,
+        title: 'Criar seu tutor do zero',
+        subtitle: 'Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.'
+    },
+    {
+        adress: '/usando-modelo',
+        img: template,
+        title: 'Usando modelo',
+        subtitle: 'Economize tempo usando tutor já configurado para uso! Mas fique à vontade para modificar.'
+    }
+]
 
 class EscolhaDoModelo extends React.Component {
     state = {
         open: false,
         redirect: false,
-        selectedModel: ''
+        selectedModel: '',
+        adress: '#'
     };
 
     setRedirect = () => {
@@ -34,12 +41,12 @@ class EscolhaDoModelo extends React.Component {
         })
     }
 
-    handleClickOpen = () => {
-        this.setState({ open: true });
+    handleClickOpen = value => event => {
+        this.setState({ open: true, adress: value });
     };
 
     handleClose = () => {
-        this.setState({ open: false });
+        this.setState({ open: false, adress: '' });
     };
 
     render() {
@@ -58,57 +65,30 @@ class EscolhaDoModelo extends React.Component {
                         className={classes.container}
                         justify="center"
                         alignItems="center">
-                        <Card className={classes.card}>
-                            <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen}>
-                                <img src={scratch} alt="" className={classes.img} />
-                                <CardContent>
-                                    <Typography className={classes.titleCard} gutterBottom align="center">
-                                        Create ITS from scratch
-                                    </Typography>
-                                    <Typography className={classes.textCard} variant="body1" gutterBottom>
-                                        Create a new tutor step by step and explore  all features that we bring for you.
-                                    </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                            <Dialog
-                                open={this.state.open}
-                                TransitionComponent={Transition}
-                                keepMounted
-                                onClose={this.handleClose}
-                                aria-labelledby="alert-dialog-slide-title"
-                                aria-describedby="alert-dialog-slide-description">
-                                <DialogTitle id="alert-dialog-slide-title">
-                                    {"Confirmation"}
-                                </DialogTitle>
-                                <DialogContent>
-                                    <DialogContentText id="alert-dialog-slide-description">
-                                        Are you sure you want to choose this one?
-                                    </DialogContentText>
-                                </DialogContent>
-                                <DialogActions>
-                                    <Button onClick={this.handleClose} color="primary">
-                                        No
-                                </Button>
-                                    <Button component={Link} to='/novo-tutor' nClick={this.handleClose} color="primary">
-                                        Yes
-                                </Button>
-                                </DialogActions>
-                            </Dialog>
-                        </Card>
-                        <Card className={classes.card}>
-                            <CardActionArea className={classes.cardAction} onClick={this.handleClickOpen}>
-                                <img src={template} alt="" className={classes.img} />
-                                <CardContent>
-                                    <Typography className={classes.titleCard} align="center" gutterBottom>
-                                        Using Template
-                                        </Typography>
-                                    <Typography className={classes.textCard} variant="body1" gutterBottom>
-                                        Save time using a tutor already configured, but feel free to modify whatever you need.
-                                        </Typography>
-                                </CardContent>
-                            </CardActionArea>
-                        </Card>
+
+                        {opcoesModelo.map((v, k) => {
+                            return (
+                                <Card key={k} className={classes.card}>
+                                    <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen(v.adress)}>
+                                        <img src={v.img} alt="" className={classes.img} />
+                                        <CardContent>
+                                            <Typography className={classes.titleCard} gutterBottom align="center">
+                                                {v.title}
+                                            </Typography>
+                                            <Typography className={classes.textCard} variant="body1" gutterBottom>
+                                                {v.subtitle}
+                                            </Typography>
+                                        </CardContent>
+                                    </CardActionArea>
+                                </Card>
+                            )
+                        })}
                     </Grid>
+                    <AlertDialogSlide
+                        adress={this.state.adress}
+                        handleClose={this.handleClose}
+                        open={this.state.open}
+                    />
                 </Header>
             </div>
         )

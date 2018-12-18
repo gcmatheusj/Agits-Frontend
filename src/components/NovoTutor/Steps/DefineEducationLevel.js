@@ -61,7 +61,7 @@ class DefineEducationLevel extends Component {
                         {
                             names.map((value, key) => {
                                 return (
-                                    <Card className={classes.button}>
+                                    <Card key={key} className={classes.button}>
                                         <CardActionArea className={classes.cardAction}>
                                             <Grid container justify="center" alignItems="center" direction="row">
                                                 <div>

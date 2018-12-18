@@ -6,8 +6,7 @@ import {
     CardActionArea,
     CardActions,
     CardContent,
-    CardMedia,
-    Button,
+    IconButton,
     Typography,
     Grid,
     Divider
@@ -19,12 +18,19 @@ const styles = theme => ({
     card: {
         maxWidth: 280,
         marginTop: 20,
-        marginLeft: 20,
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: 20,
+        },
     },
     media: {
-        height: 140,
+        height: 120,
         padding: 20,
         backgroundColor: theme.palette.primary.main,
+    },
+
+    content: {
+        height: 120,
+        padding: 20
     },
 
     top: {
@@ -43,26 +49,22 @@ class CardTutor extends React.Component {
         return (
             <Card className={classes.card}>
                 <CardActionArea>
-                    <CardMedia
-                        className={classes.media}
-                        image="/static/images/cards/contemplative-reptile.jpg"
-                        title="Contemplative Reptile">
-                        <Typography className={classes.top} variant="h6" gutterBottom> Basic math for 9th graders students </Typography>
-                        <Typography className={classes.top} variant="subtitle1" gutterBottom> 12 students </Typography>
-                    </CardMedia>
-                    <CardContent>
+                    <CardContent className={classes.media}>
+                        <Typography className={classes.top} variant="h6" gutterBottom> { this.props.name } </Typography>
+                        <Typography className={classes.top} variant="subtitle1" gutterBottom> { this.props.studentsNumber } students </Typography>
+                    </CardContent>
+                    <CardContent className={classes.content}>
                         <Typography component="p">
-                            Functions, geometry, equations, trigonometry, and others 10 subjects
-                            with performance gamification method and teacher reports.
+                            { this.props.abstract }
                         </Typography>
                     </CardContent>
                 </CardActionArea>
                 <Divider />
                 <Grid container direction="row" justify="flex-end">
                     <CardActions>
-                        <Button size="small" color="primary" style={{ alignItems: 'flex-end' }}>
+                        <IconButton>
                             <IconSettings className={classes.iconSettings} />
-                        </Button>
+                        </IconButton>
                     </CardActions>
                 </Grid>
             </Card>
