@@ -55,6 +55,7 @@ const DefineReports = (props) => {
         values.map((v, k) => {
           return (
             <StepsCard
+              key={k}
               img={v.img}
               title={v.title}
               description={v.description}
