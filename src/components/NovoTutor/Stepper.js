@@ -18,7 +18,7 @@ import MySnackbarContentWrapper from '../ToastSuccess'
 
 import DefinePedagogicalModel from './Steps/DefinePedagogicalModel';
 import DefineGamificationModel from './Steps/DefineGamificationModel';
-import EvalutaionMethods from './Steps/EvalutaionMethods';
+import EvaluationMethods from './Steps/EvaluationMethods';
 import DefineReports from './Steps/DefineReports';
 
 const styles = theme => ({
@@ -60,7 +60,7 @@ function getStepContent(step) {
     case 1:
       return <DefineGamificationModel />;
     case 2:
-      return <EvalutaionMethods />;
+      return <EvaluationMethods />;
     case 3:
       return <DefineReports />;
     default:

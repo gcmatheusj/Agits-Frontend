@@ -7,7 +7,7 @@ import Header from "../../Header";
 
 import DefinePedagogicalModel from '../../NovoTutor/Steps/DefinePedagogicalModel';
 import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
-import EvalutaionMethods from '../../NovoTutor/Steps/EvalutaionMethods';
+import EvaluationMethods from '../../NovoTutor/Steps/EvaluationMethods';
 import DefineReports from '../../NovoTutor/Steps/DefineReports';
 
 const styles = theme => ({
@@ -48,7 +48,7 @@ function getStepContent(step) {
     case 1:
       return <DefineGamificationModel />;
     case 2:
-      return <EvalutaionMethods />;
+      return <EvaluationMethods />;
     case 3:
       return <DefineReports />;
     default:
