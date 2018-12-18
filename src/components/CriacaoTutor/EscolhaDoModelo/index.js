@@ -63,10 +63,10 @@ class EscolhaDoModelo extends React.Component {
                                 <img src={scratch} alt="" className={classes.img} />
                                 <CardContent>
                                     <Typography className={classes.titleCard} gutterBottom align="center">
-                                        Criar seu tutor do zero
+                                        Create ITS from scratch
                                     </Typography>
                                     <Typography className={classes.textCard} variant="body1" gutterBottom>
-                                        Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.
+                                        Create a new tutor step by step and explore  all features that we bring for you.
                                     </Typography>
                                 </CardContent>
                             </CardActionArea>
@@ -100,10 +100,10 @@ class EscolhaDoModelo extends React.Component {
                                 <img src={template} alt="" className={classes.img} />
                                 <CardContent>
                                     <Typography className={classes.titleCard} align="center" gutterBottom>
-                                        Usando modelo
+                                        Using Template
                                         </Typography>
                                     <Typography className={classes.textCard} variant="body1" gutterBottom>
-                                        Economize tempo usando tutor já configurado para uso! Mas fique à vontade para modificar.
+                                        Save time using a tutor already configured, but feel free to modify whatever you need.
                                         </Typography>
                                 </CardContent>
                             </CardActionArea>
