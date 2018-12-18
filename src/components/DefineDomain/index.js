@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Add, Store, ExpandMore } from '@material-ui/icons'
+import { Add, Store } from '@material-ui/icons'
+
+import ExpansionSubjects from './ExpansionSubjects'
 
 import { Paper, Button, TextField, Typography, Grid, Divider, ExpansionPanel, ExpansionPanelDetails, ExpansionPanelSummary } from '@material-ui/core';
 
@@ -57,11 +59,6 @@ const styles = theme => ({
     actionsContainer: {
         marginBottom: theme.spacing.unit * 2,
     },
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        flexBasis: '33.33%',
-        flexShrink: 0,
-    },
     paper: {
         ...theme.mixins.gutters(),
         paddingTop: theme.spacing.unit * 2,
@@ -72,8 +69,8 @@ const styles = theme => ({
 class DefineDomain extends Component {
 
     state = {
-        expanded: null,
-    };
+        expanded: ''
+    }
 
     handleChange = panel => (event, expanded) => {
         this.setState({
@@ -83,8 +80,7 @@ class DefineDomain extends Component {
 
     render() {
         const { classes } = this.props;
-        const { expanded } = this.state;
-
+        const { expanded } = this.state
         return (
             <div>
                 <Header title='AGITS'>
@@ -121,17 +117,7 @@ class DefineDomain extends Component {
                             <Paper className={classes.paper}>
                                 <Typography variant='subtitle1' style={{ marginBottom: 10 }}>Subjects</Typography>
                                 <Divider />
-                                <ExpansionPanel style={{ marginTop: 10}} expanded={expanded === 'panel4'} onChange={this.handleChange('panel4')}>
-                                    <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                                        <Typography className={classes.heading}>Personal data</Typography>
-                                    </ExpansionPanelSummary>
-                                    <ExpansionPanelDetails>
-                                        <Typography>
-                                            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-                                            eros, vitae egestas augue. Duis vel est augue.
-                                        </Typography>
-                                    </ExpansionPanelDetails>
-                                </ExpansionPanel>
+                                <ExpansionSubjects expanded={expanded} handleChange={this.handleChange}/>
                             </Paper>
                         </Grid>
                     </Grid>
