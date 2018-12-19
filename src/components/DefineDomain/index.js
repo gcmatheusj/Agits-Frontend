@@ -114,7 +114,7 @@ class DefineDomain extends Component {
     };
 
     render() {
-        const { classes } = this.props;
+        const { classes } = this.props
         const { expanded } = this.state
         return (
             <div>
@@ -165,8 +165,10 @@ class DefineDomain extends Component {
                         <Grid item xs={12} className={classes.gridSubjects}>
                             <Paper className={classes.paper}>
                                 <Typography variant='subtitle1' style={{ marginBottom: 10 }}>Subjects</Typography>
-                                <Divider />
-                                <ExpansionSubjects name={'geometry'} expanded={expanded} handleChange={this.handleChange} />
+                                <Divider style={{ marginBottom: 20 }}/>
+                                <ExpansionSubjects name={'Geometry'} expanded={expanded} handleChange={this.handleChange} />
+                                <ExpansionSubjects name={'Geometry2'} expanded={expanded} handleChange={this.handleChange} />
+                                <ExpansionSubjects name={'Geometry3'} expanded={expanded} handleChange={this.handleChange} />
                             </Paper>
                         </Grid>
                     </Grid>

@@ -4,9 +4,11 @@ import {
     ExpansionPanelSummary,
     ExpansionPanelDetails,
     Typography,
+    Grid,
 } from '@material-ui/core'
 import { ExpandMore } from '@material-ui/icons'
 import { withStyles } from '@material-ui/core/styles'
+import PaperSubject from './PaperSubject'
 
 
 const styles = theme => ({
@@ -24,23 +26,30 @@ class ExpansionSubjects extends Component {
         const { classes } = this.props
 
         return (
-            <Fragment>
+            <div>
                 <ExpansionPanel
-                    style={{ marginTop: 10 }}
                     expanded={this.props.expanded === this.props.name}
                     onChange={this.props.handleChange(this.props.name)}
+                    style={{ marginBottom: 2 }}
                 >
                     <ExpansionPanelSummary expandIcon={<ExpandMore />}>
-                        <Typography className={classes.heading}>Personal data</Typography>
+                        <Typography className={classes.heading} variant='h6'>{this.props.name}</Typography>
                     </ExpansionPanelSummary>
                     <ExpansionPanelDetails>
-                        <Typography>
-                            Nunc vitae orci ultricies, auctor nunc in, volutpat nisl. Integer sit amet egestas
-                            eros, vitae egestas augue. Duis vel est augue.
-                        </Typography>
+                        <Grid>
+                            <Typography gutterBottom variant="subtitle1" >
+                                Mussum Ipsum, cacilds vidis litro abertis. Admodum accumsan disputationi eu sit. Vide electram sadipscing et per. Não sou faixa preta cumpadi, sou preto inteiris, inteiris. Em pé sem cair, deitado sem dormir, sentado sem cochilar e fazendo pose. Suco de cevadiss deixa as pessoas mais interessantis.
+                            </Typography>
+                            <Typography variant="h6">
+                                Requirements:
+                            </Typography>
+                            <PaperSubject/>
+                            <PaperSubject/>
+                            <PaperSubject/>
+                        </Grid>
                     </ExpansionPanelDetails>
                 </ExpansionPanel>
-            </Fragment>
+            </div>
         )
     }
 }
