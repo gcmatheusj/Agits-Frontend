@@ -12,6 +12,7 @@ import {
   MenuList,
   MenuItem,
   ListItemIcon,
+  ListItemText,
   CssBaseline,
 } from '@material-ui/core';
 import HomeIcon from '@material-ui/icons/Home'
@@ -73,23 +74,38 @@ class Header extends Component {
           <div className={classes.toolbar} />
         </Hidden>
         <MenuList>
-          <MenuItem component={Link} to='/escolha-do-modelo' selected={'/escolha-do-modelo' === pathname}>
+          <MenuItem
+            component={Link}
+            to='/escolha-do-modelo'
+            selected={
+              '/escolha-do-modelo' === pathname ||
+              '/novo-tutor' === pathname ||
+              '/usando-modelo' === pathname
+            }
+          >
             <ListItemIcon>
               <AddIcon />
             </ListItemIcon>
-            Create Tutor
+            <ListItemText classes={{ primary: classes.primary }} inset primary="Create Tutor" />
           </MenuItem>
-          <MenuItem component={Link} to='/'>
+
+          <MenuItem
+            component={Link} to='/'
+          >
             <ListItemIcon>
               <HomeIcon />
             </ListItemIcon>
-            Home
+            <ListItemText classes={{ primary: classes.primary }} inset primary="Home" />
           </MenuItem>
-          <MenuItem component={Link} to='/visualizar-tutores'>
+          <MenuItem
+            component={Link}
+            to='/visualizar-tutores'
+            selected={'/visualizar-tutores' === pathname}
+          >
             <ListItemIcon>
               <DashboardIcon />
             </ListItemIcon>
-            Dashboard
+            <ListItemText classes={{ primary: classes.primary }} inset primary="Dashboard" />
           </MenuItem>
         </MenuList>
       </div>

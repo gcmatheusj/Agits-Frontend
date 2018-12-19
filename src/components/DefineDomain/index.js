@@ -16,7 +16,6 @@ const styles = theme => ({
     },
     titleGrid: {
         marginTop: 15,
-        // marginBottom: 15,
         textAlign: 'left',
     },
     title: {
@@ -37,7 +36,6 @@ const styles = theme => ({
         direction: 'row',
     },
     gridAccordion: {
-        //backgroundColor: "green",
         alignItem: "center",
         justifyContent: "center",
     },
@@ -51,9 +49,6 @@ const styles = theme => ({
         width: 250,
     },
     buttons: {
-        // height: "4px",
-        // marginTop: "24px",
-        // width: "140px",
         margin: theme.spacing.unit,
     },
     actionsContainer: {
