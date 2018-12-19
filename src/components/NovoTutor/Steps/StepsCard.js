@@ -40,7 +40,7 @@ const styles = theme => ({
     },
     img: {
         margin: 20,
-        width: 128,
+        width: 100,
     },
   });
 
