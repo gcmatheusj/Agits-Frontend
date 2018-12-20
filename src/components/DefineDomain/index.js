@@ -16,7 +16,6 @@ const styles = theme => ({
         width: '100%',
     },
     titleGrid: {
-        marginTop: 15,
         textAlign: 'left',
     },
     title: {
@@ -118,61 +117,55 @@ class DefineDomain extends Component {
         const { expanded } = this.state
         return (
             <div>
-                <Header title='AGITS'>
-                    <Grid container spacing={16}>
-                        <Grid item xs={12} className={classes.titleGrid}>
-                            <Typography className={classes.title} variant="subtitle1">
-                                Define domain and subjects
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={12} >
-                            <Divider />
-                            <TextField
-                                id="outlined-with-placeholder"
-                                label="Define domain of your tutor..."
-                                className={classes.textField}
-                                margin="normal"
-                                variant="outlined"
-                            />
-                        </Grid>
-                        <Grid container justify="space-between" alignItems="center">
-                            <div>
-                                <Button variant="contained" className={classes.buttons} color='primary'>
-                                    <Add />
-                                    ADD SUBJECT
-                                </Button>
-                                <Button variant="contained" className={classes.buttons} color='primary'>
-                                    <Store />
-                                    STORE
-                                </Button>
-                            </div>
-                            <TextField
-                                id="outlined-search"
-                                label="Search existing domains"
-                                type="search"
-                                margin="normal"
-                                variant="outlined"
-                                InputProps={{
-                                    startAdornment: (
-                                        <InputAdornment position="start">
-                                            <SearchIcon />
-                                        </InputAdornment>
-                                    )
-                                }}
-                            />
-                        </Grid>
 
-                        <Grid item xs={12} className={classes.gridSubjects}>
-                            <Paper className={classes.paper}>
-                                <Typography variant='subtitle1' style={{ marginBottom: 10 }}>Subjects</Typography>
-                                <Divider style={{ marginBottom: 20 }}/>
-                                <ExpansionSubjects name={'Geometry'} expanded={expanded} handleChange={this.handleChange} />
-                                <ExpansionSubjects name={'Geometry2'} expanded={expanded} handleChange={this.handleChange} />
-                                <ExpansionSubjects name={'Geometry3'} expanded={expanded} handleChange={this.handleChange} />
-                            </Paper>
-                        </Grid>
+                <Grid container spacing={16}>
+                    <Grid item xs={12} className={classes.titleGrid}>
+                        <Typography className={classes.title} variant="subtitle1">
+                            Define Domain
+                            </Typography>
                     </Grid>
-                </Header>
+                    <Grid item xs={12} >
+                        <Divider />
+                        <TextField
+                            id="outlined-with-placeholder"
+                            label="Define domain of your tutor..."
+                            className={classes.textField}
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    </Grid>
+                    <Grid container justify="space-between" alignItems="center">
+                        <Button variant="contained" className={classes.buttons} size='medium' color='primary'>
+                            <Add />
+                            ADD SUBJECT
+                        </Button>
+                        <TextField
+                            id="outlined-search"
+                            label="Search existing domains"
+                            type="search"
+                            margin="normal"
+                            variant="outlined"
+                            InputProps={{
+                                startAdornment: (
+                                    <InputAdornment position="start">
+                                        <SearchIcon />
+                                    </InputAdornment>
+                                )
+                            }}
+                        />
+                    </Grid>
+
+                    <Grid item xs={12} className={classes.gridSubjects}>
+                        
+                            <Typography variant='subtitle1' style={{ marginBottom: 10, fontWeight: 'bold' }}>Subjects</Typography>
+                            <Divider style={{ marginBottom: 20 }} />
+                            <ExpansionSubjects name={'Geometry'} expanded={expanded} handleChange={this.handleChange} />
+                            <ExpansionSubjects name={'Geometry2'} expanded={expanded} handleChange={this.handleChange} />
+                            <ExpansionSubjects name={'Geometry3'} expanded={expanded} handleChange={this.handleChange} />
+                        
+                    </Grid>
+                </Grid>
+
             </div>
         )
     }
