@@ -122,7 +122,7 @@ class DefineDomain extends Component {
                     <Grid item xs={12} className={classes.titleGrid}>
                         <Typography className={classes.title} variant="subtitle1">
                             Define Domain
-                            </Typography>
+                        </Typography>
                     </Grid>
                     <Grid item xs={12} >
                         <Divider />
