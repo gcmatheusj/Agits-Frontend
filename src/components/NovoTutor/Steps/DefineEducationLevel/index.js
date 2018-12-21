@@ -13,12 +13,13 @@ import education from "../../../../assets/education1.png"
 
 import CollapseDescription from './CollapseDescription'
 
-
 const styles = theme => ({
     root: {
         width: '100%',
     },
     select: {
+        margin: 20,
+        width: 180,
         boxShadow: '0 0 9px #1976d2, 0 0 15px #1976d2'
     },
     grid: {
@@ -109,7 +110,7 @@ class DefineEducationLevel extends Component {
                         {
                             names.map((value, key) => {
                                 return (
-                                    <Card key={key} className={[classes.button, this.state.select === value ? classes.select : '']}>
+                                    <Card key={key} className={this.state.select === value ? classes.select : classes.button}>
                                         <CardActionArea value={value} onClick={this.handleSelect} className={classes.cardAction}>
                                             <Grid container justify="center" alignItems="center" direction="row">
                                                 <div>

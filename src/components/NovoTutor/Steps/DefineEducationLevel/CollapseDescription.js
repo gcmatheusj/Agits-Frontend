@@ -39,5 +39,4 @@ const CollapseDescription = props => {
         </Collapse>
     )
 }
-
 export default CollapseDescription
