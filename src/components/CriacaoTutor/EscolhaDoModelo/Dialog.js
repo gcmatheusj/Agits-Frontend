@@ -68,10 +68,10 @@ class AlertDialogSlide extends React.Component {
                     </Grid>
                 </DialogContent>
                 <Grid style={{ padding: 24 }} container justify="flex-start">
-                    <Button onClick={this.props.handleClose} style={{ marginRight: 10 }} variant="contained" color="primary">
+                    <Button onClick={this.props.handleClose} style={{ marginRight: 10 }} >
                         Cancel
                     </Button>
-                    <Button component={Link} to={this.props.adress} variant="contained" size="medium" onClick={this.props.handleClose} color="primary">
+                    <Button component={Link} to={this.props.adress} variant="contained" onClick={this.props.handleClose} color="primary">
                         Next
                     </Button>
                 </Grid>
