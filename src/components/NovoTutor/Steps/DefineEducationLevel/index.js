@@ -18,6 +18,7 @@ const styles = theme => ({
         width: '100%',
     },
     select: {
+        backgroundColor: '#fafafa',
         margin: 20,
         width: 180,
         boxShadow: '0 0 9px #1976d2, 0 0 15px #1976d2'
@@ -26,6 +27,7 @@ const styles = theme => ({
         width: '100%'
     },
     button: {
+        backgroundColor: '#fafafa',
         margin: 20,
         width: 180,
     },
@@ -114,7 +116,7 @@ class DefineEducationLevel extends Component {
                                         <CardActionArea value={value} onClick={this.handleSelect} className={classes.cardAction}>
                                             <Grid container justify="center" alignItems="center" direction="row">
                                                 <div>
-                                                    <img src={imgs[key]} style={{ height: 120, width: 150 }} alt="" />
+                                                    <img src={imgs[key]} style={{ height: 120 }} alt="" />
                                                 </div>
                                                 <Typography variant="body1">
                                                     {value}
