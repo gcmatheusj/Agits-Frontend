@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Card, Paper, CardActionArea, Divider, Collapse } from '@material-ui/core';
+import { Typography, Grid, Card, Paper, CardActionArea, Divider } from '@material-ui/core';
 
 import img1 from "../../../../assets/middle-school.png"
 import img2 from "../../../../assets/high-school.png"
@@ -10,9 +10,6 @@ import img4 from "../../../../assets/test.png"
 import img5 from "../../../../assets/other-school.png"
 
 import education from "../../../../assets/education1.png"
-import syllabus from "../../../../assets/syllabus.png"
-import quick from "../../../../assets/quick-test.png"
-import teacher from "../../../../assets/teacher-reports.png"
 
 import CollapseDescription from './CollapseDescription'
 

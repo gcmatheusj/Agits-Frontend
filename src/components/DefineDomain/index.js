@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import { Add, Store, Search as SearchIcon } from '@material-ui/icons'
+import { Add, Search as SearchIcon } from '@material-ui/icons'
 import { fade } from '@material-ui/core/styles/colorManipulator'
 
 import ExpansionSubjects from './ExpansionSubjects'
 
-import { Paper, Button, TextField, Typography, Grid, Divider, InputBase, InputAdornment } from '@material-ui/core';
+import { Button, TextField, Typography, Grid, Divider, InputAdornment } from '@material-ui/core';
 
 //import AddIcons from '../../assets/AddIcons';
-import Header from "../Header";
 
 const styles = theme => ({
     root: {

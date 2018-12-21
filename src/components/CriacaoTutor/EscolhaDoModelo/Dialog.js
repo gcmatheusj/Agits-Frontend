@@ -3,13 +3,10 @@ import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogContent from '@material-ui/core/DialogContent';
 import Divider from '@material-ui/core/Divider'
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import Slide from '@material-ui/core/Slide';
 import { Link } from 'react-router-dom'
 import { withStyles } from '@material-ui/core/styles';
 
-import DefineDomain from '../../DefineDomain'
 import { Grid, Typography, TextField } from '@material-ui/core';
 
 function Transition(props) {
