@@ -26,6 +26,9 @@ const theme = createMuiTheme({
       dark: '#004ba0',
     },
   },
+  typography: {
+    useNextVariants: true,
+  },
 });
 
 const App = () => (
