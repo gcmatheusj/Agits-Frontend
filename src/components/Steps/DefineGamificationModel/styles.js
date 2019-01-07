@@ -37,6 +37,7 @@ export const styles = theme => ({
         },
     },
     textCard: {
+        textAlign: 'justify',
         [theme.breakpoints.down('sm')]: {
             fontSize: '0.8rem',
             marginBottom: 15,

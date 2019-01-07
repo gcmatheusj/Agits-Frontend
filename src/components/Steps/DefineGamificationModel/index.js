@@ -8,6 +8,7 @@ import GamificationType from './GamificationType'
 const styles = theme => ({
   title: {
     padding: 1,
+    textAlign: 'justify',
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.9rem',
     },

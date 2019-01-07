@@ -50,6 +50,11 @@ const styles = theme => ({
     flexGrow: 1,
     paddingTop: 0,
     padding: theme.spacing.unit * 3,
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: 16,
+      paddinRight: 16,
+      paddingBottom: 16
+    }
   },
 });
 
