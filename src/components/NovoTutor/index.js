@@ -11,7 +11,8 @@ const styles = theme => ({
     margin: '20px',
     fontWeight: 'bold',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem',
+      fontSize: '1.2rem',
+      marginLeft: '12px'
     },
   },
   appBarSpacer: theme.mixins.toolbar,

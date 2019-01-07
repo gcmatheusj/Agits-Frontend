@@ -12,6 +12,7 @@ import StepsCard from './StepsCard'
 
 const styles = theme => ({
   title: {
+    textAlign: 'justify',
     [theme.breakpoints.down('sm')]: {
       fontSize: '0.9rem',
     },
