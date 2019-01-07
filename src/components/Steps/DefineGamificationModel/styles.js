@@ -73,15 +73,15 @@ export const styles = theme => ({
     },
     paper: {
         margin: theme.spacing.unit,
-        width: 50,
-        height: 50,
+        width: 40,
+        height: 40,
     },
     collapse: {
         width: '100%',
     },
     icon: {
-        height: 50,
-        width: 50,
-        margin: 5,
+        height: 40,
+        width: 40,
+        margin: 2,
     },
 });

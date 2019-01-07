@@ -9,7 +9,6 @@ import Login from './components/Login';
 import RecuperarSenha from './components/RecuperarSenha';
 import Cadastro from './components/Cadastro';
 import Dashboard from './components/Dashboard';
-import NovoTutor from './components/NovoTutor';
 import DefineDomain from './components/DefineDomain';
 
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
@@ -42,8 +41,7 @@ const App = () => (
             <Route path="/recuperar-senha" component={RecuperarSenha} />
             <Route path="/cadastro" component={Cadastro} />
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/novo-tutor" component={NovoTutor} />
-            <Route path="/escolha-do-modelo" component={EscolhaDoModelo} />
+            <Route path="/criar-tutor" component={EscolhaDoModelo} />
             <Route path="/passo-a-passo" component={StepperPassoaPasso} />
             <Route path="/usando-modelo" component={StepperUsandoModelo} />
             <Route path="/visualizar-tutores" component={VisualizarTutores} />

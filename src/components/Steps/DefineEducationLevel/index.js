@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography, Grid, Card, Paper, CardActionArea, Divider } from '@material-ui/core';
 
-import img1 from "../../../../assets/middle-school.png"
-import img2 from "../../../../assets/high-school.png"
-import img3 from "../../../../assets/college.png"
-import img4 from "../../../../assets/test.png"
-import img5 from "../../../../assets/other-school.png"
+import img1 from "../../../assets/middle-school.png"
+import img2 from "../../../assets/high-school.png"
+import img3 from "../../../assets/college.png"
+import img4 from "../../../assets/test.png"
+import img5 from "../../../assets/other-school.png"
 
-import education from "../../../../assets/education1.png"
+import education from "../../../assets/education1.png"
 
 import CollapseDescription from './CollapseDescription'
 

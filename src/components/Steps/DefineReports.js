@@ -3,10 +3,10 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import ActionCreators from '../../../redux/actions/tutor';
+import ActionCreators from '../../redux/actions/tutor';
 
-import student from '../../../assets/student.png';
-import teacher from '../../../assets/teacher.png';
+import student from '../../assets/student.png';
+import teacher from '../../assets/teacher.png';
 
 import StepsCard from './StepsCard'
 
