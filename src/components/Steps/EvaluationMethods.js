@@ -3,11 +3,11 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { Typography } from '@material-ui/core';
-import ActionCreators from '../../../redux/actions/tutor';
+import ActionCreators from '../../redux/actions/tutor';
 
-import quick from '../../../assets/quick.png';
-import custom from '../../../assets/custom.png';
-import placement from '../../../assets/placement.png';
+import quick from '../../assets/quick.png';
+import custom from '../../assets/custom.png';
+import placement from '../../assets/placement.png';
 
 import StepsCard from './StepsCard'
 

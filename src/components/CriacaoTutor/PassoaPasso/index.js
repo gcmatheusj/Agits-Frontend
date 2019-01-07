@@ -1,129 +1,50 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { Typography, Divider, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
-import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography } from '@material-ui/core';
 
-import Header from "../../Header";
-
-import DefinePedagogicalModel from '../../NovoTutor/Steps/DefinePedagogicalModel';
-import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
-import EvaluationMethods from '../../NovoTutor/Steps/EvaluationMethods';
-import DefineReports from '../../NovoTutor/Steps/DefineReports';
+import VerticalLinearStepper from './Stepper';
+import Header from '../../Header'
 
 const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  stepper: {
+  pageTitle: {
+    margin: '20px',
+    fontWeight: 'bold',
     [theme.breakpoints.down('sm')]: {
-      padding: 15,
-      marginTop: 10,
+      fontSize: '1rem',
     },
   },
-  button: {
-    marginTop: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-  },
-  actionsContainer: {
-    marginBottom: theme.spacing.unit * 2,
-  },
-  resetContainer: {
-    padding: theme.spacing.unit * 3,
+  appBarSpacer: theme.mixins.toolbar,
+  content: {
+    flexGrow: 1,
+    // paddingTop: 64,
+    // padding: theme.spacing.unit * 3,
+    height: '100vh',
+    overflow: 'auto',
   },
 });
 
-function getSteps() {
-  return [
-    'Define Pedagogical Model',
-    'Define Gamified Model',
-    'Define Evaluation Methods',
-    'Define Reports',
-  ];
+function novoTutor(props) {
+
+  const { classes } = props;
+  return (
+    <Header title='AGITS'>
+      <Typography className={classes.pageTitle} variant="h6">
+        Customizing Tutor
+      </Typography>
+      <Divider />
+      <Grid container>
+        <Grid container justify="center">
+          <VerticalLinearStepper />
+        </Grid>
+      </Grid>
+    </Header>
+
+  );
 }
 
-function getStepContent(step) {
-  switch (step) {
-    case 0:
-      return <DefinePedagogicalModel />;
-    case 1:
-      return <DefineGamificationModel />;
-    case 2:
-      return <EvaluationMethods />;
-    case 3:
-      return <DefineReports />;
-    default:
-      return 'Unknown step';
-  }
-}
-
-class StepperPassoaPasso extends Component {
-  state = {
-    activeStep: 0,
-  };
-
-  handleNext = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep + 1,
-    }));
-  };
-
-  handleBack = () => {
-    this.setState(state => ({
-      activeStep: state.activeStep - 1,
-    }));
-  };
-
-  handleReset = () => {
-    this.setState({
-      activeStep: 0,
-    });
-  };
-
-  render() {
-    const { classes } = this.props;
-    const steps = getSteps();
-    const { activeStep } = this.state;
-
-    return (
-      <div className={classes.root}>
-        <Header>
-            <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
-              {steps.map((label, index) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
-                  <StepContent>
-                    <div>{getStepContent(index)}</div>
-                    <div className={classes.actionsContainer}>
-                      <div>
-                        <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
-                        <Button
-                          className={classes.button}
-                          variant="contained"
-                          color="primary"
-                          onClick={this.handleNext}
-                        >
-                          {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-                        </Button>
-                      </div>
-                    </div>
-                  </StepContent>
-                </Step>
-              ))}
-          </Stepper>
-          {activeStep === steps.length && (
-            <Paper square elevation={0} className={classes.resetContainer}>
-              <Typography>All steps completed - you&quot;re finished</Typography>
-              <Button className={classes.button} onClick={this.handleReset}>Reset</Button>
-            </Paper>
-          )}    
-        </Header>
-      </div>
-    );
-  }
-}
-
-StepperPassoaPasso.propTypes = {
-  classes: PropTypes.object,
+novoTutor.propTypes = {
+  classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(StepperPassoaPasso);
+export default withStyles(styles)(novoTutor);

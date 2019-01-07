@@ -4,8 +4,8 @@ import { withStyles } from '@material-ui/core/styles';
 import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Divider } from '@material-ui/core';
 
 import Header from "../../Header"
-import DefineGamificationModel from '../../NovoTutor/Steps/DefineGamificationModel';
-import DefineEducationLevel from '../../NovoTutor/Steps/DefineEducationLevel';
+import DefineGamificationModel from '../../Steps/DefineGamificationModel';
+import DefineEducationLevel from '../../Steps/DefineEducationLevel';
 
 const styles = theme => ({
     root: {

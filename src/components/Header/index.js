@@ -81,9 +81,9 @@ class Header extends Component {
         <MenuList>
           <MenuItem
             component={Link}
-            to='/escolha-do-modelo'
+            to='/criar-tutor'
             selected={
-              '/escolha-do-modelo' === pathname ||
+              '/criar-tutor' === pathname ||
               '/novo-tutor' === pathname ||
               '/usando-modelo' === pathname
             }

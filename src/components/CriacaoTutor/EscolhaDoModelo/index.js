@@ -14,7 +14,7 @@ import template from '../../../assets/template.png'
 
 const opcoesModelo = [
     {
-        adress: '/novo-tutor',
+        adress: '/passo-a-passo',
         img: scratch,
         title: 'Criar seu tutor do zero',
         subtitle: 'Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.'
