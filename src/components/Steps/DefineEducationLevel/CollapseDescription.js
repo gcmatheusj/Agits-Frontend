@@ -31,26 +31,24 @@ class CollapseDescription extends Component {
           <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
             {this.props.details.subtitle}
           </Typography>
-          <Grid container className={classes.grid} justify="center">
-            <Grid item >
+          <Grid container className={classes.grid} justify="center" alignItems='center'>
               <img className={classes.img} src={this.props.img} alt="" />
-            </Grid>
-            <Grid item >
+            <Grid item xs>
               <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
                 - Pedagogical Model
-            </Typography>
+              </Typography>
               <Typography>
                 {this.props.details.pedagogical}
               </Typography>
               <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
                 - Evaluation Methods
-            </Typography>
+              </Typography>
               <Typography>
                 {this.props.details.evaluation}
               </Typography>
               <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
                 - Reports
-            </Typography>
+              </Typography>
               <Typography>
                 {this.props.details.reports}
               </Typography>
