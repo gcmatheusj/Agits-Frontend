@@ -112,13 +112,17 @@ class Questionario extends Component {
     }
   }
 
-  handleChangeFerramenta = (name, posicao) => (event, value) => {
+  handleChangeFerramenta = (name, posicao, text) => (event, value) => {
     let newVetor = this.state.ferramenta
-    newVetor[posicao] = value
+    
+    const v = text ? event.target.value : value
+    
+    newVetor[posicao] = v
+
     this.setState({
       ferramenta: newVetor
     })
-    window.sessionStorage.setItem(name, value)
+    window.sessionStorage.setItem(name, v)
   }
 
   handleChangeResumo1 = (event, valor1) => {

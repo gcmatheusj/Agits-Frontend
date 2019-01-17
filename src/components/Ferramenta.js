@@ -189,8 +189,19 @@ class Perguntas extends Component {
                             <br />
                             {
                                 !v.text ?
-                                    <Slider value={valores[v.valor] || 4} min={1} max={v.max || 7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
-                                    : <TextField variant='outlined' value={valores[v.valor]} onChange={this.props.onChange} style={{ width:'100%' }} />
+                                    <Slider
+                                        value={valores[v.valor] || 4}
+                                        min={1}
+                                        max={v.max || 7}
+                                        step={1}
+                                        onChange={this.props.onChange(v.name, v.valor, false)}
+                                    />
+                                    : <TextField
+                                        variant='outlined'
+                                        value={valores[v.valor]}
+                                        onChange={this.props.onChange(v.name, v.valor, true)}
+                                        style={{ width: '100%' }}
+                                    />
                             }
                         </div>
                     ))
