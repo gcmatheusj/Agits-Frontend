@@ -96,7 +96,7 @@ class StepperUsandoModelo extends Component {
   createTutorRequest = () => {
     this.setState({ finalized: true })
     // this.props.createTutor(this.props.tutor);
-    this.handleClick()
+    // this.handleClick()
   }
 
   render() {
