@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography'
 import Slider from '@material-ui/lab/Slider'
 import FormLabel from '@material-ui/core/FormLabel'
 import FormControl from '@material-ui/core/FormControl'
+import TextField from '@material-ui/core/TextField'
 
 const perguntas = [
     {
@@ -149,14 +150,15 @@ const perguntas = [
     {
         pergunta: 'Por favor, descreva aqui um ponto negativo sobre esta versão da ferramenta de configuração.',
         name: 'valorFerramenta29',
-        valor: 28
+        valor: 28,
+        text: true
     },
     {
         pergunta: 'Por favor, descreva aqui um ponto positivo sobre esta versão da ferramenta de configuração.',
         name: 'valorFerramenta30',
-        valor: 29
+        valor: 29,
+        text: true
     },
-
 ]
 
 class Perguntas extends Component {
@@ -181,9 +183,15 @@ class Perguntas extends Component {
                         <div key={v.valor}>
                             <br /> <br /> <FormControl component="fieldset">
                                 <FormLabel component="legend">{v.pergunta}</FormLabel>
-                                <br /><FormLabel component="legend"> Avaliação: {valores[v.valor] || 4} </FormLabel>
+                                <br />
+                                {!v.text && <FormLabel component="legend"> Avaliação: {valores[v.valor] || 4} </FormLabel>}
                             </FormControl>
-                            <Slider value={valores[v.valor] || 4} min={1} max={v.max || 7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
+                            <br />
+                            {
+                                !v.text ?
+                                    <Slider value={valores[v.valor] || 4} min={1} max={v.max || 7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
+                                    : <TextField variant='outlined' value={valores[v.valor]} onChange={this.props.onChange} style={{ width:'100%' }} />
+                            }
                         </div>
                     ))
                 }

@@ -53,7 +53,7 @@ class Questionario extends Component {
     super(props)
     this.state = {
       activeStep: 0,
-      ferramenta: [ ],
+      ferramenta: [],
       valor1: 5,
       valor2: 5,
       valor3: 5
