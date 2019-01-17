@@ -6,15 +6,156 @@ import FormControl from '@material-ui/core/FormControl'
 
 const perguntas = [
     {
-        pergunta: 'Aprender a configurar o sistema educacional foi fácil.',
+        pergunta: 'Para mim foi fácil aprender a configurar o sistema educacional.',
         name: 'valorFerramenta1',
         valor: 0
     },
     {
-        pergunta: 'Aprender a configurar o sistema educacional foi fácil.',
+        pergunta: 'É fácil usar o sistema para fazer o que é necessário.',
         name: 'valorFerramenta2',
         valor: 1
     },
+    {
+        pergunta: 'A interação com a ferramenta não exige muito esforço.',
+        name: 'valorFerramenta3',
+        valor: 2
+    },
+    {
+        pergunta: 'Eu acho que seria fácil tornar-se habilidoso no uso desta ferramenta de configuração.',
+        name: 'valorFerramenta4',
+        valor: 3
+    },
+    {
+        pergunta: 'Eu acho essa ferramenta de configuração fácil de usar.',
+        name: 'valorFerramenta5',
+        valor: 4
+    },
+    {
+        pergunta: 'A ferramenta de configuração é simples e clara.',
+        name: 'valorFerramenta6',
+        valor: 5
+    },
+    {
+        pergunta: 'Esta ferramenta é flexível para interagir.',
+        name: 'valorFerramenta7',
+        valor: 6
+    },
+    {
+        pergunta: 'A ferramenta de configuração tem boas funcionalidades.',
+        name: 'valorFerramenta8',
+        valor: 7
+    },
+    {
+        pergunta: 'Eu sinto que seria intuitivo configurar um sistema educacional usando esta ferramenta.',
+        name: 'valorFerramenta9',
+        valor: 8
+    },
+    {
+        pergunta: 'Eu sinto que seria fácil de lembrar como realizar tarefas usando esta ferramenta.',
+        name: 'valorFerramenta10',
+        valor: 9
+    },
+    {
+        pergunta: 'O sistema parece muito complexo para usar.',
+        name: 'valorFerramenta11',
+        valor: 10
+    },
+    {
+        pergunta: 'A implementação dos componentes e estilos de design parece ter sido bem projetada.',
+        name: 'valorFerramenta12',
+        valor: 11
+    },
+    {
+        pergunta: 'Usar esta ferramenta de configuração possibilita que eu realize estas tarefas mais lentamente.',
+        name: 'valorFerramenta13',
+        valor: 12
+    },
+    {
+        pergunta: 'Usar esta ferramenta de configuração diminui meu desempenho.',
+        name: 'valorFerramenta14',
+        valor: 13
+    },
+    {
+        pergunta: 'Usar esta ferramenta de configuração diminui minha produtividade.',
+        name: 'valorFerramenta15',
+        valor: 14
+    },
+    {
+        pergunta: 'Usar esta ferramenta de configuração diminui minha eficácia.',
+        name: 'valorFerramenta16',
+        valor: 15
+    },
+    {
+        pergunta: 'A ferramenta de configuração parece ser original.',
+        name: 'valorFerramenta17',
+        valor: 16
+    },
+    {
+        pergunta: 'O design da ferramenta parece ser único.',
+        name: 'valorFerramenta18',
+        valor: 17
+    },
+    {
+        pergunta: 'De maneira geral, configurar o sistema educacional usando esta ferramenta é bom.',
+        name: 'valorFerramenta19',
+        valor: 18
+    },
+    {
+        pergunta: 'De maneira geral, eu tive uma impressão favorável sobre esta ferramenta de configuração de sistemas educacionais adaptativos.',
+        name: 'valorFerramenta20',
+        valor: 19
+    },
+    {
+        pergunta: 'De maneira geral, eu tenho sentimentos positivos sobre esta ferramenta de configuração.',
+        name: 'valorFerramenta21',
+        valor: 20
+    },
+    {
+        pergunta: 'A qualidade da ferramenta de configuração, incluindo funções de ajuda e suporte instrucional, é boa.',
+        name: 'valorFerramenta22',
+        valor: 21
+    },
+    {
+        pergunta: 'O suporte da ferramenta de configuração para completar a tarefa de criar o sistema adaptativo é bom.',
+        name: 'valorFerramenta23',
+        valor: 22
+    },
+    {
+        pergunta: 'A ferramenta de configuração provê suporte personalizado (ex.: existem opções que me ajudam especificar minhas preferências).',
+        name: 'valorFerramenta24',
+        valor: 23
+    },
+    {
+        pergunta: 'Eu teria interesse em continuar usando esta ferramenta de configuração no futuro.',
+        name: 'valorFerramenta25',
+        valor: 24
+    },
+    {
+        pergunta: 'Eu tenho expectativa em usar esta ferramenta de configuração no futuro.',
+        name: 'valorFerramenta26',
+        valor: 25
+    },
+    {
+        pergunta: 'Se houver disponibilidade, eu planejo usar esta ferramenta de configuração no futuro.',
+        name: 'valorFerramenta27',
+        valor: 26
+    },
+    {
+        pergunta: 'Por favor, indique de 1 a 9, a credibilidade da ferramenta de configuração:',
+        name: 'valorFerramenta28',
+        valor: 27
+    },
+    {
+        pergunta: 'Por favor, descreva aqui um ponto negativo sobre esta versão da ferramenta de configuração.',
+        name: 'valorFerramenta29',
+        valor: 28
+    },
+    {
+        pergunta: 'Por favor, descreva aqui um ponto positivo sobre esta versão da ferramenta de configuração.',
+        name: 'valorFerramenta30',
+        valor: 29
+    },
+
 ]
 
 class Perguntas extends Component {
@@ -30,7 +171,6 @@ class Perguntas extends Component {
         const { valores } = this.props
         return (
             <div>
-                {console.log(valores)}
                 <Typography variant="display1" component="label">
                     Ferramenta de Configuração<br />
                 </Typography>
@@ -40,9 +180,9 @@ class Perguntas extends Component {
                         <div key={v.valor}>
                             <br /> <br /> <FormControl component="fieldset">
                                 <FormLabel component="legend">{v.pergunta}</FormLabel>
-                                <br /><FormLabel component="legend"> Avaliação: {valores[v.valor]} </FormLabel>
+                                <br /><FormLabel component="legend"> Avaliação: {valores[v.valor] || 4} </FormLabel>
                             </FormControl>
-                            <Slider value={valores[v.valor]} min={1} max={7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
+                            <Slider value={valores[v.valor] || 4} min={1} max={7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
                         </div>
                     ))
                 }
