@@ -8,11 +8,10 @@ import {
   StepLabel,
   StepContent,
   Button,
-  Paper,
-  Typography,
   Snackbar
 } from '@material-ui/core';
 import ActionCreators from '../../../redux/actions/tutor';
+import { Redirect } from 'react-router-dom'
 
 import MySnackbarContentWrapper from '../../ToastSuccess'
 
@@ -71,7 +70,8 @@ function getStepContent(step) {
 class VerticalLinearStepper extends Component {
   state = {
     activeStep: 0,
-    open: false
+    open: false,
+    finalized: false,
   };
 
   handleNext = () => {
@@ -105,14 +105,15 @@ class VerticalLinearStepper extends Component {
   };
 
   createTutorRequest = () => {
+    this.setState({finalized: true})
     this.props.createTutor(this.props.tutor);
     this.handleClick()
-  };
+  }
 
   render() {
     const { classes, } = this.props;
     const steps = getSteps();
-    const { activeStep } = this.state;
+    const { activeStep, finalized } = this.state;
 
     return (
       <div className={classes.root}>
@@ -132,31 +133,28 @@ class VerticalLinearStepper extends Component {
                       )}
                   </div>
                 </div>
-                <Snackbar
-                  anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
-                  }}
-                  open={this.state.open}
-                  autoHideDuration={3000}
-                  onClose={this.handleClose}
-                >
-                  <MySnackbarContentWrapper
-                    onClose={this.handleClose}
-                    variant="success"
-                    message="Success in creating the tutor!"
-                  />
-                </Snackbar>
+
               </StepContent>
             </Step>
           ))}
         </Stepper>
-        {activeStep === steps.length && (
-          <Paper square elevation={0} className={classes.resetContainer}>
-            <Typography>All steps completed - you&quot;re finished</Typography>
-            <Button className={classes.button} onClick={this.handleReset}>Reset</Button>
-          </Paper>
-        )}
+        <Snackbar
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'right',
+          }}
+          open={this.state.open}
+          autoHideDuration={3000}
+          onClose={this.handleClose}
+        >
+          <MySnackbarContentWrapper
+            onClose={this.handleClose}
+            variant="success"
+            message="Success in creating the tutor!"
+          />
+        </Snackbar>
+
+        {finalized && <Redirect to='/questionario'/>}
       </div>
     );
   }

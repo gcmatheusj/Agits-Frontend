@@ -47,35 +47,6 @@ class EscolhaDoModelo extends React.Component {
       resposta5: null,
       resposta6: null,
       resposta7: null,
-      valorFerramenta1: 4,
-      valorFerramenta2: 4,
-      valorFerramenta3: 4,
-      valorFerramenta4: 4,
-      valorFerramenta5: 4,
-      valorFerramenta6: 4,
-      valorFerramenta7: 4,
-      valorFerramenta8: 4,
-      valorFerramenta9: 4,
-      valorFerramenta10: 4,
-      valorFerramenta11: 4,
-      valorFerramenta12: 4,
-      valorFerramenta13: 4,
-      valorFerramenta14: 4,
-      valorFerramenta15: 4,
-      valorFerramenta16: 4,
-      valorFerramenta17: 4,
-      valorFerramenta18: 4,
-      valorFerramenta19: 4,
-      valorFerramenta20: 4,
-      valorFerramenta21: 4,
-      valorFerramenta22: 4,
-      valorFerramenta23: 4,
-      valorFerramenta24: 4,
-      valorFerramenta25: 4,
-      valorFerramenta26: 4,
-      valor1: 5,
-      valor2: 5,
-      valor3: 5
     }
   };
 
@@ -99,27 +70,57 @@ class EscolhaDoModelo extends React.Component {
     this.setState({ open: false, adress: '' });
   };
 
-  handleChangeDemografico(event) {
+  handleChangeDemografico = (event) => {
     if (event.target.name === 'sexualidade') {
-      this.setState({ resposta1: event.target.value })
+      this.setState({
+        respostas: {
+          ...this.state.respostas,
+          resposta1: event.target.value
+        }
+      })
       window.sessionStorage.setItem("resposta1", event.target.value)
     } else if (event.target.name === 'idade') {
-      this.setState({ resposta2: event.target.value })
+      this.setState({
+        respostas: {
+          ...this.state.respostas,
+          resposta2: event.target.value
+        }
+      })
       window.sessionStorage.setItem("resposta2", event.target.value)
     } else if (event.target.name === 'ocupação') {
-      this.setState({ resposta3: event.target.value })
+      this.setState({
+        respostas: {
+          ...this.state.respostas, resposta3: event.target.value
+        }
+      })
       window.sessionStorage.setItem("resposta3", event.target.value)
     } else if (event.target.name === 'escolaridade') {
-      this.setState({ resposta4: event.target.value })
+      this.setState({
+        respostas: {
+          ...this.state.respostas, resposta4: event.target.value
+        }
+      })
       window.sessionStorage.setItem("resposta4", event.target.value)
     } else if (event.target.name === 'habilidades') {
-      this.setState({ resposta5: event.target.value })
+      this.setState({
+        respostas: {
+          ...this.state.respostas, resposta5: event.target.value
+        }
+      })
       window.sessionStorage.setItem("resposta5", event.target.value)
     } else if (event.target.name === 'treinamento') {
-      this.setState({ resposta6: event.target.value })
+      this.setState({
+        respostas: {
+          ...this.state.respostas, resposta6: event.target.value
+        }
+      })
       window.sessionStorage.setItem("resposta6", event.target.value)
     } else if (event.target.name === 'usoTecnologiasEducacionais') {
-      this.setState({ resposta7: event.target.value })
+      this.setState({
+        respostas: {
+          ...this.state.respostas, resposta7: event.target.value
+        }
+      })
       window.sessionStorage.setItem("resposta7", event.target.value)
     }
   }
@@ -127,7 +128,7 @@ class EscolhaDoModelo extends React.Component {
   next = () => {
     if (this.state.position < 1) {
       this.setState({
-        position: this.state.position+1
+        position: this.state.position + 1
       })
     } else {
       this.setState({
@@ -144,11 +145,11 @@ class EscolhaDoModelo extends React.Component {
         <Header title="AGITS">
           <Typography className={classes.title} variant="subtitle1">
             Create Tutor
-                    </Typography>
+          </Typography>
           <Divider />
           <Typography className={classes.subtitle} variant="subtitle1">
             You can start by selecting create tutor from scratch or using template.
-                    </Typography>
+          </Typography>
           <Grid container
             className={classes.container}
             justify="center"
@@ -178,16 +179,16 @@ class EscolhaDoModelo extends React.Component {
             open={this.state.open}
           />
 
-          <Dialog open={!complete} maxWidth='lg'>
+          <Dialog id='dialogTermo' open={!complete} maxWidth='lg'>
             <DialogContent>
               {position === 0 ?
                 <Termo checked={checked} handleChange={this.handleChange} /> :
-                <Demografico respostas={this.state.respostas} onChangeValue={this.handleChangeDemografico}/>
+                <Demografico respostas={this.state.respostas} onChangeValue={this.handleChangeDemografico} />
               }
             </DialogContent>
             <DialogActions>
               <Button variant='contained' color='primary' disabled={!checked} onClick={this.next}>
-                Next
+                {position === 0 ? 'Next' : 'Ready'}
               </Button>
             </DialogActions>
           </Dialog>
