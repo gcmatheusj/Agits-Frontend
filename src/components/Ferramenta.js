@@ -143,7 +143,8 @@ const perguntas = [
     {
         pergunta: 'Por favor, indique de 1 a 9, a credibilidade da ferramenta de configuração:',
         name: 'valorFerramenta28',
-        valor: 27
+        valor: 27,
+        max: 9
     },
     {
         pergunta: 'Por favor, descreva aqui um ponto negativo sobre esta versão da ferramenta de configuração.',
@@ -182,7 +183,7 @@ class Perguntas extends Component {
                                 <FormLabel component="legend">{v.pergunta}</FormLabel>
                                 <br /><FormLabel component="legend"> Avaliação: {valores[v.valor] || 4} </FormLabel>
                             </FormControl>
-                            <Slider value={valores[v.valor] || 4} min={1} max={7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
+                            <Slider value={valores[v.valor] || 4} min={1} max={v.max || 7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
                         </div>
                     ))
                 }
