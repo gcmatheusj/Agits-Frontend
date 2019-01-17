@@ -6,10 +6,14 @@ import FormControl from '@material-ui/core/FormControl'
 
 const perguntas = [
     {
-        numero: '1',
         pergunta: 'Aprender a configurar o sistema educacional foi fácil.',
         name: 'valorFerramenta1',
         valor: 0
+    },
+    {
+        pergunta: 'Aprender a configurar o sistema educacional foi fácil.',
+        name: 'valorFerramenta2',
+        valor: 1
     },
 ]
 
@@ -34,12 +38,12 @@ class Perguntas extends Component {
                 {
                     perguntas.map((v) => (
                         <div key={v.valor}>
-                    <FormControl component="fieldset">
-                        <FormLabel component="legend">{v.pergunta}</FormLabel>
-                        <br /><FormLabel component="legend"> Avaliação: {valores[v.valor]} </FormLabel>
-                    </FormControl>
-                    <Slider value={valores[v.valor]} min={1} max={7} step={1} onChange={this.props.onChange('valorFerramenta1', v.valor)} />
-                </div>
+                            <br /> <br /> <FormControl component="fieldset">
+                                <FormLabel component="legend">{v.pergunta}</FormLabel>
+                                <br /><FormLabel component="legend"> Avaliação: {valores[v.valor]} </FormLabel>
+                            </FormControl>
+                            <Slider value={valores[v.valor]} min={1} max={7} step={1} onChange={this.props.onChange(v.name, v.valor)} />
+                        </div>
                     ))
                 }
 
