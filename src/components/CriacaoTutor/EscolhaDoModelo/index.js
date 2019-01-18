@@ -182,15 +182,21 @@ class EscolhaDoModelo extends React.Component {
           <Dialog id='dialogTermo' open={!complete} maxWidth='lg'>
             <DialogContent>
               {position === 0 ?
-                <Termo checked={checked} handleChange={this.handleChange} /> :
+                <Termo checked={checked} handleChange={this.handleChange} next={this.next} /> :
                 <Demografico respostas={this.state.respostas} onChangeValue={this.handleChangeDemografico} />
               }
             </DialogContent>
-            <DialogActions>
-              <Button variant='contained' color='primary' disabled={!checked} onClick={this.next}>
-                {position === 0 ? 'Next' : 'Ready'}
-              </Button>
-            </DialogActions>
+            {
+              position === 1 ? (
+                <DialogActions>
+                  <Button variant='contained' color='primary' disabled={!checked} onClick={this.next}>
+                    Ready
+                  </Button>
+                </DialogActions>
+              ) : (
+                ''
+              )
+            }
           </Dialog>
 
         </Header>

@@ -24,7 +24,7 @@ const styles = {
 class Termos extends Component {
 
   render() {
-    const { handleChange, checked } = this.props
+    const { handleChange, checked, next } = this.props
     return (
       <div >
           <Typography variant="h5" component="label" align="center" style={styles.styleText}>
@@ -93,9 +93,13 @@ class Termos extends Component {
               }
               label="Eu li e concordo com os termos de consentimento."
             />
+            <div align="center">
+                <Button onClick={next} variant="contained" color="primary" disabled={!checked}>
+                  Continuar
+                </Button>
+            </div>
           </div>
-
-      </div>
+        </div>
     )
   }
 }

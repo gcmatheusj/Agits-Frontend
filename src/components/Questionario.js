@@ -30,11 +30,12 @@ const styles = theme => ({
     marginRight: theme.spacing.unit,
   },
   instructions: {
+    width: '100%',
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
   },
   styleCard: {
-    marginTop: "60px"
+    marginTop: 24
   },
   styleText: {
     marginTop: "10px"

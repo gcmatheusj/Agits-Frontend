@@ -22,6 +22,10 @@ class Demografico extends Component {
         super(props)
     }
 
+    componentDidMount() {
+        
+    }
+
     render() {
         const { classes, respostas } = this.props
         return (

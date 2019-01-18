@@ -74,6 +74,23 @@ class VerticalLinearStepper extends Component {
     finalized: false,
   };
 
+  componentDidUpdate() {
+    const { activeStep } = this.state
+    switch (activeStep) {
+      case 1:
+        window.scrollTo(0, 0)
+        break;
+      case 2:
+        window.scrollTo(0, 0)
+        break;
+      case 3:
+        window.scrollTo(0, 0)
+        break;
+      default:
+        break;
+    }
+  }
+
   handleNext = () => {
     this.setState(state => ({
       activeStep: state.activeStep + 1,
