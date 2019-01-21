@@ -28,7 +28,7 @@ function novoTutor(props) {
   return (
     <Header title='AGITS'>
       <Typography className={classes.pageTitle} variant="h6">
-        Customizing Tutor
+        Customizando Tutor
       </Typography>
       <Divider />
       <Grid container>

@@ -33,8 +33,7 @@ class DefineGamificationModel extends Component {
     return (
       <div style={{ justifyContent: 'center' }}>
         <Typography className={classes.title} variant="subtitle1">
-          What is the main behavior do you expect from your students when they are learning in the
-          gamifed tutor?
+          Qual é o comportamento principal que você espera de seus alunos quando eles estão aprendendo no tutor gamificado?
         </Typography>
 
         {name.map((value, key) => {

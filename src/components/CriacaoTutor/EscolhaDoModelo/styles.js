@@ -12,6 +12,10 @@ export const styles = theme => ({
             margin: 10,
         }
     },
+    cardContent: {
+        paddingLeft: 16,
+        paddingRight: 16,
+    },
     cardAction: {
         padding: 10
     },
@@ -32,12 +36,13 @@ export const styles = theme => ({
     },
     titleCard: {
         fontWeight: 'bold',
-        fontSize: '1 rem',
+        fontSize: '1rem',
         [theme.breakpoints.down('sm')]: {
             fontSize: '0.9rem'
         }
     },
     textCard: {
+        fontSize: '0.875rem',
         [theme.breakpoints.down('sm')]: {
             fontSize: '0.8rem'
         }

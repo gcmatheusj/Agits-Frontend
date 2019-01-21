@@ -45,10 +45,10 @@ const styles = theme => ({
 
 function getSteps() {
   return [
-    'Define Pedagogical Model',
-    'Define Gamified Model',
-    'Define Evaluation Methods',
-    'Define Reports',
+    'Definir Modelo Pedagógico',
+    'Definir Modelo de Gamificação',
+    'Definir Métodos de Avaliação',
+    'Definir Relatórios',
   ];
 }
 
@@ -73,23 +73,6 @@ class VerticalLinearStepper extends Component {
     open: false,
     finalized: false,
   };
-
-  componentDidUpdate() {
-    const { activeStep } = this.state
-    switch (activeStep) {
-      case 1:
-        window.scrollTo(0, 0)
-        break;
-      case 2:
-        window.scrollTo(0, 0)
-        break;
-      case 3:
-        window.scrollTo(0, 0)
-        break;
-      default:
-        break;
-    }
-  }
 
   handleNext = () => {
     this.setState(state => ({
@@ -142,11 +125,11 @@ class VerticalLinearStepper extends Component {
                 <div>{getStepContent(index)}</div>
                 <div className={classes.actionsContainer}>
                   <div>
-                    <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
+                    <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Voltar</Button>
                     {activeStep === steps.length - 1 ? (
-                      <Button className={classes.button} variant="contained" color="primary" onClick={this.createTutorRequest}>Finish</Button>
+                      <Button className={classes.button} variant="contained" color="primary" onClick={this.createTutorRequest}>Finalizar</Button>
                     ) : (
-                        <Button className={classes.button} variant="contained" color="primary" onClick={this.handleNext}>Next</Button>
+                        <Button className={classes.button} variant="contained" color="primary" onClick={this.handleNext}>Próximo</Button>
                       )}
                   </div>
                 </div>

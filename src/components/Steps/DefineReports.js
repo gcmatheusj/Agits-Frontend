@@ -28,16 +28,16 @@ const DefineReports = (props) => {
   const values = [
     {
       img: student,
-      title: 'Students Reports',
-      description: 'Enable this feature if you want to provide for your students different types of reports regarding her learning performance. It includes reports on learning performance in the overall domainor on particular subjects as well as tests history.',
+      title: 'Relatórios dos Alunos',
+      description: 'Ative esse recurso se você quiser fornecer aos seus alunos diferentes tipos de relatórios sobre seu desempenho de aprendizado. Inclui relatórios sobre o desempenho de aprendizagem no domínio geral ou em assuntos específicos, bem como no histórico de testes.',
       type: studentsReports,
       switcher: switchStudentsReports,
       value: 'checkedA'
     },
     {
       img: teacher,
-      title: 'Teacher Reports',
-      description: 'Enable this feature if you want to visualize reports about the interaction, learning performance and other interesting reports about your students.',
+      title: 'Relatórios do Professor',
+      description: 'Ative esse recurso se quiser visualizar relatórios sobre a interação, desempenho de aprendizado e outros relatórios interessantes sobre seus alunos.',
       type: teacherReports,
       switcher: switchTeacherReports,
       value: 'checkedB'
@@ -49,7 +49,7 @@ const DefineReports = (props) => {
           This is the least step to customize your tutor!
     </Typography> */}
       <Typography className={classes.title} variant="subtitle1">
-        You can also select which kind of reports the tutor will provide
+        Estamos quase terminando! Você também pode selecionar que tipo de relatórios o tutor fornecerá.
       </Typography>
 
       {

@@ -39,7 +39,6 @@ class EscolhaDoModelo extends React.Component {
     position: 0,
     checked: false,
     respostas: {
-      activeStep: 0,
       resposta1: null,
       resposta2: null,
       resposta3: null,
@@ -144,11 +143,11 @@ class EscolhaDoModelo extends React.Component {
       <div className={classes.root}>
         <Header title="AGITS">
           <Typography className={classes.title} variant="subtitle1">
-            Create Tutor
+            Criar Tutor
           </Typography>
           <Divider />
           <Typography className={classes.subtitle} variant="subtitle1">
-            You can start by selecting create tutor from scratch or using template.
+            Você pode começar selecionando criar tutor do zero ou usando o modelo.
           </Typography>
           <Grid container
             className={classes.container}
@@ -160,7 +159,7 @@ class EscolhaDoModelo extends React.Component {
                 <Card key={k} className={classes.card}>
                   <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen(v.adress)}>
                     <img src={v.img} alt="" className={classes.img} />
-                    <CardContent>
+                    <CardContent className={classes.cardContent}>
                       <Typography className={classes.titleCard} gutterBottom align="center">
                         {v.title}
                       </Typography>
@@ -190,7 +189,7 @@ class EscolhaDoModelo extends React.Component {
               position === 1 ? (
                 <DialogActions>
                   <Button variant='contained' color='primary' disabled={!checked} onClick={this.next}>
-                    Ready
+                    Pronto
                   </Button>
                 </DialogActions>
               ) : (

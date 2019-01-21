@@ -40,13 +40,11 @@ const App = () => (
           <div>
             <Route exact path="/" component={Login} />
             <Route path="/recuperar-senha" component={RecuperarSenha} />
-            <Route path="/cadastro" component={Cadastro} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/criar-tutor" component={EscolhaDoModelo} />
             <Route path="/passo-a-passo" component={StepperPassoaPasso} />
             <Route path="/usando-modelo" component={StepperUsandoModelo} />
             <Route path="/visualizar-tutores" component={VisualizarTutores} />
-            <Route path="/define-domain" component={DefineDomain} />
             <Route path="/questionario" component={Questionario} />
           </div>
         </MuiThemeProvider>

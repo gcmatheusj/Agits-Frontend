@@ -28,49 +28,49 @@ import bossfight from '../../../assets/boss-fight.png'
 
 const text = {
     'participation': {
-        'title': 'Participation',
-        'description': 'Select this option if you expect your students to be participative in your course. This will activate the following game elements in the system: ',
-        'names': ['Challenges, ', 'Levels, ', 'Leaderboard, ', 'Story, ', 'Badges, ', 'Rewards ', 'and Points.'],
+        'title': 'Participação',
+        'description': 'Selecione esta opção se você espera que seus alunos sejam participativos em seu curso. Isso ativará os seguintes elementos de jogo no sistema: ',
+        'names': ['Desafios, ', 'Níveis, ', 'Entre os melhores, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
         'image': participation,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF', 'checkedG'],
         'imagesbuttons': [challenges, levels, leaderboard, story, badge, rewards, points]
     },
     'performance': {
         'title': 'Performance',
-        'description': 'Select this option if you expect your students to mainly focus on their learning performance. This will activate the following game elements in the system: ',
-        'names': ['Challenges, ', 'Feedback, ', 'Levels, ', 'Leaderboard, ', 'Story, ', 'Badges, ', 'Rewards ', 'and Points.'],
+        'description': 'Selecione essa opção se você espera que seus alunos se concentrem principalmente em seu desempenho de aprendizado. Isso ativará os seguintes elementos de jogo no sistema: ',
+        'names': ['Desafios, ', 'Feedback, ', 'Níveis, ', 'Entre os melhores, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
         'image': performance,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF', 'checkedG', 'checkedH'],
         'imagesbuttons': [challenges, feedback, levels, leaderboard, story, badge, rewards, points]
     },
     'competition': {
-        'title': 'Competition',
-        'description': 'Select this option if you expect to provide competition between students. This will activate the following game elements in the system: ',
-        'names': ['Leaderboard ', 'and Points.'],
+        'title': 'Competição',
+        'description': 'Selecione esta opção se você deseja fornecer competição entre os alunos. Isso ativará os seguintes elementos de jogo no sistema: ',
+        'names': ['Entre os melhores ', 'e Pontos.'],
         'image': competition,
         'checkeds': ['checkedA', 'checkedB'],
         'imagesbuttons': [leaderboard, points]
     },
     'enjoyment': {
-        'title': 'Enjoyment',
-        'description': 'Select this option if you expect your students to be mainly enjoyed by the tutor while they are learning. This will activate the following game elements in the system: ',
-        'names': ['Quests, ', 'Avatar, ', 'Story, ', 'Badges, ', 'Rewards ', 'and Points.'],
+        'title': 'Satisfação',
+        'description': 'Selecione esta opção se você espera que seus alunos sejam apreciados principalmente pelo tutor enquanto eles estiverem aprendendo. Isso ativará os seguintes elementos de jogo no sistema: ',
+        'names': ['Missões, ', 'Avatar, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
         'image': enjoyment,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF'],
         'imagesbuttons': [quests, avatar, story, badge, rewards, points]
     },
     'exploration': {
-        'title': 'Exploration',
-        'description': 'Select this option if you expect to incentive the exploration of the tutor by your students.This will activate the following game elements in the system: ',
-        'names': ['Challenges, ', 'Levels ', 'and Boss Fight.'],
+        'title': 'Exploração',
+        'description': 'Selecione esta opção se você pretende incentivar a exploração do tutor por seus alunos. Isso ativará os seguintes elementos de jogo no sistema: ',
+        'names': ['Desafios, ', 'Níveis ', 'e Desafio Final.'],
         'image': exploration,
         'checkeds': ['checkedA', 'checkedB', 'checkedC'],
         'imagesbuttons': [challenges, levels, bossfight]
     },
     'effectiveness': {
-        'title': 'Effectiveness',
-        'description': 'Select this options if you mainly expect your students to be effective when they are using the tutor. Enabling this behavior will activate the following game elements in the system: ',
-        'names': ['Leaderboard, ', 'Badges ', 'and Points.'],
+        'title': 'Eficácia',
+        'description': 'Selecione essa opção se você principalmente espera que seus alunos sejam eficazes quando eles estiverem usando o tutor. A ativação desse comportamento ativará os seguintes elementos de jogo no sistema: ',
+        'names': ['Entre os melhores, ', 'Medalhas ', 'e Pontos.'],
         'image': effectiveness,
         'checkeds': ['checkedA', 'checkedB', 'checkedC'],
         'imagesbuttons': [leaderboard, badge, points]

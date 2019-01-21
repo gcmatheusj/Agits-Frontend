@@ -31,12 +31,8 @@ const styles = theme => ({
 })
 
 class AlertDialogSlide extends React.Component {
-
-
     render() {
-
         const { classes } = this.props
-
         return (
             <Dialog
                 open={this.props.open}
@@ -49,14 +45,14 @@ class AlertDialogSlide extends React.Component {
                     <Grid container spacing={16}>
                         <Grid item xs={12} className={classes.titleGrid}>
                             <Typography className={classes.title} variant="subtitle1">
-                                Name of your Tutor
+                                Nomeie seu tutor 
                             </Typography>
                         </Grid>
                         <Grid item xs={12} >
                             <Divider />
                             <TextField
                                 id="outlined-with-placeholder"
-                                label="Input a name here..."
+                                label="Digite o nome"
                                 className={classes.textField}
                                 margin="normal"
                                 variant="outlined"
@@ -64,12 +60,12 @@ class AlertDialogSlide extends React.Component {
                         </Grid>
                     </Grid>
                 </DialogContent>
-                <Grid style={{ padding: 24 }} container justify="flex-start">
+                <Grid style={{ padding: 24 }} container justify="flex-end">
                     <Button onClick={this.props.handleClose} style={{ marginRight: 10 }} >
-                        Cancel
+                        Cancelar
                     </Button>
                     <Button component={Link} to={this.props.adress} variant="contained" onClick={this.props.handleClose} color="primary">
-                        Next
+                        Próximo
                     </Button>
                 </Grid>
             </Dialog>

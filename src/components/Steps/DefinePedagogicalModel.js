@@ -28,16 +28,16 @@ const DefinePedagogicalModel = (props) => {
   const values = [
     {
       img: curriculum,
-      title: 'Knowledge tracing and curriculum sequence',
-      description: 'By default your customized tutor maskes use of current intelligent techniques that model students knowledge to accurately decide whichproblems it should give to students at any given time.',
+      title: 'Rastreamento de conhecimento e sequência de currículo',
+      description: 'Por padrão, o seu tutor personalizado faz uso de técnicas inteligentes atuais que modelam os conhecimentos dos alunos para decidir com precisão quais problemas devem ser dados aos alunos a qualquer momento.',
       type: knowledgetcs,
       switcher: switchKnowledgetcs,
       value: 'checkedA'
     },
     {
       img: syllabusimg,
-      title: 'Syllabus',
-      description: 'Enable this feature if you want to manage the schedule and subjects on which your students will learn using the tutor',
+      title: 'Programa de Estudos',
+      description: 'Ative este recurso se você quiser gerenciar o cronograma e os assuntos em que seus alunos aprenderão usando o tutor',
       type: syllabus,
       switcher: switchSyllabus,
       value: 'checkedB'
@@ -47,10 +47,8 @@ const DefinePedagogicalModel = (props) => {
   return (
     <div style={{ justifyContent: 'center' }}>
       <Typography className={classes.title} variant="subtitle1">
-        We use the most advanced techniques for providing an adaptive and intelligent tutor for
-        your students!
-        </Typography>
-
+        Utilizamos as técnicas mais avançadas para fornecer um tutor adaptativo e inteligente para seus alunos!
+      </Typography>
       {
         values.map((v, k) => {
           return (
