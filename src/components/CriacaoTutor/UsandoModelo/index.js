@@ -4,7 +4,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { Stepper, Step, StepLabel, StepContent, Button, Paper, Typography, Divider } from '@material-ui/core';
 import { Redirect } from 'react-router-dom'
 
-import ActionCreators from '../../../redux/actions/tutor';
+// import ActionCreators from '../../../redux/actions/tutor';
 
 import Header from "../../Header"
 import DefineGamificationModel from '../../Steps/DefineGamificationModel';

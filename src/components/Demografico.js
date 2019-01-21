@@ -18,9 +18,6 @@ const styles = theme => ({
 })
 
 class Demografico extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         this.scrollTop = 0

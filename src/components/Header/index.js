@@ -15,8 +15,8 @@ import {
   ListItemText,
   CssBaseline,
 } from '@material-ui/core';
-import HomeIcon from '@material-ui/icons/Home'
-import DashboardIcon from '@material-ui/icons/Dashboard'
+// import HomeIcon from '@material-ui/icons/Home'
+// import DashboardIcon from '@material-ui/icons/Dashboard'
 import AddIcon from '@material-ui/icons/Add'
 import { withStyles } from '@material-ui/core/styles';
 import { Menu } from '@material-ui/icons';

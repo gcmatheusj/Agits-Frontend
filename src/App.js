@@ -5,17 +5,17 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux';
 
-import Login from './components/Login';
-import RecuperarSenha from './components/RecuperarSenha';
-import Cadastro from './components/Cadastro';
-import Dashboard from './components/Dashboard';
-import DefineDomain from './components/DefineDomain';
+// import Login from './components/Login';
+// import RecuperarSenha from './components/RecuperarSenha';
+// import Cadastro from './components/Cadastro';
+// import Dashboard from './components/Dashboard';
+// import DefineDomain from './components/DefineDomain';
 
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
 import StepperUsandoModelo from "./components/CriacaoTutor/UsandoModelo";
 
-import VisualizarTutores from './components/VisualizarTutores'
+// import VisualizarTutores from './components/VisualizarTutores'
 import Questionario from './components/Questionario'
 
 const theme = createMuiTheme({
