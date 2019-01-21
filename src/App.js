@@ -33,13 +33,24 @@ const theme = createMuiTheme({
 
 export default class App extends Component {
   state = {
-    modelo: ''
+    modelo: '',
+    creation: null
   }
 
   handleChangeModelo = modelo => {
     this.setState({
-      modelo: modelo
+      modelo
     })
+  }
+
+  componentDidMount = () => {
+    !window.sessionStorage.getItem('modelConfig') &&
+      window.sessionStorage.setItem('modelConfig', Math.floor((Math.random() * 2) + 1))
+  }
+
+  handleChangeModelConfig = () => {
+    const modelConfig = Number(window.sessionStorage.getItem('modelConfig'))
+    window.sessionStorage.setItem('modelConfig', modelConfig === 1 ? 2 : 1)
   }
 
   render() {
@@ -59,7 +70,7 @@ export default class App extends Component {
                 <Route exact path="/usando-modelo" component={StepperUsandoModelo} />
                 {/* <Route path="/visualizar-tutores" component={VisualizarTutores} /> */}
                 {/* <Route path="/define-domain" component={DefineDomain} /> */}
-                <Route exact path="/questionario" component={Questionario} />
+                <Route exact path="/questionario" render={props => <Questionario {...props} handleChangeModel={this.handleChangeModelConfig} />} />
               </div>
             </MuiThemeProvider>
           </Fragment>

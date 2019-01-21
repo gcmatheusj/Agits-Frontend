@@ -1,4 +1,4 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { withStyles } from '@material-ui/core/styles'
 import { Grid, Typography, Card, CardContent, CardActionArea, Divider, Dialog, DialogContent, DialogActions, Button } from '@material-ui/core'
 import PropTypes from 'prop-types'
@@ -16,12 +16,14 @@ import template from '../../../assets/template.png'
 
 const opcoesModelo = [
   {
+    number: 1,
     adress: '/passo-a-passo',
     img: scratch,
     title: 'Criar seu tutor do zero',
     subtitle: 'Crie um novo tutor passo a passo e explore todos os recursos que trazemos para você.'
   },
   {
+    number: 2,
     adress: '/usando-modelo',
     img: template,
     title: 'Usando modelo',
@@ -49,13 +51,13 @@ class EscolhaDoModelo extends React.Component {
     }
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.handleTermos()
   }
 
   handleTermos = async () => {
-    const termosChecked =  await window.sessionStorage.getItem("checked")
-    if(termosChecked) {
+    const termosChecked = await window.sessionStorage.getItem("checked")
+    if (termosChecked) {
       this.setState({
         complete: true
       })
@@ -153,6 +155,8 @@ class EscolhaDoModelo extends React.Component {
   render() {
     const { classes } = this.props
     const { position, checked } = this.state
+    const modelConfig = Number(window.sessionStorage.getItem('modelConfig'))
+
     return (
       <div className={classes.root}>
         <Header title="AGITS">
@@ -161,7 +165,7 @@ class EscolhaDoModelo extends React.Component {
           </Typography>
           <Divider />
           <Typography className={classes.subtitle} variant="subtitle1">
-            Você pode começar selecionando criar tutor do zero ou usando o modelo.
+            Você pode começar criando um tutor do zero ou usando um modelo.
           </Typography>
           <Grid container
             className={classes.container}
@@ -169,19 +173,25 @@ class EscolhaDoModelo extends React.Component {
             alignItems="center">
 
             {opcoesModelo.map((v, k) => {
+              const template = <Fragment>
+                <img src={v.img} alt="" className={classes.img} />
+                <CardContent className={classes.cardContent}>
+                  <Typography className={classes.titleCard} gutterBottom align="center">
+                    {v.title}
+                  </Typography>
+                  <Typography className={classes.textCard} variant="body1" gutterBottom>
+                    {v.subtitle}
+                  </Typography>
+                </CardContent>
+              </Fragment>
               return (
                 <Card key={k} className={classes.card}>
-                  <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen(v.adress)}>
-                    <img src={v.img} alt="" className={classes.img} />
-                    <CardContent className={classes.cardContent}>
-                      <Typography className={classes.titleCard} gutterBottom align="center">
-                        {v.title}
-                      </Typography>
-                      <Typography className={classes.textCard} variant="body1" gutterBottom>
-                        {v.subtitle}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
+                  {modelConfig === v.number ?
+                    <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen(v.adress)}>
+                      {template}
+                    </CardActionArea> :
+                    template
+                  }
                 </Card>
               )
             })}
@@ -207,8 +217,8 @@ class EscolhaDoModelo extends React.Component {
                   </Button>
                 </DialogActions>
               ) : (
-                ''
-              )
+                  ''
+                )
             }
           </Dialog>
 
