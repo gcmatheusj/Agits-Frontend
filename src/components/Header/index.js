@@ -81,9 +81,9 @@ class Header extends Component {
         <MenuList>
           <MenuItem
             component={Link}
-            to='/criar-tutor'
+            to='/'
             selected={
-              '/criar-tutor' === pathname ||
+              '/' === pathname ||
               '/novo-tutor' === pathname ||
               '/usando-modelo' === pathname
             }
@@ -94,7 +94,7 @@ class Header extends Component {
             <ListItemText inset primary="Create Tutor" />
           </MenuItem>
 
-          <MenuItem
+          {/* <MenuItem
             component={Link} to='/'
           >
             <ListItemIcon>
@@ -111,7 +111,7 @@ class Header extends Component {
               <DashboardIcon />
             </ListItemIcon>
             <ListItemText inset primary="Dashboard" />
-          </MenuItem>
+          </MenuItem> */}
         </MenuList>
       </div>
     );
