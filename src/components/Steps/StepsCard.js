@@ -20,6 +20,7 @@ const styles = theme => ({
       [theme.breakpoints.down('sm')]: {
         justifyContent: 'center',
       },
+      minHeight: 150,
     },
     gridText: {
       [theme.breakpoints.down('sm')]: {
