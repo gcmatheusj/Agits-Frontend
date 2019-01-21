@@ -18,18 +18,15 @@ const styles = theme => ({
 })
 
 class Demografico extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
-        
+        this.scrollTop = 0
     }
 
     render() {
         const { classes, respostas } = this.props
         return (
-            <form onSubmit={(event) => this.props.onSubmitForm(event)}>
+            <form id='demografico' onSubmit={(event) => this.props.onSubmitForm(event)}>
                 <Typography variant="h5" component="label" >
                     Sobre Você
                 </Typography>

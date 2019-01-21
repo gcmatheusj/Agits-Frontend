@@ -5,16 +5,12 @@ import FormControl from '@material-ui/core/FormControl'
 import Typography from '@material-ui/core/Typography'
 
 class Perguntas extends Component {
-    constructor(props) {
-        super(props)
-    }
-
     render() {
         const { valores } = this.props
         console.log(valores)
         return (
             <div>
-                <Typography variant="display1" component="label">
+                <Typography variant="h4" component="label">
                     Resumo do Tutor<br />
                 </Typography>
                 <br /><div>

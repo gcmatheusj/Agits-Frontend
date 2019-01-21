@@ -8,9 +8,9 @@ import Logo from '../assets/ufal.png'
 import Nees from '../assets/nees.png'
 import Checkbox from '@material-ui/core/Checkbox'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import {
-  Link
-} from 'react-router-dom'
+// import {
+//   Link
+// } from 'react-router-dom'
 
 const styles = {
   styleImagem: {

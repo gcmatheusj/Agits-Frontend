@@ -162,9 +162,6 @@ const perguntas = [
 ]
 
 class Perguntas extends Component {
-    constructor(props) {
-        super(props)
-    }
 
     componentDidMount() {
         window.scrollTo(0, 0)
@@ -174,7 +171,7 @@ class Perguntas extends Component {
         const { valores } = this.props
         return (
             <div>
-                <Typography variant="display1" component="label">
+                <Typography variant="h4" component="label">
                     Ferramenta de Configuração<br />
                 </Typography>
 

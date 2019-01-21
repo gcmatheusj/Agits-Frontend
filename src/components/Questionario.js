@@ -185,17 +185,17 @@ class Questionario extends Component {
             <div>
               {this.state.activeStep === steps.length ? (
                 <div className={classes.styleCard2}>
-                  <Typography variant="display1" component="label" align="center" className={classes.styleText}>
+                  <Typography variant="h4" component="label" align="center" className={classes.styleText}>
                     <strong>Autoria de Sistemas Educacionais Adaptativos</strong>
                   </Typography>
                   <br /><div align="center">
                     <img src={Logo} className={classes.styleImagem} alt="" />
                     <img src={Nees} className={classes.styleImagem} alt="" />
                   </div>
-                  <Typography variant="title" component="label" align="center">
+                  <Typography variant="h6" component="label" align="center">
                     <br />Obrigado por participar deste estudo! Qualquer dúvida, entre em contato com o pesquisador abaixo:
                 </Typography>
-                  <Typography variant="title" component="label" align="center">
+                  <Typography variant="h6" component="label" align="center">
                     Diego Dermeval, Universidade Federal de Alagoas, <a href="mailto:diegodermeval@copin.ufcg.edu.br">diegodermeval@copin.ufcg.edu.br</a>
                   </Typography>
                 </div>
