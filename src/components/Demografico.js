@@ -31,7 +31,7 @@ class Demografico extends Component {
         return (
             <form onSubmit={(event) => this.props.onSubmitForm(event)}>
                 <Typography variant="h5" component="label" >
-                    Questionário Demográfico
+                    Sobre Você
                 </Typography>
                 <br /><div>
                     <FormControl component="fieldset" required>

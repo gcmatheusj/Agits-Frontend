@@ -19,6 +19,12 @@ export const styles = theme => ({
     cardAction: {
         padding: 10
     },
+    dialog: {
+        marginTop: 35,
+        marginBottom: 35,
+        marginLeft: 20,
+        marginRight: 20
+    },
     titleContainer: {
         marginTop: 10,
         textAlign: 'center',

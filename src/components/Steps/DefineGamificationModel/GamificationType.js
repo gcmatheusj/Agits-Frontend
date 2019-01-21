@@ -30,26 +30,49 @@ const text = {
     'participation': {
         'title': 'Participação',
         'description': 'Selecione esta opção se você espera que seus alunos sejam participativos em seu curso. Isso ativará os seguintes elementos de jogo no sistema: ',
-        'names': ['Desafios, ', 'Níveis, ', 'Entre os melhores, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
+        'names': ['Desafios, ', 'Níveis, ', 'Ranking, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
         'image': participation,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF', 'checkedG'],
-        'imagesbuttons': [challenges, levels, leaderboard, story, badge, rewards, points]
+        'imagesbuttons': [challenges, levels, leaderboard, story, badge, rewards, points],
+        'label': [
+            'Puzzles ou outras tarefas que exigem algum esforço para resolver.',
+            'Passos definidos na progressão do aluno no conteúdo.',
+            'Uma lista de classificação dos participantes, mostrando o desempenho de um determinado aluno em comparação com as maiores pontuações e com seus amigos.',
+            'Uma descrição narrativa de uma sequência de eventos usando uma história ou um tema.',
+            'Um símbolo visual de uma conquista. Geralmente projetado para se parecer como seus análogos do mundo real, como o emblema dos escoteiros.',
+            'Benefícios por alguma ação ou conquista.',
+            'Representações numéricas da progressão dos alunos no conteúdo.'
+        ]
     },
     'performance': {
         'title': 'Performance',
         'description': 'Selecione essa opção se você espera que seus alunos se concentrem principalmente em seu desempenho de aprendizado. Isso ativará os seguintes elementos de jogo no sistema: ',
-        'names': ['Desafios, ', 'Feedback, ', 'Níveis, ', 'Entre os melhores, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
+        'names': ['Desafios, ', 'Feedback, ', 'Níveis, ', 'Ranking, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
         'image': performance,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF', 'checkedG', 'checkedH'],
-        'imagesbuttons': [challenges, feedback, levels, leaderboard, story, badge, rewards, points]
+        'imagesbuttons': [challenges, feedback, levels, leaderboard, story, badge, rewards, points],
+        label: [
+            'Puzzles ou outras tarefas que exigem algum esforço para resolver.',
+            'Feedback sobre como o aluno está indo depois de interagir com o sistema educacional adaptativo.',
+            'Passos definidos na progressão do aluno no conteúdo.',
+            'Uma lista de classificação dos participantes, mostrando o desempenho de um determinado aluno em comparação com as maiores pontuações e com seus amigos.',
+            'Uma descrição narrativa de uma sequência de eventos usando uma história ou um tema.',
+            'Um símbolo visual de uma conquista. Geralmente projetado para se parecer como seus análogos do mundo real, como o emblema dos escoteiros.',
+            'Benefícios por alguma ação ou conquista.',
+            'Representações numéricas da progressão dos alunos no conteúdo.'
+        ]
     },
     'competition': {
         'title': 'Competição',
         'description': 'Selecione esta opção se você deseja fornecer competição entre os alunos. Isso ativará os seguintes elementos de jogo no sistema: ',
-        'names': ['Entre os melhores ', 'e Pontos.'],
+        'names': ['Ranking ', 'e Pontos.'],
         'image': competition,
         'checkeds': ['checkedA', 'checkedB'],
-        'imagesbuttons': [leaderboard, points]
+        'imagesbuttons': [leaderboard, points],
+        label: [
+            'Uma lista de classificação dos participantes, mostrando o desempenho de um determinado aluno em comparação com as maiores pontuações e com seus amigos.',
+            'Representações numéricas da progressão dos alunos no conteúdo.'
+        ]
     },
     'enjoyment': {
         'title': 'Satisfação',
@@ -57,7 +80,16 @@ const text = {
         'names': ['Missões, ', 'Avatar, ', 'História, ', 'Medalhas, ', 'Recompensas ', 'e Pontos.'],
         'image': enjoyment,
         'checkeds': ['checkedA', 'checkedB', 'checkedC', 'checkedD', 'checkedE', 'checkedF'],
-        'imagesbuttons': [quests, avatar, story, badge, rewards, points]
+        'imagesbuttons': [quests, avatar, story, badge, rewards, points],
+        label: [
+            'Uma missão específica ou desafio para os alunos no sistema educacional adaptativo. A tarefa terá usualmente uma narrativa e um objetivo, além de uma recompensa quando finalizada.',
+            'Uma representação virtual do personagem do aluno no sistema educacional adaptativo. Este elemento é comum nos jogos de RPG (Role-Playing Game) em que o jogador pode assumir o papel de uma criatura mágica ou um guerreiro medieval.',
+            'Uma descrição narrativa de uma sequência de eventos usando uma história ou um tema.',
+            'Um símbolo visual de uma conquista. Geralmente projetado para se parecer como seus análogos do mundo real, como o emblema dos escoteiros.',
+            'Benefícios por alguma ação ou conquista.',
+            'Representações numéricas da progressão dos alunos no conteúdo.'
+
+        ]
     },
     'exploration': {
         'title': 'Exploração',
@@ -65,22 +97,32 @@ const text = {
         'names': ['Desafios, ', 'Níveis ', 'e Desafio Final.'],
         'image': exploration,
         'checkeds': ['checkedA', 'checkedB', 'checkedC'],
-        'imagesbuttons': [challenges, levels, bossfight]
+        'imagesbuttons': [challenges, levels, bossfight],
+        label: [
+            'Puzzles ou outras tarefas que exigem algum esforço para resolver.',
+            'Passos definidos na progressão do aluno no conteúdo.',
+            'Uma difícil batalha contra um adversário de nível alto, chamado de boss. Geralmente ele marca o fim de um nível ou de um conteúdo do sistema.'
+        ]
     },
     'effectiveness': {
         'title': 'Eficácia',
         'description': 'Selecione essa opção se você principalmente espera que seus alunos sejam eficazes quando eles estiverem usando o tutor. A ativação desse comportamento ativará os seguintes elementos de jogo no sistema: ',
-        'names': ['Entre os melhores, ', 'Medalhas ', 'e Pontos.'],
+        'names': ['Ranking, ', 'Medalhas ', 'e Pontos.'],
         'image': effectiveness,
         'checkeds': ['checkedA', 'checkedB', 'checkedC'],
-        'imagesbuttons': [leaderboard, badge, points]
+        'imagesbuttons': [leaderboard, badge, points],
+        label: [
+            'Uma lista de classificação dos participantes, mostrando o desempenho de um determinado aluno em comparação com as maiores pontuações e com seus amigos.',
+            'Um símbolo visual de uma conquista. Geralmente projetado para se parecer como seus análogos do mundo real, como o emblema dos escoteiros.',
+            'Representações numéricas da progressão dos alunos no conteúdo.'
+        ]
     }
 }
 
 const pChecked = ["checkedA", "checkedB", "checkedC", "checkedD", "checkedE", "checkedF", "checkedG", "checkedH"]
 
 const checkedsbuttons = [
-    'Lorem Ipsum A is simply dummy text of the printing and typesetting industry.',
+    'Puzzles ou outras tarefas que exigem algum esforço para resolver.',
     'Lorem Ipsum B is simply dummy text of the printing and typesetting industry.',
     'Lorem Ipsum C is simply dummy text of the printing and typesetting industry.',
     'Lorem Ipsum D is simply dummy text of the printing and typesetting industry.',
@@ -156,7 +198,7 @@ class GamificationType extends Component {
                                         <Grid container direction="row" alignItems="center">
                                             <img className={classes.paper} src={(textprops.imagesbuttons)[k]} alt="" />
                                             <Typography>
-                                                {v}
+                                                {textprops.label[k]}
                                             </Typography>
                                         </Grid>
                                     </Collapse>

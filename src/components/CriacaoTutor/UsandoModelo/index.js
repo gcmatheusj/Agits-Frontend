@@ -53,8 +53,8 @@ const styles = theme => ({
 
 function getSteps() {
   return [
-    'Define Education Level',
-    'Define Gamified Model',
+    'Definir Nível Educacional',
+    'Define Modelo de Gamificação',
   ];
 }
 
@@ -108,8 +108,8 @@ class StepperUsandoModelo extends Component {
       <div className={classes.root}>
         <Header title="AGITS">
           <Typography className={classes.pageTitle} variant="h6">
-            Customize Your Tutor
-                    </Typography>
+            Customizando Tutor
+          </Typography>
           <Divider style={styles.divider} />
           <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
             {steps.map((label, index) => (
@@ -118,12 +118,12 @@ class StepperUsandoModelo extends Component {
                 <StepContent>
                   <div>{getStepContent(index)}</div>
                   <div className={classes.actionsContainer}>
-                    <div style={{ marginTop: 10 }}>
-                      <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Back</Button>
+                    <div>
+                      <Button className={classes.button} disabled={activeStep === 0} onClick={this.handleBack}>Voltar</Button>
                       {activeStep === steps.length - 1 ? (
-                        <Button className={classes.button} variant="contained" color="primary" onClick={this.createTutorRequest}>Finish</Button>
+                        <Button className={classes.button} variant="contained" color="primary" onClick={this.createTutorRequest}>Finalizar</Button>
                       ) : (
-                          <Button className={classes.button} variant="contained" color="primary" onClick={this.handleNext}>Next</Button>
+                          <Button className={classes.button} variant="contained" color="primary" onClick={this.handleNext}>Próximo</Button>
                         )}
                     </div>
                   </div>

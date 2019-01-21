@@ -49,10 +49,24 @@ class EscolhaDoModelo extends React.Component {
     }
   };
 
+  componentDidMount(){
+    this.handleTermos()
+  }
+
+  handleTermos = async () => {
+    const termosChecked =  await window.sessionStorage.getItem("checked")
+    if(termosChecked) {
+      this.setState({
+        complete: true
+      })
+    }
+  }
+
   handleChange = () => {
     this.setState({
       checked: !this.state.checked
     })
+    window.sessionStorage.setItem("checked", this.state.checked)
   }
 
   setRedirect = () => {
@@ -138,7 +152,7 @@ class EscolhaDoModelo extends React.Component {
 
   render() {
     const { classes } = this.props
-    const { complete, position, checked } = this.state
+    const { position, checked } = this.state
     return (
       <div className={classes.root}>
         <Header title="AGITS">
@@ -178,7 +192,7 @@ class EscolhaDoModelo extends React.Component {
             open={this.state.open}
           />
 
-          <Dialog id='dialogTermo' open={!complete} maxWidth='lg'>
+          <Dialog id='dialogTermo' open={!this.state.complete} maxWidth='lg'>
             <DialogContent>
               {position === 0 ?
                 <Termo checked={checked} handleChange={this.handleChange} next={this.next} /> :
