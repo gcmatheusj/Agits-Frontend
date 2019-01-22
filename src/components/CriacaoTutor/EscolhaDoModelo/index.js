@@ -46,8 +46,10 @@ class EscolhaDoModelo extends React.Component {
     respostas: {}
   };
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.handleTermos()
+    !window.sessionStorage.getItem('configPosition') &&
+    window.sessionStorage.setItem('configPosition', 1)
   }
 
   handleTermos = async () => {

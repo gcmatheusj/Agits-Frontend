@@ -59,7 +59,13 @@ export default class App extends Component {
     window.sessionStorage.setItem('modelConfig', modelConfig === 1 ? 2 : 1)
   }
 
+  handleChangeConfigPosition() {
+    const configPosition = Number(window.sessionStorage.getItem('configPosition'))
+    window.sessionStorage.setItem('configPosition', configPosition+1)
+  }
+
   render() {
+    
     return (
       <Provider store={store}>
         <Router>
@@ -76,8 +82,17 @@ export default class App extends Component {
                 <Route exact path="/usando-modelo" component={StepperUsandoModelo} />
                 {/* <Route path="/visualizar-tutores" component={VisualizarTutores} /> */}
                 {/* <Route path="/define-domain" component={DefineDomain} /> */}
-                <Route exact path="/questionario" render={props => <Questionario {...props} handleChangeModel={this.handleChangeModelConfig} />} />
+                <Route exact path="/questionario" render={props => (
+                  <Questionario
+                    {...props}
+                    configPosition = {Number(window.sessionStorage.getItem('configPosition'))}
+                    modelConfig = {Number(window.sessionStorage.getItem('modelConfig'))}
+                    changePosition={this.handleChangeConfigPosition}
+                    changeModel={this.handleChangeModelConfig}
+                  />
+                )} />
               </div>
+              {console.log(Number(window.sessionStorage.getItem('configPosition')))}
             </MuiThemeProvider>
           </Fragment>
         </Router>
