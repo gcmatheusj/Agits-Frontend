@@ -1,6 +1,6 @@
 const styles = theme => ({
     //StepsCard
-    rootrootStepsCard: {
+      rootStepsCard: {
       flexGrow: 1,
       maxWidth: '100%',
       padding: 1,
@@ -23,6 +23,11 @@ const styles = theme => ({
       [theme.breakpoints.down('sm')]: {
         justifyContent: 'center',
       },
+    },
+    title: {
+      [theme.breakpoints.down('sm')]: {
+        fontSize: '0.875rem',
+    },
     },
     titleCard: {
       fontWeight: 'bold',

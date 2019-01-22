@@ -1,5 +1,5 @@
-import { createReducer } from 'reduxsauce';
-import { Types } from '../actions/tutor';
+import { createReducer } from 'reduxsauce'
+import { Types } from '../actions/tutor'
 
 export const INITIAL_STATE = {
   knowledgetcs: false,
@@ -9,7 +9,7 @@ export const INITIAL_STATE = {
   placementTest: false,
   studentsReports: false,
   teacherReports: false,
-};
+}
 
 export const knowledgeTCS = (state = INITIAL_STATE, action) => ({
   ...state,
@@ -53,6 +53,6 @@ export const HANDLERS = {
   [Types.TEACHERREPORTS]: teacherReports,
 
   [Types.CREATETUTOR_REQUEST]: createtutorRequest,
-};
+}
 
-export default createReducer(INITIAL_STATE, HANDLERS);
+export default createReducer(INITIAL_STATE, HANDLERS)

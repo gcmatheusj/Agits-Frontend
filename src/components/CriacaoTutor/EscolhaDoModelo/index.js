@@ -1,4 +1,6 @@
 import React, { Fragment } from "react"
+import { connect } from 'react-redux'
+import ActionCreators from '../../../redux/actions/experimento'
 import { withStyles } from '@material-ui/core/styles'
 import { Grid, Typography, Card, CardContent, CardActionArea, Divider, Dialog, DialogContent, DialogActions, Button } from '@material-ui/core'
 import PropTypes from 'prop-types'
@@ -10,6 +12,7 @@ import Demografico from '../../Demografico'
 import AlertDialogSlide from './Dialog'
 
 import { styles } from './styles'
+import './style.css'
 
 import scratch from '../../../assets/scratch2.png'
 import template from '../../../assets/template.png'
@@ -40,15 +43,7 @@ class EscolhaDoModelo extends React.Component {
     complete: false,
     position: 0,
     checked: false,
-    respostas: {
-      resposta1: null,
-      resposta2: null,
-      resposta3: null,
-      resposta4: null,
-      resposta5: null,
-      resposta6: null,
-      resposta7: null,
-    }
+    respostas: {}
   };
 
   componentDidMount = () => {
@@ -92,7 +87,7 @@ class EscolhaDoModelo extends React.Component {
       this.setState({
         respostas: {
           ...this.state.respostas,
-          resposta1: event.target.value
+          sexo: event.target.value
         }
       })
       window.sessionStorage.setItem("resposta1", event.target.value)
@@ -100,42 +95,42 @@ class EscolhaDoModelo extends React.Component {
       this.setState({
         respostas: {
           ...this.state.respostas,
-          resposta2: event.target.value
+          idade: event.target.value
         }
       })
       window.sessionStorage.setItem("resposta2", event.target.value)
     } else if (event.target.name === 'ocupação') {
       this.setState({
         respostas: {
-          ...this.state.respostas, resposta3: event.target.value
+          ...this.state.respostas, ocupacao: event.target.value
         }
       })
       window.sessionStorage.setItem("resposta3", event.target.value)
     } else if (event.target.name === 'escolaridade') {
       this.setState({
         respostas: {
-          ...this.state.respostas, resposta4: event.target.value
+          ...this.state.respostas, escolaridade: event.target.value
         }
       })
       window.sessionStorage.setItem("resposta4", event.target.value)
     } else if (event.target.name === 'habilidades') {
       this.setState({
         respostas: {
-          ...this.state.respostas, resposta5: event.target.value
+          ...this.state.respostas, habilidades: event.target.value
         }
       })
       window.sessionStorage.setItem("resposta5", event.target.value)
     } else if (event.target.name === 'treinamento') {
       this.setState({
         respostas: {
-          ...this.state.respostas, resposta6: event.target.value
+          ...this.state.respostas, treinamento: event.target.value
         }
       })
       window.sessionStorage.setItem("resposta6", event.target.value)
     } else if (event.target.name === 'usoTecnologiasEducacionais') {
       this.setState({
         respostas: {
-          ...this.state.respostas, resposta7: event.target.value
+          ...this.state.respostas, usoTecnologiasEducacionais: event.target.value
         }
       })
       window.sessionStorage.setItem("resposta7", event.target.value)
@@ -148,6 +143,7 @@ class EscolhaDoModelo extends React.Component {
         position: this.state.position + 1
       })
     } else {
+      this.props.handleDemograficoRequest(this.state.respostas)
       this.setState({
         complete: true
       })
@@ -204,7 +200,7 @@ class EscolhaDoModelo extends React.Component {
             open={this.state.open}
           />
 
-          <Dialog id='dialogTermo' open={!this.state.complete} maxWidth='lg'>
+          <Dialog id="dialogTermo" open={!this.state.complete} maxWidth='lg'>
             <DialogContent>
               {position === 0 ?
                 <Termo checked={checked} handleChange={this.handleChange} next={this.next} /> :
@@ -234,4 +230,12 @@ EscolhaDoModelo.propTypes = {
   classes: PropTypes.object.isRequired,
 }
 
-export default withStyles(styles)(EscolhaDoModelo)
+const mapStateToProps = state => ({
+  experimento: state.experimento
+})
+
+const mapDispatchToProps = dispatch => ({
+  handleDemograficoRequest: respostasDemografico => dispatch(ActionCreators.demograficoRequest(respostasDemografico))
+})
+
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(EscolhaDoModelo))

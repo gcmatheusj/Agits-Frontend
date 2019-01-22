@@ -2,6 +2,7 @@ const styles = theme => ({
     //index.js
     root: {
       width: '100%',
+      paddingBottom: 10
     },
     select: {
       backgroundColor: '#fafafa',
@@ -13,7 +14,8 @@ const styles = theme => ({
       width: '100%',
       justifyContent: 'space-between',
       [theme.breakpoints.down('sm')]: {
-        justifyContent: 'center',
+        flexDirection: 'column',
+        alignItems: 'center',
       },
     },
   button: {
@@ -32,16 +34,15 @@ const styles = theme => ({
   img: {
     padding: 20
   },
-
+  title: {
+    marginBottom: 10,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem'
+    }
+  },
   //Collapse
   imgCollapse: {
     width: 230,
-  },
-  grid: {
-    flexDirection: 'row',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
   },
   });
 

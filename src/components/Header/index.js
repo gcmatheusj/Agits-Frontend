@@ -54,9 +54,9 @@ class Header extends Component {
             }
           >
             <ListItemIcon>
-              <AddIcon />
+              <AddIcon/>
             </ListItemIcon>
-            <ListItemText inset primary="Create Tutor" />
+            <ListItemText inset primary="Criar Tutor" />
           </MenuItem>
 
           {/* <MenuItem

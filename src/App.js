@@ -33,14 +33,7 @@ const theme = createMuiTheme({
 
 export default class App extends Component {
   state = {
-    modelo: '',
     creation: null
-  }
-
-  handleChangeModelo = modelo => {
-    this.setState({
-      modelo
-    })
   }
 
   componentDidMount = () => {
