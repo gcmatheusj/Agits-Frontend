@@ -46,7 +46,7 @@ const styles = theme => ({
 })
 
 function getSteps() {
-  return ['Ferramenta de Configuração', 'Resumo do Tutor']
+  return ['Ferramenta de Configuração']
 }
 
 class Questionario extends Component {
@@ -70,15 +70,15 @@ class Questionario extends Component {
             onChange={this.handleChangeFerramenta}
           />
         )
-      case 1:
-        return (
-          <Resumo
-            valores={this.state}
-            onChangeSlider1={this.handleChangeResumo1}
-            onChangeSlider2={this.handleChangeResumo2}
-            onChangeSlider3={this.handleChangeResumo3}
-          />
-        )
+      // case 1:
+      //   return (
+      //     <Resumo
+      //       valores={this.state}
+      //       onChangeSlider1={this.handleChangeResumo1}
+      //       onChangeSlider2={this.handleChangeResumo2}
+      //       onChangeSlider3={this.handleChangeResumo3}
+      //     />
+      //   )
       default:
         return 'Unknown step'
     }
