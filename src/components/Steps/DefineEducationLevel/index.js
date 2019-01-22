@@ -16,11 +16,11 @@ import CollapseDescription from './CollapseDescription';
 import styles from './styles';
 
 const names = [
-  'Middle School Class',
-  'High School Class',
-  'College Class',
-  'Test Preparation',
-  'Other']
+  'Ensino Fundamental',
+  'Ensino Médio',
+  'Universidade',
+  'Preparação de Teste',
+  'Outro']
 
 const imgs = [img1, img2, img3, img4, img5]
 
@@ -75,9 +75,9 @@ class DefineEducationLevel extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography style={{ margin: 10 }} variant="subtitle1">
-          Select the educational level context on which you will use the gamified tutor:
-                </Typography>
+        <Typography style={{ marginBottom: 10 }} variant="subtitle1">
+          Selecione o contexto de nível educacional no qual você usará o tutor gamificado:
+        </Typography>
         <Paper>
           <Grid className={classes.grid} container direction="row">
             {

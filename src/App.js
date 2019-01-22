@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Component, Fragment } from 'react';
 import { CssBaseline } from '@material-ui/core';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
@@ -31,28 +31,51 @@ const theme = createMuiTheme({
   },
 });
 
-const App = () => (
-  <Provider store={store}>
-    <Router>
-      <Fragment>
-        <CssBaseline />
-        <MuiThemeProvider theme={theme}>
-          <div>
-            {/* <Route exact path="/" component={Login} /> */}
-            {/* <Route path="/recuperar-senha" component={RecuperarSenha} /> */}
-            {/* <Route path="/cadastro" component={Cadastro} /> */}
-            {/* <Route path="/dashboard" component={Dashboard} /> */}
-            <Route exact path="/" component={EscolhaDoModelo} />
-            <Route exact path="/passo-a-passo" component={StepperPassoaPasso} />
-            <Route exact path="/usando-modelo" component={StepperUsandoModelo} />
-            {/* <Route path="/visualizar-tutores" component={VisualizarTutores} /> */}
-            {/* <Route path="/define-domain" component={DefineDomain} /> */}
-            <Route exact path="/questionario" component={Questionario} />
-          </div>
-        </MuiThemeProvider>
-      </Fragment>
-    </Router>
-  </Provider>
-);
+export default class App extends Component {
+  state = {
+    modelo: '',
+    creation: null
+  }
 
-export default App;
+  handleChangeModelo = modelo => {
+    this.setState({
+      modelo
+    })
+  }
+
+  componentDidMount = () => {
+    !window.sessionStorage.getItem('modelConfig') &&
+      window.sessionStorage.setItem('modelConfig', Math.floor((Math.random() * 2) + 1))
+  }
+
+  handleChangeModelConfig = () => {
+    const modelConfig = Number(window.sessionStorage.getItem('modelConfig'))
+    window.sessionStorage.setItem('modelConfig', modelConfig === 1 ? 2 : 1)
+  }
+
+  render() {
+    return (
+      <Provider store={store}>
+        <Router>
+          <Fragment>
+            <CssBaseline />
+            <MuiThemeProvider theme={theme}>
+              <div>
+                {/* <Route exact path="/" component={Login} /> */}
+                {/* <Route path="/recuperar-senha" component={RecuperarSenha} /> */}
+                {/* <Route path="/cadastro" component={Cadastro} /> */}
+                {/* <Route path="/dashboard" component={Dashboard} /> */}
+                <Route exact path="/" component={EscolhaDoModelo} />
+                <Route exact path="/passo-a-passo" component={StepperPassoaPasso} />
+                <Route exact path="/usando-modelo" component={StepperUsandoModelo} />
+                {/* <Route path="/visualizar-tutores" component={VisualizarTutores} /> */}
+                {/* <Route path="/define-domain" component={DefineDomain} /> */}
+                <Route exact path="/questionario" render={props => <Questionario {...props} handleChangeModel={this.handleChangeModelConfig} />} />
+              </div>
+            </MuiThemeProvider>
+          </Fragment>
+        </Router>
+      </Provider>
+    )
+  }
+}

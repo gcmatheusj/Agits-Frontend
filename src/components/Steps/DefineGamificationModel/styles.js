@@ -2,7 +2,7 @@ export const styles = theme => ({
     root: {
         flexGrow: 1,
         paddingLeft: 1,
-        padding: theme.spacing.unit * 2,
+        padding: 10,
         [theme.breakpoints.down('sm')]: {
             padding: 1,
             marginTop: 10,

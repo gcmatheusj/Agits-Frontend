@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-// import Card from '@material-ui/core/Card'
-// import CardContent from '@material-ui/core/CardContent'
+import Grid from '@material-ui/core/Grid'
+import CardContent from '@material-ui/core/CardContent'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
@@ -14,6 +14,13 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 
 const styles = {
   styleImagem: {
+    marginTop: 20,
+    marginBottom: 10,
+    height: "150px",
+  },
+  styleImagem2: {
+    marginTop: 20,
+    marginBottom: 10,
     height: "150px",
   },
   styleText: {
@@ -34,9 +41,11 @@ class Termos extends Component {
             <Typography variant="h6" component="label" align="center">
               <strong>Termo de Consentimento</strong>
             </Typography>
-            <br /><div>
-              <img src={Logo} style={styles.styleImagem} alt="" />
-              <img src={Nees} style={styles.styleImagem} alt="" />
+            <div style={styles.containerImg}>
+              <Grid container justify="center">
+                <img src={Logo} style={styles.styleImagem} alt="" />
+                <img src={Nees} style={styles.styleImagem2} alt="" />
+              </Grid>
             </div>
             <br /><Divider />
           </div>
@@ -83,6 +92,7 @@ class Termos extends Component {
           <br /><Divider />
           <div align="center">
             <FormControlLabel
+              style={{ marginBottom: 5 }}
               control={
                 <Checkbox
                   checked={checked}
@@ -98,6 +108,7 @@ class Termos extends Component {
                   Continuar
                 </Button>
             </div>
+            
           </div>
         </div>
     )

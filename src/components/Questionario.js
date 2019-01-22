@@ -142,6 +142,7 @@ class Questionario extends Component {
   }
 
   handleSubmit(event) {
+    this.props.handleChangeModel()
     event.preventDefault()
     axios.post('https://agits-87987.firebaseio.com/Respostas.json', this.state)
     console.log('Teste')

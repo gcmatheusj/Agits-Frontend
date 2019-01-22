@@ -21,7 +21,7 @@ const DefinePedagogicalModel = (props) => {
   const values = [
     {
       img: curriculum,
-      title: 'Rastreamento de conhecimento e sequência de currículo',
+      title: 'Pontos Fortes e Fracos',
       description: 'Por padrão, o seu tutor personalizado faz uso de técnicas inteligentes atuais que modelam os conhecimentos dos alunos para decidir com precisão quais problemas devem ser dados aos alunos a qualquer momento.',
       type: knowledgetcs,
       switcher: switchKnowledgetcs,
