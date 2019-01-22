@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import PropTypes from 'prop-types';
 import {
     withStyles,
@@ -10,37 +10,11 @@ import {
     Typography,
     Grid,
     Divider
-} from '@material-ui/core'
+} from '@material-ui/core';
 
-import IconSettings from '@material-ui/icons/Settings'
+import IconSettings from '@material-ui/icons/Settings';
 
-const styles = theme => ({
-    card: {
-        maxWidth: 280,
-        marginTop: 20,
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: 20,
-        },
-    },
-    media: {
-        height: 120,
-        padding: 20,
-        backgroundColor: theme.palette.primary.main,
-    },
-
-    content: {
-        height: 120,
-        padding: 20
-    },
-
-    top: {
-        color: '#ffffff',
-    },
-
-    iconSettings: {
-        color: '#212121'
-    },
-})
+import styles from './styles';
 
 class CardTutor extends React.Component {
 

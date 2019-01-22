@@ -17,46 +17,11 @@ import {
 } from '@material-ui/core';
 // import HomeIcon from '@material-ui/icons/Home'
 // import DashboardIcon from '@material-ui/icons/Dashboard'
-import AddIcon from '@material-ui/icons/Add'
+import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/core/styles';
 import { Menu } from '@material-ui/icons';
 
-const drawerWidth = 240;
-
-const styles = theme => ({
-  root: {
-    display: 'flex',
-  },
-  drawer: {
-    [theme.breakpoints.up('sm')]: {
-      width: drawerWidth,
-      flexShrink: 0,
-    },
-  },
-  appBar: {
-    zIndex: theme.zIndex.drawer + 1,
-  },
-  menuButton: {
-    marginRight: 20,
-    [theme.breakpoints.up('sm')]: {
-      display: 'none',
-    },
-  },
-  toolbar: theme.mixins.toolbar,
-  drawerPaper: {
-    width: drawerWidth,
-  },
-  content: {
-    flexGrow: 1,
-    paddingTop: 0,
-    padding: theme.spacing.unit * 3,
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: 16,
-      paddinRight: 16,
-      paddingBottom: 16
-    }
-  },
-});
+import styles from './styles';
 
 class Header extends Component {
   state = {

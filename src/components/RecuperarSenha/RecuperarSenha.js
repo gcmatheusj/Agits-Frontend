@@ -12,38 +12,7 @@ import {
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
-const styles = theme => ({
-  grid: {
-    flexGrow: 1,
-    alignItems: 'center',
-    [theme.breakpoints.down('sm')]: {
-      alignItems: 'flex-start',
-      marginTop: 30,
-      marginLeft: 16,
-      marginRight: 16,
-    },
-  },
-  card: {
-    maxWidth: 550,
-  },
-  title: {
-    fontSize: 27,
-    marginTop: 8,
-    fontWeight: 'bold',
-  },
-  subheading: {
-    marginBottom: 8,
-  },
-  input: {
-    width: '100%',
-  },
-  cardActions: {
-    marginBottom: 10,
-  },
-  formContainer: {
-    width: '100%',
-  },
-});
+import styles from './styles';
 
 class RecuperarSenha extends Component {
   constructor(props) {

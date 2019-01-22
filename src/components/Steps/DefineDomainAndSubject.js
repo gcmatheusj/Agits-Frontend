@@ -16,54 +16,7 @@ import {
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import { withStyles } from '@material-ui/core/styles';
 
-const styles = theme => ({
-  root: {
-    marginTop: '30px',
-    marginBottom: '10px',
-  },
-  expansionPanel: {
-    paddingTop: '5px',
-    paddingBottom: '5px',
-    borderTop: '1px solid #bdbdbd',
-    borderRight: '1px solid #bdbdbd',
-    borderLeft: '1px solid #bdbdbd',
-  },
-  expansionPanelFont: {
-    fontSize: '16pt',
-  },
-  expansionPanelDetail: {
-    borderRight: '1px solid #bdbdbd',
-    borderLeft: '1px solid #bdbdbd',
-    margin: '0',
-    padding: '0',
-  },
-  label: {
-    paddingTop: '30px',
-    fontSize: '14pt',
-  },
-  formControl: {
-    '@media only screen and (max-width: 360px)': {
-      // Galaxy S3 width Compatibility
-      maxWidth: '177px',
-    },
-    width: '100%',
-  },
-  gridContainer: {
-    '@media only screen and (max-width: 360px)': {
-      // Galaxy S3 width Compatibility
-      padding: '20px',
-    },
-    paddingTop: '0',
-    padding: '15px',
-  },
-  gridButton: {
-    float: 'right',
-  },
-  divider: {
-    marginTop: '25px',
-    marginBottom: '15px',
-  },
-});
+import styles from './styles';
 
 class DefineDomainAndSubject extends Component {
   state = {
@@ -79,7 +32,7 @@ class DefineDomainAndSubject extends Component {
     const { domainArray } = this.state;
 
     return (
-      <div className={classes.root}>
+      <div className={classes.rootDefineDomain}>
         <div>
           {/* Domain selection */}
           <ExpansionPanel>

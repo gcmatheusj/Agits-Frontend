@@ -1,50 +1,8 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
-import { Grid, Typography, Card, Switch } from '@material-ui/core'
+import { Grid, Typography, Card, Switch } from '@material-ui/core';
 
-const styles = theme => ({
-    root: {
-      flexGrow: 1,
-      maxWidth: '100%',
-      padding: 1,
-      paddingBottom: 10,
-      paddingTop: 10,
-      [theme.breakpoints.down('sm')]: {
-        padding: 1,
-        marginTop: 10,
-        marginBottom: 20,
-      },
-    },
-    gridCard: {
-      alignItems: 'center',
-      [theme.breakpoints.down('sm')]: {
-        justifyContent: 'center',
-      },
-      minHeight: 150,
-    },
-    gridText: {
-      [theme.breakpoints.down('sm')]: {
-        justifyContent: 'center',
-      },
-    },
-    titleCard: {
-      fontWeight: 'bold',
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '0.9rem',
-        textAlign: 'center',
-      },
-    },
-    textCard: {
-        textAlign: 'justify',
-      [theme.breakpoints.down('sm')]: {
-        fontSize: '0.8rem',
-      },
-    },
-    img: {
-        margin: 20,
-        width: 100,
-    },
-  });
+import styles from './styles';
 
 const StepsCard = (props) => {
 
@@ -54,7 +12,7 @@ const StepsCard = (props) => {
     } = props;
 
     return (
-        <div className={classes.root}>
+        <div className={classes.rootStepsCard}>
             <Card>
                 <Grid container style={{ padding: 20 }}>
                     <Grid item xs={12}>
