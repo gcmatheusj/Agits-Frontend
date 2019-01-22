@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { withStyles } from '@material-ui/core/styles'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
@@ -115,9 +115,9 @@ class Questionario extends Component {
 
   handleChangeFerramenta = (name, posicao, text) => (event, value) => {
     let newVetor = this.state.ferramenta
-    
+
     const v = text ? event.target.value : value
-    
+
     newVetor[posicao] = v
 
     this.setState({
@@ -141,8 +141,9 @@ class Questionario extends Component {
     window.sessionStorage.setItem("valor3", valor3)
   }
 
-  handleSubmit(event) {
-    this.props.handleChangeModel()
+  handleSubmit = (event) => {
+    this.props.changePosition()
+    this.props.changeModel()
     event.preventDefault()
     axios.post('https://agits-87987.firebaseio.com/Respostas.json', this.state)
     console.log('Teste')
@@ -163,12 +164,33 @@ class Questionario extends Component {
   }
 
   render() {
-    const { classes } = this.props
+    const { classes, configPosition, modelConfig } = this.props
     const steps = getSteps();
     const { activeStep } = this.state;
 
+    const um = modelConfig === 1? 'Passo a Passo' : 'Usando Modelo'
+    const dois = modelConfig === 2? 'Passo a Passo' : 'Usando Modelo'
+
+    const obrigado = <Fragment>
+      <Typography variant="h6" component="label" align="center">
+        <br />Obrigado por participar deste estudo! Qualquer dúvida, entre em contato com o pesquisador abaixo:
+      </Typography>
+      <Typography variant="h6" component="label" align="center">
+        Diego Dermeval, Universidade Federal de Alagoas, <a href="mailto:diegodermeval@copin.ufcg.edu.br">diegodermeval@copin.ufcg.edu.br</a>
+      </Typography>
+    </Fragment>
+    const proximaEtapa = <Fragment>
+      <Typography variant="h6" component="label" align="center">
+        <br />Nessa etapa você configurou um sistema educational adaptativo através de um processo {um}.
+      </Typography>
+      <Typography variant="h6" component="label" align="center">
+      Por favor, siga para a próxima etapa, clicando no botão 'Criar Tutor' no Menu lateral onde você irá configurar um sistema educacional adaptativo através de um processo {dois}.
+      </Typography>
+    </Fragment>
+
     return (
       <Header title='Questionário'>
+        {console.log(modelConfig)}
         <Card className={classes.styleCard}>
           <div className={classes.root}>
             <Stepper activeStep={activeStep} alternativeLabel>
@@ -189,16 +211,12 @@ class Questionario extends Component {
                   <Typography variant="h4" component="label" align="center" className={classes.styleText}>
                     <strong>Autoria de Sistemas Educacionais Adaptativos</strong>
                   </Typography>
+                  {configPosition > 1 ? obrigado : proximaEtapa}
                   <br /><div align="center">
                     <img src={Logo} className={classes.styleImagem} alt="" />
                     <img src={Nees} className={classes.styleImagem} alt="" />
                   </div>
-                  <Typography variant="h6" component="label" align="center">
-                    <br />Obrigado por participar deste estudo! Qualquer dúvida, entre em contato com o pesquisador abaixo:
-                </Typography>
-                  <Typography variant="h6" component="label" align="center">
-                    Diego Dermeval, Universidade Federal de Alagoas, <a href="mailto:diegodermeval@copin.ufcg.edu.br">diegodermeval@copin.ufcg.edu.br</a>
-                  </Typography>
+
                 </div>
               ) : (
                   <CardContent>
@@ -216,11 +234,11 @@ class Questionario extends Component {
                       {activeStep === steps.length - 1 ? (
                         <Button variant="contained" color="primary" onClick={(event) => { this.handleNext(event); this.handleSubmit(event) }}>
                           Finalizar
-                      </Button>
+                        </Button>
                       ) : (
                           <Button variant="contained" color="primary" onClick={this.handleNext}>
                             Próximo
-                      </Button>
+                          </Button>
                         )}
 
                     </div>
