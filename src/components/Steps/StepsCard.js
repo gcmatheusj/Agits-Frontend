@@ -13,7 +13,7 @@ const StepsCard = (props) => {
 
     return (
         <div className={classes.rootStepsCard}>
-            <Card>
+            <Card style={{ paddingTop: 10, paddingBottom: 10 }}>
                 <Grid container style={{ padding: 20 }}>
                     <Grid item xs={12}>
                         <Grid container direction="row" spacing={16} className={classes.gridCard}>

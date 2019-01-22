@@ -200,7 +200,7 @@ class EscolhaDoModelo extends React.Component {
             open={this.state.open}
           />
 
-          <Dialog id='dialogTermo' open={!this.state.complete} maxWidth='lg'>
+          <Dialog id="dialogTermo" open={!this.state.complete} maxWidth='lg'>
             <DialogContent>
               {position === 0 ?
                 <Termo checked={checked} handleChange={this.handleChange} next={this.next} /> :

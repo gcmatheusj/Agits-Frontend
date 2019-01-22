@@ -75,7 +75,7 @@ class DefineEducationLevel extends Component {
     const { classes } = this.props;
     return (
       <div className={classes.root}>
-        <Typography style={{ marginBottom: 10 }} variant="subtitle1">
+        <Typography className={classes.title} variant="subtitle1">
           Selecione o contexto de nível educacional no qual você usará o tutor gamificado:
         </Typography>
         <Paper>

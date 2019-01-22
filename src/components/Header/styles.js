@@ -29,7 +29,7 @@ const styles = theme => ({
     padding: theme.spacing.unit * 3,
     [theme.breakpoints.down('sm')]: {
       paddingLeft: 16,
-      paddinRight: 16,
+      paddingRight: 16,
       paddingBottom: 16
     }
   },

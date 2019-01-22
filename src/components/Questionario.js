@@ -1,4 +1,6 @@
 import React, { Component, Fragment } from 'react'
+import { connect } from 'react-redux'
+import ActionCreators from '../redux/actions/experimento'
 import { withStyles } from '@material-ui/core/styles'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
@@ -256,4 +258,13 @@ Questionario.propTypes = {
   classes: PropTypes.object,
 }
 
-export default withStyles(styles)(Questionario)
+const mapStateToProps = state => ({
+  experimento: state.experimento
+})
+
+const mapDispatchToProps = dispatch => ({
+  handlePassoAPassoRequest: respostasPassoAPasso => dispatch(ActionCreators.passoapassoRequest(respostasPassoAPasso)),
+  handleUsandoModeloRequest: respostasUsandoModelo => dispatch(ActionCreators.usandomodeloRequest(respostasUsandoModelo))
+})
+
+export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(Questionario))

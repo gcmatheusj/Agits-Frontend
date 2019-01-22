@@ -10,7 +10,10 @@ const styles = theme => ({
       margin: '20px',
       fontWeight: 'bold',
       [theme.breakpoints.down('sm')]: {
-        fontSize: '1rem',
+        fontSize: '1.1rem',
+            marginLeft: 10,
+            marginTop: 15,
+            marginBottom: 15
       },
     },
     title: {
@@ -23,7 +26,7 @@ const styles = theme => ({
     stepper: {
       background: 'none',
       [theme.breakpoints.down('sm')]: {
-        padding: 15,
+        padding: 10,
         marginTop: 10,
       },
     },

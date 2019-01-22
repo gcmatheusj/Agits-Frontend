@@ -26,7 +26,7 @@ export const styles = theme => ({
     title: {
         padding: 1,
         [theme.breakpoints.down('sm')]: {
-            fontSize: '0.9rem',
+            fontSize: '0.875rem',
         },
     },
     titleCard: {

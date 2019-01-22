@@ -19,12 +19,6 @@ export const styles = theme => ({
     cardAction: {
         padding: 10
     },
-    dialog: {
-        marginTop: 35,
-        marginBottom: 35,
-        marginLeft: 20,
-        marginRight: 20
-    },
     titleContainer: {
         marginTop: 10,
         textAlign: 'center',
@@ -34,11 +28,20 @@ export const styles = theme => ({
         fontSize: 20,
         margin: 20,
         [theme.breakpoints.down('sm')]: {
-            fontSize: '1rem'
+            fontSize: '1.1rem',
+            marginLeft: 10,
+            marginTop: 15,
+            marginBottom: 15
         },
     },
     subtitle: {
-        margin: 20
+        margin: 20,
+        [theme.breakpoints.down('sm')]: {
+            fontSize: '0.9rem',
+            marginLeft: 10,
+            marginTop: 15,
+            marginBottom: 15
+        },
     },
     titleCard: {
         fontWeight: 'bold',
