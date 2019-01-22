@@ -1,17 +1,8 @@
-import React from 'react'
-import { withStyles } from '@material-ui/core/styles'
-import { Grid, Switch, Paper } from '@material-ui/core'
+import React from 'react';
+import { withStyles } from '@material-ui/core/styles';
+import { Grid, Switch, Paper } from '@material-ui/core';
 
-const styles = theme => ({
-    root: {
-        padding: 5,
-        paddingLeft: 30,
-        marginTop: 5
-    },
-    grid: {
-        alignItems: 'center'
-    }
-})
+import styles from './styles';
 
 const PaperSubject = (props) => {
 
@@ -19,8 +10,8 @@ const PaperSubject = (props) => {
 
     return (
         <div>
-            <Paper className={classes.root}>
-                <Grid container direction='row' className={classes.grid}>
+            <Paper className={classes.rootPaper}>
+                <Grid container direction='row' className={classes.gridPaper}>
                     <Grid item xs={11}>
                         dskajdksahs
                     </Grid>

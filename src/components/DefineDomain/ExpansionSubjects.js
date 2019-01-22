@@ -1,23 +1,16 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import {
     ExpansionPanel,
     ExpansionPanelSummary,
     ExpansionPanelDetails,
     Typography,
     Grid,
-} from '@material-ui/core'
-import { ExpandMore } from '@material-ui/icons'
-import { withStyles } from '@material-ui/core/styles'
-import PaperSubject from './PaperSubject'
+} from '@material-ui/core';
+import { ExpandMore } from '@material-ui/icons';
+import { withStyles } from '@material-ui/core/styles';
+import PaperSubject from './PaperSubject';
 
-
-const styles = theme => ({
-    heading: {
-        fontSize: theme.typography.pxToRem(15),
-        flexBasis: '33.33%',
-        flexShrink: 0,
-    },
-})
+import styles from './styles';
 
 class ExpansionSubjects extends Component {
 

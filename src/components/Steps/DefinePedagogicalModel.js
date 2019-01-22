@@ -8,16 +8,9 @@ import ActionCreators from '../../redux/actions/tutor';
 import curriculum from '../../assets/curriculum.png';
 import syllabusimg from '../../assets/syllabus.png';
 
-import StepsCard from './StepsCard'
+import StepsCard from './StepsCard';
 
-const styles = theme => ({
-  title: {
-    textAlign: 'justify',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '0.9rem',
-    },
-  },
-});
+import styles from './styles';
 
 const DefinePedagogicalModel = (props) => {
   const {

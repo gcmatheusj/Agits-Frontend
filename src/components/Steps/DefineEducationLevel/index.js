@@ -4,49 +4,16 @@ import { withStyles } from '@material-ui/core/styles';
 import { Typography, Grid, Card, Paper, CardActionArea } from '@material-ui/core';
 
 import img1 from "../../../assets/middle-school.png"
-import img2 from "../../../assets/high-school.png"
-import img3 from "../../../assets/college.png"
-import img4 from "../../../assets/test.png"
-import img5 from "../../../assets/other-school.png"
+import img2 from "../../../assets/high-school.png";
+import img3 from "../../../assets/college.png";
+import img4 from "../../../assets/test.png";
+import img5 from "../../../assets/other-school.png";
 
-import education from "../../../assets/education1.png"
+import education from "../../../assets/education1.png";
 
-import CollapseDescription from './CollapseDescription'
+import CollapseDescription from './CollapseDescription';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  select: {
-    backgroundColor: '#fafafa',
-    margin: 20,
-    width: 180,
-    boxShadow: '0 0 9px #1976d2, 0 0 15px #1976d2'
-  },
-  grid: {
-    width: '100%',
-    justifyContent: 'space-between',
-    [theme.breakpoints.down('sm')]: {
-      justifyContent: 'center',
-    },
-  },
-button: {
-  backgroundColor: '#fafafa',
-    margin: 20,
-      width: 180,
-  },
-cardAction: {
-  padding: 10,
-  },
-media: {
-  height: 120,
-    width: 150,
-      marginBottom: 20
-},
-img: {
-  padding: 20
-}
-});
+import styles from './styles';
 
 const names = [
   'Ensino Fundamental',

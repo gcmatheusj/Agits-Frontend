@@ -4,15 +4,7 @@ import PropTypes from 'prop-types'
 import { withStyles } from '@material-ui/core/styles'
 
 const styles = theme => ({
-  img: {
-    width: 230,
-  },
-  grid: {
-    flexDirection: 'row',
-    [theme.breakpoints.down('sm')]: {
-      flexDirection: 'column',
-    },
-  },
+  
 })
 
 class CollapseDescription extends Component {
@@ -32,7 +24,7 @@ class CollapseDescription extends Component {
             {this.props.details.subtitle}
           </Typography>
           <Grid container className={classes.grid} justify="center" alignItems='center'>
-              <img className={classes.img} src={this.props.img} alt="" />
+              <img className={classes.imgCollapse} src={this.props.img} alt="" />
             <Grid item xs>
               <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
                 - Pedagogical Model

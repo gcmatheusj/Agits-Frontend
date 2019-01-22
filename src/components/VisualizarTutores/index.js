@@ -1,29 +1,11 @@
-import React, { Fragment } from 'react'
-import { withStyles, Grid, Divider, Typography } from '@material-ui/core'
-import PropTypes from 'prop-types'
+import React, { Fragment } from 'react';
+import { withStyles, Grid, Divider, Typography } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
-import CardTutor from './CardTutor'
-import Header from '../Header'
+import CardTutor from './CardTutor';
+import Header from '../Header';
 
-const styles = (theme) => ({
-    root: {
-        display: 'flex',
-    },
-    pageTitle: {
-        margin: 20,
-        fontWeight: 'bold',
-        [theme.breakpoints.down('sm')]: {
-            fontSize: '1rem',
-        },
-    },
-
-    grid: {
-        justifyContent: 'flex-start',
-        [theme.breakpoints.down('sm')]: {
-            justifyContent: 'center',
-        },
-    }
-});
+import styles from './styles';
 
 const tutors = [
     {

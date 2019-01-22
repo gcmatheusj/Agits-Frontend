@@ -4,23 +4,9 @@ import { Typography, Divider, Grid } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 
 import VerticalLinearStepper from './Stepper';
-import Header from '../../Header'
+import Header from '../../Header';
 
-const styles = theme => ({
-  pageTitle: {
-    margin: '20px',
-    fontWeight: 'bold',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem',
-    },
-  },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    height: '100vh',
-    overflow: 'auto',
-  },
-});
+import styles from './styles';
 
 function novoTutor(props) {
 

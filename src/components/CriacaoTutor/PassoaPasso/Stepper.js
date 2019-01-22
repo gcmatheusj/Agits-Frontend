@@ -11,37 +11,16 @@ import {
   Snackbar
 } from '@material-ui/core';
 import ActionCreators from '../../../redux/actions/tutor';
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 
-import MySnackbarContentWrapper from '../../ToastSuccess'
+import MySnackbarContentWrapper from '../../ToastSuccess';
 
 import DefinePedagogicalModel from '../../Steps/DefinePedagogicalModel';
 import DefineGamificationModel from '../../Steps/DefineGamificationModel';
 import EvaluationMethods from '../../Steps/EvaluationMethods';
 import DefineReports from '../../Steps/DefineReports';
 
-const styles = theme => ({
-  root: {
-    width: '100%',
-  },
-  stepper: {
-    background: 'none',
-    [theme.breakpoints.down('sm')]: {
-      padding: 15,
-      marginTop: 10,
-    },
-  },
-  button: {
-    marginTop: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
-  },
-  actionsContainer: {
-    marginBottom: theme.spacing.unit * 2,
-  },
-  resetContainer: {
-    padding: theme.spacing.unit * 3,
-  },
-});
+import styles from './styles';
 
 function getSteps() {
   return [

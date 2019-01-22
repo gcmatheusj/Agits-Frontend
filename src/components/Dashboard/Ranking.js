@@ -16,35 +16,13 @@ import {
 } from '@material-ui/core';
 import AccountCircle from '@material-ui/icons/AccountCircle';
 
-const styles = theme => ({
-  card: {
-    width: '100%',
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: 20,
-    },
-  },
-  divider: {
-    width: '100%',
-  },
-  bullet: {
-    display: 'inline-block',
-    margin: '0 2px',
-    transform: 'scale(0.8)',
-  },
-  title: {
-    marginBottom: 16,
-    fontSize: 14,
-  },
-  pos: {
-    marginBottom: 12,
-  },
-});
+import styles from './styles';
 
 const Ranking = (props) => {
   const { classes } = props;
 
   return (
-    <Card className={classes.card}>
+    <Card className={classes.cardRanking}>
       <CardContent>
         <Typography variant="h6" style={{ fontWeight: 'bold' }}>
           Ranking

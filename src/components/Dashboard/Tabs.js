@@ -2,11 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
 import {
-  withStyles, AppBar, Tabs, Tab, Typography, Grid,
+  withStyles, 
+  AppBar, 
+  Tabs, 
+  Tab, 
+  Typography, 
+  Grid,
 } from '@material-ui/core';
 import Content from './Content';
 import Ranking from './Ranking';
 import NewsActivities from './News&Activities';
+
+import styles from './styles';
 
 function TabContainer({ children, dir }) {
   return (
@@ -20,20 +27,6 @@ TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
   dir: PropTypes.string.isRequired,
 };
-
-const styles = theme => ({
-  root: {
-    backgroundColor: theme.palette.background.paper,
-    width: '100%',
-  },
-  appBarSpacer: theme.mixins.toolbar,
-  content: {
-    flexGrow: 1,
-    paddingTop: 64,
-    height: '100vh',
-    overflow: 'auto',
-  },
-});
 
 class FullWidthTabs extends React.Component {
   state = {

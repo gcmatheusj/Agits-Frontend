@@ -6,30 +6,7 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import logo from '../../assets/meu-tutor.png';
 
-const styles = theme => ({
-  root: {
-    backgroundColor: '#003175',
-  },
-  logo: {
-    marginTop: 5,
-    width: 130,
-    [theme.breakpoints.down('sm')]: {
-      width: 110,
-    },
-  },
-  button: {
-    backgroundColor: '#ff572f',
-    color: 'white',
-  },
-  label: {
-    marginTop: 8,
-    marginRight: 20,
-    fontSize: 18,
-    [theme.breakpoints.down('sm')]: {
-      display: 'none',
-    },
-  },
-});
+import styles from './styles';
 
 function Header(props) {
   const { classes } = props;

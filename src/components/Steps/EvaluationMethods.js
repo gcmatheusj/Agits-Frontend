@@ -9,16 +9,9 @@ import quick from '../../assets/quick.png';
 import custom from '../../assets/custom.png';
 import placement from '../../assets/placement.png';
 
-import StepsCard from './StepsCard'
+import StepsCard from './StepsCard';
 
-const styles = theme => ({
-  title: {
-    textAlign: 'justify',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '0.9rem',
-    },
-  },
-});
+import styles from './styles';
 
 const EvaluationMethods = (props) => {
   const {

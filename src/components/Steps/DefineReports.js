@@ -8,16 +8,9 @@ import ActionCreators from '../../redux/actions/tutor';
 import student from '../../assets/student.png';
 import teacher from '../../assets/teacher.png';
 
-import StepsCard from './StepsCard'
+import StepsCard from './StepsCard';
 
-const styles = theme => ({
-  title: {
-    textAlign: 'justify',
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '0.9rem',
-    },
-  },
-});
+import styles from './styles';
 
 const DefineReports = (props) => {
   const {
