@@ -33,13 +33,19 @@ const theme = createMuiTheme({
 
 export default class App extends Component {
   state = {
-    modelo: '',
+    demografico: {},
+    usandoModelo: {},
+    passoAPasso: {},
     creation: null
   }
 
-  handleChangeModelo = modelo => {
-    this.setState({
-      modelo
+  handleExperimento = () => {
+    const { demografico, usandoModelo, passoAPasso } = this.state
+
+    const data = JSON.parse({
+      demografico,
+      usandoModelo,
+      passoAPasso
     })
   }
 

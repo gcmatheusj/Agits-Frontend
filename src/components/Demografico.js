@@ -37,7 +37,7 @@ class Demografico extends Component {
                             aria-label="gender"
                             name="sexualidade"
                             className={classes.group}
-                            value={respostas.resposta1}
+                            value={respostas.sexo}
                             onChange={this.props.onChangeValue}
                         >
                             <FormControlLabel value="Feminino" control={<Radio color="primary" />} label="Feminino" />
@@ -52,7 +52,7 @@ class Demografico extends Component {
                         <RadioGroup
                             aria-label="gender"
                             name="idade"
-                            value={respostas.resposta2}
+                            value={respostas.idade}
                             onChange={this.props.onChangeValue}
                         >
                             <FormControlLabel value="18 a 25 anos" control={<Radio color="primary" />} label="18 a 25 anos" />
@@ -71,7 +71,7 @@ class Demografico extends Component {
                         <RadioGroup
                             aria-label="gender"
                             name="ocupação"
-                            value={respostas.resposta3}
+                            value={respostas.ocupacao}
                             onChange={this.props.onChangeValue}
                         >
                             <FormControlLabel value="Estudante" control={<Radio color="primary" />} label="Estudante" />
@@ -86,7 +86,7 @@ class Demografico extends Component {
                         <RadioGroup
                             aria-label="gender"
                             name="escolaridade"
-                            value={respostas.resposta4}
+                            value={respostas.escolaridade}
                             onChange={this.props.onChangeValue}
                         >
                             <FormControlLabel value="Ensino Fundamental" control={<Radio color="primary" />} label="Ensino Fundamental" />
@@ -104,7 +104,7 @@ class Demografico extends Component {
                         <RadioGroup
                             aria-label="gender"
                             name="habilidades"
-                            value={respostas.resposta5}
+                            value={respostas.habilidades}
                             onChange={this.props.onChangeValue}
                         >
                             <FormControlLabel value="Nenhuma habilidade" control={<Radio color="primary" />} label="Nenhuma habilidade" />
@@ -122,7 +122,7 @@ class Demografico extends Component {
                         <RadioGroup
                             aria-label="gender"
                             name="treinamento"
-                            value={respostas.resposta6}
+                            value={respostas.treinamento}
                             onChange={this.props.onChangeValue}
                         >
                             <FormControlLabel value="Sim" control={<Radio color="primary" />} label="Sim" />
@@ -136,7 +136,7 @@ class Demografico extends Component {
                         <RadioGroup
                             aria-label="gender"
                             name="usoTecnologiasEducacionais"
-                            value={respostas.resposta7}
+                            value={respostas.usoTecnologiasEducacionais}
                             onChange={this.props.onChangeValue}
                         >
                             <FormControlLabel value="Sim" control={<Radio color="primary" />} label="Sim" />
