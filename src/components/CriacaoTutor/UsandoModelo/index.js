@@ -36,6 +36,15 @@ class StepperUsandoModelo extends Component {
     finalized: false,
   };
 
+  componentDidMount() {
+    window.sessionStorage.setItem('StartedModel', Date(Date.now()))
+  }
+
+  componentWillUnmount(){
+    window.sessionStorage.setItem('FinishedModel', Date(Date.now()))
+  }
+
+
   handleNext = () => {
     this.setState(state => ({
       activeStep: state.activeStep + 1,
