@@ -74,8 +74,9 @@ class EscolhaDoModelo extends React.Component {
     })
   }
 
-  handleClickOpen = value => event => {
-    this.setState({ open: true, adress: value });
+  handleClickOpen = value => async event => {
+    await this.setState({ open: true, adress: value });
+    this.props.handleRespostasRequest(this.state.adress)
   };
 
   handleClose = () => {
@@ -235,7 +236,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  handleDemograficoRequest: respostasDemografico => dispatch(ActionCreators.demograficoRequest(respostasDemografico))
+  handleDemograficoRequest: respostasDemografico => dispatch(ActionCreators.demograficoRequest(respostasDemografico)),
+  handleRespostasRequest: questionario => dispatch(ActionCreators.handleRespostasRequest(questionario))
 })
 
 export default withStyles(styles)(connect(mapStateToProps, mapDispatchToProps)(EscolhaDoModelo))

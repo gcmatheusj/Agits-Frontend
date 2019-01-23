@@ -6,7 +6,9 @@ export const {
 } = createActions({
     demograficoRequest: ['respostasDemografico'],
     passoapassoRequest: ['respostas'],
-    usandomodeloRequest: ['respostas']
+    usandomodeloRequest: ['respostas'],
+
+    handleRespostasRequest: ['questionario']
 })
 
 export default Creators
