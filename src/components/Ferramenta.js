@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Typography from '@material-ui/core/Typography'
+import Slider from '@material-ui/lab/Slider'
+import FormLabel from '@material-ui/core/FormLabel'
+import FormControl from '@material-ui/core/FormControl'
+import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import Radio from '@material-ui/core/Radio'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormLabel from '@material-ui/core/FormLabel'
-import FormControl from '@material-ui/core/FormControl'
-import TextField from '@material-ui/core/TextField'
 
 const perguntas = [
     {
@@ -188,22 +189,21 @@ class Perguntas extends Component {
                             <br />
                             {
                                 !v.text ?
-                                    <RadioGroup
-                                        aria-label="gender"
-                                        name="escolaridade"
-                                        value={'Doutorado'}
-                                        onChange={this.props.onChangeValue}
-                                    >
-                                        <Grid container justify='space-between'>
-                                            <FormControlLabel value="Discordo Totalmente" control={<Radio color="primary" />} label="Discordo Totalmente" />
-                                            <FormControlLabel value="Discordo" control={<Radio color="primary" />} label="Discordo" />
-                                            <FormControlLabel value="Discordo Parcialmente" control={<Radio color="primary" />} label="Discordo Parcialmente" />
-                                            <FormControlLabel value="Neutro" control={<Radio color="primary" />} label="Neutro" />
-                                            <FormControlLabel value="Concordo Parcialmente" control={<Radio color="primary" />} label="Concordo Parcialmente" />
-                                            <FormControlLabel value="Concordo" control={<Radio color="primary" />} label="Concordo" />
-                                            <FormControlLabel value="Concordo Totalmente" control={<Radio color="primary" />} label="Concordo Totalmente" />
-                                        </Grid>
-                                    </RadioGroup>
+                                <RadioGroup
+                                  aria-label="ferramenta"
+                                  value={valores[v.valor]}
+                                  onChange={this.props.onChange(v.name, v.valor, false)}
+                                >
+                                  <Grid container justify='space-between'>
+                                    <FormControlLabel value="Discordo Totalmente" control={<Radio color="primary" />} label="Discordo Totalmente" />
+                                    <FormControlLabel value="Discordo" control={<Radio color="primary" />} label="Discordo" />
+                                    <FormControlLabel value="Discordo Parcialmente" control={<Radio color="primary" />} label="Discordo Parcialmente" />
+                                    <FormControlLabel value="Neutro" control={<Radio color="primary" />} label="Neutro" />
+                                    <FormControlLabel value="Concordo Parcialmente" control={<Radio color="primary" />} label="Concordo Parcialmente" />
+                                    <FormControlLabel value="Concordo" control={<Radio color="primary" />} label="Concordo" />
+                                    <FormControlLabel value="Concordo Totalmente" control={<Radio color="primary" />} label="Concordo Totalmente" />
+                                  </Grid>
+                                </RadioGroup>
                                     : <TextField
                                         variant='outlined'
                                         value={valores[v.valor]}
