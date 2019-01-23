@@ -8,6 +8,7 @@ import FormLabel from '@material-ui/core/FormLabel'
 import FormControl from '@material-ui/core/FormControl'
 import TextField from '@material-ui/core/TextField'
 
+
 const perguntas = [
     {
         pergunta: 'Para mim foi fácil aprender a configurar o sistema educacional.',
@@ -174,21 +175,45 @@ class Perguntas extends Component {
         const { valores } = this.props
         return (
             <div>
-                <Typography variant="h4" component="label">
-                    Ferramenta de Configuração<br />
-                </Typography>
-
                 {
                     perguntas.map((v) => (
                         <div key={v.valor}>
                             <br /> <br /> <FormControl component="fieldset">
-                                <FormLabel component="legend">{v.pergunta}</FormLabel>
+                                <FormLabel component="legend" style={{fontWeight: "bold", color: "black"}}>{v.pergunta}</FormLabel>
                                 <br />
                             </FormControl>
                             <br />
-                            {
-                                !v.text ?
+                            
+                              { v.text && 
+                                    <TextField
+                                        variant='outlined'
+                                        value={valores[v.valor]}
+                                        onChange={this.props.onChange(v.name, v.valor, true)}
+                                        style={{ width: '100%' }}
+                                    />
+                               }
+                                {v.max &&
                                     <RadioGroup
+                                        aria-label="gender"
+                                        name="escolaridade"
+                                        value={'Doutorado'}
+                                        onChange={this.props.onChangeValue}
+                                    >
+                                        <Grid container justify='space-between'>
+                                            <FormControlLabel value="1" control={<Radio color="primary" />} label="1" />
+                                            <FormControlLabel value="2" control={<Radio color="primary" />} label="2" />
+                                            <FormControlLabel value="3" control={<Radio color="primary" />} label="3" />
+                                            <FormControlLabel value="4" control={<Radio color="primary" />} label="4" />
+                                            <FormControlLabel value="5" control={<Radio color="primary" />} label="5" />
+                                            <FormControlLabel value="6" control={<Radio color="primary" />} label="6" />
+                                            <FormControlLabel value="7" control={<Radio color="primary" />} label="7" />
+                                            <FormControlLabel value="8" control={<Radio color="primary" />} label="8" />
+                                            <FormControlLabel value="9" control={<Radio color="primary" />} label="9" />
+                                        </Grid>
+                                    </RadioGroup>  
+                                }
+                                { !v.text && !v.max &&
+                                  <RadioGroup
                                         aria-label="gender"
                                         name="escolaridade"
                                         value={'Doutorado'}
@@ -203,14 +228,8 @@ class Perguntas extends Component {
                                             <FormControlLabel value="Concordo" control={<Radio color="primary" />} label="Concordo" />
                                             <FormControlLabel value="Concordo Totalmente" control={<Radio color="primary" />} label="Concordo Totalmente" />
                                         </Grid>
-                                    </RadioGroup>
-                                    : <TextField
-                                        variant='outlined'
-                                        value={valores[v.valor]}
-                                        onChange={this.props.onChange(v.name, v.valor, true)}
-                                        style={{ width: '100%' }}
-                                    />
-                            }
+                                    </RadioGroup>                                                              
+                                }                            
                         </div>
                     ))
                 }
