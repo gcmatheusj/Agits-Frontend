@@ -210,7 +210,7 @@ class EscolhaDoModelo extends React.Component {
             {
               position === 1 ? (
                 <DialogActions>
-                  <Button variant='contained' color='primary' disabled={!checked} onClick={this.next}>
+                  <Button variant='contained' color='primary' disabled={Object.keys(this.state.respostas).length < 7} onClick={this.next}>
                     Pronto
                   </Button>
                 </DialogActions>
