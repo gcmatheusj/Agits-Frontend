@@ -202,7 +202,7 @@ class GamificationType extends Component {
                 <div key={k} className={classes.container}>
                   <Collapse className={classes.collapse} in={checked === pChecked[k]} >
                     <Divider />
-                    <Grid container direction="row" alignItems="center" >
+                    <Grid style={{ paddingTop: 10, paddingBottom: 10 }} container direction="row" alignItems="center" >
                       <Grid item>
                         <img className={classes.paper} src={(textprops.imagesbuttons)[k]} alt="" />
                       </Grid>

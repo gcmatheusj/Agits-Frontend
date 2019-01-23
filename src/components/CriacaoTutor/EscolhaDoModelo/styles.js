@@ -6,6 +6,7 @@ export const styles = theme => ({
     card: {
         maxWidth: 280,
         textAlign: "center",
+        height: 360,
         margin: 30,
         [theme.breakpoints.down('sm')]: {
             padding: 1,
@@ -17,7 +18,8 @@ export const styles = theme => ({
         paddingRight: 16,
     },
     cardAction: {
-        padding: 10
+        padding: 10,
+        height: '100%'
     },
     titleContainer: {
         marginTop: 10,

@@ -177,9 +177,12 @@ class Perguntas extends Component {
       <div>
         {
           perguntas.map((v) => (
-            <div key={v.valor}>
-              <br /> <br /> <FormControl component="fieldset">
+            <div style={{ marginBottom: 20 }} key={v.valor}>
+              <FormControl component="fieldset">
                 <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>{v.pergunta}</FormLabel>
+                {
+                  v.max && <FormLabel style={{color:'black', fontWeight: 'bold', marginTop: 10, marginBottom: 10 }} component="legend"> Avaliação: {valores[v.valor]} </FormLabel>
+                }
                 <br />
               </FormControl>
               <br />

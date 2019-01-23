@@ -189,7 +189,9 @@ class EscolhaDoModelo extends React.Component {
                     <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen(v.adress)}>
                       {template}
                     </CardActionArea> :
-                    template
+                    <div className={classes.cardAction}>
+                      {template}
+                    </div>
                   }
                 </Card>
               )

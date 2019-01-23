@@ -74,8 +74,8 @@ export const styles = theme => ({
     },
     paper: {
         margin: theme.spacing.unit,
-        width: 40,
-        height: 40,
+        width: 60,
+        height: 60,
     },
     collapse: {
         width: '100%',

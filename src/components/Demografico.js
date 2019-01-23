@@ -27,12 +27,12 @@ class Demografico extends Component {
         const { classes, respostas } = this.props
         return (
             <form id='demografico' onSubmit={(event) => this.props.onSubmitForm(event)}>
-                <Typography variant="h5" component="label" >
+                <Typography variant="h5" component="label" style={{fontWeight: 'bold'}}>
                     Sobre Você
                 </Typography>
                 <br /><div>
                     <FormControl component="fieldset" required>
-                        <FormLabel component="legend">Inicialmente selecione seu gênero.</FormLabel>
+                        <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>Inicialmente selecione seu gênero.</FormLabel>
                         <RadioGroup
                             aria-label="gender"
                             name="sexualidade"
@@ -48,7 +48,7 @@ class Demografico extends Component {
                 </div>
                 <br /><div>
                     <FormControl component="fieldset" required>
-                        <FormLabel component="legend">Por favor, informe sua idade.</FormLabel>
+                        <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>Informe sua idade.</FormLabel>
                         <RadioGroup
                             aria-label="gender"
                             name="idade"
@@ -67,7 +67,7 @@ class Demografico extends Component {
                 </div>
                 <br /><div>
                     <FormControl component="fieldset" required>
-                        <FormLabel component="legend">Ocupação.</FormLabel>
+                        <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>Ocupação.</FormLabel>
                         <RadioGroup
                             aria-label="gender"
                             name="ocupação"
@@ -82,7 +82,7 @@ class Demografico extends Component {
                 </div>
                 <br /><div> 
                     <FormControl component="fieldset" required>
-                        <FormLabel component="legend">Qual o maior nível de educação que você completou?</FormLabel>
+                        <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>Qual o maior nível de educação que você completou?</FormLabel>
                         <RadioGroup
                             aria-label="gender"
                             name="escolaridade"
@@ -100,7 +100,7 @@ class Demografico extends Component {
                 </div>
                 <br /><div>
                     <FormControl component="fieldset" required>
-                        <FormLabel component="legend">Como você classifica suas habilidades com a informática?</FormLabel>
+                        <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>Como você classifica suas habilidades com a informática?</FormLabel>
                         <RadioGroup
                             aria-label="gender"
                             name="habilidades"
@@ -118,7 +118,7 @@ class Demografico extends Component {
                 </div>        
                 <br /><div>
                     <FormControl component="fieldset" required>
-                        <FormLabel component="legend">Você recebeu, durante sua formação, treinamento formal para o uso de tecnologias educacionais de informática?</FormLabel>
+                        <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>Você recebeu, durante sua formação, treinamento formal para o uso de tecnologias educacionais de informática?</FormLabel>
                         <RadioGroup
                             aria-label="gender"
                             name="treinamento"
@@ -132,7 +132,7 @@ class Demografico extends Component {
                 </div>
                 <br /><div>
                     <FormControl component="fieldset" required>
-                        <FormLabel component="legend">Você se considera apto para o uso de tecnologias educacionais de informática?</FormLabel>
+                        <FormLabel component="legend" style={{color:'black', fontWeight: 'bold'}}>Você se considera apto para o uso de tecnologias educacionais de informática?</FormLabel>
                         <RadioGroup
                             aria-label="gender"
                             name="usoTecnologiasEducacionais"

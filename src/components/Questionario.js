@@ -36,15 +36,35 @@ const styles = theme => ({
     marginTop: theme.spacing.unit,
     marginBottom: theme.spacing.unit,
   },
+  title: {
+    fontSize: '1.25rem',
+    fontWeight: 'bold',
+    margin: 20,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.1rem',
+      marginLeft: 10,
+      marginTop: 15,
+      marginBottom: 15
+    }
+  },
+  content: {
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem'
+    }
+  },
   styleCard: {
     marginTop: 24
   },
   styleText: {
-    marginTop: "10px"
+    marginTop: "10px",
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.25rem'
+    }
   },
   styleCard2: {
-    marginBottom: "10px"
-  }
+    marginBottom: "10px",
+    padding: 20
+  },
 })
 
 function getSteps() {
@@ -177,8 +197,22 @@ class Questionario extends Component {
     this.props.changePosition()
     this.props.changeModel()
     event.preventDefault()
-    axios.post('https://agits-87987.firebaseio.com/Respostas.json', this.state)
-    console.log('Teste')
+  }
+
+  handleSubmitExperimento = async (event) => {
+    this.props.changePosition()
+
+    await this.handleRespostas()
+
+    const { questionario, demografico, passoAPasso, usandoModelo } = this.props.experimento
+
+    await axios.post('https://agits-icalt.firebaseio.com/data.json', {
+      demografico,
+      passoAPasso,
+      usandoModelo
+    })
+
+    event.preventDefault()
   }
 
   handleRespostas = () => {
@@ -216,11 +250,23 @@ class Questionario extends Component {
     const dois = modelConfig === 2 ? 'Passo a Passo' : 'Usando Modelo'
 
     const obrigado = <Fragment>
-      <Typography variant="h6" component="label" align="center">
+      <Typography className={classes.content} variant="h6" component="label" align="center">
         <br />Obrigado por participar deste estudo! Qualquer dúvida, entre em contato com o pesquisador abaixo:
       </Typography>
-      <Typography variant="h6" component="label" align="center">
-        Diego Dermeval, Universidade Federal de Alagoas, <a href="mailto:diegodermeval@copin.ufcg.edu.br">diegodermeval@copin.ufcg.edu.br</a>
+      <Typography  className={classes.content} variant="h6" component="label" align="center">
+        Diego Dermeval, Universidade Federal de Alagoas, <a href="mailto:diego.matos@famed.ufal.br">diego.matos@famed.ufal.br</a>
+      </Typography>
+      <Typography  className={classes.content} variant="h6" component="label" align="center">
+        Daniel Gomes, <a href="mailto:gomes.dg3@gmail.com">gomes.dg3@gmail.com</a>
+      </Typography>
+      <Typography  className={classes.content} variant="h6" component="label" align="center">
+        Henrique de Couto Melo, <a href="mailto:henrique.melo@arapiraca.ufal.br">henrique.melo@arapiraca.ufal.br</a>
+      </Typography>
+      <Typography  className={classes.content} variant="h6" component="label" align="center">
+        Italo Jonas de Moura Lima, <a href="mailto:italojonas@hotmail.com">italojonas@hotmail.com</a>
+      </Typography>
+      <Typography  className={classes.content} variant="h6" component="label" align="center">
+        José Matheus Gomes Castro, <a href="mailto:diego.matos@famed.ufal.br">jose.matheus@arapiraca.ufal.br</a>
       </Typography>
     </Fragment>
     const proximaEtapa = <Fragment>
@@ -234,24 +280,12 @@ class Questionario extends Component {
 
     return (
       <Header title='Questionário'>
-        {console.log(modelConfig)}
+        <Typography className={classes.title} variant="h4">
+          Ferramenta de Configuração
+        </Typography>
+        <Divider />
         <Card className={classes.styleCard}>
-          <div className={classes.root}>
-            <Stepper activeStep={activeStep} alternativeLabel>
-              <Typography variant="h4">
-                Ferramenta de Configuração
-              </Typography><br />
-              {/* {steps.map(label => {
-                return (
-                  <Step key={label}>
-                    <StepLabel>{label}</StepLabel>
-                  </Step>
-                )
-              })}*/}
-            </Stepper>
-            <div>
-              <Divider />
-            </div>
+          <div>
             <div>
               {this.state.activeStep === steps.length ? (
                 <div className={classes.styleCard2}>
@@ -273,9 +307,17 @@ class Questionario extends Component {
                     <div>
                       <Divider />
                       <br />
-                      <Button variant="contained" color="primary" onClick={(event) => { this.handleNext(event); this.handleSubmit(event); this.handleRespostas() }}>
-                        Finalizar
-                        </Button>
+                      {
+                        configPosition > 1 ? (
+                          <Button variant="contained" color="primary" onClick={(event) => { this.handleNext(event); this.handleSubmitExperimento(event)}}>
+                            Finalizar
+                          </Button>
+                        ) : (
+                          <Button variant="contained" color="primary" onClick={(event) => { this.handleNext(event); this.handleSubmit(event); this.handleRespostas() }}>
+                            Próximo
+                          </Button>
+                        )
+                      }
                     </div>
                   </CardContent>
                 )}
