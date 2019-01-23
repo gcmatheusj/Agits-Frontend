@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import Typography from '@material-ui/core/Typography'
+import Slider from '@material-ui/lab/Slider'
+import FormLabel from '@material-ui/core/FormLabel'
+import FormControl from '@material-ui/core/FormControl'
+import TextField from '@material-ui/core/TextField'
 import Grid from '@material-ui/core/Grid'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import Radio from '@material-ui/core/Radio'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormLabel from '@material-ui/core/FormLabel'
-import FormControl from '@material-ui/core/FormControl'
-import TextField from '@material-ui/core/TextField'
 
 
 const perguntas = [
@@ -183,7 +184,6 @@ class Perguntas extends Component {
                                 <br />
                             </FormControl>
                             <br />
-                            
                               { v.text && 
                                     <TextField
                                         variant='outlined'

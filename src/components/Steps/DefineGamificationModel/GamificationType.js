@@ -42,7 +42,9 @@ const text = {
       'Um símbolo visual de uma conquista. Geralmente projetado para se parecer como seus análogos do mundo real, como o emblema dos escoteiros.',
       'Benefícios por alguma ação ou conquista.',
       'Representações numéricas da progressão dos alunos no conteúdo.'
-    ]
+    ],
+    'titleButton': ['Desafios', 'Níveis', 'Ranking', 'História', 'Medalhas', 'Recompensas', 'Pontos'],
+
   },
   'performance': {
     'title': 'Performance',
@@ -60,7 +62,8 @@ const text = {
       'Um símbolo visual de uma conquista. Geralmente projetado para se parecer como seus análogos do mundo real, como o emblema dos escoteiros.',
       'Benefícios por alguma ação ou conquista.',
       'Representações numéricas da progressão dos alunos no conteúdo.'
-    ]
+    ],
+    'titleButton': ['Desafios', 'Feedback', 'Níveis', 'Ranking', 'História', 'Medalhas','Recompensas', 'Pontos'],
   },
   'competition': {
     'title': 'Competição',
@@ -72,7 +75,8 @@ const text = {
     label: [
       'Uma lista de classificação dos participantes, mostrando o desempenho de um determinado aluno em comparação com as maiores pontuações e com seus amigos.',
       'Representações numéricas da progressão dos alunos no conteúdo.'
-    ]
+    ],
+    'titleButton': ['Ranking', 'Pontos'],
   },
   'enjoyment': {
     'title': 'Satisfação',
@@ -89,7 +93,8 @@ const text = {
       'Benefícios por alguma ação ou conquista.',
       'Representações numéricas da progressão dos alunos no conteúdo.'
 
-    ]
+    ],
+    'titleButton': ['Missões', 'Avatar', 'História', 'Medalhas', 'Recompensas', 'Pontos'],
   },
   'exploration': {
     'title': 'Exploração',
@@ -102,7 +107,8 @@ const text = {
       'Puzzles ou outras tarefas que exigem algum esforço para resolver.',
       'Passos definidos na progressão do aluno no conteúdo.',
       'Uma difícil batalha contra um adversário de nível alto, chamado de boss. Geralmente ele marca o fim de um nível ou de um conteúdo do sistema.'
-    ]
+    ],
+    'titleButton': ['Desafios', 'Níveis', 'Desafio Final'],
   },
   'effectiveness': {
     'title': 'Eficácia',
@@ -115,7 +121,8 @@ const text = {
       'Uma lista de classificação dos participantes, mostrando o desempenho de um determinado aluno em comparação com as maiores pontuações e com seus amigos.',
       'Um símbolo visual de uma conquista. Geralmente projetado para se parecer como seus análogos do mundo real, como o emblema dos escoteiros.',
       'Representações numéricas da progressão dos alunos no conteúdo.'
-    ]
+    ],
+    'titleButton': ['Ranking', 'Medalhas', 'Pontos'],
   }
 }
 
@@ -200,7 +207,8 @@ class GamificationType extends Component {
                         <img className={classes.paper} src={(textprops.imagesbuttons)[k]} alt="" />
                       </Grid>
                       <Grid item xs>
-                        <Typography>
+                      <Typography>
+                          <strong>{textprops.titleButton[k]}</strong><br/>
                           {textprops.label[k]}
                         </Typography>
                       </Grid>
