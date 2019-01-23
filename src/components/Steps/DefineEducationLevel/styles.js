@@ -29,7 +29,7 @@ const styles = theme => ({
   media: {
     height: 120,
       width: 150,
-        marginBottom: 20
+      marginBottom: 20
   },
   img: {
     padding: 20
