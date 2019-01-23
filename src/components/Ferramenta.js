@@ -187,7 +187,7 @@ class Perguntas extends Component {
                             {
                                 !v.text ?
                                     <Slider
-                                        value={valores[v.valor] || 4}
+                                        value={this.props.value}
                                         min={1}
                                         max={v.max || 7}
                                         step={1}
