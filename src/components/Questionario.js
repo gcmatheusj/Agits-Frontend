@@ -238,13 +238,16 @@ class Questionario extends Component {
         <Card className={classes.styleCard}>
           <div className={classes.root}>
             <Stepper activeStep={activeStep} alternativeLabel>
-              {steps.map(label => {
+              <Typography variant="h4" component="label">
+                    Ferramenta de Configuração<br />
+                </Typography>
+              {/* {steps.map(label => {
                 return (
                   <Step key={label}>
                     <StepLabel>{label}</StepLabel>
                   </Step>
                 )
-              })}
+              })}*/}
             </Stepper>
             <div>
               <Divider />
@@ -269,22 +272,10 @@ class Questionario extends Component {
                     </CardActions>
                     <div>
                       <Divider />
-                      <br /><Button
-                        disabled={activeStep === 0}
-                        onClick={this.handleBack}
-                      >
-                        Voltar
-                    </Button>
-                      {activeStep === steps.length - 1 ? (
+                      <br />
                         <Button variant="contained" color="primary" onClick={(event) => { this.handleNext(event); this.handleSubmit(event); this.handleRespostas() }}>
                           Finalizar
                         </Button>
-                      ) : (
-                          <Button variant="contained" color="primary" onClick={this.handleNext}>
-                            Próximo
-                          </Button>
-                        )}
-
                     </div>
                   </CardContent>
                 )}
