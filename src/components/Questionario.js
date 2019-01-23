@@ -66,27 +66,27 @@ class Questionario extends Component {
         'Neutro',
         'Neutro',
         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         'Neutro',
-         5,
-         '',
-         ''
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        5,
+        '',
+        ''
       ],
     }
   }
@@ -184,11 +184,11 @@ class Questionario extends Component {
   handleRespostas = () => {
     const { questionario } = this.props.experimento
 
-    if(questionario === '/usando-modelo'){
+    if (questionario === '/usando-modelo') {
       this.props.handleUsandoModeloRequest(this.state.ferramenta)
     }
 
-    if(questionario === '/passo-a-passo'){
+    if (questionario === '/passo-a-passo') {
       this.props.handlePassoAPassoRequest(this.state.ferramenta)
     }
   }
@@ -212,8 +212,8 @@ class Questionario extends Component {
     const steps = getSteps();
     const { activeStep } = this.state;
 
-    const um = modelConfig === 1? 'Passo a Passo' : 'Usando Modelo'
-    const dois = modelConfig === 2? 'Passo a Passo' : 'Usando Modelo'
+    const um = modelConfig === 1 ? 'Passo a Passo' : 'Usando Modelo'
+    const dois = modelConfig === 2 ? 'Passo a Passo' : 'Usando Modelo'
 
     const obrigado = <Fragment>
       <Typography variant="h6" component="label" align="center">
@@ -228,7 +228,7 @@ class Questionario extends Component {
         <br />Nessa etapa você configurou um sistema educational adaptativo através de um processo {um}.
       </Typography>
       <Typography variant="h6" component="label" align="center">
-      Por favor, siga para a próxima etapa, clicando no botão 'Criar Tutor' no Menu lateral onde você irá configurar um sistema educacional adaptativo através de um processo {dois}.
+        Por favor, siga para a próxima etapa, clicando no botão 'Criar Tutor' no Menu lateral onde você irá configurar um sistema educacional adaptativo através de um processo {dois}.
       </Typography>
     </Fragment>
 
@@ -238,9 +238,9 @@ class Questionario extends Component {
         <Card className={classes.styleCard}>
           <div className={classes.root}>
             <Stepper activeStep={activeStep} alternativeLabel>
-              <Typography variant="h4" component="label">
-                    Ferramenta de Configuração<br />
-                </Typography>
+              <Typography variant="h4">
+                Ferramenta de Configuração
+              </Typography><br />
               {/* {steps.map(label => {
                 return (
                   <Step key={label}>
@@ -273,8 +273,8 @@ class Questionario extends Component {
                     <div>
                       <Divider />
                       <br />
-                        <Button variant="contained" color="primary" onClick={(event) => { this.handleNext(event); this.handleSubmit(event); this.handleRespostas() }}>
-                          Finalizar
+                      <Button variant="contained" color="primary" onClick={(event) => { this.handleNext(event); this.handleSubmit(event); this.handleRespostas() }}>
+                        Finalizar
                         </Button>
                     </div>
                   </CardContent>
