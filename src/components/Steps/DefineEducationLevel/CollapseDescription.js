@@ -27,19 +27,19 @@ class CollapseDescription extends Component {
               <img className={classes.imgCollapse} src={this.props.img} alt="" />
             <Grid item xs>
               <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
-                - Pedagogical Model
+                - Modelo pedagógico
               </Typography>
               <Typography>
                 {this.props.details.pedagogical}
               </Typography>
               <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
-                - Evaluation Methods
+                - Métodos avaliativos
               </Typography>
               <Typography>
                 {this.props.details.evaluation}
               </Typography>
               <Typography variant="subtitle2" style={{ fontWeight: 'bold' }}>
-                - Reports
+                - Relatórios
               </Typography>
               <Typography>
                 {this.props.details.reports}
