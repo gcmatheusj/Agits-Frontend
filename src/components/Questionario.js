@@ -56,38 +56,38 @@ class Questionario extends Component {
     super(props)
     this.state = {
       activeStep: 0,
-      ferramenta: {
-        valorFerramenta1: 'Neutro',
-        valorFerramenta2: 'Neutro',
-        valorFerramenta3: 'Neutro',
-        valorFerramenta4: 'Neutro',
-        valorFerramenta5: 'Neutro',
-        valorFerramenta6: 'Neutro',
-        valorFerramenta7: 'Neutro',
-        valorFerramenta8: 'Neutro',
-        valorFerramenta9: 'Neutro',
-        valorFerramenta10: 'Neutro',
-        valorFerramenta11: 'Neutro',
-        valorFerramenta12: 'Neutro',
-        valorFerramenta13: 'Neutro',
-        valorFerramenta14: 'Neutro',
-        valorFerramenta15: 'Neutro',
-        valorFerramenta16: 'Neutro',
-        valorFerramenta17: 'Neutro',
-        valorFerramenta18: 'Neutro',
-        valorFerramenta19: 'Neutro',
-        valorFerramenta20: 'Neutro',
-        valorFerramenta21: 'Neutro',
-        valorFerramenta22: 'Neutro',
-        valorFerramenta23: 'Neutro',
-        valorFerramenta24: 'Neutro',
-        valorFerramenta25: 'Neutro',
-        valorFerramenta26: 'Neutro',
-        valorFerramenta27: 'Neutro',
-        valorFerramenta28: 5,
-        valorFerramenta29: '',
-        valorFerramenta30: ''
-      },
+      ferramenta: [
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+        'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         'Neutro',
+         5,
+         '',
+         ''
+      ],
     }
   }
 
@@ -113,6 +113,8 @@ class Questionario extends Component {
         return 'Unknown step'
     }
   }
+
+  //Ele ta pegando o valor e ta jogando 27 vezes
 
   componentDidMount() {
     window.scrollTo(0, 0)

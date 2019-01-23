@@ -194,7 +194,8 @@ class Perguntas extends Component {
                                   value={valores[v.valor]}
                                   onChange={this.props.onChange(v.name, v.valor, false)}
                                 >
-                                  <Grid container justify='space-between'>
+                                {console.log(valores[v.valor])}
+                                  {/* <Grid container justify='space-between'> */}
                                     <FormControlLabel value="Discordo Totalmente" control={<Radio color="primary" />} label="Discordo Totalmente" />
                                     <FormControlLabel value="Discordo" control={<Radio color="primary" />} label="Discordo" />
                                     <FormControlLabel value="Discordo Parcialmente" control={<Radio color="primary" />} label="Discordo Parcialmente" />
@@ -202,7 +203,7 @@ class Perguntas extends Component {
                                     <FormControlLabel value="Concordo Parcialmente" control={<Radio color="primary" />} label="Concordo Parcialmente" />
                                     <FormControlLabel value="Concordo" control={<Radio color="primary" />} label="Concordo" />
                                     <FormControlLabel value="Concordo Totalmente" control={<Radio color="primary" />} label="Concordo Totalmente" />
-                                  </Grid>
+                                  {/* </Grid> */}
                                 </RadioGroup>
                                     : <TextField
                                         variant='outlined'
