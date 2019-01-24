@@ -204,12 +204,20 @@ class Questionario extends Component {
 
     await this.handleRespostas()
 
-    const { questionario, demografico, passoAPasso, usandoModelo } = this.props.experimento
+    const { 
+      demografico, 
+      passoAPasso, 
+      usandoModelo, 
+      duracaoConfigPassoAPasso, 
+      duracaoConfigUsandoModelo 
+    } = this.props.experimento
 
     await axios.post('https://agits-icalt.firebaseio.com/data.json', {
       demografico,
       passoAPasso,
-      usandoModelo
+      usandoModelo,
+      duracaoConfigPassoAPasso,
+      duracaoConfigUsandoModelo
     })
 
     event.preventDefault()
@@ -218,12 +226,23 @@ class Questionario extends Component {
   handleRespostas = () => {
     const { questionario } = this.props.experimento
 
+    const inicioScratch = new Date(window.sessionStorage.getItem('StartedScratch')) 
+    const fimScratch = new Date(window.sessionStorage.getItem('FinishedScratch'))
+
+    const inicioModel = new Date(window.sessionStorage.getItem('StartedModel')) 
+    const fimModel = new Date(window.sessionStorage.getItem('FinishedModel'))
+
+    let duracaoScratch = fimScratch - inicioScratch
+    let duracaoModel = fimModel - inicioModel
+
     if (questionario === '/usando-modelo') {
       this.props.handleUsandoModeloRequest(this.state.ferramenta)
+      this.props.handleDuracaoConfigUsandoModeloRequest(duracaoModel)
     }
 
     if (questionario === '/passo-a-passo') {
       this.props.handlePassoAPassoRequest(this.state.ferramenta)
+      this.props.handleDuracaoConfigPassoAPassoRequest(duracaoScratch)
     }
   }
 
@@ -339,6 +358,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handlePassoAPassoRequest: respostasPassoAPasso => dispatch(ActionCreators.passoapassoRequest(respostasPassoAPasso)),
+  handleDuracaoConfigPassoAPassoRequest: duracao => dispatch(ActionCreators.duracaoConfig(duracao)),
+  handleDuracaoConfigUsandoModeloRequest: duracao => dispatch(ActionCreators.duracaoConfigUsandoModeloRequest(duracao)),
   handleUsandoModeloRequest: respostasUsandoModelo => dispatch(ActionCreators.usandomodeloRequest(respostasUsandoModelo))
 })
 

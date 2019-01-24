@@ -4,9 +4,11 @@ export const {
     Types,
     Creators,
 } = createActions({
-    demograficoRequest: ['respostasDemografico'],
+    demograficoRequest: ['respostas'],
     passoapassoRequest: ['respostas'],
     usandomodeloRequest: ['respostas'],
+    duracaoConfig: ['duracao'],
+    duracaoConfigUsandoModeloRequest: ['duracao'],
 
     handleRespostasRequest: ['questionario']
 })
