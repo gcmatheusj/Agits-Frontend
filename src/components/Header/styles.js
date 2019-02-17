@@ -4,6 +4,10 @@ const styles = theme => ({
   root: {
     display: 'flex',
   },
+  fab: {
+    margin: theme.spacing.unit,
+    backgroundColor: theme.palette.common.white,
+  },
   drawer: {
     [theme.breakpoints.up('sm')]: {
       width: drawerWidth,

@@ -14,12 +14,15 @@ import {
   ListItemIcon,
   ListItemText,
   CssBaseline,
+  Fab,
 } from '@material-ui/core';
-// import HomeIcon from '@material-ui/icons/Home'
-// import DashboardIcon from '@material-ui/icons/Dashboard'
-import AddIcon from '@material-ui/icons/Add';
 import { withStyles } from '@material-ui/core/styles';
-import { Menu } from '@material-ui/icons';
+import {
+  Menu,
+  Home as HomeIcon,
+  Dashboard as DashboardIcon,
+  Add as AddIcon,
+} from '@material-ui/icons';
 
 import styles from './styles';
 
@@ -44,22 +47,18 @@ class Header extends Component {
           <div className={classes.toolbar} />
         </Hidden>
         <MenuList>
-          <MenuItem
-            component={Link}
-            to='/'
-            selected={
-              '/' === pathname ||
-              '/novo-tutor' === pathname ||
-              '/usando-modelo' === pathname
-            }
-          >
-            <ListItemIcon>
-              <AddIcon/>
-            </ListItemIcon>
-            <ListItemText inset primary="Criar Tutor" />
-          </MenuItem>
 
-          {/* <MenuItem
+          <Fab
+            variant='extended'
+            component={Link}
+            to='/criar-tutor'
+            className={classes.fab}
+          >
+            <AddIcon />
+            Criar Tutor
+          </Fab>
+
+          <MenuItem
             component={Link} to='/'
           >
             <ListItemIcon>
@@ -76,7 +75,7 @@ class Header extends Component {
               <DashboardIcon />
             </ListItemIcon>
             <ListItemText inset primary="Dashboard" />
-          </MenuItem> */}
+          </MenuItem>
         </MenuList>
       </div>
     );

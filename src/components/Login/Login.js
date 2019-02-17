@@ -16,6 +16,7 @@ import {
 } from '@material-ui/core';
 import { Visibility, VisibilityOff } from '@material-ui/icons';
 import { withStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types';
 import axios from 'axios';
 
@@ -121,7 +122,12 @@ class Login extends Component {
               </CardContent>
               <CardActions className={classes.cardActions}>
                 <Grid container justify="flex-end">
-                  <Button size="medium" onClick={this.handleAuth}>
+                  <Button
+                    size="medium"
+                  // onClick={this.handleAuth}
+                    component={Link}
+                    to='/recuperar-senha'
+                  >
                     Forgot your password?
                   </Button>
                   <Button
@@ -129,7 +135,9 @@ class Login extends Component {
                     size="medium"
                     color="primary"
                     style={{ backgroundColor: '#ff572f' }}
-                    onClick={this.handleAuth}
+                    // onClick={this.handleAuth}
+                    component={Link}
+                    to='/visualizar-tutores'
                   >
                     Access
                   </Button>

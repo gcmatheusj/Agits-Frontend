@@ -6,8 +6,6 @@ import { Grid, Typography, Card, CardContent, CardActionArea, Divider, Dialog, D
 import PropTypes from 'prop-types'
 
 import Header from "../../Header"
-import Termo from '../../TermoConsentimento'
-import Demografico from '../../Demografico'
 
 import AlertDialogSlide from './Dialog'
 
@@ -41,8 +39,6 @@ class EscolhaDoModelo extends React.Component {
     selectedModel: '',
     adress: '#',
     complete: false,
-    position: 0,
-    checked: false,
     respostas: {}
   };
 
@@ -153,8 +149,6 @@ class EscolhaDoModelo extends React.Component {
 
   render() {
     const { classes } = this.props
-    const { position, checked } = this.state
-    const modelConfig = Number(window.sessionStorage.getItem('modelConfig'))
 
     return (
       <div className={classes.root}>
@@ -185,10 +179,9 @@ class EscolhaDoModelo extends React.Component {
               </Fragment>
               return (
                 <Card key={k} className={classes.card}>
-                  {modelConfig === v.number ?
                     <CardActionArea className={classes.cardAction} value="teste" onClick={this.handleClickOpen(v.adress)}>
                       {template}
-                    </CardActionArea> :
+                    </CardActionArea>
                     <div className={classes.cardAction}>
                       {template}
                     </div>
@@ -203,7 +196,7 @@ class EscolhaDoModelo extends React.Component {
             open={this.state.open}
           />
 
-          <Dialog id="dialogTermo" open={!this.state.complete} maxWidth='lg'>
+          {/* <Dialog id="dialogTermo" open={!this.state.complete} maxWidth='lg'>
             <DialogContent>
               {position === 0 ?
                 <Termo checked={checked} handleChange={this.handleChange} next={this.next} /> :
@@ -221,7 +214,7 @@ class EscolhaDoModelo extends React.Component {
                   ''
                 )
             }
-          </Dialog>
+          </Dialog> */}
 
         </Header>
       </div>
