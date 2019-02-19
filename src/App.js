@@ -5,18 +5,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux';
 
-// import Login from './components/Login';
-// import RecuperarSenha from './components/RecuperarSenha';
-// import Cadastro from './components/Cadastro';
-// import Dashboard from './components/Dashboard';
-// import DefineDomain from './components/DefineDomain';
+import Login from './components/Login';
+import RecuperarSenha from './components/RecuperarSenha';
+import Cadastro from './components/Cadastro';
+import Dashboard from './components/Dashboard';
+import DefineDomain from './components/DefineDomain';
 
 import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
 import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
 import StepperUsandoModelo from "./components/CriacaoTutor/UsandoModelo";
+import VisualizarTutores from './components/VisualizarTutores'
 
-// import VisualizarTutores from './components/VisualizarTutores'
-import Questionario from './components/Questionario'
+// import Questionario from './components/Questionario'
 
 const theme = createMuiTheme({
   palette: {
@@ -32,24 +32,24 @@ const theme = createMuiTheme({
 });
 
 export default class App extends Component {
-  state = {
-    creation: null
-  }
+  // state = {
+  //   creation: null
+  // }
 
-  componentDidMount = () => {
-    !window.sessionStorage.getItem('modelConfig') &&
-      window.sessionStorage.setItem('modelConfig', Math.floor((Math.random() * 2) + 1))
-  }
+  // componentDidMount = () => {
+  //   !window.sessionStorage.getItem('modelConfig') &&
+  //     window.sessionStorage.setItem('modelConfig', Math.floor((Math.random() * 2) + 1))
+  // }
 
-  handleChangeModelConfig = () => {
-    const modelConfig = Number(window.sessionStorage.getItem('modelConfig'))
-    window.sessionStorage.setItem('modelConfig', modelConfig === 1 ? 2 : 1)
-  }
+  // handleChangeModelConfig = () => {
+  //   const modelConfig = Number(window.sessionStorage.getItem('modelConfig'))
+  //   window.sessionStorage.setItem('modelConfig', modelConfig === 1 ? 2 : 1)
+  // }
 
-  handleChangeConfigPosition() {
-    const configPosition = Number(window.sessionStorage.getItem('configPosition'))
-    window.sessionStorage.setItem('configPosition', configPosition+1)
-  }
+  // handleChangeConfigPosition() {
+  //   const configPosition = Number(window.sessionStorage.getItem('configPosition'))
+  //   window.sessionStorage.setItem('configPosition', configPosition+1)
+  // }
 
   render() {
     
@@ -60,16 +60,16 @@ export default class App extends Component {
             <CssBaseline />
             <MuiThemeProvider theme={theme}>
               <div>
-                {/* <Route exact path="/" component={Login} /> */}
-                {/* <Route path="/recuperar-senha" component={RecuperarSenha} /> */}
-                {/* <Route path="/cadastro" component={Cadastro} /> */}
-                {/* <Route path="/dashboard" component={Dashboard} /> */}
-                <Route exact path="/" component={EscolhaDoModelo} />
+                <Route exact path="/" component={Login} />
+                <Route path="/recuperar-senha" component={RecuperarSenha} />
+                <Route path="/cadastro" component={Cadastro} />
+                <Route path="/dashboard" component={Dashboard} />
+                <Route exact path="/criar-tutor" component={EscolhaDoModelo} />
                 <Route exact path="/passo-a-passo" component={StepperPassoaPasso} />
                 <Route exact path="/usando-modelo" component={StepperUsandoModelo} />
-                {/* <Route path="/visualizar-tutores" component={VisualizarTutores} /> */}
-                {/* <Route path="/define-domain" component={DefineDomain} /> */}
-                <Route exact path="/questionario" render={props => (
+                <Route path="/visualizar-tutores" component={VisualizarTutores} />
+                <Route path="/define-domain" component={DefineDomain} />
+                {/* <Route exact path="/questionario" render={props => (
                   <Questionario
                     {...props}
                     configPosition = {Number(window.sessionStorage.getItem('configPosition'))}
@@ -77,9 +77,8 @@ export default class App extends Component {
                     changePosition={this.handleChangeConfigPosition}
                     changeModel={this.handleChangeModelConfig}
                   />
-                )} />
+                )} /> */}
               </div>
-              {console.log(Number(window.sessionStorage.getItem('configPosition')))}
             </MuiThemeProvider>
           </Fragment>
         </Router>
