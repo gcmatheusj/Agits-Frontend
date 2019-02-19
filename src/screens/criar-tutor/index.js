@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
-import ActionCreators from "../../../redux/actions/experimento";
+import ActionCreators from "../../redux/actions/experimento";
 import { withStyles } from "@material-ui/core/styles";
 import {
   Grid,
@@ -8,23 +8,18 @@ import {
   Card,
   CardContent,
   CardActionArea,
-  Divider,
-  Dialog,
-  DialogContent,
-  DialogActions,
-  Button
+  Divider
 } from "@material-ui/core";
 import PropTypes from "prop-types";
 
-import Header from "../../Header";
+import Header from "../../components/Header";
 
 import AlertDialogSlide from "./Dialog";
 
 import { styles } from "./styles";
-import "./style.css";
 
-import scratch from "../../../assets/scratch2.png";
-import template from "../../../assets/template.png";
+import scratch from "../../assets/scratch2.png";
+import template from "../../assets/template.png";
 
 const opcoesModelo = [
   {

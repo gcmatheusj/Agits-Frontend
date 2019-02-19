@@ -1,34 +1,30 @@
-import React, { Component, Fragment } from 'react';
-import { CssBaseline } from '@material-ui/core';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import store from './redux';
+import React, { Component, Fragment } from "react";
+import { CssBaseline } from "@material-ui/core";
+import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./redux";
 
-import Login from './components/Login';
-import RecuperarSenha from './components/RecuperarSenha';
-import Cadastro from './components/Cadastro';
-import Dashboard from './components/Dashboard';
-import DefineDomain from './components/DefineDomain';
+import Dashboard from "./screens/dashboard";
 
-import EscolhaDoModelo from './components/CriacaoTutor/EscolhaDoModelo';
-import StepperPassoaPasso from './components/CriacaoTutor/PassoaPasso';
-import StepperUsandoModelo from "./components/CriacaoTutor/UsandoModelo";
-import VisualizarTutores from './components/VisualizarTutores'
+import CriarTutor from "./screens/criar-tutor";
+import StepperPassoaPasso from "./screens/passo-a-passo";
+import StepperUsandoModelo from "./screens/usando-modelo";
+import VisualizarTutores from "./screens/visualizar-tutores";
 
 // import Questionario from './components/Questionario'
 
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: '#63a4ff',
-      main: '#1976d2',
-      dark: '#004ba0',
-    },
+      light: "#63a4ff",
+      main: "#1976d2",
+      dark: "#004ba0"
+    }
   },
   typography: {
-    useNextVariants: true,
-  },
+    useNextVariants: true
+  }
 });
 
 export default class App extends Component {
@@ -52,24 +48,18 @@ export default class App extends Component {
   // }
 
   render() {
-    
     return (
       <Provider store={store}>
         <Router>
           <Fragment>
             <CssBaseline />
             <MuiThemeProvider theme={theme}>
-              <div>
-                <Route exact path="/" component={Login} />
-                <Route path="/recuperar-senha" component={RecuperarSenha} />
-                <Route path="/cadastro" component={Cadastro} />
-                <Route path="/dashboard" component={Dashboard} />
-                <Route exact path="/criar-tutor" component={EscolhaDoModelo} />
-                <Route exact path="/passo-a-passo" component={StepperPassoaPasso} />
-                <Route exact path="/usando-modelo" component={StepperUsandoModelo} />
-                <Route path="/visualizar-tutores" component={VisualizarTutores} />
-                <Route path="/define-domain" component={DefineDomain} />
-                {/* <Route exact path="/questionario" render={props => (
+              <Route exact path="/" component={CriarTutor} />
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/passo-a-passo" component={StepperPassoaPasso} />
+              <Route path="/usando-modelo" component={StepperUsandoModelo} />
+              <Route path="/visualizar-tutores" component={VisualizarTutores} />
+              {/* <Route exact path="/questionario" render={props => (
                   <Questionario
                     {...props}
                     configPosition = {Number(window.sessionStorage.getItem('configPosition'))}
@@ -78,11 +68,10 @@ export default class App extends Component {
                     changeModel={this.handleChangeModelConfig}
                   />
                 )} /> */}
-              </div>
             </MuiThemeProvider>
           </Fragment>
         </Router>
       </Provider>
-    )
+    );
   }
 }
