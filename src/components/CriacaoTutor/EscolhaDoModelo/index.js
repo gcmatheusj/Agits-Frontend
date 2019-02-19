@@ -52,6 +52,12 @@ class EscolhaDoModelo extends React.Component {
     window.sessionStorage.setItem('configPosition', 1)
   }
 
+  componentDidUpdate (){
+    setTimeout( () => {
+      window.scrollTo(0,0)
+      }, 200)
+  }
+
   handleTermos = async () => {
     const termosChecked = await window.sessionStorage.getItem("checked")
     if (termosChecked) {
