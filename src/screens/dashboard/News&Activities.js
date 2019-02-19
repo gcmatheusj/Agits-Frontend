@@ -11,7 +11,7 @@ import {
   Divider,
 } from '@material-ui/core';
 
-import styles from './styles';
+import {news as styles} from './styles';
 
 const NewsActivities = (props) => {
   const { classes } = props;
@@ -41,7 +41,7 @@ const NewsActivities = (props) => {
           </CardActions>
         </div>
         <Divider />
-        <Typography variant="h6" style={{ fontWeight: 'bold' }}>
+        <Typography variant="h6" >
           Next Activities
         </Typography>
         <div>

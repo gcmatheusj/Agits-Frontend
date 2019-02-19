@@ -1,10 +1,10 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles, Card, CardContent } from '@material-ui/core';
+import React from "react";
+import PropTypes from "prop-types";
+import { withStyles, Card, CardContent } from "@material-ui/core";
 
-import styles from './styles';
+import { content as styles } from "./styles";
 
-const Content = (props) => {
+const Content = props => {
   const { classes } = props;
 
   return (
@@ -15,7 +15,7 @@ const Content = (props) => {
 };
 
 Content.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.shape.isRequired
 };
 
 export default withStyles(styles)(Content);

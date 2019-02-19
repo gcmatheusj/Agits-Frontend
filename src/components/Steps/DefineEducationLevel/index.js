@@ -17,7 +17,7 @@ import education5 from "../../../assets/education5.png"
 
 import CollapseDescription from './CollapseDescription';
 
-import styles from './styles';
+import {index as styles} from './styles';
 
 const education = [education1, education2, education3, education4, education5]
 

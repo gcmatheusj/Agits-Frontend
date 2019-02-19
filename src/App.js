@@ -17,9 +17,14 @@ import VisualizarTutores from "./screens/visualizar-tutores";
 const theme = createMuiTheme({
   palette: {
     primary: {
-      light: "#63a4ff",
       main: "#1976d2",
+      light: "#63a4ff",
       dark: "#004ba0"
+    },
+    secondary: {
+      main: "#ff5722",
+      light: "#ff8a50",
+      dark: "#c41c00"
     }
   },
   typography: {
