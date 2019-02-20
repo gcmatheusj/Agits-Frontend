@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Collapse from "@material-ui/core/Collapse";
+import { withStyles } from "@material-ui/core/styles";
 import {
   Grid,
   Card,
@@ -9,7 +10,6 @@ import {
   Button,
   Tooltip
 } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 
 import { styles } from "./styles";
 

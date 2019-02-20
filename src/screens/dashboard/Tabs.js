@@ -1,19 +1,12 @@
-import React from "react";
-import PropTypes from "prop-types";
-import SwipeableViews from "react-swipeable-views";
-import {
-  withStyles,
-  AppBar,
-  Tabs,
-  Tab,
-  Typography,
-  Grid
-} from "@material-ui/core";
-import Content from "./Content";
-import Ranking from "./Ranking";
-import NewsActivities from "./News&Activities";
+import React from 'react';
+import PropTypes from 'prop-types';
+import SwipeableViews from 'react-swipeable-views';
+import { withStyles, AppBar, Tabs, Tab, Typography, Grid } from '@material-ui/core';
+import Content from './Content';
+import Ranking from './Ranking';
+import NewsActivities from './News&Activities';
 
-import { tabs as styles } from "./styles";
+import { tabs as styles } from './styles';
 
 function TabContainer({ children, dir }) {
   return (
@@ -25,12 +18,12 @@ function TabContainer({ children, dir }) {
 
 TabContainer.propTypes = {
   children: PropTypes.node.isRequired,
-  dir: PropTypes.string.isRequired
+  dir: PropTypes.string.isRequired,
 };
 
 class FullWidthTabs extends React.Component {
   state = {
-    value: 0
+    value: 0,
   };
 
   handleChange = (event, value) => {
@@ -62,8 +55,8 @@ class FullWidthTabs extends React.Component {
             </Tabs>
           </AppBar>
           <SwipeableViews
-            style={{ backgroundColor: "#f1f1f1" }}
-            axis={theme.direction === "rtl" ? "x-reverse" : "x"}
+            style={{ backgroundColor: '#f1f1f1' }}
+            axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
             index={value}
             onChangeIndex={this.handleChangeIndex}
           >
@@ -92,7 +85,7 @@ class FullWidthTabs extends React.Component {
 
 FullWidthTabs.propTypes = {
   classes: PropTypes.shape.isRequired,
-  theme: PropTypes.shape.isRequired
+  theme: PropTypes.shape.isRequired,
 };
 
 export default withStyles(styles, { withTheme: true })(FullWidthTabs);

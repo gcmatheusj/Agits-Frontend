@@ -2,6 +2,7 @@ import React, { Component, Fragment } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { compose } from "recompose";
 import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
 import {
   AppBar,
   Toolbar,
@@ -16,7 +17,6 @@ import {
   CssBaseline,
   Fab
 } from "@material-ui/core";
-import { withStyles } from "@material-ui/core/styles";
 import {
   Menu,
   Home as HomeIcon,
@@ -101,7 +101,6 @@ class Header extends Component {
             </Toolbar>
           </AppBar>
           <nav className={classes.drawer}>
-            {/* The implementation can be swap with js to avoid SEO duplication of links. */}
             <Hidden smUp implementation="css">
               <Drawer
                 container={container}
@@ -112,7 +111,7 @@ class Header extends Component {
                   paper: classes.drawerPaper
                 }}
                 ModalProps={{
-                  keepMounted: true // Better open performance on mobile.
+                  keepMounted: true
                 }}
               >
                 {drawer}
