@@ -54,7 +54,7 @@ students
 };
 
 CardTutor.propTypes = {
-  classes: PropTypes.shape.isRequired, // Corrigir tipo da prop
+  classes: PropTypes.object.isRequired,
   name: PropTypes.string.isRequired,
   studentsNumber: PropTypes.string.isRequired,
   abstract: PropTypes.string.isRequired,
