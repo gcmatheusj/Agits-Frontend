@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 import {
   withStyles,
   Card,
@@ -12,13 +12,13 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  Divider
-} from "@material-ui/core";
-import AccountCircle from "@material-ui/icons/AccountCircle";
+  Divider,
+} from '@material-ui/core';
+import AccountCircle from '@material-ui/icons/AccountCircle';
 
-import { ranking as styles } from "./styles";
+import { ranking as styles } from './styles';
 
-const Ranking = props => {
+const Ranking = (props) => {
   const { classes } = props;
 
   return (
@@ -78,7 +78,7 @@ const Ranking = props => {
 };
 
 Ranking.propTypes = {
-  classes: PropTypes.shape.isRequired
+  classes: PropTypes.shape.isRequired,
 };
 
 export default withStyles(styles)(Ranking);

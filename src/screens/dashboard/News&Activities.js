@@ -11,7 +11,7 @@ import {
   Divider,
 } from '@material-ui/core';
 
-import {news as styles} from './styles';
+import { news as styles } from './styles';
 
 const NewsActivities = (props) => {
   const { classes } = props;
@@ -41,9 +41,7 @@ const NewsActivities = (props) => {
           </CardActions>
         </div>
         <Divider />
-        <Typography variant="h6" >
-          Next Activities
-        </Typography>
+        <Typography variant="h6">Next Activities</Typography>
         <div>
           <Typography variant="subtitle1">Student 01 performed the ACTIVITYNAME</Typography>
           <Divider />

@@ -6,6 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import Slide from '@material-ui/core/Slide';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
+import PropTypes from 'prop-types';
 
 import { Grid, Typography, TextField } from '@material-ui/core';
 
@@ -78,6 +79,13 @@ const AlertDialogSlide = (props) => {
       </Grid>
     </Dialog>
   );
+};
+
+AlertDialogSlide.propTypes = {
+  classes: PropTypes.shape.isRequired,
+  open: PropTypes.bool.isRequired,
+  handleClose: PropTypes.func.isRequired,
+  adress: PropTypes.string.isRequired,
 };
 
 export default withStyles(styles)(AlertDialogSlide);

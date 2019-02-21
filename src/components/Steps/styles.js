@@ -1,106 +1,106 @@
 export const stepsCard = theme => ({
   rootStepsCard: {
     flexGrow: 1,
-    maxWidth: "100%",
+    maxWidth: '100%',
     padding: 1,
     paddingBottom: 10,
     paddingTop: 10,
-    [theme.breakpoints.down("sm")]: {
+    [theme.breakpoints.down('sm')]: {
       padding: 1,
       marginTop: 10,
-      marginBottom: 20
-    }
+      marginBottom: 20,
+    },
   },
   gridCard: {
-    alignItems: "center",
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "center"
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
     },
-    minHeight: 150
+    minHeight: 150,
   },
   gridText: {
-    [theme.breakpoints.down("sm")]: {
-      justifyContent: "center"
-    }
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'center',
+    },
   },
   title: {
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.875rem"
-    }
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.875rem',
+    },
   },
   titleCard: {
-    fontWeight: "bold",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.9rem",
-      textAlign: "center"
-    }
+    fontWeight: 'bold',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem',
+      textAlign: 'center',
+    },
   },
   textCard: {
-    textAlign: "justify",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.8rem"
-    }
+    textAlign: 'justify',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.8rem',
+    },
   },
   img: {
     margin: 20,
-    width: 100
-  }
+    width: 100,
+  },
 });
 
 export const defineDomain = theme => ({
   rootDefineDomain: {
-    marginTop: "30px",
-    marginBottom: "10px"
+    marginTop: '30px',
+    marginBottom: '10px',
   },
   expansionPanel: {
-    paddingTop: "5px",
-    paddingBottom: "5px",
+    paddingTop: '5px',
+    paddingBottom: '5px',
     borderTop: `1px solid ${theme.palette.common.white}`,
     borderRight: `1px solid ${theme.palette.common.white}`,
-    borderLeft: `1px solid ${theme.palette.common.white}`
+    borderLeft: `1px solid ${theme.palette.common.white}`,
   },
   expansionPanelFont: {
-    fontSize: "16pt"
+    fontSize: '16pt',
   },
   expansionPanelDetail: {
     borderRight: `1px solid ${theme.palette.common.white}`,
     borderLeft: `1px solid ${theme.palette.common.white}`,
-    margin: "0",
-    padding: "0"
+    margin: '0',
+    padding: '0',
   },
   label: {
-    paddingTop: "30px",
-    fontSize: "14pt"
+    paddingTop: '30px',
+    fontSize: '14pt',
   },
   formControl: {
-    "@media only screen and (max-width: 360px)": {
+    '@media only screen and (max-width: 360px)': {
       // Galaxy S3 width Compatibility
-      maxWidth: "177px"
+      maxWidth: '177px',
     },
-    width: "100%"
+    width: '100%',
   },
   gridContainer: {
-    "@media only screen and (max-width: 360px)": {
+    '@media only screen and (max-width: 360px)': {
       // Galaxy S3 width Compatibility
-      padding: "20px"
+      padding: '20px',
     },
-    paddingTop: "0",
-    padding: "15px"
+    paddingTop: '0',
+    padding: '15px',
   },
   gridButton: {
-    float: "right"
+    float: 'right',
   },
   divider: {
-    marginTop: "25px",
-    marginBottom: "15px"
-  }
+    marginTop: '25px',
+    marginBottom: '15px',
+  },
 });
 
 export const steps = theme => ({
   title: {
-    textAlign: "justify",
-    [theme.breakpoints.down("sm")]: {
-      fontSize: "0.9rem"
-    }
-  }
+    textAlign: 'justify',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '0.9rem',
+    },
+  },
 });

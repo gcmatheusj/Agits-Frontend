@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SwipeableViews from 'react-swipeable-views';
-import { withStyles, AppBar, Tabs, Tab, Typography, Grid } from '@material-ui/core';
+import {
+  withStyles, AppBar, Tabs, Tab, Typography, Grid,
+} from '@material-ui/core';
 import Content from './Content';
 import Ranking from './Ranking';
 import NewsActivities from './News&Activities';
@@ -30,7 +32,7 @@ class FullWidthTabs extends React.Component {
     this.setState({ value });
   };
 
-  handleChangeIndex = index => {
+  handleChangeIndex = (index) => {
     this.setState({ value: index });
   };
 

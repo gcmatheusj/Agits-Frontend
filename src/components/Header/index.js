@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from "react";
-import { Link, withRouter } from "react-router-dom";
-import { compose } from "recompose";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import React, { Component, Fragment } from 'react';
+import { Link, withRouter } from 'react-router-dom';
+import { compose } from 'recompose';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import {
   AppBar,
   Toolbar,
@@ -15,20 +15,20 @@ import {
   ListItemIcon,
   ListItemText,
   CssBaseline,
-  Fab
-} from "@material-ui/core";
+  Fab,
+} from '@material-ui/core';
 import {
   Menu,
   Home as HomeIcon,
   Dashboard as DashboardIcon,
-  Add as AddIcon
-} from "@material-ui/icons";
+  Add as AddIcon,
+} from '@material-ui/icons';
 
-import styles from "./styles";
+import styles from './styles';
 
 class Header extends Component {
   state = {
-    mobileOpen: false
+    mobileOpen: false,
   };
 
   handleDrawerToggle = () => {
@@ -41,7 +41,7 @@ class Header extends Component {
       container,
       location: { pathname },
       children,
-      title
+      title,
     } = this.props;
     const { mobileOpen } = this.state;
 
@@ -51,12 +51,7 @@ class Header extends Component {
           <div className={classes.toolbar} />
         </Hidden>
         <MenuList>
-          <Fab
-            variant="extended"
-            component={Link}
-            to="/criar-tutor"
-            className={classes.fab}
-          >
+          <Fab variant="extended" component={Link} to="/criar-tutor" className={classes.fab}>
             <AddIcon />
             Criar Tutor
           </Fab>
@@ -70,7 +65,7 @@ class Header extends Component {
           <MenuItem
             component={Link}
             to="/visualizar-tutores"
-            selected={"/visualizar-tutores" === pathname}
+            selected={pathname === '/visualizar-tutores'}
           >
             <ListItemIcon>
               <DashboardIcon />
@@ -108,10 +103,10 @@ class Header extends Component {
                 open={mobileOpen}
                 onClose={this.handleDrawerToggle}
                 classes={{
-                  paper: classes.drawerPaper
+                  paper: classes.drawerPaper,
                 }}
                 ModalProps={{
-                  keepMounted: true
+                  keepMounted: true,
                 }}
               >
                 {drawer}
@@ -120,7 +115,7 @@ class Header extends Component {
             <Hidden xsDown implementation="css">
               <Drawer
                 classes={{
-                  paper: classes.drawerPaper
+                  paper: classes.drawerPaper,
                 }}
                 variant="permanent"
                 open
@@ -141,10 +136,10 @@ class Header extends Component {
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  container: PropTypes.object
+  container: PropTypes.object,
 };
 
 export default compose(
   withRouter,
-  withStyles(styles)
+  withStyles(styles),
 )(Header);

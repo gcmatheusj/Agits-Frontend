@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 import {
   Stepper,
   Step,
@@ -9,21 +9,21 @@ import {
   Button,
   Paper,
   Typography,
-  Divider
-} from "@material-ui/core";
-import { Redirect } from "react-router-dom";
+  Divider,
+} from '@material-ui/core';
+import { Redirect } from 'react-router-dom';
 
 // import ActionCreators from '../../../redux/actions/tutor';
 
-import Header from "../../components/Header";
+import Header from '../../components/Header';
 
-import DefineGamificationModel from "../../components/Steps/DefineGamificationModel";
-import DefineEducationLevel from "../../components/Steps/DefineEducationLevel";
+import DefineGamificationModel from '../../components/Steps/DefineGamificationModel';
+import DefineEducationLevel from '../../components/Steps/DefineEducationLevel';
 
-import styles from "./styles";
+import styles from './styles';
 
 function getSteps() {
-  return ["Definir Nível Educacional", "Define Modelo de Gamificação"];
+  return ['Definir Nível Educacional', 'Define Modelo de Gamificação'];
 }
 
 function getStepContent(step) {
@@ -33,39 +33,39 @@ function getStepContent(step) {
     case 1:
       return <DefineGamificationModel />;
     default:
-      return "Unknown step";
+      return 'Unknown step';
   }
 }
 
 class StepperUsandoModelo extends Component {
   state = {
     activeStep: 0,
-    finalized: false
+    finalized: false,
   };
 
   componentDidMount() {
-    window.sessionStorage.setItem("StartedModel", Date(Date.now()));
+    window.sessionStorage.setItem('StartedModel', Date(Date.now()));
   }
 
   componentWillUnmount() {
-    window.sessionStorage.setItem("FinishedModel", Date(Date.now()));
+    window.sessionStorage.setItem('FinishedModel', Date(Date.now()));
   }
 
   handleNext = () => {
     this.setState(state => ({
-      activeStep: state.activeStep + 1
+      activeStep: state.activeStep + 1,
     }));
   };
 
   handleBack = () => {
     this.setState(state => ({
-      activeStep: state.activeStep - 1
+      activeStep: state.activeStep - 1,
     }));
   };
 
   handleReset = () => {
     this.setState({
-      activeStep: 0
+      activeStep: 0,
     });
   };
 
@@ -87,11 +87,7 @@ class StepperUsandoModelo extends Component {
             Customizando Tutor
           </Typography>
           <Divider style={styles.divider} />
-          <Stepper
-            className={classes.stepper}
-            activeStep={activeStep}
-            orientation="vertical"
-          >
+          <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
             {steps.map((label, index) => (
               <Step key={label}>
                 <StepLabel>{label}</StepLabel>
@@ -133,9 +129,7 @@ class StepperUsandoModelo extends Component {
           </Stepper>
           {activeStep === steps.length && (
             <Paper square elevation={0} className={classes.resetContainer}>
-              <Typography>
-                All steps completed - you&quot;re finished
-              </Typography>
+              <Typography>All steps completed - you&quot;re finished</Typography>
               <Button className={classes.button} onClick={this.handleReset}>
                 Reset
               </Button>
@@ -149,7 +143,7 @@ class StepperUsandoModelo extends Component {
 }
 
 StepperUsandoModelo.propTypes = {
-  classes: PropTypes.object
+  classes: PropTypes.shape.isRequired, // Corrigir tipo da prop
 };
 
 export default withStyles(styles)(StepperUsandoModelo);

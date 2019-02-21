@@ -1,33 +1,27 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import PropTypes from "prop-types";
-import { withStyles } from "@material-ui/core/styles";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import { Redirect } from 'react-router-dom';
 import {
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
-  Button,
-  Snackbar
-} from "@material-ui/core";
-import ActionCreators from "../../redux/actions/tutor";
-import { Redirect } from "react-router-dom";
+  Stepper, Step, StepLabel, StepContent, Button, Snackbar,
+} from '@material-ui/core';
+import ActionCreators from '../../redux/actions/tutor';
 
-import MySnackbarContentWrapper from "../../components/ToastSuccess";
+import MySnackbarContentWrapper from '../../components/ToastSuccess';
+import DefinePedagogicalModel from '../../components/Steps/DefinePedagogicalModel';
+import DefineGamificationModel from '../../components/Steps/DefineGamificationModel';
+import EvaluationMethods from '../../components/Steps/EvaluationMethods';
+import DefineReports from '../../components/Steps/DefineReports';
 
-import DefinePedagogicalModel from "../../components/Steps/DefinePedagogicalModel";
-import DefineGamificationModel from "../../components/Steps/DefineGamificationModel";
-import EvaluationMethods from "../../components/Steps/EvaluationMethods";
-import DefineReports from "../../components/Steps/DefineReports";
-
-import styles from "./styles";
+import styles from './styles';
 
 function getSteps() {
   return [
-    "Definir Modelo Pedagógico",
-    "Definir Modelo de Gamificação",
-    "Definir Métodos de Avaliação",
-    "Definir Relatórios"
+    'Definir Modelo Pedagógico',
+    'Definir Modelo de Gamificação',
+    'Definir Métodos de Avaliação',
+    'Definir Relatórios',
   ];
 }
 
@@ -42,7 +36,7 @@ function getStepContent(step) {
     case 3:
       return <DefineReports />;
     default:
-      return "Unknown step";
+      return 'Unknown step';
   }
 }
 
@@ -50,24 +44,24 @@ class VerticalLinearStepper extends Component {
   state = {
     activeStep: 0,
     open: false,
-    finalized: false
+    finalized: false,
   };
 
   handleNext = () => {
     this.setState(state => ({
-      activeStep: state.activeStep + 1
+      activeStep: state.activeStep + 1,
     }));
   };
 
   handleBack = () => {
     this.setState(state => ({
-      activeStep: state.activeStep - 1
+      activeStep: state.activeStep - 1,
     }));
   };
 
   handleReset = () => {
     this.setState({
-      activeStep: 0
+      activeStep: 0,
     });
   };
 
@@ -76,7 +70,7 @@ class VerticalLinearStepper extends Component {
   };
 
   handleClose = (event, reason) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
 
@@ -84,23 +78,20 @@ class VerticalLinearStepper extends Component {
   };
 
   createTutorRequest = () => {
+    const { createTutor, tutor } = this.props;
     this.setState({ finalized: true });
-    this.props.createTutor(this.props.tutor);
+    createTutor(tutor);
     this.handleClick();
   };
 
   render() {
     const { classes } = this.props;
     const steps = getSteps();
-    const { activeStep, finalized } = this.state;
+    const { activeStep, finalized, open } = this.state;
 
     return (
       <div className={classes.root}>
-        <Stepper
-          className={classes.stepper}
-          activeStep={activeStep}
-          orientation="vertical"
-        >
+        <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
           {steps.map((label, index) => (
             <Step key={label}>
               <StepLabel>{label}</StepLabel>
@@ -142,10 +133,10 @@ class VerticalLinearStepper extends Component {
         </Stepper>
         <Snackbar
           anchorOrigin={{
-            vertical: "top",
-            horizontal: "right"
+            vertical: 'top',
+            horizontal: 'right',
           }}
-          open={this.state.open}
+          open={open}
           autoHideDuration={3000}
           onClose={this.handleClose}
         >
@@ -163,20 +154,22 @@ class VerticalLinearStepper extends Component {
 }
 
 VerticalLinearStepper.propTypes = {
-  classes: PropTypes.object
+  classes: PropTypes.shape.isRequired, // Corrigir o tipo da props
+  createTutor: PropTypes.func.isRequired,
+  tutor: PropTypes.func.isRequired, // Corrigir o tipo da props
 };
 
 const mapStateToProps = state => ({
-  tutor: state.tutor
+  tutor: state.tutor,
 });
 
 const mapDispatchToProps = dispatch => ({
-  createTutor: tutor => dispatch(ActionCreators.createtutorRequest(tutor))
+  createTutor: tutor => dispatch(ActionCreators.createtutorRequest(tutor)),
 });
 
 export default withStyles(styles)(
   connect(
     mapStateToProps,
-    mapDispatchToProps
-  )(VerticalLinearStepper)
+    mapDispatchToProps,
+  )(VerticalLinearStepper),
 );
