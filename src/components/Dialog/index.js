@@ -10,26 +10,11 @@ import PropTypes from 'prop-types';
 
 import { Grid, Typography, TextField } from '@material-ui/core';
 
+import styles from './styles';
+
 function Transition(props) {
   return <Slide direction="down" {...props} />;
 }
-
-const styles = theme => ({
-  titleGrid: {
-    textAlign: 'left',
-  },
-  title: {
-    fontWeight: 'bold',
-    fontSize: 20,
-    [theme.breakpoints.down('sm')]: {
-      fontSize: '1rem',
-    },
-  },
-  textField: {
-    marginTop: 25,
-    width: '100%',
-  },
-});
 
 const AlertDialogSlide = (props) => {
   const {
@@ -82,7 +67,7 @@ const AlertDialogSlide = (props) => {
 };
 
 AlertDialogSlide.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
   open: PropTypes.bool.isRequired,
   handleClose: PropTypes.func.isRequired,
   adress: PropTypes.string.isRequired,

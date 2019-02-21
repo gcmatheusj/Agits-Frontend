@@ -11,16 +11,13 @@ const styles = theme => ({
     padding: 20,
     backgroundColor: theme.palette.primary.main,
   },
-
   content: {
     height: 120,
     padding: 20,
   },
-
   top: {
     color: theme.palette.common.white,
   },
-
   iconSettings: {
     color: theme.palette.primary.dark,
   },

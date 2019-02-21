@@ -7,7 +7,7 @@ import {
 import PropTypes from 'prop-types';
 
 import Header from '../../components/Header';
-import AlertDialogSlide from './Dialog';
+import AlertDialogSlide from '../../components/Dialog';
 
 import { styles } from './styles';
 
@@ -97,7 +97,7 @@ class EscolhaDoModelo extends React.Component {
   }
 }
 EscolhaDoModelo.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

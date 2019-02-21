@@ -143,7 +143,7 @@ class StepperUsandoModelo extends Component {
 }
 
 StepperUsandoModelo.propTypes = {
-  classes: PropTypes.shape.isRequired, // Corrigir tipo da prop
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(StepperUsandoModelo);

@@ -154,9 +154,9 @@ class VerticalLinearStepper extends Component {
 }
 
 VerticalLinearStepper.propTypes = {
-  classes: PropTypes.shape.isRequired, // Corrigir o tipo da props
+  classes: PropTypes.object.isRequired,
   createTutor: PropTypes.func.isRequired,
-  tutor: PropTypes.func.isRequired, // Corrigir o tipo da props
+  tutor: PropTypes.object.isRequired,
 };
 
 const mapStateToProps = state => ({

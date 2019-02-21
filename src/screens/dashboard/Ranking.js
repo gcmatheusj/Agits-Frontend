@@ -78,7 +78,7 @@ const Ranking = (props) => {
 };
 
 Ranking.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Ranking);

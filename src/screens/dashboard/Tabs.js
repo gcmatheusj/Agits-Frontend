@@ -52,7 +52,7 @@ class FullWidthTabs extends React.Component {
               textColor="primary"
               fullWidth
             >
-              <Tab label="Turma  1" />
+              <Tab label="Turma 1" />
               <Tab label="Turma 2" />
             </Tabs>
           </AppBar>
@@ -86,7 +86,7 @@ class FullWidthTabs extends React.Component {
 }
 
 FullWidthTabs.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
   theme: PropTypes.shape.isRequired,
 };
 

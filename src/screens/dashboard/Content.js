@@ -15,7 +15,7 @@ const Content = (props) => {
 };
 
 Content.propTypes = {
-  classes: PropTypes.shape.isRequired,
+  classes: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(Content);
