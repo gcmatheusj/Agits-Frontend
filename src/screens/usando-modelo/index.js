@@ -13,10 +13,7 @@ import {
 } from '@material-ui/core';
 import { Redirect } from 'react-router-dom';
 
-// import ActionCreators from '../../../redux/actions/tutor';
-
 import Header from '../../components/Header';
-
 import DefineGamificationModel from '../../components/Steps/DefineGamificationModel';
 import DefineEducationLevel from '../../components/Steps/DefineEducationLevel';
 
@@ -43,14 +40,6 @@ class StepperUsandoModelo extends Component {
     finalized: false,
   };
 
-  componentDidMount() {
-    window.sessionStorage.setItem('StartedModel', Date(Date.now()));
-  }
-
-  componentWillUnmount() {
-    window.sessionStorage.setItem('FinishedModel', Date(Date.now()));
-  }
-
   handleNext = () => {
     this.setState(state => ({
       activeStep: state.activeStep + 1,
@@ -71,8 +60,6 @@ class StepperUsandoModelo extends Component {
 
   createTutorRequest = () => {
     this.setState({ finalized: true });
-    // this.props.createTutor(this.props.tutor);
-    // this.handleClick()
   };
 
   render() {

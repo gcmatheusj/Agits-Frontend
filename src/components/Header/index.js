@@ -136,7 +136,10 @@ class Header extends Component {
 
 Header.propTypes = {
   classes: PropTypes.object.isRequired,
-  container: PropTypes.object,
+  container: PropTypes.object.isRequired,
+  location: PropTypes.object.isRequired,
+  children: PropTypes.array.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default compose(
