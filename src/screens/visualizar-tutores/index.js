@@ -1,11 +1,10 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import {
   withStyles, Grid, Divider, Typography,
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
 import CardTutor from './CardTutor';
-import Header from '../../components/Header';
 
 import styles from './styles';
 
@@ -37,24 +36,22 @@ function VisualizarTutores(props) {
   const { classes } = props;
 
   return (
-    <Fragment>
-      <Header title="AGITS">
-        <Typography className={classes.pageTitle} variant="h6">
-          These Are Your Intelligent Tutor
-        </Typography>
-        <Divider style={styles.divider} />
-        <Grid className={classes.grid} container direction="row">
-          {tutors.map(v => (
-            <CardTutor
-              key={v.id}
-              name={v.name}
-              studentsNumber={v.studentsNumber}
-              abstract={v.abstract}
-            />
-          ))}
-        </Grid>
-      </Header>
-    </Fragment>
+    <>
+      <Typography className={classes.pageTitle} variant="h6">
+        These Are Your Intelligent Tutor
+      </Typography>
+      <Divider style={styles.divider} />
+      <Grid className={classes.grid} container direction="row">
+        {tutors.map(v => (
+          <CardTutor
+            key={v.id}
+            name={v.name}
+            studentsNumber={v.studentsNumber}
+            abstract={v.abstract}
+          />
+        ))}
+      </Grid>
+    </>
   );
 }
 

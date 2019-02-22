@@ -10,6 +10,7 @@ import CriarTutor from './screens/criar-tutor';
 import StepperPassoaPasso from './screens/passo-a-passo';
 import StepperUsandoModelo from './screens/usando-modelo';
 import VisualizarTutores from './screens/visualizar-tutores';
+import Header from './components/Header';
 
 const theme = createMuiTheme({
   palette: {
@@ -35,11 +36,13 @@ const App = () => (
       <Fragment>
         <CssBaseline />
         <MuiThemeProvider theme={theme}>
-          <Route exact path="/" component={CriarTutor} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/passo-a-passo" component={StepperPassoaPasso} />
-          <Route path="/usando-modelo" component={StepperUsandoModelo} />
-          <Route path="/visualizar-tutores" component={VisualizarTutores} />
+          <Header title="AGITS">
+            <Route exact path="/" component={CriarTutor} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/passo-a-passo" component={StepperPassoaPasso} />
+            <Route path="/usando-modelo" component={StepperUsandoModelo} />
+            <Route path="/visualizar-tutores" component={VisualizarTutores} />
+          </Header>
         </MuiThemeProvider>
       </Fragment>
     </Router>

@@ -1,10 +1,5 @@
 import React from 'react';
-import Header from '../../components/Header';
 
-const Index = () => (
-  <div>
-    <Header />
-  </div>
-);
+const Index = () => <div />;
 
 export default Index;

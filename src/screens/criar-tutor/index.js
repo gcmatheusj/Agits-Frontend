@@ -6,7 +6,6 @@ import {
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
-import Header from '../../components/Header';
 import AlertDialogSlide from '../../components/Dialog';
 
 import { styles } from './styles';
@@ -53,45 +52,43 @@ class EscolhaDoModelo extends React.Component {
 
     return (
       <div className={classes.root}>
-        <Header title="AGITS">
-          <Typography className={classes.title} variant="subtitle1">
-            Criar Tutor
-          </Typography>
-          <Divider />
-          <Typography className={classes.subtitle} variant="subtitle1">
-            Você pode começar criando um tutor do zero ou usando um modelo.
-          </Typography>
-          <Grid container className={classes.container} justify="center" alignItems="center">
-            {opcoesModelo.map((v) => {
-              const templateCard = (
-                <Fragment>
-                  <img src={v.img} alt="" className={classes.img} />
-                  <CardContent className={classes.cardContent}>
-                    <Typography className={classes.titleCard} gutterBottom align="center">
-                      {v.title}
-                    </Typography>
-                    <Typography className={classes.textCard} variant="body1" gutterBottom>
-                      {v.subtitle}
-                    </Typography>
-                  </CardContent>
-                </Fragment>
-              );
-              return (
-                <Card key={v.number} className={classes.card}>
-                  <CardActionArea
-                    className={classes.cardAction}
-                    value="teste"
-                    onClick={this.handleClickOpen(v.adress)}
-                  >
-                    {templateCard}
-                  </CardActionArea>
-                  <div className={classes.cardAction}>{template}</div>
-                </Card>
-              );
-            })}
-          </Grid>
-          <AlertDialogSlide adress={adress} handleClose={this.handleClose} open={open} />
-        </Header>
+        <Typography className={classes.title} variant="subtitle1">
+          Criar Tutor
+        </Typography>
+        <Divider />
+        <Typography className={classes.subtitle} variant="subtitle1">
+          Você pode começar criando um tutor do zero ou usando um modelo.
+        </Typography>
+        <Grid container className={classes.container} justify="center" alignItems="center">
+          {opcoesModelo.map((v) => {
+            const templateCard = (
+              <Fragment>
+                <img src={v.img} alt="" className={classes.img} />
+                <CardContent className={classes.cardContent}>
+                  <Typography className={classes.titleCard} gutterBottom align="center">
+                    {v.title}
+                  </Typography>
+                  <Typography className={classes.textCard} variant="body1" gutterBottom>
+                    {v.subtitle}
+                  </Typography>
+                </CardContent>
+              </Fragment>
+            );
+            return (
+              <Card key={v.number} className={classes.card}>
+                <CardActionArea
+                  className={classes.cardAction}
+                  value="teste"
+                  onClick={this.handleClickOpen(v.adress)}
+                >
+                  {templateCard}
+                </CardActionArea>
+                <div className={classes.cardAction}>{template}</div>
+              </Card>
+            );
+          })}
+        </Grid>
+        <AlertDialogSlide adress={adress} handleClose={this.handleClose} open={open} />
       </div>
     );
   }
