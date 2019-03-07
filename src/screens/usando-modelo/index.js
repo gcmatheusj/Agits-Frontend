@@ -13,7 +13,6 @@ import {
 } from '@material-ui/core';
 import { Redirect } from 'react-router-dom';
 
-import Header from '../../components/Header';
 import DefineGamificationModel from '../../components/Steps/DefineGamificationModel';
 import DefineEducationLevel from '../../components/Steps/DefineEducationLevel';
 
@@ -69,60 +68,58 @@ class StepperUsandoModelo extends Component {
 
     return (
       <div className={classes.root}>
-        <Header title="AGITS">
-          <Typography className={classes.pageTitle} variant="h6">
-            Customizando Tutor
-          </Typography>
-          <Divider style={styles.divider} />
-          <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
-            {steps.map((label, index) => (
-              <Step key={label}>
-                <StepLabel>{label}</StepLabel>
-                <StepContent>
-                  <div>{getStepContent(index)}</div>
-                  <div className={classes.actionsContainer}>
-                    <div>
+        <Typography className={classes.pageTitle} variant="h6">
+          Customizando Tutor
+        </Typography>
+        <Divider style={styles.divider} />
+        <Stepper className={classes.stepper} activeStep={activeStep} orientation="vertical">
+          {steps.map((label, index) => (
+            <Step key={label}>
+              <StepLabel>{label}</StepLabel>
+              <StepContent>
+                <div>{getStepContent(index)}</div>
+                <div className={classes.actionsContainer}>
+                  <div>
+                    <Button
+                      className={classes.button}
+                      disabled={activeStep === 0}
+                      onClick={this.handleBack}
+                    >
+                      Voltar
+                    </Button>
+                    {activeStep === steps.length - 1 ? (
                       <Button
                         className={classes.button}
-                        disabled={activeStep === 0}
-                        onClick={this.handleBack}
+                        variant="contained"
+                        color="primary"
+                        onClick={this.createTutorRequest}
                       >
-                        Voltar
+                        Finalizar
                       </Button>
-                      {activeStep === steps.length - 1 ? (
-                        <Button
-                          className={classes.button}
-                          variant="contained"
-                          color="primary"
-                          onClick={this.createTutorRequest}
-                        >
-                          Finalizar
-                        </Button>
-                      ) : (
-                        <Button
-                          className={classes.button}
-                          variant="contained"
-                          color="primary"
-                          onClick={this.handleNext}
-                        >
-                          Próximo
-                        </Button>
-                      )}
-                    </div>
+                    ) : (
+                      <Button
+                        className={classes.button}
+                        variant="contained"
+                        color="primary"
+                        onClick={this.handleNext}
+                      >
+                        Próximo
+                      </Button>
+                    )}
                   </div>
-                </StepContent>
-              </Step>
-            ))}
-          </Stepper>
-          {activeStep === steps.length && (
-            <Paper square elevation={0} className={classes.resetContainer}>
-              <Typography>All steps completed - you&quot;re finished</Typography>
-              <Button className={classes.button} onClick={this.handleReset}>
-                Reset
-              </Button>
-            </Paper>
-          )}
-        </Header>
+                </div>
+              </StepContent>
+            </Step>
+          ))}
+        </Stepper>
+        {activeStep === steps.length && (
+          <Paper square elevation={0} className={classes.resetContainer}>
+            <Typography>All steps completed - you&quot;re finished</Typography>
+            <Button className={classes.button} onClick={this.handleReset}>
+              Reset
+            </Button>
+          </Paper>
+        )}
         {finalized && <Redirect to="/questionario" />}
       </div>
     );

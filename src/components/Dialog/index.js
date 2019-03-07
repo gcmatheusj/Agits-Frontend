@@ -36,15 +36,13 @@ const AlertDialogSlide = (props) => {
       <DialogContent>
         <Grid container spacing={16}>
           <Grid item xs={12} className={classes.titleGrid}>
-            <Typography className={classes.title} variant="subtitle1">
-              Nomeie seu tutor
-            </Typography>
+            <Typography variant="h6">Dê um nome para seu tutor</Typography>
           </Grid>
           <Grid item xs={12}>
             <Divider />
             <TextField
               id="outlined-with-placeholder"
-              label="Digite o nome"
+              label="Nome"
               className={classes.textField}
               margin="normal"
               variant="outlined"

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Collapse from '@material-ui/core/Collapse';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import {
   Grid,
@@ -196,32 +197,33 @@ const checkedsbuttons = [
 class GamificationType extends Component {
   state = {
     checked: '',
-    select: '',
   };
 
   handleChange = name => (event) => {
-    this.state.checked === '' || this.state.checked !== event.currentTarget.value
+    const { checked } = this.state;
+    return checked === '' || checked !== event.currentTarget.value
       ? this.setState({ [name]: event.currentTarget.value })
       : this.setState({ checked: '' });
   };
 
   handleSelect = (event) => {
-    this.props.handleSelect(event);
+    const { handleSelect } = this.props;
+    return handleSelect(event);
   };
 
   render() {
-    const { classes } = this.props;
+    const { classes, select, name } = this.props;
     const { checked } = this.state;
-    const textprops = text[this.props.name];
+    const textprops = text[name];
 
     return (
       <div className={classes.root}>
-        <Card className={this.props.select === this.props.name ? classes.select : ''}>
-          <CardActionArea value={this.props.name} onClick={this.handleSelect}>
+        <Card className={select === name ? classes.select : ''}>
+          <CardActionArea value={name} onClick={this.handleSelect}>
             <Grid className={classes.gridContent} container>
               <Grid item xs={12}>
                 <Grid container direction="row" spacing={16} className={classes.gridCard}>
-                  <img className={classes.img} alt="complex" src={text[this.props.name].image} />
+                  <img className={classes.img} alt="complex" src={text[name].image} />
                   <Grid className={classes.gridText} container item xs={12} sm>
                     <Grid item xs container direction="column" spacing={16}>
                       <Grid item xs>
@@ -230,8 +232,8 @@ class GamificationType extends Component {
                         </Typography>
                         <Typography className={classes.textCard} gutterBottom variant="subtitle1">
                           {textprops.description}
-                          {textprops.names.map((v, k) => (
-                            <strong key={k}>{v}</strong>
+                          {textprops.names.map(v => (
+                            <strong key={v}>{v}</strong>
                           ))}
                         </Typography>
                       </Grid>
@@ -245,13 +247,18 @@ class GamificationType extends Component {
           <div className={classes.gridGame}>
             {textprops.checkeds.map((v, k) => (
               <Tooltip title={textprops.titleButton[k]} placement="top">
-                <Button key={k} value={v} onClick={this.handleChange('checked')}>
+                <Button
+                  key={(v, k)}
+                  value={v}
+                  onClick={this.handleChange('checked')}
+                  variant={checked === v && 'raised'}
+                >
                   <img className={classes.icon} alt="x" src={textprops.imagesbuttons[k]} />
                 </Button>
               </Tooltip>
             ))}
             {checkedsbuttons.map((v, k) => (
-              <div key={k} className={classes.container}>
+              <div key={v} className={classes.container}>
                 <Collapse className={classes.collapse} in={checked === pChecked[k]}>
                   <Divider />
                   <Grid
@@ -280,5 +287,12 @@ class GamificationType extends Component {
     );
   }
 }
+
+GamificationType.propTypes = {
+  classes: PropTypes.object.isRequired,
+  handleSelect: PropTypes.func.isRequired,
+  name: PropTypes.string.isRequired,
+  select: PropTypes.string.isRequired,
+};
 
 export default withStyles(styles)(GamificationType);
