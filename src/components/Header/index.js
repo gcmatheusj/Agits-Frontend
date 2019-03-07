@@ -7,9 +7,11 @@ import {
   AppBar,
   Toolbar,
   IconButton,
+  Badge,
   Typography,
   Hidden,
   Drawer,
+  Menu,
   MenuList,
   MenuItem,
   ListItemIcon,
@@ -18,10 +20,14 @@ import {
   Fab,
 } from '@material-ui/core';
 import {
-  Menu,
+  Menu as MenuIcon,
   Home as HomeIcon,
   Dashboard as DashboardIcon,
   Add as AddIcon,
+  Notifications as NotificationsIcon,
+  Mail as MailIcon,
+  MoreVert as MoreIcon,
+  AccountCircle,
 } from '@material-ui/icons';
 
 import styles from './styles';
@@ -29,10 +35,29 @@ import styles from './styles';
 class Header extends Component {
   state = {
     mobileOpen: false,
+    anchorEl: null,
+    mobileMoreAnchorEl: null,
   };
 
   handleDrawerToggle = () => {
     this.setState(state => ({ mobileOpen: !state.mobileOpen }));
+  };
+
+  handleProfileMenuOpen = (event) => {
+    this.setState({ anchorEl: event.currentTarget });
+  };
+
+  handleMenuClose = () => {
+    this.setState({ anchorEl: null });
+    this.handleMobileMenuClose();
+  };
+
+  handleMobileMenuOpen = (event) => {
+    this.setState({ mobileMoreAnchorEl: event.currentTarget });
+  };
+
+  handleMobileMenuClose = () => {
+    this.setState({ mobileMoreAnchorEl: null });
   };
 
   render() {
@@ -43,7 +68,9 @@ class Header extends Component {
       children,
       title,
     } = this.props;
-    const { mobileOpen } = this.state;
+    const { mobileOpen, anchorEl, mobileMoreAnchorEl } = this.state;
+    const isMenuOpen = Boolean(anchorEl);
+    const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
     const drawer = (
       <div>
@@ -76,6 +103,52 @@ class Header extends Component {
       </div>
     );
 
+    const renderMenu = (
+      <Menu
+        anchorEl={anchorEl}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={isMenuOpen}
+        onClose={this.handleMenuClose}
+      >
+        <MenuItem onClick={this.handleMenuClose}>Perfil</MenuItem>
+        <MenuItem onClick={this.handleMenuClose}>Minha Conta</MenuItem>
+      </Menu>
+    );
+
+    const renderMobileMenu = (
+      <Menu
+        anchorEl={mobileMoreAnchorEl}
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
+        transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+        open={isMobileMenuOpen}
+        onClose={this.handleMenuClose}
+      >
+        <MenuItem onClick={this.handleMobileMenuClose}>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <MailIcon />
+            </Badge>
+          </IconButton>
+          <p>Menssagens</p>
+        </MenuItem>
+        <MenuItem onClick={this.handleMobileMenuClose}>
+          <IconButton color="inherit">
+            <Badge color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+          <p>Notificações</p>
+        </MenuItem>
+        <MenuItem onClick={this.handleProfileMenuOpen}>
+          <IconButton color="inherit">
+            <AccountCircle />
+          </IconButton>
+          <p>Perfil</p>
+        </MenuItem>
+      </Menu>
+    );
+
     return (
       <Fragment>
         <CssBaseline />
@@ -88,13 +161,42 @@ class Header extends Component {
                 onClick={this.handleDrawerToggle}
                 className={classes.menuButton}
               >
-                <Menu />
+                <MenuIcon />
               </IconButton>
               <Typography variant="h6" color="inherit" noWrap>
                 {title}
               </Typography>
+
+              <div className={classes.grow} />
+              <div className={classes.sectionDesktop}>
+                <IconButton color="inherit">
+                  <MailIcon />
+                </IconButton>
+                <IconButton color="inherit">
+                  <NotificationsIcon />
+                </IconButton>
+                <IconButton
+                  aria-owns={isMenuOpen ? 'material-appbar' : undefined}
+                  aria-haspopup="true"
+                  onClick={this.handleProfileMenuOpen}
+                  color="inherit"
+                >
+                  <AccountCircle />
+                </IconButton>
+              </div>
+              <div className={classes.sectionMobile}>
+                <IconButton
+                  aria-haspopup="true"
+                  onClick={this.handleMobileMenuOpen}
+                  color="inherit"
+                >
+                  <MoreIcon />
+                </IconButton>
+              </div>
             </Toolbar>
           </AppBar>
+          {renderMenu}
+          {renderMobileMenu}
           <nav className={classes.drawer}>
             <Hidden smUp implementation="css">
               <Drawer

@@ -40,7 +40,7 @@ function VisualizarTutores(props) {
     <Fragment>
       <Header title="AGITS">
         <Typography className={classes.pageTitle} variant="h6">
-          These Are Your Intelligent Tutor
+          Painel de Controle
         </Typography>
         <Divider style={styles.divider} />
         <Grid className={classes.grid} container direction="row">

@@ -1,14 +1,17 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogContent from '@material-ui/core/DialogContent';
-import Divider from '@material-ui/core/Divider';
-import Slide from '@material-ui/core/Slide';
 import { Link } from 'react-router-dom';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
-
-import { Grid, Typography, TextField } from '@material-ui/core';
+import {
+  Grid,
+  Typography,
+  TextField,
+  Button,
+  Dialog,
+  DialogContent,
+  Divider,
+  Slide,
+} from '@material-ui/core';
 
 import styles from './styles';
 
@@ -20,6 +23,7 @@ const AlertDialogSlide = (props) => {
   const {
     classes, adress, handleClose, open,
   } = props;
+
   return (
     <Dialog
       open={open}

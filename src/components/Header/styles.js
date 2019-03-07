@@ -4,6 +4,9 @@ const styles = theme => ({
   root: {
     display: 'flex',
   },
+  grow: {
+    flexGrow: 1,
+  },
   fab: {
     margin: theme.spacing.unit,
     backgroundColor: theme.palette.common.white,
@@ -35,6 +38,18 @@ const styles = theme => ({
       paddingLeft: 16,
       paddingRight: 16,
       paddingBottom: 16,
+    },
+  },
+  sectionDesktop: {
+    display: 'none',
+    [theme.breakpoints.up('md')]: {
+      display: 'flex',
+    },
+  },
+  sectionMobile: {
+    display: 'flex',
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
     },
   },
 });
