@@ -59,6 +59,7 @@ class EscolhaDoModelo extends React.Component {
         <Typography className={classes.subtitle} variant="subtitle1">
           Você pode começar criando um tutor do zero ou usando um modelo.
         </Typography>
+        {JSON.stringify(this.props)}
         <Grid container className={classes.container} justify="center" alignItems="center">
           {opcoesModelo.map((v) => {
             const templateCard = (

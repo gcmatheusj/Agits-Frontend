@@ -14,6 +14,11 @@ import Header from './components/Header';
 
 const theme = createMuiTheme({
   palette: {
+    action: {
+      selected: '#bbdefb',
+      hover: '#e3f2fd',
+      disabled: '#9B9B9B',
+    },
     primary: {
       main: '#1976d2',
       light: '#63a4ff',
@@ -41,7 +46,7 @@ const App = () => (
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/passo-a-passo" component={StepperPassoaPasso} />
             <Route path="/usando-modelo" component={StepperUsandoModelo} />
-            <Route path="/visualizar-tutores" component={VisualizarTutores} />
+            <Route path="/dashboard" component={VisualizarTutores} />
           </Header>
         </MuiThemeProvider>
       </Fragment>

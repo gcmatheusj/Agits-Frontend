@@ -2,8 +2,9 @@ const styles = theme => ({
   card: {
     maxWidth: 280,
     marginTop: 20,
+    marginRight: 20,
     [theme.breakpoints.up('sm')]: {
-      marginLeft: 20,
+      // marginLeft: 20,
     },
   },
   media: {
@@ -31,6 +32,9 @@ const styles = theme => ({
       marginTop: 15,
       marginBottom: 15,
     },
+  },
+  grid: {
+    margin: 20,
   },
 });
 

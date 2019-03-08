@@ -20,6 +20,9 @@ const styles = theme => ({
   appBar: {
     zIndex: theme.zIndex.drawer + 1,
   },
+  menuList: {
+    marginTop: 63,
+  },
   menuButton: {
     marginRight: 20,
     [theme.breakpoints.up('sm')]: {
@@ -52,6 +55,15 @@ const styles = theme => ({
       display: 'none',
     },
   },
+  selected: {
+    '&$selected': {
+      '&$primary, &$icon': {
+        color: theme.palette.primary.main,
+      },
+    },
+  },
+  primary: {},
+  icon: {},
 });
 
 export default styles;

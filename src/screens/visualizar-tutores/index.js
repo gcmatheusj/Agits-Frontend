@@ -1,7 +1,8 @@
 import React from 'react';
 import {
-  withStyles, Grid, Divider, Typography,
+  withStyles, Grid, Divider, Typography, Fab,
 } from '@material-ui/core';
+import { Add as AddIcon } from '@material-ui/icons';
 import PropTypes from 'prop-types';
 
 import CardTutor from './CardTutor';
@@ -41,15 +42,20 @@ function VisualizarTutores(props) {
         Painel de Controle
       </Typography>
       <Divider style={styles.divider} />
-      <Grid className={classes.grid} container direction="row">
-        {tutors.map(v => (
-          <CardTutor
-            key={v.id}
-            name={v.name}
-            studentsNumber={v.studentsNumber}
-            abstract={v.abstract}
-          />
-        ))}
+      <Grid className={classes.grid} container>
+        <Fab color="primary" aria-label="Add">
+          <AddIcon />
+        </Fab>
+        <Grid container direction="row">
+          {tutors.map(v => (
+            <CardTutor
+              key={v.id}
+              name={v.name}
+              studentsNumber={v.studentsNumber}
+              abstract={v.abstract}
+            />
+          ))}
+        </Grid>
       </Grid>
     </>
   );

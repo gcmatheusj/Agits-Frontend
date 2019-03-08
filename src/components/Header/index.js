@@ -77,27 +77,33 @@ class Header extends Component {
         <Hidden smDown>
           <div className={classes.toolbar} />
         </Hidden>
-        <MenuList>
+        <MenuList className={classes.menuList}>
           {/* <Fab variant="extended" component={Link} to="/criar-tutor" className={classes.fab}>
             <AddIcon />
             Criar Tutor
           </Fab> */}
 
-          <MenuItem component={Link} to="/">
-            <ListItemIcon>
+          <MenuItem
+            className={classes.selected}
+            component={Link}
+            to="/"
+            selected={pathname === '/'}
+          >
+            <ListItemIcon className={classes.icon}>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText inset primary="Home" />
+            <ListItemText classes={{ primary: classes.primary }} inset primary="Home" />
           </MenuItem>
           <MenuItem
+            className={classes.selected}
             component={Link}
-            to="/visualizar-tutores"
-            selected={pathname === '/visualizar-tutores'}
+            to="/dashboard"
+            selected={pathname === '/dashboard'}
           >
-            <ListItemIcon>
+            <ListItemIcon className={classes.icon}>
               <DashboardIcon />
             </ListItemIcon>
-            <ListItemText inset primary="Dashboard" />
+            <ListItemText classes={{ primary: classes.primary }} inset primary="Dashboard" />
           </MenuItem>
         </MenuList>
       </div>
