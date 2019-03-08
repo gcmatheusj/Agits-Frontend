@@ -17,13 +17,13 @@ import {
   ListItemIcon,
   ListItemText,
   CssBaseline,
-  Fab,
+  // Fab,
 } from '@material-ui/core';
 import {
   Menu as MenuIcon,
   Home as HomeIcon,
   Dashboard as DashboardIcon,
-  Add as AddIcon,
+  // Add as AddIcon,
   Notifications as NotificationsIcon,
   Mail as MailIcon,
   MoreVert as MoreIcon,
@@ -78,10 +78,10 @@ class Header extends Component {
           <div className={classes.toolbar} />
         </Hidden>
         <MenuList>
-          <Fab variant="extended" component={Link} to="/criar-tutor" className={classes.fab}>
+          {/* <Fab variant="extended" component={Link} to="/criar-tutor" className={classes.fab}>
             <AddIcon />
             Criar Tutor
-          </Fab>
+          </Fab> */}
 
           <MenuItem component={Link} to="/">
             <ListItemIcon>

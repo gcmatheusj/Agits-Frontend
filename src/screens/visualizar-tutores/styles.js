@@ -19,7 +19,18 @@ const styles = theme => ({
     color: theme.palette.common.white,
   },
   iconSettings: {
-    color: theme.palette.primary.dark,
+    color: '##757575',
+  },
+  title: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    margin: 20,
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.1rem',
+      marginLeft: 10,
+      marginTop: 15,
+      marginBottom: 15,
+    },
   },
 });
 

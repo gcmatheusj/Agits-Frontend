@@ -37,7 +37,7 @@ function VisualizarTutores(props) {
 
   return (
     <>
-      <Typography className={classes.pageTitle} variant="h6">
+      <Typography className={classes.title} variant="h6">
         Painel de Controle
       </Typography>
       <Divider style={styles.divider} />
