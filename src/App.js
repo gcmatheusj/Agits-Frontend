@@ -5,11 +5,12 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import store from './redux';
 
-import Dashboard from './screens/dashboard';
+// import Dashboard from './screens/dashboard';
 import CriarTutor from './screens/criar-tutor';
 import StepperPassoaPasso from './screens/passo-a-passo';
 import StepperUsandoModelo from './screens/usando-modelo';
 import VisualizarTutores from './screens/visualizar-tutores';
+import Tutor from './screens/tutor';
 import Header from './components/Header';
 
 const theme = createMuiTheme({
@@ -43,10 +44,11 @@ const App = () => (
         <MuiThemeProvider theme={theme}>
           <Header title="AGITS">
             <Route exact path="/" component={CriarTutor} />
-            <Route path="/dashboard" component={Dashboard} />
+            {/* <Route path="/dashboard" component={Dashboard} /> */}
             <Route path="/passo-a-passo" component={StepperPassoaPasso} />
             <Route path="/usando-modelo" component={StepperUsandoModelo} />
-            <Route path="/dashboard" component={VisualizarTutores} />
+            <Route exact path="/dashboard" component={VisualizarTutores} />
+            <Route path="/dashboard/tutor" component={Tutor} />
           </Header>
         </MuiThemeProvider>
       </Fragment>

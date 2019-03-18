@@ -9,6 +9,7 @@ import CardTutor from './CardTutor';
 
 import styles from './styles';
 
+// precisa estar no redux
 const tutors = [
   {
     id: 0,
@@ -50,9 +51,7 @@ function VisualizarTutores(props) {
           {tutors.map(v => (
             <CardTutor
               key={v.id}
-              name={v.name}
-              studentsNumber={v.studentsNumber}
-              abstract={v.abstract}
+              tutor={v}
             />
           ))}
         </Grid>

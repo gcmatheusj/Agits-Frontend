@@ -11,6 +11,7 @@ import {
   Grid,
   Divider,
 } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 import IconSettings from '@material-ui/icons/Settings';
 
@@ -18,27 +19,27 @@ import styles from './styles';
 
 const CardTutor = (props) => {
   const {
-    classes, name, studentsNumber, abstract,
+    classes, tutor,
   } = props;
   return (
     <Card className={classes.card}>
-      <CardActionArea>
+      <CardActionArea component={Link} to="/dashboard/tutor">
         <CardContent className={classes.media}>
           <Typography className={classes.top} variant="h6" gutterBottom>
             {' '}
-            {name}
+            {tutor.name}
             {' '}
           </Typography>
           <Typography className={classes.top} variant="subtitle1" gutterBottom>
             {' '}
-            {studentsNumber}
+            {tutor.studentsNumber}
             {' '}
 students
             {' '}
           </Typography>
         </CardContent>
         <CardContent className={classes.content}>
-          <Typography component="p">{abstract}</Typography>
+          <Typography component="p">{tutor.abstract}</Typography>
         </CardContent>
       </CardActionArea>
       <Divider />
@@ -55,9 +56,7 @@ students
 
 CardTutor.propTypes = {
   classes: PropTypes.object.isRequired,
-  name: PropTypes.string.isRequired,
-  studentsNumber: PropTypes.string.isRequired,
-  abstract: PropTypes.string.isRequired,
+  tutor: PropTypes.object.isRequired,
 };
 
 export default withStyles(styles)(CardTutor);
