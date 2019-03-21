@@ -13,17 +13,13 @@ import {
   TableCell,
   TableBody,
   Card,
-  CardActionArea,
   CardContent,
-  CardActions,
-  IconButton,
-  CardHeader,
-  ListItem,
-  ListItemText,
-  ListSubheader,
   List,
 } from '@material-ui/core';
-import { Settings } from '@material-ui/icons';
+
+import TableTests from '../../components/TableTests';
+import StrongWeak from '../../components/StrongWeak';
+import Students from '../../components/Students';
 
 import styles from './styles';
 
@@ -105,129 +101,22 @@ class Tutor extends Component {
           <Grid item xs={9}>
             <Grid container direction="column" spacing={24} className={classes.grid}>
               <Grid item>
-                <Paper className={classes.paper}>
-                  <Table className={classes.table}>
-                    <TableHead>
-                      <TableRow>
-                        <TableCell>Test</TableCell>
-                        <TableCell>Average Hits</TableCell>
-                        <TableCell>Average Error</TableCell>
-                        <TableCell>Average Grade</TableCell>
-                        <TableCell>Date</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {tutor.tests.map(test => (
-                        <TableRow key={test.id}>
-                          <TableCell component="th" scope="row">
-                            {test.name}
-                          </TableCell>
-                          <TableCell>{test.hits}</TableCell>
-                          <TableCell>{test.error}</TableCell>
-                          <TableCell>{test.grade}</TableCell>
-                          <TableCell>{test.date}</TableCell>
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </Paper>
+                <TableTests tutor={tutor} />
               </Grid>
               <Grid item>
                 <Grid container spacing={24}>
                   <Grid item xs>
-                    <Card className={classes.paper}>
-                      <CardContent className={classes.strong}>
-                        <Grid container direction="column" alignItems="center">
-                          <Typography className={classes.top} variant="h3" gutterBottom>
-                            {tutor.strongSkills.length}
-                          </Typography>
-                          <Typography className={classes.top} variant="h6" gutterBottom>
-                            STRONG SKILLS
-                          </Typography>
-                        </Grid>
-                      </CardContent>
-                      <CardContent className={classes.content}>
-                        <Grid container spacing={8} className={classes.gridCard}>
-                          <Grid item xs={9}>
-                            <Typography variant="title">Skill</Typography>
-                          </Grid>
-                          <Grid item xs={3}>
-                            <Typography variant="title">Level</Typography>
-                          </Grid>
-                        </Grid>
-                        <Divider />
-                        <List className={classes.list}>
-                          <Grid container spacing={8} className={classes.gridCard}>
-                            {tutor.strongSkills.map(skill => (
-                              <>
-                                <Grid item xs={10}>
-                                  <Typography variant="body1">{skill.name}</Typography>
-                                </Grid>
-                                <Grid item xs={2}>
-                                  <Typography variant="body1">{skill.level}</Typography>
-                                </Grid>
-                              </>
-                            ))}
-                          </Grid>
-                        </List>
-                        {/* <Grid container spacing={8} className={classes.gridCard}>
-                          {tutor.strongSkills.map(skill => (
-                            <>
-                              <Grid item xs={10}>
-                                <Typography variant="body1">{skill.name}</Typography>
-                              </Grid>
-                              <Grid item xs={2}>
-                                <Typography variant="body1">{skill.level}</Typography>
-                              </Grid>
-                            </>
-                          ))}
-                        </Grid> */}
-                      </CardContent>
-                    </Card>
+                    <StrongWeak type="STRONG" skills={tutor.strongSkills} />
                   </Grid>
                   <Grid item xs>
-                    <Card className={classes.paper}>
-                      <CardContent className={classes.weak}>
-                        <Grid container direction="column" alignItems="center">
-                          <Typography className={classes.top} variant="h3" gutterBottom>
-                            {tutor.weakSkills.length}
-                          </Typography>
-                          <Typography className={classes.top} variant="h6" gutterBottom>
-                            WEAK SKILLS
-                          </Typography>
-                        </Grid>
-                      </CardContent>
-                      <CardContent className={classes.content}>
-                        <Grid container spacing={8} className={classes.gridCard}>
-                          <Grid item xs={10}>
-                            <Typography variant="title">Skill</Typography>
-                          </Grid>
-                          <Grid item xs={2}>
-                            <Typography variant="title">Level</Typography>
-                          </Grid>
-                        </Grid>
-                        <Divider />
-                        <Grid container spacing={8} className={classes.gridCard}>
-                          {tutor.weakSkills.map(skill => (
-                            <>
-                              <Grid item xs={10}>
-                                <Typography variant="body1">{skill.name}</Typography>
-                              </Grid>
-                              <Grid item xs={2}>
-                                <Typography variant="body1">{skill.level}</Typography>
-                              </Grid>
-                            </>
-                          ))}
-                        </Grid>
-                      </CardContent>
-                    </Card>
+                    <StrongWeak type="WEAK" skills={tutor.weakSkills} />
                   </Grid>
                 </Grid>
               </Grid>
             </Grid>
           </Grid>
           <Grid item xs={3}>
-            Students
+            <Students />
           </Grid>
         </Grid>
       </>
