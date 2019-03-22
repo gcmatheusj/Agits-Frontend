@@ -2,6 +2,7 @@ const styles = theme => ({
   paper: {
     width: '100%',
     overflowX: 'auto',
+    paddingBottom: theme.spacing.unit * 4,
   },
   strong: {
     // height: 120,
@@ -21,7 +22,8 @@ const styles = theme => ({
     padding: 5,
   },
   gridCard: {
-    padding: 10,
+    paddingLeft: 15,
+    paddingRight: 15,
   },
   list: {
     width: '100%',

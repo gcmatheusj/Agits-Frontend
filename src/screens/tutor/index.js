@@ -81,6 +81,68 @@ const tutor = {
       date: '23/11/2018',
     },
   ],
+  students: [
+    {
+      avatar: '',
+      name: 'Henrique Couto',
+    },
+    {
+      avatar: '',
+      name: 'José Matheus',
+    },
+    {
+      avatar: '',
+      name: 'Daniel Gomes',
+    },
+    {
+      avatar: '',
+      name: 'Ítalo Lima',
+    },
+    {
+      avatar: '',
+      name: 'Ari Barros',
+    },
+    {
+      avatar: '',
+      name: 'Henrique Couto',
+    },
+    {
+      avatar: '',
+      name: 'José Matheus',
+    },
+    {
+      avatar: '',
+      name: 'Daniel Gomes',
+    },
+    {
+      avatar: '',
+      name: 'Ítalo Lima',
+    },
+    {
+      avatar: '',
+      name: 'Ari Barros',
+    },
+    {
+      avatar: '',
+      name: 'Henrique Couto',
+    },
+    {
+      avatar: '',
+      name: 'José Matheus',
+    },
+    {
+      avatar: '',
+      name: 'Daniel Gomes',
+    },
+    {
+      avatar: '',
+      name: 'Ítalo Lima',
+    },
+    {
+      avatar: '',
+      name: 'Ari Barros',
+    },
+  ],
 };
 
 class Tutor extends Component {
@@ -97,14 +159,14 @@ class Tutor extends Component {
           {name + tutor.name}
         </Typography>
         <Divider />
-        <Grid container spacing={16}>
+        <Grid container spacing={16} className={classes.grid}>
           <Grid item xs={9}>
-            <Grid container direction="column" spacing={24} className={classes.grid}>
+            <Grid container direction="column" spacing={16}>
               <Grid item>
                 <TableTests tutor={tutor} />
               </Grid>
               <Grid item>
-                <Grid container spacing={24}>
+                <Grid container spacing={16}>
                   <Grid item xs>
                     <StrongWeak type="STRONG" skills={tutor.strongSkills} />
                   </Grid>
@@ -116,7 +178,7 @@ class Tutor extends Component {
             </Grid>
           </Grid>
           <Grid item xs={3}>
-            <Students />
+            <Students students={tutor.students} />
           </Grid>
         </Grid>
       </>

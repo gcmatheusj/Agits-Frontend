@@ -7,6 +7,7 @@ import {
   TableCell,
   TableBody,
   withStyles,
+  Typography,
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
@@ -20,7 +21,7 @@ class TableTests extends Component {
         <Table className={classes.table}>
           <TableHead>
             <TableRow>
-              <TableCell>Test</TableCell>
+              <TableCell>Tests</TableCell>
               <TableCell>Average Hits</TableCell>
               <TableCell>Average Error</TableCell>
               <TableCell>Average Grade</TableCell>
