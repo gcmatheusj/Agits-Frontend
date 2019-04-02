@@ -43,12 +43,12 @@ const App = () => (
         <CssBaseline />
         <MuiThemeProvider theme={theme}>
           <Header title="AGITS">
-            <Route exact path="/" component={CriarTutor} />
+            <Route exact path="/criar-tutor" component={CriarTutor} />
             {/* <Route path="/dashboard" component={Dashboard} /> */}
-            <Route path="/passo-a-passo" component={StepperPassoaPasso} />
-            <Route path="/usando-modelo" component={StepperUsandoModelo} />
-            <Route exact path="/dashboard" component={VisualizarTutores} />
-            <Route path="/dashboard/tutor" component={Tutor} />
+            <Route path="/criar-tutor/passo-a-passo" component={StepperPassoaPasso} />
+            <Route path="/criar-tutor/usando-modelo" component={StepperUsandoModelo} />
+            <Route exact path="/" component={VisualizarTutores} />
+            <Route path="/tutor" component={Tutor} />
           </Header>
         </MuiThemeProvider>
       </Fragment>

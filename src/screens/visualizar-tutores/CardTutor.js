@@ -23,7 +23,7 @@ const CardTutor = (props) => {
   } = props;
   return (
     <Card className={classes.card}>
-      <CardActionArea component={Link} to="/dashboard/tutor">
+      <CardActionArea component={Link} to="/tutor">
         <CardContent className={classes.media}>
           <Typography className={classes.top} variant="h6" gutterBottom>
             {' '}

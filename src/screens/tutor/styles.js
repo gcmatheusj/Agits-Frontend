@@ -5,12 +5,10 @@ const styles = theme => ({
   title: {
     fontWeight: 'bold',
     fontSize: 20,
-    margin: 20,
+    padding: 15,
     [theme.breakpoints.down('sm')]: {
       fontSize: '1.1rem',
-      marginLeft: 10,
-      marginTop: 15,
-      marginBottom: 15,
+      padding: 10,
     },
   },
 });

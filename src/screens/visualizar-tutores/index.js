@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
-  withStyles, Grid, Divider, Typography, Fab,
+  withStyles, Grid, Divider, Typography, Fab, Tooltip, IconButton,
 } from '@material-ui/core';
 import { Add as AddIcon } from '@material-ui/icons';
 import PropTypes from 'prop-types';
@@ -39,14 +40,22 @@ function VisualizarTutores(props) {
 
   return (
     <>
-      <Typography className={classes.title} variant="h6">
-        Painel de Controle
-      </Typography>
+      <Grid container direction="row" justify="space-between" alignItems="center" className={classes.title}>
+        <Grid item>
+          <Typography variant="h6">
+            Aqui estão todos os tutores criados por você!
+          </Typography>
+        </Grid>
+        <Grid item>
+          <Tooltip title="Criar um novo tutor">
+            <Fab color="primary" aria-label="Add" component={Link} to="/criar-tutor">
+              <AddIcon />
+            </Fab>
+          </Tooltip>
+        </Grid>
+      </Grid>
       <Divider style={styles.divider} />
       <Grid className={classes.grid} container>
-        <Fab color="primary" aria-label="Add">
-          <AddIcon />
-        </Fab>
         <Grid container direction="row">
           {tutors.map(v => (
             <CardTutor

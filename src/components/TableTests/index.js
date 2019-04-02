@@ -7,7 +7,6 @@ import {
   TableCell,
   TableBody,
   withStyles,
-  Typography,
 } from '@material-ui/core';
 import PropTypes from 'prop-types';
 

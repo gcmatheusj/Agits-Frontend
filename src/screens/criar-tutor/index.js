@@ -16,7 +16,7 @@ import template from '../../assets/template.png';
 const opcoesModelo = [
   {
     number: 1,
-    adress: '/passo-a-passo',
+    adress: '/criar-tutor/passo-a-passo',
     img: scratch,
     title: 'Criar seu tutor do zero',
     subtitle:
@@ -24,7 +24,7 @@ const opcoesModelo = [
   },
   {
     number: 2,
-    adress: '/usando-modelo',
+    adress: '/criar-tutor/usando-modelo',
     img: template,
     title: 'Usando modelo',
     subtitle:

@@ -92,9 +92,9 @@ class Header extends Component {
             <ListItemIcon className={classes.icon}>
               <HomeIcon />
             </ListItemIcon>
-            <ListItemText classes={{ primary: classes.primary }} inset primary="Home" />
+            <ListItemText classes={{ primary: classes.primary }} inset primary="Meus tutores" />
           </MenuItem>
-          <MenuItem
+          {/* <MenuItem
             className={classes.selected}
             component={Link}
             to="/dashboard"
@@ -104,7 +104,7 @@ class Header extends Component {
               <DashboardIcon />
             </ListItemIcon>
             <ListItemText classes={{ primary: classes.primary }} inset primary="Dashboard" />
-          </MenuItem>
+          </MenuItem> */}
         </MenuList>
       </div>
     );

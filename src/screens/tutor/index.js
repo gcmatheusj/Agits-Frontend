@@ -1,27 +1,25 @@
+/* eslint-disable react/prefer-stateless-function */
 import React, { Component } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom'
 
 import {
   Typography,
   Divider,
   Grid,
-  Paper,
-  Table,
-  TableHead,
-  TableRow,
-  TableCell,
-  TableBody,
-  Card,
-  CardContent,
-  List,
+  Tooltip,
+  Fab,
+  IconButton,
 } from '@material-ui/core';
+import { Settings, ArrowBack } from '@material-ui/icons';
 
+import Students from '../../components/Students';
 import TableTests from '../../components/TableTests';
 import StrongWeak from '../../components/StrongWeak';
-import Students from '../../components/Students';
 
 import styles from './styles';
+import Tabs from '../../components/Tabs';
 
 const tutor = {
   id: 0,
@@ -146,20 +144,34 @@ const tutor = {
 };
 
 class Tutor extends Component {
-  state = {
-    name: 'Nome: ',
-  };
-
   render() {
     const { classes } = this.props;
-    const { name } = this.state;
     return (
       <>
-        <Typography className={classes.title} variant="h6">
-          {name + tutor.name}
-        </Typography>
+        <Grid container direction="row" justify="space-between" alignItems="center" className={classes.title}>
+          <Grid item>
+            <Grid container direction="row" alignItems="center">
+              <Tooltip title="Voltar">
+                <IconButton color="primary" aria-label="Back" component={Link} to="/" style={{ marginRight: 10 }}>
+                  <ArrowBack />
+                </IconButton>
+              </Tooltip>
+              <Typography variant="h6">
+                {tutor.name}
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item>
+            <Tooltip title="Configurar tutor">
+              <Fab color="primary" aria-label="Setting">
+                <Settings />
+              </Fab>
+            </Tooltip>
+          </Grid>
+        </Grid>
         <Divider />
-        <Grid container spacing={16} className={classes.grid}>
+        <Tabs tutor={tutor} />
+        {/* <Grid container spacing={16} className={classes.grid}>
           <Grid item xs={9}>
             <Grid container direction="column" spacing={16}>
               <Grid item>
@@ -180,7 +192,7 @@ class Tutor extends Component {
           <Grid item xs={3}>
             <Students students={tutor.students} />
           </Grid>
-        </Grid>
+        </Grid> */}
       </>
     );
   }
